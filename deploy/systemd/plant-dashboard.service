@@ -1,0 +1,18 @@
+[Unit]
+Description=Paper 2 — Plant deploy dashboard (roster + UI)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=%i
+WorkingDirectory=/opt/plant-deploy/deploy
+EnvironmentFile=/opt/plant-deploy/deploy/config/.env
+ExecStart=/opt/plant-deploy/.venv/bin/python -m dashboard.server
+Restart=on-failure
+RestartSec=5
+StandardOutput=append:/var/log/plant-dashboard.log
+StandardError=append:/var/log/plant-dashboard.log
+
+[Install]
+WantedBy=multi-user.target

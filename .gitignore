@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.log
+deploy/config/.env
+deploy/config/config.yaml
+deploy_run.csv
+.DS_Store

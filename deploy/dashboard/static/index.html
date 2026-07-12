@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>plant-deploy dashboard</title>
+  <link rel="stylesheet" href="/style.css" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+</head>
+<body>
+  <header>
+    <h1>plant-deploy</h1>
+    <span class="sub" id="last-update">connecting&hellip;</span>
+  </header>
+
+  <section id="summary" class="cards"></section>
+
+  <h2>Edge nodes <span class="muted" id="edge-count"></span></h2>
+  <div id="edges" class="grid"></div>
+
+  <h2>Cloud nodes <span class="muted" id="cloud-count"></span></h2>
+  <div id="clouds" class="grid"></div>
+
+  <h2>Offline <span class="muted" id="off-count"></span></h2>
+  <div id="offline" class="grid"></div>
+
+  <footer>
+    <span>polls every 2 s</span>
+    <span class="muted">paper 2 / hybridquant</span>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>

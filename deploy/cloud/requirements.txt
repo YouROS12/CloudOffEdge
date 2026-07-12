@@ -1,0 +1,19 @@
+# Cloud server dependencies. The setup_cloud.sh script handles the
+# Jetson-specific torch wheel separately (it cannot come from PyPI).
+#
+# On a desktop / laptop GPU host, `pip install -r requirements.txt` works
+# directly because torch wheels are available on PyPI.
+fastapi==0.110.0
+uvicorn[standard]==0.27.1
+pydantic==2.6.4
+pyyaml==6.0.1
+pillow==10.2.0
+numpy==1.26.4
+# These pull torch transitively. On Jetson, install torch FIRST from the
+# NVIDIA wheel index, then pip-install the rest with --no-deps if needed.
+timm==0.9.16
+open-clip-torch==2.24.0
+# Torch — desktop hosts only. setup_cloud.sh skips this line on Jetson.
+--extra-index-url https://download.pytorch.org/whl/cu121
+torch==2.2.1
+torchvision==0.17.1

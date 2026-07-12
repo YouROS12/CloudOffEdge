@@ -1,0 +1,40 @@
+# Paper 2 deploy config — copy to deploy/config/config.yaml on each device.
+#
+# `role` is set automatically by setup_edge.sh / setup_cloud.sh, but you can
+# override it here for testing on a single host.
+role: edge   # or 'cloud'
+
+edge:
+  arch: mobilenet_v3_large
+  ckpt_path: checkpoints/edge_v3l.pt
+  class_names_path: checkpoints/class_names.txt
+  n_classes: 89
+  img_size: 224
+  device: cpu              # Pi has no CUDA; use 'cuda' on a desktop test
+  margin_threshold: 0.20   # route iff margin < threshold
+  cloud_url: http://CHANGE-ME-TO-JETSON-TAILSCALE-NAME:8001
+  cloud_timeout_s: 60.0
+  jpeg_quality: 90
+
+cloud:
+  head_ckpt_path: checkpoints/qualitygate_fusion_3L.pt
+  class_names_path: checkpoints/class_names.txt
+  n_classes: 89
+  device: cuda             # or 'cpu' if no GPU
+  sequential: true         # Nano 4GB MUST be true; desktop GPU can use false
+  backbones:
+    - dinov2_vitl14
+    - dinov3_vitl16
+    - clip_vitl14
+
+server:
+  host: 0.0.0.0            # bind on all interfaces; Tailscale will route over WireGuard
+  port: 8000               # edge default; cloud overrides via systemd env to 8001
+  log_dir: logs
+
+dashboard:
+  # Set this on every Pi/Jetson to your laptop's Tailscale name + dashboard port.
+  # Leave empty (or omit) to disable heartbeats entirely.
+  url: http://CHANGE-ME-TO-LAPTOP-TAILSCALE-NAME:9000
+  node_id:                  # optional; default = socket.gethostname()
+  interval_s: 15.0
