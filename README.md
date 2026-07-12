@@ -50,12 +50,18 @@ curl -fsSL https://tailscale.com/install.sh | sh && sudo tailscale up
 
 git clone https://github.com/YouROS12/CloudOffEdge.git ~/CloudOffEdge
 cd ~/CloudOffEdge
-bash deploy/setup.sh edge
+bash deploy/pull_and_run.sh edge     # pulls latest, installs, starts service
 
 # set CLOUD_URL to the Jetson's Tailscale MagicDNS name:
 #   /opt/plant-deploy/deploy/config/.env
 sudo systemctl restart plant-edge
 journalctl -u plant-edge -f
+```
+
+**To update later** (after you push new code from the dev machine), just:
+
+```bash
+cd ~/CloudOffEdge && bash deploy/pull_and_run.sh edge
 ```
 
 ## On the Jetson Nano (cloud)
@@ -66,9 +72,11 @@ curl -fsSL https://tailscale.com/install.sh | sh && sudo tailscale up
 
 git clone https://github.com/YouROS12/CloudOffEdge.git ~/CloudOffEdge
 cd ~/CloudOffEdge
-bash deploy/setup.sh cloud
+bash deploy/pull_and_run.sh cloud    # pulls latest, installs, starts service
 journalctl -u plant-cloud -f
 ```
+
+**To update later:** `cd ~/CloudOffEdge && bash deploy/pull_and_run.sh cloud`
 
 > **JetPack-4 caveat:** on the Nano, torchvision has no prebuilt aarch64 wheel
 > matching NVIDIA's torch — build it from source (clone `pytorch/vision` at the
