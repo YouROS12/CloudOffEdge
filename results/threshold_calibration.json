@@ -1,0 +1,23 @@
+{
+  "rule": "smallest margin threshold whose validation accuracy reaches 95% of cloud validation accuracy; escalate iff margin < tau",
+  "edge": "MobileNetV3-Large (outputs/edge_model_v3l/best.pt)",
+  "tau": 0.138424,
+  "val": {
+    "n": 1820,
+    "cloud_acc": 0.7972527472527473,
+    "edge_acc": 0.6945054945054945,
+    "escalation": 0.1934065934065934,
+    "acc": 0.7576923076923077,
+    "pct_of_cloud": 0.950379048931771
+  },
+  "test": {
+    "n": 3677,
+    "cloud_acc": 0.801740549360892,
+    "edge_acc": 0.6932281751427795,
+    "escalation": 0.18602121294533588,
+    "acc": 0.7582268153385913,
+    "pct_of_cloud": 0.9457259158751696,
+    "reduction_x": 5.375730994152047,
+    "kb_at_250": 46.50530323633397
+  }
+}

@@ -1,0 +1,11 @@
+# shell scripts and systemd units run on Linux devices: always LF (docs/ADAPTATIONS.md, C1)
+*.sh text eol=lf
+*.service text eol=lf
+*.py text eol=lf
+*.yaml text eol=lf
+.env.example text eol=lf
+*.pt binary
+*.pdf binary
+*.docx binary
+*.png binary
+*.jpg binary

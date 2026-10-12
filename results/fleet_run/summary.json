@@ -1,0 +1,322 @@
+{
+  "overall": {
+    "n": 3677,
+    "route_decision_rate": 0.18602121294533588,
+    "offload_rate": 0.18602121294533588,
+    "cloud_failures": 0,
+    "edge_acc": 0.6932281751427795,
+    "final_acc": 0.7601305412020669,
+    "upload_mb": 40.3541162109375,
+    "cloud_only_mb": 216.336525390625,
+    "kb_per_image": 11.238132988849605,
+    "cloud_only_kb_per_image": 60.24710416100082,
+    "bandwidth_reduction_x": 5.360953124578394,
+    "edge_ms_p50": 69.9,
+    "edge_ms_p95": 80.8,
+    "local_latency_ms_p50": 74.0,
+    "routed_latency_ms_p50": 138.9,
+    "routed_latency_ms_p95": 206.6,
+    "cloud_ms_p50": 6913.5,
+    "cloud_ms_p95": 6940.6,
+    "network_ms_p50": 68.8,
+    "answer_delay_h_mean": 3.4766081871345027,
+    "answer_delay_h_max": 6.0
+  },
+  "per_farm": {
+    "A": {
+      "n": 1360,
+      "route_decision_rate": 0.1889705882352941,
+      "offload_rate": 0.1889705882352941,
+      "cloud_failures": 0,
+      "edge_acc": 0.7227941176470588,
+      "final_acc": 0.7985294117647059,
+      "upload_mb": 14.6312177734375,
+      "cloud_only_mb": 75.2825810546875,
+      "kb_per_image": 11.016446323529411,
+      "cloud_only_kb_per_image": 56.68335514705882,
+      "bandwidth_reduction_x": 5.145339384624606,
+      "edge_ms_p50": 70.3,
+      "edge_ms_p95": 81.3,
+      "local_latency_ms_p50": 74.5,
+      "routed_latency_ms_p50": 138.4,
+      "routed_latency_ms_p95": 191.4,
+      "cloud_ms_p50": 6914.6,
+      "cloud_ms_p95": 6948.5,
+      "network_ms_p50": 68.3,
+      "answer_delay_h_mean": 3.4863813229571985,
+      "answer_delay_h_max": 6.0
+    },
+    "B": {
+      "n": 701,
+      "route_decision_rate": 0.23823109843081314,
+      "offload_rate": 0.23823109843081314,
+      "cloud_failures": 0,
+      "edge_acc": 0.5649072753209701,
+      "final_acc": 0.6219686162624821,
+      "upload_mb": 9.3763427734375,
+      "cloud_only_mb": 38.8676025390625,
+      "kb_per_image": 13.696683309557775,
+      "cloud_only_kb_per_image": 56.776640513552074,
+      "bandwidth_reduction_x": 4.145283878611137,
+      "edge_ms_p50": 69.1,
+      "edge_ms_p95": 78.6,
+      "local_latency_ms_p50": 73.1,
+      "routed_latency_ms_p50": 134.4,
+      "routed_latency_ms_p95": 210.7,
+      "cloud_ms_p50": 6911.6,
+      "cloud_ms_p95": 6935.2,
+      "network_ms_p50": 66.3,
+      "answer_delay_h_mean": 3.3233532934131738,
+      "answer_delay_h_max": 6.0
+    },
+    "C": {
+      "n": 707,
+      "route_decision_rate": 0.1782178217821782,
+      "offload_rate": 0.1782178217821782,
+      "cloud_failures": 0,
+      "edge_acc": 0.693069306930693,
+      "final_acc": 0.751060820367751,
+      "upload_mb": 7.725900390625,
+      "cloud_only_mb": 43.553921875,
+      "kb_per_image": 11.189988684582744,
+      "cloud_only_kb_per_image": 63.082342291371994,
+      "bandwidth_reduction_x": 5.637391070670616,
+      "edge_ms_p50": 69.5,
+      "edge_ms_p95": 80.0,
+      "local_latency_ms_p50": 72.8,
+      "routed_latency_ms_p50": 135.9,
+      "routed_latency_ms_p95": 196.5,
+      "cloud_ms_p50": 6913.1,
+      "cloud_ms_p95": 6938.4,
+      "network_ms_p50": 67.0,
+      "answer_delay_h_mean": 3.5952380952380953,
+      "answer_delay_h_max": 6.0
+    },
+    "D": {
+      "n": 909,
+      "route_decision_rate": 0.1474147414741474,
+      "offload_rate": 0.1474147414741474,
+      "cloud_failures": 0,
+      "edge_acc": 0.7480748074807481,
+      "final_acc": 0.8162816281628162,
+      "upload_mb": 8.6206552734375,
+      "cloud_only_mb": 58.632419921875,
+      "kb_per_image": 9.711277227722771,
+      "cloud_only_kb_per_image": 66.05016281628163,
+      "bandwidth_reduction_x": 6.801387836785084,
+      "edge_ms_p50": 70.2,
+      "edge_ms_p95": 81.9,
+      "local_latency_ms_p50": 74.8,
+      "routed_latency_ms_p50": 143.3,
+      "routed_latency_ms_p95": 228.7,
+      "cloud_ms_p50": 6912.9,
+      "cloud_ms_p95": 6933.7,
+      "network_ms_p50": 72.3,
+      "answer_delay_h_mean": 3.537313432835821,
+      "answer_delay_h_max": 6.0
+    }
+  },
+  "per_farm_day": {
+    "A/day0": {
+      "n": 195,
+      "offload_rate": 0.1794871794871795,
+      "final_acc": 0.8051282051282052,
+      "upload_mb": 1.9818349609375,
+      "cloud_only_mb": 10.3610556640625
+    },
+    "A/day1": {
+      "n": 194,
+      "offload_rate": 0.21649484536082475,
+      "final_acc": 0.788659793814433,
+      "upload_mb": 2.3578720703125,
+      "cloud_only_mb": 11.398828125
+    },
+    "A/day2": {
+      "n": 194,
+      "offload_rate": 0.18041237113402062,
+      "final_acc": 0.7938144329896907,
+      "upload_mb": 2.050841796875,
+      "cloud_only_mb": 10.174837890625
+    },
+    "A/day3": {
+      "n": 195,
+      "offload_rate": 0.14871794871794872,
+      "final_acc": 0.841025641025641,
+      "upload_mb": 1.409275390625,
+      "cloud_only_mb": 10.816951171874999
+    },
+    "A/day4": {
+      "n": 194,
+      "offload_rate": 0.18041237113402062,
+      "final_acc": 0.8092783505154639,
+      "upload_mb": 2.2010546875,
+      "cloud_only_mb": 11.0972021484375
+    },
+    "A/day5": {
+      "n": 194,
+      "offload_rate": 0.22164948453608246,
+      "final_acc": 0.7628865979381443,
+      "upload_mb": 2.578484375,
+      "cloud_only_mb": 10.784234375
+    },
+    "A/day6": {
+      "n": 194,
+      "offload_rate": 0.1958762886597938,
+      "final_acc": 0.788659793814433,
+      "upload_mb": 2.0518544921875,
+      "cloud_only_mb": 10.6494716796875
+    },
+    "B/day0": {
+      "n": 101,
+      "offload_rate": 0.27722772277227725,
+      "final_acc": 0.6138613861386139,
+      "upload_mb": 1.5514638671875,
+      "cloud_only_mb": 5.45641796875
+    },
+    "B/day1": {
+      "n": 100,
+      "offload_rate": 0.22,
+      "final_acc": 0.66,
+      "upload_mb": 1.2372509765625,
+      "cloud_only_mb": 6.0060283203125
+    },
+    "B/day2": {
+      "n": 100,
+      "offload_rate": 0.22,
+      "final_acc": 0.61,
+      "upload_mb": 1.24685546875,
+      "cloud_only_mb": 5.82225
+    },
+    "B/day3": {
+      "n": 100,
+      "offload_rate": 0.25,
+      "final_acc": 0.68,
+      "upload_mb": 1.3585830078125,
+      "cloud_only_mb": 5.198404296875
+    },
+    "B/day4": {
+      "n": 100,
+      "offload_rate": 0.26,
+      "final_acc": 0.57,
+      "upload_mb": 1.3259326171875,
+      "cloud_only_mb": 5.104779296875
+    },
+    "B/day5": {
+      "n": 100,
+      "offload_rate": 0.29,
+      "final_acc": 0.58,
+      "upload_mb": 1.61292578125,
+      "cloud_only_mb": 5.752955078125
+    },
+    "B/day6": {
+      "n": 100,
+      "offload_rate": 0.15,
+      "final_acc": 0.64,
+      "upload_mb": 1.0433310546875,
+      "cloud_only_mb": 5.526767578125
+    },
+    "C/day0": {
+      "n": 101,
+      "offload_rate": 0.1485148514851485,
+      "final_acc": 0.7128712871287128,
+      "upload_mb": 0.8746240234375,
+      "cloud_only_mb": 6.3864912109375
+    },
+    "C/day1": {
+      "n": 101,
+      "offload_rate": 0.18811881188118812,
+      "final_acc": 0.693069306930693,
+      "upload_mb": 0.96165625,
+      "cloud_only_mb": 6.0148154296875
+    },
+    "C/day2": {
+      "n": 101,
+      "offload_rate": 0.2079207920792079,
+      "final_acc": 0.7821782178217822,
+      "upload_mb": 1.0549794921875,
+      "cloud_only_mb": 5.932453125
+    },
+    "C/day3": {
+      "n": 101,
+      "offload_rate": 0.1188118811881188,
+      "final_acc": 0.7722772277227723,
+      "upload_mb": 0.8323779296875,
+      "cloud_only_mb": 6.880828125
+    },
+    "C/day4": {
+      "n": 101,
+      "offload_rate": 0.22772277227722773,
+      "final_acc": 0.7821782178217822,
+      "upload_mb": 1.3475966796875,
+      "cloud_only_mb": 6.07278125
+    },
+    "C/day5": {
+      "n": 101,
+      "offload_rate": 0.1782178217821782,
+      "final_acc": 0.7425742574257426,
+      "upload_mb": 1.352669921875,
+      "cloud_only_mb": 6.14786328125
+    },
+    "C/day6": {
+      "n": 101,
+      "offload_rate": 0.1782178217821782,
+      "final_acc": 0.7722772277227723,
+      "upload_mb": 1.30199609375,
+      "cloud_only_mb": 6.1186894531250005
+    },
+    "D/day0": {
+      "n": 130,
+      "offload_rate": 0.13076923076923078,
+      "final_acc": 0.8384615384615385,
+      "upload_mb": 1.1492451171875,
+      "cloud_only_mb": 8.8169287109375
+    },
+    "D/day1": {
+      "n": 130,
+      "offload_rate": 0.16923076923076924,
+      "final_acc": 0.8076923076923077,
+      "upload_mb": 1.45715625,
+      "cloud_only_mb": 8.02018359375
+    },
+    "D/day2": {
+      "n": 130,
+      "offload_rate": 0.12307692307692308,
+      "final_acc": 0.8153846153846154,
+      "upload_mb": 1.28766015625,
+      "cloud_only_mb": 8.117482421875
+    },
+    "D/day3": {
+      "n": 130,
+      "offload_rate": 0.14615384615384616,
+      "final_acc": 0.8,
+      "upload_mb": 1.23473828125,
+      "cloud_only_mb": 8.8131796875
+    },
+    "D/day4": {
+      "n": 130,
+      "offload_rate": 0.18461538461538463,
+      "final_acc": 0.8769230769230769,
+      "upload_mb": 1.5744931640625,
+      "cloud_only_mb": 8.5275810546875
+    },
+    "D/day5": {
+      "n": 130,
+      "offload_rate": 0.12307692307692308,
+      "final_acc": 0.7384615384615385,
+      "upload_mb": 0.73275390625,
+      "cloud_only_mb": 8.082628906250001
+    },
+    "D/day6": {
+      "n": 129,
+      "offload_rate": 0.15503875968992248,
+      "final_acc": 0.8372093023255814,
+      "upload_mb": 1.1846083984375,
+      "cloud_only_mb": 8.254435546875
+    }
+  },
+  "cloud_requests_per_sim_hour": {
+    "max": 14,
+    "mean_over_active_hours": 8.142857142857142
+  },
+  "wall_clock_minutes": 98.20778663953145
+}

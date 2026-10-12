@@ -1,0 +1,17 @@
+# data (PlantWild is not redistributed; see data/README.md)
+data/*
+!data/README.md
+# build products
+build/
+__pycache__/
+*.pyc
+*.engine
+*.onnx
+*.npy
+.venv*/
+# LaTeX intermediates
+paper/*.aux
+paper/*.log
+paper/*.bbl
+paper/*.blg
+paper/*.out

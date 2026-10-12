@@ -1,0 +1,18 @@
+[Unit]
+Description=Paper 2 — Plant disease edge server (MobileNetV3-L + margin routing)
+After=network-online.target tailscaled.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=%i
+WorkingDirectory=/opt/plant-deploy/deploy
+EnvironmentFile=/opt/plant-deploy/deploy/config/.env
+ExecStart=/opt/plant-deploy/.venv/bin/python -m edge.server
+Restart=on-failure
+RestartSec=5
+StandardOutput=append:/var/log/plant-edge.log
+StandardError=append:/var/log/plant-edge.log
+
+[Install]
+WantedBy=multi-user.target

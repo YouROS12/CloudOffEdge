@@ -1,0 +1,9 @@
+# Jetson Nano (JetPack 4.6, Python 3.6) TensorRT cloud server.
+# TensorRT itself comes from JetPack (system site-packages), not pip.
+# Last releases that support Python 3.6:
+numpy==1.19.5
+Pillow==8.4.0
+pycuda==2021.1
+fastapi==0.83.0
+pydantic==1.9.2
+uvicorn==0.16.0

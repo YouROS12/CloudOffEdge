@@ -1,0 +1,21 @@
+[Unit]
+Description=Paper 2 — virtual farm edge node %i (MobileNetV3-L + margin routing)
+After=network-online.target tailscaled.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+# __USER__ is substituted at install time by edge/setup_farms.sh (%i is the
+# farm letter here, not a user name).
+User=__USER__
+WorkingDirectory=/opt/plant-deploy/deploy
+EnvironmentFile=/opt/plant-deploy/deploy/config/.env
+EnvironmentFile=/opt/plant-deploy/deploy/config/farm-%i.env
+ExecStart=/opt/plant-deploy/.venv/bin/python -m edge.server
+Restart=on-failure
+RestartSec=5
+StandardOutput=append:/var/log/plant-edge-farm-%i.log
+StandardError=append:/var/log/plant-edge-farm-%i.log
+
+[Install]
+WantedBy=multi-user.target

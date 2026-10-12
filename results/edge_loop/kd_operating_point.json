@@ -1,0 +1,22 @@
+{
+ "baseline": {
+  "tau": 0.14067316055297852,
+  "val_escalation": 0.1934065967798233,
+  "test_edge_acc": 0.6935001611709595,
+  "test_escalation": 0.18738101422786713,
+  "test_acc": 0.758770763874054,
+  "test_pct_of_cloud": 0.9464044016440742,
+  "test_reduction_x": 5.336719966644737,
+  "test_esc_for_95": 0.2020669023660593
+ },
+ "distilled": {
+  "tau": 0.07299190759658813,
+  "val_escalation": 0.11813186854124069,
+  "test_edge_acc": 0.7185205221176147,
+  "test_escalation": 0.1251019835472107,
+  "test_acc": 0.753603458404541,
+  "test_pct_of_cloud": 0.9399592921672438,
+  "test_reduction_x": 7.99347837376713,
+  "test_esc_for_95": 0.16100081588251292
+ }
+}

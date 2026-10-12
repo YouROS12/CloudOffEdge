@@ -1,0 +1,34 @@
+[PlantWild] Using MVPDR-native layout (images/ directory)
+[PlantWild] Loading split from C:\Users\Youssef\Desktop\TurboQuant\PlantEdge\data\PlantWild\trainval.txt
+[PlantWild] 89 classes | train=13045 | val=1820 | test=3677
+    {'epoch': 0, 'loss': 2.6024, 'elapsed_s': 50.7483, 'val_accuracy': 0.4057, 'val_macro_f1': 0.3487}
+    {'epoch': 1, 'loss': 1.2179, 'elapsed_s': 93.317, 'val_accuracy': 0.5541, 'val_macro_f1': 0.4984}
+    {'epoch': 2, 'loss': 0.9075, 'elapsed_s': 136.7461, 'val_accuracy': 0.573, 'val_macro_f1': 0.5299}
+    {'epoch': 3, 'loss': 0.764, 'elapsed_s': 188.7215, 'val_accuracy': 0.6062, 'val_macro_f1': 0.583}
+    {'epoch': 4, 'loss': 0.6785, 'elapsed_s': 232.4574, 'val_accuracy': 0.6464, 'val_macro_f1': 0.6192}
+    {'epoch': 5, 'loss': 0.605, 'elapsed_s': 274.9519, 'val_accuracy': 0.629, 'val_macro_f1': 0.6079}
+    {'epoch': 6, 'loss': 0.5574, 'elapsed_s': 316.8254, 'val_accuracy': 0.6527, 'val_macro_f1': 0.604}
+    {'epoch': 7, 'loss': 0.5185, 'elapsed_s': 359.7575, 'val_accuracy': 0.6519, 'val_macro_f1': 0.6169}
+    {'epoch': 8, 'loss': 0.4854, 'elapsed_s': 401.843, 'val_accuracy': 0.6867, 'val_macro_f1': 0.6549}
+    {'epoch': 9, 'loss': 0.4614, 'elapsed_s': 443.8224, 'val_accuracy': 0.6732, 'val_macro_f1': 0.6331}
+    {'epoch': 10, 'loss': 0.441, 'elapsed_s': 486.3065, 'val_accuracy': 0.6788, 'val_macro_f1': 0.6437}
+    {'epoch': 11, 'loss': 0.4159, 'elapsed_s': 529.628, 'val_accuracy': 0.6756, 'val_macro_f1': 0.642}
+    {'epoch': 12, 'loss': 0.3884, 'elapsed_s': 572.3681, 'val_accuracy': 0.6875, 'val_macro_f1': 0.6492}
+    {'epoch': 13, 'loss': 0.3837, 'elapsed_s': 615.8916, 'val_accuracy': 0.6906, 'val_macro_f1': 0.6576}
+    {'epoch': 14, 'loss': 0.3692, 'elapsed_s': 658.8768, 'val_accuracy': 0.7056, 'val_macro_f1': 0.6742}
+    {'epoch': 15, 'loss': 0.3482, 'elapsed_s': 702.6066, 'val_accuracy': 0.6969, 'val_macro_f1': 0.6666}
+    {'epoch': 16, 'loss': 0.3441, 'elapsed_s': 746.2591, 'val_accuracy': 0.7088, 'val_macro_f1': 0.6801}
+    {'epoch': 17, 'loss': 0.3346, 'elapsed_s': 789.67, 'val_accuracy': 0.7032, 'val_macro_f1': 0.6778}
+    {'epoch': 18, 'loss': 0.3273, 'elapsed_s': 833.4387, 'val_accuracy': 0.7048, 'val_macro_f1': 0.6839}
+    {'epoch': 19, 'loss': 0.3173, 'elapsed_s': 877.4971, 'val_accuracy': 0.708, 'val_macro_f1': 0.6851}
+    {'epoch': 20, 'loss': 0.3172, 'elapsed_s': 921.6105, 'val_accuracy': 0.7048, 'val_macro_f1': 0.676}
+    {'epoch': 21, 'loss': 0.3093, 'elapsed_s': 964.2227, 'val_accuracy': 0.7072, 'val_macro_f1': 0.6851}
+    {'epoch': 22, 'loss': 0.3097, 'elapsed_s': 1008.1936, 'val_accuracy': 0.7056, 'val_macro_f1': 0.6828}
+    {'epoch': 23, 'loss': 0.3062, 'elapsed_s': 1051.205, 'val_accuracy': 0.7032, 'val_macro_f1': 0.6766}
+    {'epoch': 24, 'loss': 0.3042, 'elapsed_s': 1092.3626, 'val_accuracy': 0.7096, 'val_macro_f1': 0.6868}
+    {'epoch': 25, 'loss': 0.3047, 'elapsed_s': 1135.1713, 'val_accuracy': 0.7056, 'val_macro_f1': 0.6799}
+    {'epoch': 26, 'loss': 0.2996, 'elapsed_s': 1178.2514, 'val_accuracy': 0.7103, 'val_macro_f1': 0.6891}
+    {'epoch': 27, 'loss': 0.3032, 'elapsed_s': 1221.3312, 'val_accuracy': 0.7064, 'val_macro_f1': 0.6811}
+    {'epoch': 28, 'loss': 0.3001, 'elapsed_s': 1264.5774, 'val_accuracy': 0.7096, 'val_macro_f1': 0.6841}
+    {'epoch': 29, 'loss': 0.304, 'elapsed_s': 1308.3759, 'val_accuracy': 0.7072, 'val_macro_f1': 0.6815}
+[test] {'edge_acc': 0.7185205221176147, 'esc_at_tau': 0.20125101506710052, 'acc_at_tau': 0.7693772315979004, 'cloud_acc': 0.8014686107635498, 'esc_for_95': 0.1629045417459886}

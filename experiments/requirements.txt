@@ -1,0 +1,32 @@
+# Workstation environment (experiments/, paper generation, jetson_deploy export tools).
+# Versions are those the paper's experiments ran with (Windows 11, Python 3.12,
+# NVIDIA RTX 3070 8 GB, CUDA 12.8); newer releases are expected to work.
+
+# paper numbers, figures, analysis (CPU only)
+numpy>=1.26          # 2.4.4
+pandas>=2.0          # 3.0.2
+matplotlib>=3.8      # 3.10.8
+scikit-learn>=1.3    # 1.8.0
+pymupdf>=1.24        # 1.28.2  (figure cropping, PDF checks)
+pypandoc_binary>=1.13  # 1.17 / pandoc 3.9 (Word version only)
+
+# training, distillation, prediction, profiling (CUDA GPU recommended)
+torch>=2.4           # 2.11.0+cu128
+torchvision>=0.19    # 0.26
+Pillow>=10           # 12.2.0
+fvcore>=0.1.5        # FLOP counts (benchmark_archs.py)
+
+# foundation backbones and ONNX export (jetson_deploy/cloud/export_*.py)
+timm>=1.0.20         # 1.0.26 (DINOv3 support)
+open_clip_torch>=3.0 # 3.3.0
+onnx>=1.16           # 1.17.0
+onnxruntime>=1.18    # 1.31.0
+onnxsim>=0.4         # 0.8.1
+onnxconverter-common>=1.14
+
+# fleet emulator, fidelity checks, operations console
+httpx>=0.27          # 0.28.1
+fastapi>=0.110       # 0.143.0
+uvicorn>=0.29        # 0.54.0
+pydantic>=2.0        # 2.12.5
+PyYAML>=6.0

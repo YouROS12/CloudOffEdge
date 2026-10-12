@@ -1,0 +1,17 @@
+{
+ "n": 300,
+ "duration_s": 37.02415919303894,
+ "samples_idle": 294,
+ "samples_load": 380,
+ "p_idle_w": 1.6659227891156463,
+ "p_load_mean_w": 3.636749736842105,
+ "p_load_max_w": 8.9618,
+ "energy_j": 134.51067944608926,
+ "energy_per_image_j": 0.44836893148696416,
+ "incremental_per_image_j": 0.24277096299520043,
+ "edge_ms_mean": 75.72094817330556,
+ "t_idle": 1791801114.6677167,
+ "t0": 1791801144.7913525,
+ "t1": 1791801181.8155117,
+ "note": "PMIC rails only (SoC, memory, on-board supplies); excludes 5 V peripherals"
+}

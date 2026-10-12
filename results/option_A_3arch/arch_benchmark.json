@@ -1,0 +1,46 @@
+{
+  "device": "cuda",
+  "img_size": 224,
+  "n_classes": 89,
+  "rows": [
+    {
+      "arch": "v3-Small",
+      "torch_arch_id": "mobilenet_v3_small",
+      "params_M": 1.609081,
+      "flops_M_macs_b1": 58.716672,
+      "flops_G_macs_b1": 0.058716672,
+      "ms_per_image_b1": 3.4324900002684444,
+      "ms_per_batch_b1": 3.4324900002684444,
+      "imgs_per_sec_b1": 291.3336965065574,
+      "ms_per_image_b32": 0.12957899998582434,
+      "ms_per_batch_b32": 4.146527999546379,
+      "imgs_per_sec_b32": 7717.299871965348
+    },
+    {
+      "arch": "v3-Large",
+      "torch_arch_id": "mobilenet_v3_large",
+      "params_M": 4.316041,
+      "flops_M_macs_b1": 224.867744,
+      "flops_G_macs_b1": 0.224867744,
+      "ms_per_image_b1": 4.16689999983646,
+      "ms_per_batch_b1": 4.16689999983646,
+      "imgs_per_sec_b1": 239.98656076201672,
+      "ms_per_image_b32": 0.3517023125095875,
+      "ms_per_batch_b32": 11.2544740003068,
+      "imgs_per_sec_b32": 2843.3136901047237
+    },
+    {
+      "arch": "EfficientNet-B0",
+      "torch_arch_id": "efficientnet_b0",
+      "params_M": 4.121557,
+      "flops_M_macs_b1": 400.493312,
+      "flops_G_macs_b1": 0.400493312,
+      "ms_per_image_b1": 5.652746999403462,
+      "ms_per_batch_b1": 5.652746999403462,
+      "imgs_per_sec_b1": 176.9051401213482,
+      "ms_per_image_b32": 0.5802890312406817,
+      "ms_per_batch_b32": 18.569248999701813,
+      "imgs_per_sec_b32": 1723.2791697991588
+    }
+  ]
+}

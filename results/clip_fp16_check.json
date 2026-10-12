@@ -1,0 +1,9 @@
+{
+  "source": "deploy/cloud/rebuild_clip16_check.sh on the Jetson Nano, 2026-10-12; engines in /opt/plant-deploy/trt_clip16 (deployed fp32 engines untouched)",
+  "reference_images": 24,
+  "fp32_deployed": {"cos_vs_desktop_min": 0.9474, "cos_vs_desktop_mean": 0.9911, "ms_per_img": 1613, "load_s_verify": 18.9},
+  "fp16": {"cos_vs_desktop_min": 0.9474, "cos_vs_desktop_mean": 0.9911, "ms_per_img": 1158, "load_s_verify": 10.3,
+           "engine_mb": [161, 159, 159, 166]},
+  "fp16_vs_fp32_engines_same_inputs": {"cos_min": 0.99982, "cos_mean": 0.99992},
+  "pipeline_top1_agreement": {"fp32": "23/24", "fp16": "23/24"}
+}

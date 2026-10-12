@@ -1,0 +1,32 @@
+{
+  "timestamp_utc": "2026-10-11T16:44:42+00:00",
+  "hostname": "raspberrypi",
+  "role": "edge",
+  "device_key": "pi5",
+  "device_model": "Raspberry Pi 5 Model B Rev 1.1",
+  "cpu": {
+    "model_name": "Raspberry Pi 5 Model B Rev 1.1",
+    "cores": 4,
+    "max_freq_ghz": 2.4,
+    "arch": "aarch64"
+  },
+  "ram_total_gb": 15.84,
+  "os": "Debian GNU/Linux 13 (trixie)",
+  "kernel": "6.12.75+rpt-rpi-2712",
+  "python": "3.13.5",
+  "torch": {
+    "available": true,
+    "version": "2.6.0+cpu",
+    "cuda_available": false,
+    "torchvision": "0.21.0"
+  },
+  "measured_gflops_fp32": {
+    "cpu": 74.3
+  },
+  "edge_latency": {
+    "model": "mobilenet_v3_large",
+    "img_size": 224,
+    "runs": 200,
+    "ms_per_image_fp32": 65.5
+  }
+}

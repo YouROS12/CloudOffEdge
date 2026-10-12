@@ -1,0 +1,23 @@
+{
+ "rule": "smallest margin threshold whose validation accuracy reaches 95% of cloud validation accuracy; escalate iff margin < tau",
+ "edge_val_csv": "C:/Users/Youssef/Desktop/TurboQuant/paper2/outputs/edge_v3l_kd_predictions_val.csv",
+ "tau": 0.071893,
+ "val": {
+  "n": 1820,
+  "cloud_acc": 0.7972527472527473,
+  "edge_acc": 0.7181318681318681,
+  "escalation": 0.11648351648351649,
+  "acc": 0.7576923076923077,
+  "pct_of_cloud": 0.950379048931771,
+  "reduction_x": 8.584905660377359
+ },
+ "test": {
+  "n": 3677,
+  "cloud_acc": 0.801740549360892,
+  "edge_acc": 0.7190644547185205,
+  "escalation": 0.12347022028827849,
+  "acc": 0.7536034810987218,
+  "pct_of_cloud": 0.9399592944369064,
+  "reduction_x": 8.099118942731277
+ }
+}

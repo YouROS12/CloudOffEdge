@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Edge–Cloud Console</title>
+<link rel="stylesheet" href="/static/console.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <svg class="mark" viewBox="0 0 32 32" aria-hidden="true">
+      <path d="M6 26C6 13 14 6 27 5c-1 13-8 21-21 21z" fill="var(--s1)"/>
+      <path d="M6 26 19 13" stroke="var(--surface)" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+    <div>
+      <h1>Plant Disease Edge–Cloud Console</h1>
+      <p class="sub">Selective escalation · Raspberry Pi 5 edge · Jetson Nano cloud (TensorRT)</p>
+    </div>
+  </div>
+  <div class="clock">
+    <div class="clock-label">simulated time</div>
+    <div class="clock-value" id="clock">—</div>
+    <div class="week"><div class="week-fill" id="weekFill"></div></div>
+  </div>
+  <div class="nodes" id="nodes"></div>
+</header>
+
+<section class="kpis" id="kpis"></section>
+
+<main class="grid">
+  <section class="card span2">
+    <div class="card-head">
+      <h2>Cloud escalations per simulated hour</h2>
+      <div class="legend" id="legend"></div>
+    </div>
+    <div id="timeline" class="timeline"></div>
+  </section>
+
+  <section class="card">
+    <div class="card-head"><h2>Topology</h2><span class="muted" id="topoNote"></span></div>
+    <div id="topology"></div>
+  </section>
+
+  <section class="farms span2" id="farms"></section>
+
+  <section class="card feed-card">
+    <div class="card-head"><h2>Live diagnoses</h2><span class="muted">newest first</span></div>
+    <div id="feed" class="feed"></div>
+  </section>
+
+  <section class="card span2">
+    <div class="card-head"><h2>Latency, median per stage</h2><span class="muted">measured on device</span></div>
+    <div id="latency"></div>
+  </section>
+</main>
+
+<footer class="disclosure" id="disclosure"></footer>
+<script src="/static/console.js"></script>
+</body>
+</html>

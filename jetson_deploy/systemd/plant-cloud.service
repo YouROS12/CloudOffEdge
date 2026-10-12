@@ -1,0 +1,19 @@
+[Unit]
+Description=Paper 2 — Plant disease cloud server (DINOv2-L + DINOv3-L + CLIP-L + QualityGate)
+After=network-online.target tailscaled.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=%i
+WorkingDirectory=/opt/plant-deploy/deploy
+EnvironmentFile=/opt/plant-deploy/deploy/config/.env
+ExecStart=/opt/plant-deploy/.venv/bin/python -m cloud.server
+Restart=on-failure
+RestartSec=10
+TimeoutStartSec=180
+StandardOutput=append:/var/log/plant-cloud.log
+StandardError=append:/var/log/plant-cloud.log
+
+[Install]
+WantedBy=multi-user.target

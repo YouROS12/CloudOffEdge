@@ -1,0 +1,92 @@
+{
+  "description": "Time-compressed multi-farm deployment replay.",
+  "disclosure": "4 virtual edge nodes (farms A,B,C,D) emulated as separate processes on one physical edge device (100.80.229.78); 1 simulated hour = >= 1.0 s wall clock. Every inference and every edge->cloud transfer is a real measurement; only the idle time between captures is compressed.",
+  "args": {
+    "image_dir": "outputs/plantwild_test",
+    "edge_host": "100.80.229.78",
+    "farms": "A,B,C,D",
+    "base_port": 8101,
+    "cloud_url": "http://100.87.131.25:8001",
+    "allow_no_cloud": false,
+    "assign": "themed",
+    "days": 7,
+    "day_start": 7,
+    "day_end": 19,
+    "real_seconds_per_tick": 1.0,
+    "max_images_per_farm": 0,
+    "sim_start": "2026-06-01T00:00:00",
+    "jpeg_quality": 90,
+    "seed": 0,
+    "timeout": 300.0,
+    "out_dir": "results/fleet_run_improved",
+    "resume": false,
+    "flush_hours": "12,18"
+  },
+  "farms": {
+    "A": {
+      "type": "orchard",
+      "crops": [
+        "apple",
+        "banana",
+        "blueberry",
+        "cherry",
+        "citrus",
+        "coffee",
+        "grape",
+        "grapevine",
+        "maple",
+        "peach",
+        "plum",
+        "raspberry",
+        "strawberry"
+      ],
+      "n_images": 1360,
+      "edge_node": "farm-A"
+    },
+    "B": {
+      "type": "solanaceae",
+      "crops": [
+        "bell pepper",
+        "eggplant",
+        "potato",
+        "tobacco",
+        "tomato"
+      ],
+      "n_images": 701,
+      "edge_node": "farm-B"
+    },
+    "C": {
+      "type": "field crops",
+      "crops": [
+        "bean",
+        "corn",
+        "garlic",
+        "ginger",
+        "rice",
+        "soybean"
+      ],
+      "n_images": 707,
+      "edge_node": "farm-C"
+    },
+    "D": {
+      "type": "market garden",
+      "crops": [
+        "basil",
+        "broccoli",
+        "cabbage",
+        "carrot",
+        "cauliflower",
+        "celery",
+        "cucumber",
+        "lettuce",
+        "squash",
+        "zucchini"
+      ],
+      "n_images": 909,
+      "edge_node": "farm-D"
+    }
+  },
+  "n_images": 3677,
+  "started_real": "2026-10-12T11:17:17.372901+00:00",
+  "finished_real": "2026-10-12T12:24:08.841804+00:00"
+}

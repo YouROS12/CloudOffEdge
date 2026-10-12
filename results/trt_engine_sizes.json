@@ -1,0 +1,11 @@
+{
+  "source": "ls -la --block-size=K /opt/plant-deploy/trt/*.engine on the Jetson Nano (plant-cloud-trt), 2026-10-12",
+  "unit": "KiB",
+  "precision": {"dinov2_vitl14": "fp16", "dinov3_vitl16": "fp32 (all32)", "clip_vitl14": "fp32 (all32)"},
+  "engines": {
+    "dinov2_vitl14": {"c0": 152717, "c1": 148817, "c2": 148824, "c3": 149812},
+    "dinov3_vitl16": {"c0": 300205, "c1": 297097, "c2": 297099, "c3": 297167},
+    "clip_vitl14":   {"c0": 305893, "c1": 302435, "c2": 302439, "c3": 309575}
+  },
+  "total_mb_per_backbone": {"dinov2_vitl14": 587, "dinov3_vitl16": 1164, "clip_vitl14": 1192}
+}

@@ -1,0 +1,1821 @@
+image_path,true_label,edge_pred,edge_confidence,edge_margin,edge_entropy
+apple black rot/111.jpg,apple black rot,potato leaf,0.438024,0.400879,2.921437
+apple black rot/156.jpg,apple black rot,tomato early blight,0.511930,0.440057,2.504152
+apple black rot/google_0099.jpg,apple black rot,apple scab,0.511691,0.483903,2.674025
+apple black rot/google_0008.jpg,apple black rot,apple black rot,0.815545,0.769056,1.117070
+apple black rot/google_0016.jpg,apple black rot,apple scab,0.817135,0.743752,1.043180
+apple black rot/211.jpg,apple black rot,tomato septoria leaf spot,0.113924,0.016569,3.706452
+apple black rot/google_0158.jpg,apple black rot,apple scab,0.601948,0.507463,2.061294
+apple black rot/150.jpg,apple black rot,apple black rot,0.769148,0.749701,1.414232
+apple black rot/google_0014.jpg,apple black rot,apple scab,0.925308,0.873858,0.400459
+apple black rot/google_0113.jpg,apple black rot,apple black rot,0.302764,0.036670,2.526142
+apple black rot/70.jpg,apple black rot,apple scab,0.179454,0.076726,3.587124
+apple black rot/google_0012.jpg,apple black rot,apple black rot,0.813638,0.781533,1.139202
+apple black rot/google_0043.jpg,apple black rot,apple scab,0.265438,0.110237,2.830711
+apple black rot/google_0137.jpg,apple black rot,cherry leaf spot,0.252101,0.119092,3.108814
+apple black rot/151.jpg,apple black rot,apple rust,0.187592,0.121720,3.659231
+apple black rot/168.jpg,apple black rot,citrus canker,0.279474,0.034688,2.854241
+apple black rot/32.jpg,apple black rot,cherry leaf spot,0.097357,0.014536,3.782379
+apple leaf/87.jpg,apple leaf,strawberry leaf,0.952293,0.949806,0.393313
+apple leaf/9.jpg,apple leaf,apple leaf,0.746811,0.715754,1.433017
+apple leaf/325.jpg,apple leaf,apple leaf,0.502472,0.432706,2.641741
+apple leaf/google_0345.jpg,apple leaf,apple leaf,0.321162,0.160208,3.121480
+apple leaf/google_0403.jpg,apple leaf,cherry leaf,0.823265,0.707064,0.823451
+apple leaf/74.jpg,apple leaf,apple leaf,0.955155,0.944554,0.337186
+apple leaf/google_0386.jpg,apple leaf,cherry leaf,0.481942,0.317931,2.443211
+apple leaf/67.jpg,apple leaf,apple leaf,0.133543,0.004501,3.475769
+apple leaf/google_0008.jpg,apple leaf,apple leaf,0.926189,0.919749,0.548802
+apple leaf/133.jpg,apple leaf,apple leaf,0.309627,0.250406,3.249599
+apple leaf/251.jpg,apple leaf,raspberry leaf,0.306156,0.089533,2.772897
+apple leaf/209.jpg,apple leaf,plum leaf,0.473675,0.239139,1.977679
+apple leaf/google_0126.jpg,apple leaf,apple leaf,0.552395,0.499190,2.298954
+apple leaf/google_0514.jpg,apple leaf,apple leaf,0.962973,0.960698,0.308607
+apple leaf/55.jpg,apple leaf,apple leaf,0.468077,0.359995,2.424065
+apple leaf/190.jpg,apple leaf,blueberry leaf,0.777324,0.743613,1.285212
+apple leaf/302.jpg,apple leaf,apple leaf,0.625152,0.575611,2.059825
+apple leaf/google_0055.jpg,apple leaf,plum leaf,0.500068,0.102496,1.242334
+apple leaf/100.jpg,apple leaf,apple leaf,0.273746,0.170764,3.393247
+apple leaf/google_0023.jpg,apple leaf,cherry leaf,0.501327,0.146088,1.546397
+apple leaf/google_0376.jpg,apple leaf,apple leaf,0.377279,0.247952,2.476447
+apple leaf/281.jpg,apple leaf,apple leaf,0.749764,0.718430,1.534693
+apple leaf/238.jpg,apple leaf,apple leaf,0.870581,0.856797,0.901540
+apple leaf/170.jpg,apple leaf,apple leaf,0.547903,0.505431,2.474344
+apple leaf/google_0552.jpg,apple leaf,apple leaf,0.610422,0.557630,2.076070
+apple leaf/75.jpg,apple leaf,blueberry leaf,0.493469,0.390378,2.419362
+apple leaf/48.jpg,apple leaf,basil leaf,0.182822,0.064516,3.433100
+apple leaf/81.jpg,apple leaf,apple leaf,0.831351,0.772558,0.915297
+apple leaf/google_0204.jpg,apple leaf,apple leaf,0.277972,0.210082,3.457707
+apple leaf/88.jpg,apple leaf,apple leaf,0.978450,0.974981,0.187875
+apple leaf/google_0377.jpg,apple leaf,lettuce downy mildew,0.162027,0.054949,3.691759
+apple leaf/191.jpg,apple leaf,apple leaf,0.959382,0.938591,0.263353
+apple leaf/112.jpg,apple leaf,peach leaf,0.186942,0.112970,3.678315
+apple leaf/google_0044.jpg,apple leaf,apple leaf,0.965448,0.957498,0.252890
+apple leaf/289.jpg,apple leaf,grape leaf,0.188701,0.055909,3.320711
+apple leaf/google_0118.jpg,apple leaf,bean leaf,0.265223,0.180700,3.431350
+apple leaf/330.jpg,apple leaf,apple rust,0.936561,0.929126,0.462265
+apple leaf/287.jpg,apple leaf,apple leaf,0.947512,0.936949,0.390219
+apple leaf/google_0494.jpg,apple leaf,plum leaf,0.820376,0.755357,0.982859
+apple leaf/50.jpg,apple leaf,apple leaf,0.728754,0.671968,1.562427
+apple leaf/276.jpg,apple leaf,garlic leaf,0.173124,0.048806,3.612658
+apple leaf/66.jpg,apple leaf,coffee leaf,0.161880,0.055118,3.568307
+apple leaf/google_0182.jpg,apple leaf,plum leaf,0.231015,0.037292,3.209252
+apple leaf/267.jpg,apple leaf,apple leaf,0.276455,0.108693,2.957034
+apple mosaic virus/google_0155.jpg,apple mosaic virus,apple leaf,0.103069,0.000686,3.745056
+apple mosaic virus/google_0041.jpg,apple mosaic virus,bean mosaic virus,0.323742,0.250400,3.012947
+apple mosaic virus/google_0071.jpg,apple mosaic virus,apple mosaic virus,0.973548,0.968144,0.211528
+apple mosaic virus/8.jpg,apple mosaic virus,apple mosaic virus,0.678237,0.605219,1.732321
+apple mosaic virus/100.jpg,apple mosaic virus,apple mosaic virus,0.497096,0.464311,2.730110
+apple mosaic virus/google_0081.jpg,apple mosaic virus,citrus greening disease,0.384016,0.019697,1.802815
+apple mosaic virus/google_0078.jpg,apple mosaic virus,apple mosaic virus,0.336573,0.136921,2.578167
+apple mosaic virus/google_0144.jpg,apple mosaic virus,tomato yellow leaf curl virus,0.259075,0.153532,3.308851
+apple mosaic virus/google_0058.jpg,apple mosaic virus,apple mosaic virus,0.814228,0.793625,1.149787
+apple mosaic virus/65.jpg,apple mosaic virus,squash leaf,0.131404,0.020817,3.617152
+apple mosaic virus/63.jpg,apple mosaic virus,apple mosaic virus,0.377750,0.097210,2.077519
+apple mosaic virus/google_0196.jpg,apple mosaic virus,basil leaf,0.153913,0.074921,3.742422
+apple mosaic virus/72.jpg,apple mosaic virus,bean mosaic virus,0.956454,0.944235,0.329454
+apple mosaic virus/45.jpg,apple mosaic virus,apple mosaic virus,0.920802,0.908670,0.572740
+apple mosaic virus/google_0030.jpg,apple mosaic virus,apple scab,0.843057,0.826118,1.044938
+apple mosaic virus/google_0024.jpg,apple mosaic virus,apple mosaic virus,0.359396,0.178516,2.566171
+apple mosaic virus/google_0089.jpg,apple mosaic virus,apple mosaic virus,0.392068,0.273790,2.846675
+apple mosaic virus/37.jpg,apple mosaic virus,apple mosaic virus,0.683353,0.633871,1.863747
+apple rust/google_0056.jpg,apple rust,apple rust,0.299871,0.136855,2.996523
+apple rust/google_0036.jpg,apple rust,apple rust,0.943937,0.928932,0.414501
+apple rust/google_0065.jpg,apple rust,apple rust,0.972409,0.969083,0.230532
+apple rust/google_0143.jpg,apple rust,apple rust,0.796679,0.762652,1.276107
+apple rust/google_0064.jpg,apple rust,apple rust,0.517020,0.384052,2.330438
+apple rust/74.jpg,apple rust,cherry leaf spot,0.253392,0.029954,2.884803
+apple rust/google_0207.jpg,apple rust,apple rust,0.789411,0.725469,1.192519
+apple rust/google_0168.jpg,apple rust,apple rust,0.551888,0.475123,2.187521
+apple rust/google_0194.jpg,apple rust,apple rust,0.911079,0.905423,0.667022
+apple rust/google_0228.jpg,apple rust,maple leaf,0.796537,0.746238,1.215884
+apple rust/71.jpg,apple rust,blueberry rust,0.260622,0.043338,2.760314
+apple rust/google_0142.jpg,apple rust,apple rust,0.920857,0.914438,0.585290
+apple rust/google_0159.jpg,apple rust,apple rust,0.716054,0.681318,1.635628
+apple rust/google_0114.jpg,apple rust,apple rust,0.182992,0.104208,3.635551
+apple rust/google_0220.jpg,apple rust,apple rust,0.797669,0.749876,1.170380
+apple rust/google_0022.jpg,apple rust,cherry leaf,0.062720,0.009583,4.037769
+apple rust/google_0169.jpg,apple rust,apple rust,0.841575,0.815036,1.007827
+apple rust/19.jpg,apple rust,citrus canker,0.456135,0.302982,2.523271
+apple rust/6.jpg,apple rust,bean rust,0.792791,0.687567,0.967982
+apple rust/45.jpg,apple rust,blueberry rust,0.061240,0.008961,4.086067
+apple rust/34.jpg,apple rust,squash leaf,0.128768,0.002174,3.356048
+apple rust/google_0030.jpg,apple rust,apple rust,0.516548,0.366764,2.308338
+apple rust/143.jpg,apple rust,apple rust,0.171911,0.081027,3.613388
+apple rust/google_0093.jpg,apple rust,apple rust,0.667852,0.651053,2.037127
+apple rust/google_0010.jpg,apple rust,peach leaf curl,0.284022,0.207478,3.197349
+apple rust/google_0092.jpg,apple rust,apple rust,0.186143,0.074903,3.395420
+apple rust/google_0227.jpg,apple rust,apple rust,0.753487,0.709275,1.430431
+apple rust/182.jpg,apple rust,apple scab,0.552009,0.219756,1.203980
+apple rust/google_0123.jpg,apple rust,apple leaf,0.130096,0.054333,3.736994
+apple rust/26 - Copy (2).jpg,apple rust,apple black rot,0.181633,0.028518,3.306973
+apple scab/google_0133.jpg,apple scab,apple scab,0.932605,0.914630,0.462722
+apple scab/google_0064.jpg,apple scab,apple scab,0.807919,0.767098,1.154807
+apple scab/4.jpg,apple scab,cherry leaf spot,0.165226,0.070344,3.498210
+apple scab/google_0207.jpg,apple scab,peach leaf curl,0.206533,0.128969,3.652013
+apple scab/google_0288.jpg,apple scab,apple scab,0.445485,0.211042,2.304585
+apple scab/google_0208.jpg,apple scab,apple scab,0.945016,0.932096,0.416161
+apple scab/71.jpg,apple scab,maple tar spot,0.198151,0.088453,3.202659
+apple scab/google_0072.jpg,apple scab,apple scab,0.375172,0.321317,3.043355
+apple scab/google_0037.jpg,apple scab,apple scab,0.294019,0.086735,2.956974
+apple scab/85.jpg,apple scab,apple rust,0.678415,0.587938,1.375607
+apple scab/google_0189.jpg,apple scab,bean rust,0.781411,0.724679,1.202234
+apple scab/62.jpg,apple scab,apple rust,0.763307,0.725512,1.349068
+apple scab/google_0002.jpg,apple scab,apple scab,0.967593,0.961226,0.259136
+apple scab/google_0140.jpg,apple scab,apple scab,0.970231,0.956523,0.220577
+apple scab/43.jpg,apple scab,apple scab,0.409702,0.303007,2.867197
+apple scab/google_0097.jpg,apple scab,apple black rot,0.176865,0.006478,3.209917
+apple scab/21.jpg,apple scab,apple scab,0.342765,0.124678,2.827713
+apple scab/google_0320.jpg,apple scab,apple scab,0.883057,0.867097,0.812109
+apple scab/google_0125.jpg,apple scab,apple mosaic virus,0.866716,0.846898,0.867178
+apple scab/google_0169.jpg,apple scab,apple rust,0.391652,0.220533,2.486520
+apple scab/google_0216.jpg,apple scab,apple scab,0.737913,0.525974,0.865174
+apple scab/google_0316.jpg,apple scab,cherry leaf spot,0.326906,0.131284,2.410700
+apple scab/google_0013.jpg,apple scab,apple black rot,0.473790,0.434877,2.837809
+apple scab/google_0018.jpg,apple scab,tomato late blight,0.183254,0.064258,3.573097
+apple scab/google_0118.jpg,apple scab,apple scab,0.798298,0.759139,1.272075
+apple scab/google_0249.jpg,apple scab,apple leaf,0.542358,0.464320,2.327997
+apple scab/37.jpg,apple scab,citrus canker,0.467098,0.421060,2.792606
+apple scab/google_0218.jpg,apple scab,cherry powdery mildew,0.170335,0.091658,3.542185
+apple scab/google_0332.jpg,apple scab,apple scab,0.431259,0.277845,2.643712
+banana leaf/google_0153.jpg,banana leaf,ginger leaf,0.087008,0.021640,3.849606
+banana leaf/83.jpg,banana leaf,banana leaf,0.829405,0.809080,1.104095
+banana leaf/74.jpg,banana leaf,banana leaf,0.544089,0.474218,2.301792
+banana leaf/4.jpg,banana leaf,banana leaf,0.199525,0.059200,3.128639
+banana leaf/284.jpg,banana leaf,soybean leaf,0.072830,0.005127,3.713231
+banana leaf/55.jpg,banana leaf,banana leaf,0.158737,0.002493,3.397384
+banana leaf/google_0102.jpg,banana leaf,banana leaf,0.784535,0.767811,1.392171
+banana leaf/49.jpg,banana leaf,corn leaf,0.525223,0.336225,2.134938
+banana leaf/google_0049.jpg,banana leaf,banana leaf,0.738145,0.654038,1.377847
+banana leaf/167.jpg,banana leaf,banana leaf,0.263425,0.190032,3.497212
+banana leaf/36.jpg,banana leaf,peach leaf,0.361923,0.005108,2.241091
+banana leaf/81.jpg,banana leaf,banana leaf,0.778008,0.741228,1.392290
+banana leaf/70.jpg,banana leaf,banana leaf,0.666816,0.565910,1.729940
+banana leaf/137.jpg,banana leaf,banana leaf,0.982450,0.981448,0.161935
+banana leaf/15.jpg,banana leaf,banana leaf,0.927685,0.924352,0.566563
+banana leaf/94.jpg,banana leaf,banana leaf,0.471109,0.392235,2.634248
+banana leaf/25.jpg,banana leaf,banana leaf,0.340783,0.285346,3.358828
+banana leaf/202.jpg,banana leaf,banana leaf,0.445014,0.323032,2.497493
+banana leaf/140.jpg,banana leaf,banana leaf,0.746044,0.713063,1.580382
+banana leaf/165.jpg,banana leaf,banana leaf,0.928782,0.924681,0.554774
+banana leaf/201.jpg,banana leaf,banana leaf,0.702177,0.656509,1.809865
+banana leaf/189.jpg,banana leaf,banana leaf,0.878967,0.859760,0.859777
+banana leaf/google_0180.jpg,banana leaf,apple leaf,0.246939,0.101142,3.265131
+banana leaf/57.jpg,banana leaf,banana leaf,0.642315,0.617806,2.113702
+banana panama disease/google_0157 - Copy.jpg,banana panama disease,bell pepper leaf spot,0.270130,0.133717,3.007000
+banana panama disease/add_2 (1).jpg,banana panama disease,banana panama disease,0.533420,0.481898,2.567594
+banana panama disease/addition (13).jpg,banana panama disease,banana panama disease,0.683532,0.569025,1.658383
+banana panama disease/111.jpg,banana panama disease,banana panama disease,0.954320,0.944124,0.346070
+banana panama disease/addition (8).jpg,banana panama disease,banana panama disease,0.856535,0.820702,0.908111
+banana panama disease/google_0000.jpg,banana panama disease,banana panama disease,0.845749,0.839395,1.077642
+banana panama disease/add_2 (11).jpg,banana panama disease,banana panama disease,0.973219,0.970151,0.222682
+banana panama disease/49.jpg,banana panama disease,banana panama disease,0.860307,0.845626,0.960172
+banana panama disease/google_0144.jpg,banana panama disease,banana panama disease,0.874609,0.858731,0.880679
+banana panama disease/addition (10).jpg,banana panama disease,citrus greening disease,0.115007,0.015138,3.685500
+banana panama disease/add_2 (10).jpg,banana panama disease,banana panama disease,0.933431,0.926271,0.498089
+banana panama disease/google_0017.jpg,banana panama disease,banana panama disease,0.216225,0.065105,3.192052
+banana panama disease/add_2 (63).jpg,banana panama disease,banana panama disease,0.943278,0.936831,0.428865
+banana panama disease/118.jpg,banana panama disease,banana panama disease,0.971352,0.969872,0.249576
+banana panama disease/add_2 (55).jpg,banana panama disease,banana panama disease,0.970003,0.967093,0.250728
+banana panama disease/google_0015.jpg,banana panama disease,banana panama disease,0.692579,0.574916,1.552877
+banana panama disease/google_0061.jpg,banana panama disease,banana panama disease,0.955939,0.940647,0.320888
+banana panama disease/add_2 (49).jpg,banana panama disease,banana panama disease,0.527906,0.442812,2.352229
+banana panama disease/addition (17).jpg,banana panama disease,banana panama disease,0.929087,0.924046,0.538788
+banana panama disease/57.jpg,banana panama disease,banana panama disease,0.589656,0.545008,2.295519
+banana panama disease/google_0105.jpg,banana panama disease,banana panama disease,0.595853,0.294894,1.298155
+basil downy mildew/google_0045.jpg,basil downy mildew,peach leaf,0.665985,0.628206,1.924294
+basil downy mildew/google_0057.jpg,basil downy mildew,basil downy mildew,0.979291,0.977582,0.182102
+basil downy mildew/google_0084.jpg,basil downy mildew,basil leaf,0.712611,0.689921,1.757740
+basil downy mildew/google_0052 - Copy.jpg,basil downy mildew,basil downy mildew,0.172413,0.052403,3.560833
+basil downy mildew/google_0184.jpg,basil downy mildew,peach leaf,0.312434,0.199136,3.004136
+basil downy mildew/google_0210.jpg,basil downy mildew,basil leaf,0.811339,0.661489,0.713369
+basil downy mildew/google_0167.jpg,basil downy mildew,basil downy mildew,0.162118,0.050252,3.567312
+basil downy mildew/google_0030.jpg,basil downy mildew,basil downy mildew,0.273202,0.158620,3.231207
+basil leaf/google_0321.jpg,basil leaf,basil leaf,0.802208,0.781408,1.274104
+basil leaf/1.jpg,basil leaf,basil leaf,0.916045,0.888729,0.577733
+basil leaf/google_0133.jpg,basil leaf,basil leaf,0.823797,0.797130,1.157420
+basil leaf/google_0036.jpg,basil leaf,basil leaf,0.968156,0.962511,0.260778
+basil leaf/399.jpg,basil leaf,basil leaf,0.590370,0.538699,2.272778
+basil leaf/google_0070.jpg,basil leaf,basil leaf,0.971148,0.966816,0.244245
+basil leaf/54.jpg,basil leaf,basil leaf,0.925883,0.918750,0.572131
+basil leaf/google_0041.jpg,basil leaf,bell pepper leaf,0.259813,0.032313,3.051972
+basil leaf/105.jpg,basil leaf,basil leaf,0.964432,0.961145,0.296836
+basil leaf/google_0392.jpg,basil leaf,squash leaf,0.297957,0.144273,2.678674
+basil leaf/google_0087.jpg,basil leaf,basil leaf,0.876581,0.864373,0.876725
+basil leaf/425.jpg,basil leaf,basil leaf,0.948549,0.931177,0.352300
+basil leaf/336.jpg,basil leaf,basil leaf,0.613455,0.588683,2.278276
+basil leaf/google_0111.jpg,basil leaf,basil leaf,0.909081,0.898187,0.656726
+basil leaf/google_0170.jpg,basil leaf,basil leaf,0.725641,0.603068,1.403280
+basil leaf/google_0266.jpg,basil leaf,basil leaf,0.748596,0.657386,1.395807
+basil leaf/google_0435.jpg,basil leaf,bell pepper leaf,0.110902,0.032520,3.797804
+basil leaf/275.jpg,basil leaf,basil leaf,0.981410,0.978817,0.164960
+basil leaf/23.jpg,basil leaf,basil leaf,0.959547,0.942980,0.296960
+basil leaf/104.jpg,basil leaf,cabbage leaf,0.702048,0.657403,1.779497
+basil leaf/google_0102.jpg,basil leaf,basil leaf,0.988562,0.983145,0.093901
+basil leaf/google_0391.jpg,basil leaf,basil leaf,0.889216,0.858352,0.750463
+basil leaf/google_0110.jpg,basil leaf,basil leaf,0.558978,0.501231,2.258083
+basil leaf/google_0197.jpg,basil leaf,bean leaf,0.090735,0.005354,3.820397
+basil leaf/92.jpg,basil leaf,basil leaf,0.893896,0.866156,0.737380
+basil leaf/49.jpg,basil leaf,basil leaf,0.984207,0.982729,0.145994
+basil leaf/393.jpg,basil leaf,basil leaf,0.965851,0.964264,0.292763
+basil leaf/google_0129.jpg,basil leaf,basil leaf,0.949492,0.936879,0.371418
+basil leaf/198.jpg,basil leaf,tomato yellow leaf curl virus,0.418751,0.360825,2.976228
+basil leaf/google_0271.jpg,basil leaf,basil leaf,0.893798,0.884552,0.779165
+basil leaf/google_0162.jpg,basil leaf,basil leaf,0.834990,0.813284,1.073900
+basil leaf/371.jpg,basil leaf,basil leaf,0.639213,0.600810,2.093983
+basil leaf/431.jpg,basil leaf,tomato leaf,0.226325,0.049591,3.293599
+basil leaf/402.jpg,basil leaf,basil leaf,0.919217,0.915831,0.625432
+basil leaf/google_0204.jpg,basil leaf,basil leaf,0.925440,0.911003,0.559325
+basil leaf/134.jpg,basil leaf,basil leaf,0.865597,0.818843,0.853230
+basil leaf/15.jpg,basil leaf,basil leaf,0.946973,0.941231,0.426638
+basil leaf/223.jpg,basil leaf,basil leaf,0.928192,0.910345,0.520449
+basil leaf/274.jpg,basil leaf,basil leaf,0.706334,0.669796,1.770050
+basil leaf/202.jpg,basil leaf,basil leaf,0.693284,0.664098,1.870134
+basil leaf/252.jpg,basil leaf,basil leaf,0.942432,0.924277,0.409826
+basil leaf/google_0018.jpg,basil leaf,basil leaf,0.873419,0.864990,0.908607
+basil leaf/239.jpg,basil leaf,basil leaf,0.928132,0.910800,0.511850
+basil leaf/428.jpg,basil leaf,potato leaf,0.378956,0.001527,2.063338
+basil leaf/199.jpg,basil leaf,basil leaf,0.950381,0.944476,0.394053
+basil leaf/231.jpg,basil leaf,basil leaf,0.980602,0.978736,0.172928
+basil leaf/58.jpg,basil leaf,basil leaf,0.914142,0.897200,0.620811
+basil leaf/28.jpg,basil leaf,basil leaf,0.937149,0.930367,0.490881
+basil leaf/google_0007.jpg,basil leaf,basil leaf,0.913447,0.892376,0.622098
+basil leaf/google_0402.jpg,basil leaf,basil leaf,0.847981,0.821784,1.033354
+basil leaf/366.jpg,basil leaf,basil leaf,0.676548,0.549718,1.598816
+basil leaf/google_0165.jpg,basil leaf,basil leaf,0.835926,0.825132,1.129047
+basil leaf/57.jpg,basil leaf,basil leaf,0.819004,0.807857,1.224263
+basil leaf/227.jpg,basil leaf,basil leaf,0.926820,0.922366,0.573195
+basil leaf/312.jpg,basil leaf,basil leaf,0.473316,0.328257,2.353928
+basil leaf/google_0095.jpg,basil leaf,basil leaf,0.832519,0.788125,1.028342
+basil leaf/66.jpg,basil leaf,basil leaf,0.973500,0.963489,0.204297
+basil leaf/270.jpg,basil leaf,basil leaf,0.945517,0.940692,0.433710
+basil leaf/310.jpg,basil leaf,basil leaf,0.915335,0.901112,0.630542
+bean halo blight/google_0075.jpg,bean halo blight,bean halo blight,0.513713,0.125122,1.326145
+bean halo blight/google_0035.jpg,bean halo blight,bean halo blight,0.767864,0.725071,1.342762
+bean halo blight/google_0021.jpg,bean halo blight,potato early blight,0.393041,0.169111,2.467014
+bean halo blight/google_0042.jpg,bean halo blight,bean halo blight,0.810883,0.797361,1.229818
+bean halo blight/18.jpg,bean halo blight,tomato early blight,0.416013,0.027976,1.716869
+bean halo blight/google_0067.jpg,bean halo blight,citrus canker,0.283725,0.179217,3.259573
+bean halo blight/google_0306.jpg,bean halo blight,bean halo blight,0.767814,0.684656,1.269824
+bean halo blight/google_0113.jpg,bean halo blight,tomato late blight,0.153163,0.025450,3.392803
+bean halo blight/google_0161.jpg,bean halo blight,grape leaf spot,0.588437,0.552339,2.267566
+bean halo blight/google_0018.jpg,bean halo blight,bean rust,0.519145,0.335759,2.214662
+bean halo blight/google_0184 - Copy (2).jpg,bean halo blight,bean halo blight,0.158651,0.030980,3.203963
+bean leaf/google_0054.jpg,bean leaf,tobacco leaf,0.182487,0.051190,3.512645
+bean leaf/google_0057.jpg,bean leaf,cucumber leaf,0.724929,0.696280,1.636729
+bean leaf/260.jpg,bean leaf,bean leaf,0.271151,0.114395,2.864614
+bean leaf/google_0514.jpg,bean leaf,soybean leaf,0.898462,0.885558,0.698372
+bean leaf/275.jpg,bean leaf,lettuce leaf,0.207215,0.013565,3.032669
+bean leaf/google_0031.jpg,bean leaf,bean leaf,0.210410,0.034325,3.203493
+bean leaf/282.jpg,bean leaf,bean leaf,0.139849,0.052043,3.668218
+bean leaf/193.jpg,bean leaf,lettuce mosaic virus,0.253782,0.111910,3.390495
+bean leaf/google_0088.jpg,bean leaf,apple scab,0.145224,0.019450,3.597364
+bean leaf/google_0183.jpg,bean leaf,bean mosaic virus,0.296290,0.208084,3.296909
+bean leaf/281.jpg,bean leaf,bean leaf,0.951866,0.944784,0.368101
+bean leaf/google_0114.jpg,bean leaf,bean leaf,0.500405,0.445442,2.697172
+bean leaf/google_0220.jpg,bean leaf,bean leaf,0.458033,0.334952,2.466913
+bean leaf/google_0340.jpg,bean leaf,bean leaf,0.420956,0.321075,2.818036
+bean leaf/google_0129.jpg,bean leaf,bean leaf,0.222455,0.045725,3.204914
+bean leaf/google_0286.jpg,bean leaf,basil leaf,0.549498,0.367335,2.020063
+bean leaf/google_0181.jpg,bean leaf,bean leaf,0.487665,0.333611,2.342187
+bean leaf/google_0001.jpg,bean leaf,soybean leaf,0.892480,0.870784,0.739961
+bean leaf/72.jpg,bean leaf,bean halo blight,0.430490,0.174951,2.210920
+bean leaf/google_0259.jpg,bean leaf,bean leaf,0.960529,0.951047,0.270854
+bean leaf/google_0315.jpg,bean leaf,bean leaf,0.391663,0.178513,2.010906
+bean leaf/google_0326.jpg,bean leaf,bean leaf,0.577289,0.499722,2.204772
+bean leaf/14.jpg,bean leaf,potato early blight,0.157582,0.027551,3.313284
+bean leaf/google_0289.jpg,bean leaf,bean leaf,0.661713,0.603491,1.813957
+bean leaf/66.jpg,bean leaf,peach leaf,0.219442,0.041975,2.886378
+bean mosaic virus/38.jpg,bean mosaic virus,tobacco mosaic virus,0.719678,0.673435,1.604910
+bean mosaic virus/google_0012 - Copy (2).jpg,bean mosaic virus,bean mosaic virus,0.419537,0.224643,2.496993
+bean mosaic virus/google_0111.jpg,bean mosaic virus,tomato mosaic virus,0.419987,0.092110,2.067912
+bean mosaic virus/google_0142.jpg,bean mosaic virus,bean mosaic virus,0.803114,0.767861,1.242882
+bean mosaic virus/google_0203.jpg,bean mosaic virus,eggplant cercospora leaf spot,0.346385,0.225345,3.022680
+bean mosaic virus/google_0066.jpg,bean mosaic virus,bean mosaic virus,0.789982,0.740395,1.190582
+bean mosaic virus/21.jpg,bean mosaic virus,squash powdery mildew,0.212214,0.146474,3.630977
+bean mosaic virus/22.jpg,bean mosaic virus,bean mosaic virus,0.361639,0.278274,2.878268
+bean mosaic virus/google_0181.jpg,bean mosaic virus,zucchini yellow mosaic virus,0.344327,0.248842,3.111280
+bean mosaic virus/google_0017.jpg,bean mosaic virus,bean mosaic virus,0.271896,0.097721,2.946003
+bean mosaic virus/17.jpg,bean mosaic virus,bean mosaic virus,0.921586,0.902929,0.526591
+bean mosaic virus/57.jpg,bean mosaic virus,zucchini yellow mosaic virus,0.200862,0.049569,3.076281
+bean rust/google_0054.jpg,bean rust,tobacco leaf,0.182487,0.051190,3.512645
+bean rust/197.jpg,bean rust,bean rust,0.576969,0.360104,1.656997
+bean rust/175.jpg,bean rust,cucumber angular leaf spot,0.289051,0.051539,2.479686
+bean rust/google_0077.jpg,bean rust,cherry leaf spot,0.391128,0.326458,2.989890
+bean rust/google_0128.jpg,bean rust,bean rust,0.560610,0.470375,2.182425
+bean rust/3.jpg,bean rust,cherry leaf spot,0.203960,0.103701,3.603081
+bean rust/google_0178.jpg,bean rust,coffee leaf rust,0.732177,0.702240,1.572960
+bean rust/21.jpg,bean rust,bean rust,0.529525,0.470706,2.420164
+bean rust/11.jpg,bean rust,bean rust,0.812667,0.711643,0.900184
+bean rust/170.jpg,bean rust,bean rust,0.474799,0.357636,2.305967
+bean rust/google_0121.jpg,bean rust,bean rust,0.623230,0.541391,1.890537
+bean rust/46.jpg,bean rust,citrus canker,0.302381,0.117738,2.693486
+bean rust/26.jpg,bean rust,bean rust,0.461163,0.391795,2.786161
+bean rust/google_0015.jpg,bean rust,bean rust,0.983194,0.981416,0.148005
+bean rust/50.jpg,bean rust,apple rust,0.496198,0.352676,2.237379
+bean rust/google_0107.jpg,bean rust,corn rust,0.379563,0.119530,2.515561
+bell pepper leaf/54.jpg,bell pepper leaf,bell pepper leaf,0.854630,0.802285,0.886834
+bell pepper leaf/175.jpg,bell pepper leaf,strawberry leaf,0.340962,0.204736,3.002268
+bell pepper leaf/40 - Copy.jpg,bell pepper leaf,bell pepper leaf,0.742769,0.670801,1.345628
+bell pepper leaf/241.jpg,bell pepper leaf,bell pepper leaf,0.234175,0.102451,2.957812
+bell pepper leaf/51.jpg,bell pepper leaf,bell pepper leaf,0.851833,0.804422,0.905792
+bell pepper leaf/275.jpg,bell pepper leaf,bell pepper leaf spot,0.145792,0.059197,3.440020
+bell pepper leaf/google_0140.jpg,bell pepper leaf,bell pepper leaf,0.548062,0.409936,2.033045
+bell pepper leaf/google_0192.jpg,bell pepper leaf,bell pepper leaf,0.235974,0.011140,3.179037
+bell pepper leaf/242.jpg,bell pepper leaf,coffee leaf,0.598153,0.526614,2.041880
+bell pepper leaf/108.jpg,bell pepper leaf,bell pepper leaf,0.424163,0.355596,2.895571
+bell pepper leaf/11.jpg,bell pepper leaf,basil downy mildew,0.190527,0.049997,3.268635
+bell pepper leaf/65.jpg,bell pepper leaf,bell pepper leaf,0.934554,0.910965,0.428771
+bell pepper leaf/158.jpg,bell pepper leaf,cherry leaf,0.377832,0.292215,2.973557
+bell pepper leaf/google_0117.jpg,bell pepper leaf,squash leaf,0.463974,0.283647,2.373641
+bell pepper leaf/google_0014.jpg,bell pepper leaf,bell pepper leaf,0.364445,0.177897,2.528515
+bell pepper leaf/google_0253.jpg,bell pepper leaf,bell pepper leaf,0.753246,0.663808,1.216664
+bell pepper leaf/46.jpg,bell pepper leaf,bell pepper leaf spot,0.182326,0.088427,3.523247
+bell pepper leaf/google_0161.jpg,bell pepper leaf,cucumber leaf,0.384870,0.107419,2.229706
+bell pepper leaf/google_0006.jpg,bell pepper leaf,citrus canker,0.653691,0.605324,1.823395
+bell pepper leaf/google_0264.jpg,bell pepper leaf,basil leaf,0.883234,0.852481,0.729816
+bell pepper leaf/58.jpg,bell pepper leaf,bell pepper leaf,0.197802,0.112150,3.646945
+bell pepper leaf/17.jpg,bell pepper leaf,basil leaf,0.630203,0.405088,1.439359
+bell pepper leaf/37.jpg,bell pepper leaf,bell pepper leaf,0.983756,0.981707,0.142411
+bell pepper leaf/50.jpg,bell pepper leaf,bell pepper leaf,0.443342,0.039499,1.651036
+bell pepper leaf spot/google_0214.jpg,bell pepper leaf spot,bell pepper leaf,0.605839,0.405055,1.573799
+bell pepper leaf spot/google_0153.jpg,bell pepper leaf spot,bell pepper leaf spot,0.281269,0.153532,3.179311
+bell pepper leaf spot/google_0208.jpg,bell pepper leaf spot,bell pepper leaf spot,0.335646,0.205581,3.069407
+bell pepper leaf spot/3.jpg,bell pepper leaf spot,bell pepper leaf,0.110590,0.028482,3.794988
+bell pepper leaf spot/google_0222.jpg,bell pepper leaf spot,apple mosaic virus,0.167541,0.079227,3.576568
+bell pepper leaf spot/google_0066.jpg,bell pepper leaf spot,tomato bacterial leaf spot,0.775541,0.689920,1.167769
+bell pepper leaf spot/google_0151.jpg,bell pepper leaf spot,tomato leaf,0.142810,0.078946,3.769744
+bell pepper leaf spot/google_0122.jpg,bell pepper leaf spot,corn gray leaf spot,0.180330,0.011679,3.394965
+bell pepper leaf spot/google_0213.jpg,bell pepper leaf spot,eggplant cercospora leaf spot,0.597848,0.257603,1.090260
+bell pepper leaf spot/google_0024.jpg,bell pepper leaf spot,bean leaf,0.233205,0.055984,3.110411
+bell pepper leaf spot/google_0090.jpg,bell pepper leaf spot,tomato bacterial leaf spot,0.142213,0.060334,3.864670
+blueberry leaf/google_0291.jpg,blueberry leaf,blueberry leaf,0.945718,0.942075,0.437406
+blueberry leaf/174.jpg,blueberry leaf,blueberry leaf,0.634122,0.597236,2.019321
+blueberry leaf/google_0135.jpg,blueberry leaf,blueberry leaf,0.649456,0.533232,1.675768
+blueberry leaf/google_0283.jpg,blueberry leaf,blueberry leaf,0.423839,0.270517,2.538510
+blueberry leaf/124.jpg,blueberry leaf,blueberry leaf,0.988158,0.987355,0.112584
+blueberry leaf/56.jpg,blueberry leaf,blueberry leaf,0.766574,0.750274,1.502817
+blueberry leaf/44.jpg,blueberry leaf,blueberry leaf,0.823270,0.802015,1.183258
+blueberry leaf/113.jpg,blueberry leaf,blueberry leaf,0.827614,0.806225,1.167711
+blueberry leaf/google_0031.jpg,blueberry leaf,blueberry leaf,0.957257,0.953624,0.343271
+blueberry leaf/google_0504.jpg,blueberry leaf,garlic leaf,0.073623,0.006320,3.796403
+blueberry leaf/154.jpg,blueberry leaf,basil leaf,0.242164,0.117669,3.409638
+blueberry leaf/google_0355.jpg,blueberry leaf,potato early blight,0.137632,0.034959,3.631404
+blueberry leaf/google_0026.jpg,blueberry leaf,blueberry leaf,0.962976,0.959994,0.307087
+blueberry leaf/48.jpg,blueberry leaf,blueberry leaf,0.854060,0.840957,1.015515
+blueberry leaf/81.jpg,blueberry leaf,raspberry leaf,0.271201,0.125038,2.980888
+blueberry leaf/google_0501.jpg,blueberry leaf,peach leaf curl,0.101140,0.026498,3.823495
+blueberry leaf/google_0308.jpg,blueberry leaf,grape black rot,0.311420,0.209611,3.108856
+blueberry leaf/google_0481.jpg,blueberry leaf,blueberry leaf,0.367955,0.281465,2.953566
+blueberry leaf/97.jpg,blueberry leaf,blueberry leaf,0.883192,0.876106,0.828619
+blueberry leaf/199.jpg,blueberry leaf,blueberry leaf,0.546094,0.523884,2.633153
+blueberry leaf/google_0431.jpg,blueberry leaf,blueberry leaf,0.952730,0.950374,0.388061
+blueberry leaf/189.jpg,blueberry leaf,blueberry leaf,0.497303,0.430276,2.549996
+blueberry leaf/28.jpg,blueberry leaf,blueberry leaf,0.429070,0.356818,2.881090
+blueberry leaf/195.jpg,blueberry leaf,tomato mosaic virus,0.166545,0.007265,3.443560
+blueberry leaf/208.jpg,blueberry leaf,blueberry leaf,0.831952,0.817102,1.140111
+blueberry leaf/google_0185.jpg,blueberry leaf,plum leaf,0.237653,0.125790,3.459954
+blueberry leaf/146.jpg,blueberry leaf,cherry powdery mildew,0.122379,0.010207,3.456634
+blueberry leaf/32.jpg,blueberry leaf,blueberry leaf,0.973746,0.970863,0.224216
+blueberry rust/google_0054.jpg,blueberry rust,bean rust,0.538735,0.406183,2.316107
+blueberry rust/google_0135.jpg,blueberry rust,blueberry rust,0.758668,0.692729,1.317379
+blueberry rust/12.jpg,blueberry rust,eggplant leaf,0.250372,0.130721,3.079293
+blueberry rust/google_0226.jpg,blueberry rust,apple scab,0.500931,0.419094,2.452137
+blueberry rust/google_0072.jpg,blueberry rust,apple mosaic virus,0.363239,0.259296,2.974066
+blueberry rust/google_0034.jpg,blueberry rust,blueberry leaf,0.671990,0.631337,1.927063
+blueberry rust/google_0033.jpg,blueberry rust,blueberry rust,0.753253,0.680830,1.381371
+blueberry rust/google_0190.jpg,blueberry rust,blueberry leaf,0.167406,0.088804,3.536689
+blueberry rust/34.jpg,blueberry rust,blueberry rust,0.244868,0.148454,3.337523
+blueberry rust/31.jpg,blueberry rust,tomato bacterial leaf spot,0.252015,0.039212,2.874211
+blueberry rust/google_0025.jpg,blueberry rust,blueberry rust,0.216247,0.073491,3.182347
+broccoli downy mildew/google_0003.jpg,broccoli downy mildew,cabbage alternaria leaf spot,0.857687,0.830349,0.912893
+broccoli downy mildew/google_0050.jpg,broccoli downy mildew,cabbage alternaria leaf spot,0.732654,0.620006,1.206357
+broccoli downy mildew/google_0163.jpg,broccoli downy mildew,broccoli downy mildew,0.945800,0.939897,0.408504
+broccoli downy mildew/22.jpg,broccoli downy mildew,cauliflower alternaria leaf spot,0.323396,0.238946,3.232241
+broccoli downy mildew/google_0256.jpg,broccoli downy mildew,tomato early blight,0.128828,0.024651,3.604914
+broccoli downy mildew/google_0275.jpg,broccoli downy mildew,broccoli downy mildew,0.408569,0.305872,2.782075
+broccoli leaf/331.jpg,broccoli leaf,broccoli leaf,0.847392,0.778783,0.858923
+broccoli leaf/google_0321.jpg,broccoli leaf,broccoli leaf,0.977071,0.972777,0.193369
+broccoli leaf/1.jpg,broccoli leaf,cauliflower leaf,0.296596,0.144666,3.076418
+broccoli leaf/google_0384.jpg,broccoli leaf,broccoli leaf,0.947681,0.930181,0.382429
+broccoli leaf/86.jpg,broccoli leaf,broccoli leaf,0.890663,0.860044,0.725221
+broccoli leaf/google_0453.jpg,broccoli leaf,broccoli leaf,0.921585,0.888631,0.487755
+broccoli leaf/google_0396.jpg,broccoli leaf,celery leaf,0.264707,0.186795,3.464998
+broccoli leaf/google_0242.jpg,broccoli leaf,cauliflower leaf,0.728470,0.570382,1.186291
+broccoli leaf/google_0409.jpg,broccoli leaf,broccoli leaf,0.554125,0.492473,2.355253
+broccoli leaf/google_0164.jpg,broccoli leaf,broccoli leaf,0.842845,0.820710,1.061216
+broccoli leaf/178.jpg,broccoli leaf,broccoli leaf,0.631026,0.592259,2.119149
+broccoli leaf/242.jpg,broccoli leaf,broccoli leaf,0.635459,0.544841,1.869830
+broccoli leaf/163.jpg,broccoli leaf,broccoli leaf,0.961775,0.952765,0.296651
+broccoli leaf/google_0322.jpg,broccoli leaf,basil leaf,0.283986,0.221448,3.386828
+broccoli leaf/google_0073.jpg,broccoli leaf,broccoli leaf,0.535417,0.376759,2.156573
+broccoli leaf/30.jpg,broccoli leaf,broccoli leaf,0.933621,0.928028,0.505044
+broccoli leaf/172.jpg,broccoli leaf,broccoli leaf,0.940595,0.934048,0.468967
+broccoli leaf/198.jpg,broccoli leaf,broccoli leaf,0.945638,0.942075,0.433027
+broccoli leaf/google_0014.jpg,broccoli leaf,broccoli leaf,0.841388,0.801062,1.010333
+broccoli leaf/400.jpg,broccoli leaf,broccoli leaf,0.876305,0.865563,0.882473
+broccoli leaf/google_0161.jpg,broccoli leaf,eggplant leaf,0.226678,0.111126,3.304528
+broccoli leaf/173.jpg,broccoli leaf,broccoli leaf,0.905325,0.894360,0.702919
+broccoli leaf/231.jpg,broccoli leaf,broccoli leaf,0.890617,0.879264,0.781349
+broccoli leaf/189.jpg,broccoli leaf,broccoli leaf,0.929873,0.917589,0.518388
+broccoli leaf/google_0260.jpg,broccoli leaf,lettuce downy mildew,0.069534,0.006856,3.959493
+broccoli leaf/google_0103.jpg,broccoli leaf,broccoli leaf,0.780902,0.759168,1.382855
+broccoli leaf/google_0127.jpg,broccoli leaf,broccoli leaf,0.951523,0.946372,0.385764
+cabbage alternaria leaf spot/40.jpg,cabbage alternaria leaf spot,cauliflower alternaria leaf spot,0.401232,0.210178,2.348368
+cabbage alternaria leaf spot/google_0075.jpg,cabbage alternaria leaf spot,cauliflower alternaria leaf spot,0.454603,0.156549,2.006171
+cabbage alternaria leaf spot/12.jpg,cabbage alternaria leaf spot,lettuce downy mildew,0.408767,0.245134,2.531078
+cabbage alternaria leaf spot/google_0074.jpg,cabbage alternaria leaf spot,cabbage alternaria leaf spot,0.216623,0.075717,3.241931
+cabbage alternaria leaf spot/16.jpg,cabbage alternaria leaf spot,cabbage alternaria leaf spot,0.257014,0.124404,3.001484
+cabbage alternaria leaf spot/43.jpg,cabbage alternaria leaf spot,cabbage alternaria leaf spot,0.121219,0.010043,3.395248
+cabbage alternaria leaf spot/google_0047.jpg,cabbage alternaria leaf spot,grape leaf spot,0.779900,0.714469,1.158308
+cabbage alternaria leaf spot/22.jpg,cabbage alternaria leaf spot,cabbage alternaria leaf spot,0.351343,0.102117,1.942402
+cabbage alternaria leaf spot/google_0027.jpg,cabbage alternaria leaf spot,cucumber angular leaf spot,0.192575,0.032812,3.309616
+cabbage alternaria leaf spot/8 - Copy.jpg,cabbage alternaria leaf spot,cabbage alternaria leaf spot,0.145280,0.038949,3.563524
+cabbage alternaria leaf spot/17.jpg,cabbage alternaria leaf spot,cabbage alternaria leaf spot,0.168756,0.005419,3.435153
+cabbage alternaria leaf spot/google_0107.jpg,cabbage alternaria leaf spot,tomato bacterial leaf spot,0.245749,0.152234,3.361616
+cabbage leaf/47.jpg,cabbage leaf,potato leaf,0.550018,0.509716,2.430527
+cabbage leaf/385.jpg,cabbage leaf,cabbage leaf,0.391812,0.297901,2.721447
+cabbage leaf/156.jpg,cabbage leaf,cabbage leaf,0.978119,0.973302,0.178386
+cabbage leaf/google_0071.jpg,cabbage leaf,cabbage leaf,0.783435,0.729284,1.160574
+cabbage leaf/google_0080.jpg,cabbage leaf,cabbage leaf,0.664592,0.605747,1.910729
+cabbage leaf/103.jpg,cabbage leaf,cabbage leaf,0.850754,0.839649,1.026446
+cabbage leaf/113.jpg,cabbage leaf,cabbage leaf,0.968528,0.965065,0.257514
+cabbage leaf/282.jpg,cabbage leaf,cabbage leaf,0.935204,0.922335,0.492445
+cabbage leaf/190.jpg,cabbage leaf,cabbage leaf,0.970878,0.967598,0.247199
+cabbage leaf/397.jpg,cabbage leaf,cabbage leaf,0.382626,0.030509,1.835316
+cabbage leaf/136.jpg,cabbage leaf,cabbage leaf,0.179994,0.033892,3.159765
+cabbage leaf/205.jpg,cabbage leaf,cabbage leaf,0.788328,0.760819,1.377463
+cabbage leaf/google_0246.jpg,cabbage leaf,cabbage leaf,0.761125,0.727520,1.380473
+cabbage leaf/398.jpg,cabbage leaf,cabbage leaf,0.947346,0.932787,0.377474
+cabbage leaf/11.jpg,cabbage leaf,cabbage leaf,0.547656,0.493995,2.409052
+cabbage leaf/65.jpg,cabbage leaf,cabbage leaf,0.408264,0.077521,2.164756
+cabbage leaf/215.jpg,cabbage leaf,cabbage leaf,0.959707,0.956369,0.327420
+cabbage leaf/257.jpg,cabbage leaf,cabbage leaf,0.969226,0.966422,0.254805
+cabbage leaf/324.jpg,cabbage leaf,cabbage leaf,0.829657,0.810407,1.152829
+cabbage leaf/547.jpg,cabbage leaf,cabbage leaf,0.683460,0.645791,1.863939
+cabbage leaf/81.jpg,cabbage leaf,cabbage leaf,0.695434,0.665922,1.803894
+cabbage leaf/347.jpg,cabbage leaf,cabbage leaf,0.951134,0.944408,0.395841
+cabbage leaf/google_0029.jpg,cabbage leaf,lettuce downy mildew,0.093699,0.021379,3.884131
+cabbage leaf/435.jpg,cabbage leaf,cabbage leaf,0.499790,0.344717,2.427134
+cabbage leaf/google_0001.jpg,cabbage leaf,cabbage leaf,0.793367,0.742549,1.078617
+cabbage leaf/460.jpg,cabbage leaf,cabbage leaf,0.660803,0.617367,1.992438
+cabbage leaf/112.jpg,cabbage leaf,cabbage leaf,0.573904,0.493266,2.311749
+cabbage leaf/453.jpg,cabbage leaf,cabbage leaf,0.886590,0.872372,0.798626
+cabbage leaf/109.jpg,cabbage leaf,cabbage leaf,0.891515,0.877420,0.775209
+cabbage leaf/390.jpg,cabbage leaf,cabbage leaf,0.362275,0.308267,3.134965
+cabbage leaf/448.jpg,cabbage leaf,cabbage leaf,0.784762,0.710171,1.225729
+cabbage leaf/96.jpg,cabbage leaf,cabbage leaf,0.163835,0.026690,3.361770
+cabbage leaf/561.jpg,cabbage leaf,cabbage leaf,0.433635,0.268273,2.591787
+cabbage leaf/35.jpg,cabbage leaf,cabbage leaf,0.631693,0.600262,2.139548
+cabbage leaf/428.jpg,cabbage leaf,cabbage leaf,0.240931,0.117459,3.275637
+cabbage leaf/google_0093.jpg,cabbage leaf,lettuce leaf,0.810486,0.784213,1.131461
+cabbage leaf/google_0090.jpg,cabbage leaf,cabbage leaf,0.550047,0.496131,2.341355
+cabbage leaf/31.jpg,cabbage leaf,cabbage leaf,0.954660,0.943802,0.340318
+cabbage leaf/357.jpg,cabbage leaf,cabbage leaf,0.994615,0.993523,0.053357
+cabbage leaf/196.jpg,cabbage leaf,cabbage leaf,0.954446,0.951861,0.372200
+cabbage leaf/50.jpg,cabbage leaf,cabbage leaf,0.909467,0.893962,0.635273
+cabbage leaf/356.jpg,cabbage leaf,cabbage leaf,0.982963,0.981667,0.155523
+cabbage leaf/google_0025.jpg,cabbage leaf,cabbage leaf,0.684353,0.627451,1.742789
+cabbage leaf/404.jpg,cabbage leaf,cabbage leaf,0.885139,0.869882,0.797616
+cabbage leaf/438.jpg,cabbage leaf,lettuce leaf,0.094752,0.029705,3.952303
+cabbage leaf/255.jpg,cabbage leaf,cabbage leaf,0.699543,0.685428,1.868155
+carrot cavity spot/google_0003.jpg,carrot cavity spot,carrot cavity spot,0.927855,0.924784,0.563969
+carrot cavity spot/google_0269.jpg,carrot cavity spot,carrot cavity spot,0.702459,0.644465,1.752660
+carrot cavity spot/google_0192.jpg,carrot cavity spot,carrot cavity spot,0.738375,0.710282,1.597410
+carrot cavity spot/google_0245.jpg,carrot cavity spot,carrot cavity spot,0.903399,0.899687,0.732428
+carrot cavity spot/google_0012.jpg,carrot cavity spot,carrot cavity spot,0.745657,0.729651,1.633468
+carrot cavity spot/google_0024.jpg,carrot cavity spot,coffee leaf rust,0.207103,0.121507,3.621725
+carrot cavity spot/google_0093.jpg,carrot cavity spot,apple black rot,0.571622,0.465105,2.198951
+cauliflower alternaria leaf spot/google_0042 - Copy.jpg,cauliflower alternaria leaf spot,tomato early blight,0.247170,0.075204,3.307645
+cauliflower alternaria leaf spot/google_0008.jpg,cauliflower alternaria leaf spot,cabbage alternaria leaf spot,0.178232,0.014884,3.470318
+cauliflower alternaria leaf spot/google_0288.jpg,cauliflower alternaria leaf spot,potato early blight,0.130854,0.029629,3.587906
+cauliflower alternaria leaf spot/google_0208.jpg,cauliflower alternaria leaf spot,cabbage alternaria leaf spot,0.323882,0.089102,2.418124
+cauliflower alternaria leaf spot/google_0037.jpg,cauliflower alternaria leaf spot,cabbage alternaria leaf spot,0.844663,0.763879,0.823423
+cauliflower alternaria leaf spot/google_0022.jpg,cauliflower alternaria leaf spot,cabbage alternaria leaf spot,0.756253,0.653537,1.263996
+cauliflower alternaria leaf spot/google_0120.jpg,cauliflower alternaria leaf spot,cauliflower alternaria leaf spot,0.589075,0.191913,0.790885
+cauliflower alternaria leaf spot/google_0061.jpg,cauliflower alternaria leaf spot,cauliflower alternaria leaf spot,0.454603,0.156549,2.006171
+cauliflower alternaria leaf spot/17.jpg,cauliflower alternaria leaf spot,cabbage alternaria leaf spot,0.638818,0.334693,0.997007
+cauliflower leaf/google_0214.jpg,cauliflower leaf,cauliflower leaf,0.985216,0.983782,0.134928
+cauliflower leaf/1.jpg,cauliflower leaf,cauliflower leaf,0.981929,0.978782,0.156902
+cauliflower leaf/68.jpg,cauliflower leaf,cauliflower leaf,0.966894,0.958084,0.262714
+cauliflower leaf/5.jpg,cauliflower leaf,cauliflower leaf,0.746058,0.722985,1.567844
+cauliflower leaf/google_0071.jpg,cauliflower leaf,cabbage leaf,0.474762,0.136776,1.781644
+cauliflower leaf/google_0179.jpg,cauliflower leaf,squash leaf,0.178677,0.071840,3.575335
+cauliflower leaf/103.jpg,cauliflower leaf,raspberry leaf,0.151470,0.050833,3.599446
+cauliflower leaf/56.jpg,cauliflower leaf,cauliflower leaf,0.655453,0.515682,1.709022
+cauliflower leaf/google_0136.jpg,cauliflower leaf,squash powdery mildew,0.140425,0.022966,3.707695
+cauliflower leaf/google_0150.jpg,cauliflower leaf,cauliflower leaf,0.352483,0.278832,3.220625
+cauliflower leaf/google_0158.jpg,cauliflower leaf,cauliflower leaf,0.575904,0.439668,1.855213
+cauliflower leaf/google_0247.jpg,cauliflower leaf,cauliflower leaf,0.916506,0.842099,0.351032
+cauliflower leaf/90.jpg,cauliflower leaf,cauliflower leaf,0.332309,0.241878,3.032496
+cauliflower leaf/120.jpg,cauliflower leaf,cauliflower leaf,0.277820,0.076428,3.046295
+cauliflower leaf/google_0169.jpg,cauliflower leaf,cabbage leaf,0.110936,0.029038,3.691688
+cauliflower leaf/google_0122.jpg,cauliflower leaf,cauliflower leaf,0.936585,0.927546,0.470494
+cauliflower leaf/google_0239.jpg,cauliflower leaf,cauliflower leaf,0.188105,0.002592,3.443422
+cauliflower leaf/155.jpg,cauliflower leaf,cauliflower leaf,0.686802,0.591399,1.609833
+cauliflower leaf/66.jpg,cauliflower leaf,cauliflower alternaria leaf spot,0.224554,0.120554,3.476013
+celery anthracnose/google_0035.jpg,celery anthracnose,garlic leaf blight,0.954935,0.946270,0.326627
+celery anthracnose/google_0002.jpg,celery anthracnose,celery anthracnose,0.503961,0.187229,1.691416
+celery anthracnose/google_0024.jpg,celery anthracnose,lettuce downy mildew,0.112181,0.049723,3.755897
+celery anthracnose/google_0090.jpg,celery anthracnose,banana panama disease,0.315128,0.156102,2.805902
+celery early blight/1.jpg,celery early blight,celery early blight,0.356917,0.254088,2.921046
+celery early blight/google_0023.jpg,celery early blight,tomato early blight,0.277424,0.021683,2.849986
+celery early blight/google_0022.jpg,celery early blight,tomato early blight,0.279400,0.129419,3.193194
+celery early blight/6.jpg,celery early blight,bean leaf,0.177362,0.025902,3.236861
+celery early blight/google_0012.jpg,celery early blight,cucumber bacterial wilt,0.210233,0.103997,3.473950
+celery leaf/google_0082.jpg,celery leaf,tomato leaf,0.364659,0.232632,2.590501
+celery leaf/203.jpg,celery leaf,celery leaf,0.193973,0.127618,3.745290
+celery leaf/83.jpg,celery leaf,celery leaf,0.816708,0.721497,0.928454
+celery leaf/105.jpg,celery leaf,celery leaf,0.945213,0.941597,0.439098
+celery leaf/google_0084.jpg,celery leaf,celery leaf,0.931184,0.918227,0.500932
+celery leaf/69.jpg,celery leaf,celery leaf,0.804206,0.738845,1.162921
+celery leaf/190.jpg,celery leaf,celery leaf,0.996146,0.995192,0.039367
+celery leaf/235.jpg,celery leaf,celery leaf,0.379332,0.231958,2.732220
+celery leaf/234.jpg,celery leaf,garlic leaf,0.121490,0.005059,3.469506
+celery leaf/google_0164.jpg,celery leaf,potato leaf,0.685762,0.654091,1.785542
+celery leaf/90.jpg,celery leaf,celery early blight,0.903848,0.837437,0.474037
+celery leaf/198.jpg,celery leaf,celery leaf,0.861302,0.841314,0.917929
+celery leaf/google_0116.jpg,celery leaf,celery leaf,0.823524,0.806049,1.155120
+celery leaf/google_0017.jpg,celery leaf,celery leaf,0.960135,0.956628,0.330787
+celery leaf/97.jpg,celery leaf,lettuce leaf,0.221263,0.001625,2.882176
+celery leaf/google_0161.jpg,celery leaf,celery leaf,0.427892,0.231075,2.541843
+celery leaf/25.jpg,celery leaf,celery leaf,0.875786,0.868596,0.895281
+celery leaf/6.jpg,celery leaf,celery leaf,0.969240,0.966823,0.262678
+celery leaf/201.jpg,celery leaf,celery leaf,0.893073,0.849098,0.670201
+celery leaf/132.jpg,celery leaf,celery leaf,0.797437,0.770730,1.265704
+celery leaf/32.jpg,celery leaf,celery leaf,0.744232,0.732985,1.656233
+cherry leaf/google_0335.jpg,cherry leaf,cherry leaf,0.313407,0.191257,3.021803
+cherry leaf/13.jpg,cherry leaf,cherry leaf,0.685571,0.594445,1.586850
+cherry leaf/google_0425.jpg,cherry leaf,cherry powdery mildew,0.174182,0.011555,3.079021
+cherry leaf/105.jpg,cherry leaf,plum leaf,0.680641,0.456414,1.191103
+cherry leaf/145.jpg,cherry leaf,cherry leaf,0.215477,0.093199,3.425986
+cherry leaf/google_0084.jpg,cherry leaf,cherry leaf,0.971157,0.957798,0.205559
+cherry leaf/139.jpg,cherry leaf,raspberry leaf,0.123704,0.013385,3.692188
+cherry leaf/53.jpg,cherry leaf,cherry leaf,0.342544,0.243373,2.913802
+cherry leaf/google_0461.jpg,cherry leaf,raspberry leaf,0.828581,0.778952,0.962091
+cherry leaf/google_0228.jpg,cherry leaf,cherry leaf spot,0.131861,0.048699,3.809809
+cherry leaf/google_0285.jpg,cherry leaf,plum leaf,0.525708,0.372257,2.056093
+cherry leaf/google_0002.jpg,cherry leaf,cherry leaf,0.878587,0.847250,0.770444
+cherry leaf/google_0000.jpg,cherry leaf,apple leaf,0.663588,0.579549,1.774752
+cherry leaf/google_0158.jpg,cherry leaf,apple leaf,0.755798,0.695415,1.422486
+cherry leaf/79.jpg,cherry leaf,cherry leaf,0.436330,0.356302,2.635563
+cherry leaf/google_0322.jpg,cherry leaf,apple leaf,0.409778,0.291526,2.454339
+cherry leaf/144.jpg,cherry leaf,cherry leaf spot,0.132497,0.011691,3.626339
+cherry leaf/google_0286.jpg,cherry leaf,cherry leaf,0.818171,0.710703,0.900171
+cherry leaf/google_0438.jpg,cherry leaf,peach leaf curl,0.582679,0.534947,2.273106
+cherry leaf/109.jpg,cherry leaf,plum leaf,0.566506,0.339426,1.160285
+cherry leaf/google_0079.jpg,cherry leaf,raspberry leaf,0.200852,0.083455,3.558349
+cherry leaf/26.jpg,cherry leaf,cherry leaf,0.914304,0.873432,0.529975
+cherry leaf/157.jpg,cherry leaf,cherry leaf,0.462350,0.351343,2.678161
+cherry leaf/google_0263.jpg,cherry leaf,peach leaf,0.334558,0.191811,3.047704
+cherry leaf/google_0455.jpg,cherry leaf,cherry leaf,0.911351,0.900655,0.638232
+cherry leaf/2.jpg,cherry leaf,cherry leaf,0.964300,0.958162,0.281463
+cherry leaf/132.jpg,cherry leaf,cherry leaf,0.281217,0.220417,3.387484
+cherry leaf/google_0007.jpg,cherry leaf,cherry leaf,0.872164,0.802550,0.669078
+cherry leaf spot/google_0304.jpg,cherry leaf spot,bell pepper leaf spot,0.191143,0.033681,3.441021
+cherry leaf spot/google_0054.jpg,cherry leaf spot,lettuce downy mildew,0.124075,0.029763,3.565497
+cherry leaf spot/google_0215.jpg,cherry leaf spot,cherry leaf spot,0.433752,0.193785,2.272434
+cherry leaf spot/16.jpg,cherry leaf spot,cherry leaf spot,0.521946,0.197234,1.477884
+cherry leaf spot/google_0011.jpg,cherry leaf spot,cherry leaf spot,0.448402,0.365877,2.645828
+cherry leaf spot/google_0072.jpg,cherry leaf spot,cherry leaf,0.179257,0.011785,3.315267
+cherry leaf spot/google_0004.jpg,cherry leaf spot,cherry leaf spot,0.811388,0.797426,1.257326
+cherry leaf spot/google_0274.jpg,cherry leaf spot,citrus canker,0.113208,0.032023,3.973658
+cherry leaf spot/google_0022.jpg,cherry leaf spot,cherry leaf spot,0.747518,0.583526,1.042708
+cherry leaf spot/google_0300.jpg,cherry leaf spot,cherry leaf,0.623846,0.546903,1.813750
+cherry leaf spot/google_0427.jpg,cherry leaf spot,peach leaf curl,0.302261,0.101584,2.859375
+cherry leaf spot/google_0017.jpg,cherry leaf spot,cherry leaf spot,0.894155,0.878570,0.735402
+cherry leaf spot/70.jpg,cherry leaf spot,cherry leaf spot,0.631918,0.576263,2.033304
+cherry leaf spot/google_0204.jpg,cherry leaf spot,cherry leaf spot,0.840800,0.801138,0.908282
+cherry leaf spot/google_0397.jpg,cherry leaf spot,blueberry rust,0.182655,0.022117,3.257306
+cherry leaf spot/google_0196.jpg,cherry leaf spot,cherry leaf spot,0.150221,0.020998,3.377938
+cherry leaf spot/15.jpg,cherry leaf spot,cherry leaf spot,0.907187,0.898289,0.671960
+cherry leaf spot/google_0316.jpg,cherry leaf spot,tomato septoria leaf spot,0.133143,0.008459,3.481255
+cherry leaf spot/google_0122.jpg,cherry leaf spot,cherry leaf spot,0.142189,0.001848,3.563045
+cherry leaf spot/45.jpg,cherry leaf spot,cherry leaf spot,0.395968,0.041630,1.966519
+cherry leaf spot/33.jpg,cherry leaf spot,peach leaf curl,0.271864,0.178156,3.280914
+cherry leaf spot/google_0090.jpg,cherry leaf spot,bell pepper leaf spot,0.874843,0.820238,0.717817
+cherry leaf spot/google_0289.jpg,cherry leaf spot,tomato bacterial leaf spot,0.861100,0.818279,0.818873
+cherry powdery mildew/13.jpg,cherry powdery mildew,squash powdery mildew,0.386525,0.022030,2.018444
+cherry powdery mildew/40.jpg,cherry powdery mildew,squash powdery mildew,0.212589,0.072672,3.290149
+cherry powdery mildew/8.jpg,cherry powdery mildew,apple rust,0.927008,0.911858,0.479193
+cherry powdery mildew/google_0077.jpg,cherry powdery mildew,apple leaf,0.384418,0.234585,2.434916
+cherry powdery mildew/google_0094.jpg,cherry powdery mildew,soybean leaf,0.497054,0.444176,2.606833
+cherry powdery mildew/google_0031.jpg,cherry powdery mildew,citrus canker,0.564338,0.434661,1.963397
+cherry powdery mildew/google_0164.jpg,cherry powdery mildew,squash powdery mildew,0.592114,0.473712,1.948209
+cherry powdery mildew/google_0145.jpg,cherry powdery mildew,cherry powdery mildew,0.956659,0.942119,0.319317
+cherry powdery mildew/google_0023.jpg,cherry powdery mildew,tomato mosaic virus,0.507667,0.341128,2.104677
+cherry powdery mildew/google_0028.jpg,cherry powdery mildew,apple scab,0.167034,0.075065,3.531704
+cherry powdery mildew/29.jpg,cherry powdery mildew,cherry powdery mildew,0.473621,0.289864,2.055597
+citrus canker/309.jpg,citrus canker,bean rust,0.111238,0.011781,3.643367
+citrus canker/google_0304.jpg,citrus canker,citrus canker,0.265692,0.160139,3.254621
+citrus canker/399.jpg,citrus canker,citrus canker,0.928036,0.917506,0.546625
+citrus canker/226.jpg,citrus canker,citrus canker,0.969076,0.958764,0.231271
+citrus canker/124.jpg,citrus canker,citrus canker,0.930366,0.913082,0.469403
+citrus canker/google_0221.jpg,citrus canker,citrus canker,0.991839,0.989393,0.072516
+citrus canker/35 - Copy (3).jpg,citrus canker,citrus canker,0.782490,0.757930,1.309152
+citrus canker/42.jpg,citrus canker,citrus canker,0.964271,0.956086,0.288704
+citrus canker/71.jpg,citrus canker,citrus canker,0.907081,0.900542,0.681716
+citrus canker/google_0072.jpg,citrus canker,bean rust,0.466219,0.188451,2.019966
+citrus canker/paper2.png,citrus canker,citrus canker,0.685139,0.602429,1.764992
+citrus canker/139 - Copy (2).jpg,citrus canker,citrus canker,0.447738,0.390467,2.766060
+citrus canker/313.jpg,citrus canker,citrus canker,0.962038,0.953190,0.305299
+citrus canker/397.jpg,citrus canker,citrus canker,0.995439,0.994986,0.047062
+citrus canker/google_0238.jpg,citrus canker,plum leaf,0.539509,0.501898,2.460489
+citrus canker/265.jpg,citrus canker,citrus canker,0.672850,0.594630,1.739686
+citrus canker/24.jpg,citrus canker,citrus canker,0.654667,0.624400,2.009004
+citrus canker/google_0197.jpg,citrus canker,citrus canker,0.421474,0.299032,2.537028
+citrus canker/163.jpg,citrus canker,citrus canker,0.958894,0.954661,0.331678
+citrus canker/google_0287.jpg,citrus canker,citrus canker,0.595157,0.516883,1.977140
+citrus canker/google_0004.jpg,citrus canker,citrus canker,0.837449,0.814062,1.072901
+citrus canker/396.jpg,citrus canker,citrus canker,0.932949,0.925858,0.510436
+citrus canker/google_0049.jpg,citrus canker,citrus canker,0.612798,0.585428,2.261806
+citrus canker/google_0184.jpg,citrus canker,grape black rot,0.424464,0.355599,2.875383
+citrus canker/google_0129.jpg,citrus canker,coffee leaf rust,0.454824,0.175230,1.965314
+citrus canker/google_0108.jpg,citrus canker,apple scab,0.530306,0.363206,2.246210
+citrus canker/269.jpg,citrus canker,citrus canker,0.543489,0.518043,2.576797
+citrus canker/389.jpg,citrus canker,citrus canker,0.945667,0.938825,0.419105
+citrus canker/google_0240.jpg,citrus canker,citrus canker,0.200654,0.020666,2.967350
+citrus canker/google_0029.jpg,citrus canker,cherry leaf spot,0.363114,0.020138,2.280234
+citrus canker/15.jpg,citrus canker,citrus canker,0.935667,0.928540,0.489191
+citrus canker/225.jpg,citrus canker,citrus canker,0.812670,0.762401,1.152782
+citrus canker/105 - Copy.jpg,citrus canker,grape downy mildew,0.173211,0.037797,3.455095
+citrus canker/273.jpg,citrus canker,citrus canker,0.793351,0.774027,1.323432
+citrus canker/405.jpg,citrus canker,apple scab,0.265186,0.149952,3.219565
+citrus canker/94.jpg,citrus canker,citrus canker,0.409111,0.259767,2.642611
+citrus canker/202.jpg,citrus canker,citrus canker,0.880616,0.869879,0.847869
+citrus canker/118.jpg,citrus canker,peach leaf,0.213955,0.007707,2.925691
+citrus canker/google_0232.jpg,citrus canker,citrus canker,0.897169,0.880925,0.723746
+citrus canker/139 - Copy.jpg,citrus canker,citrus canker,0.300304,0.175604,3.045052
+citrus canker/google_0012.jpg,citrus canker,apple mosaic virus,0.232340,0.148187,3.355255
+citrus canker/26.jpg,citrus canker,citrus canker,0.932841,0.878343,0.327506
+citrus canker/140.jpg,citrus canker,citrus canker,0.958198,0.955606,0.346709
+citrus canker/173.jpg,citrus canker,citrus greening disease,0.462516,0.249310,2.180433
+citrus canker/406.jpg,citrus canker,citrus canker,0.963099,0.958950,0.301651
+citrus canker/382.jpg,citrus canker,citrus canker,0.936569,0.931231,0.497017
+citrus canker/35.jpg,citrus canker,broccoli downy mildew,0.266454,0.203060,3.557602
+citrus canker/28.jpg,citrus canker,bean rust,0.222670,0.068857,2.939160
+citrus canker/57.jpg,citrus canker,citrus canker,0.687356,0.580237,1.651585
+citrus canker/50.jpg,citrus canker,citrus canker,0.856581,0.833243,0.977082
+citrus canker/google_0278.jpg,citrus canker,citrus greening disease,0.319600,0.268504,3.337292
+citrus canker/35 - Copy.jpg,citrus canker,citrus canker,0.979845,0.973869,0.165758
+citrus canker/262.jpg,citrus canker,citrus canker,0.384475,0.318699,3.075394
+citrus greening disease/47.jpg,citrus greening disease,citrus greening disease,0.413655,0.312172,2.636910
+citrus greening disease/google_0036.jpg,citrus greening disease,citrus greening disease,0.942768,0.930884,0.402017
+citrus greening disease/5.jpg,citrus greening disease,citrus greening disease,0.923044,0.898768,0.529831
+citrus greening disease/67.jpg,citrus greening disease,citrus greening disease,0.847827,0.789497,0.878907
+citrus greening disease/google_0071.jpg,citrus greening disease,citrus greening disease,0.793895,0.747774,1.192037
+citrus greening disease/google_0074.jpg,citrus greening disease,apple black rot,0.096565,0.022061,3.889841
+citrus greening disease/8.jpg,citrus greening disease,citrus greening disease,0.672373,0.639762,1.958849
+citrus greening disease/google_0077.jpg,citrus greening disease,citrus greening disease,0.572200,0.488267,2.190241
+citrus greening disease/56.jpg,citrus greening disease,citrus greening disease,0.568184,0.417007,2.054702
+citrus greening disease/google_0011 - Copy.jpg,citrus greening disease,tomato mosaic virus,0.351382,0.287999,3.142490
+citrus greening disease/google_0126.jpg,citrus greening disease,citrus greening disease,0.990356,0.989032,0.090842
+citrus greening disease/51.jpg,citrus greening disease,citrus greening disease,0.426728,0.344471,2.887217
+citrus greening disease/google_0131.jpg,citrus greening disease,citrus greening disease,0.555103,0.460707,2.236556
+citrus greening disease/google_0236.jpg,citrus greening disease,citrus canker,0.527763,0.451933,2.397143
+citrus greening disease/google_0081.jpg,citrus greening disease,citrus greening disease,0.703447,0.602146,1.575603
+citrus greening disease/google_0004.jpg,citrus greening disease,citrus greening disease,0.735572,0.549510,1.059674
+citrus greening disease/108.jpg,citrus greening disease,citrus greening disease,0.602663,0.449340,1.909457
+citrus greening disease/google_0073.jpg,citrus greening disease,citrus greening disease,0.602348,0.569382,2.246623
+citrus greening disease/65.jpg,citrus greening disease,citrus greening disease,0.976697,0.974057,0.199518
+citrus greening disease/google_0053.jpg,citrus greening disease,citrus greening disease,0.954838,0.947267,0.342274
+citrus greening disease/6.jpg,citrus greening disease,citrus greening disease,0.971325,0.967212,0.236223
+citrus greening disease/52.jpg,citrus greening disease,citrus greening disease,0.834094,0.810650,1.072908
+citrus greening disease/google_0185.jpg,citrus greening disease,citrus greening disease,0.732083,0.678563,1.501675
+coffee leaf/13.jpg,coffee leaf,coffee leaf,0.850833,0.843129,1.047021
+coffee leaf/google_0036.jpg,coffee leaf,maple leaf,0.287718,0.079261,2.938440
+coffee leaf/323.jpg,coffee leaf,apple leaf,0.344252,0.205784,2.741452
+coffee leaf/google_0112.jpg,coffee leaf,coffee leaf,0.695968,0.638570,1.783435
+coffee leaf/342.jpg,coffee leaf,peach leaf,0.171685,0.005885,3.466967
+coffee leaf/google_0066.jpg,coffee leaf,basil leaf,0.571391,0.359035,1.811725
+coffee leaf/google_0058.jpg,coffee leaf,coffee leaf,0.784867,0.746155,1.311621
+coffee leaf/48.jpg,coffee leaf,coffee leaf,0.942176,0.938068,0.453240
+coffee leaf/6.jpg,coffee leaf,tomato leaf,0.316160,0.188638,3.137980
+coffee leaf/157.jpg,coffee leaf,coffee leaf,0.530539,0.442926,2.220120
+coffee leaf/292.jpg,coffee leaf,apple leaf,0.169388,0.089199,3.665221
+coffee leaf/35.jpg,coffee leaf,coffee leaf,0.847898,0.814092,0.994894
+coffee leaf/39.jpg,coffee leaf,coffee leaf,0.424920,0.330001,2.765603
+coffee leaf rust/google_0270.jpg,coffee leaf rust,grape downy mildew,0.091991,0.011070,3.801204
+coffee leaf rust/google_0065.jpg,coffee leaf rust,coffee leaf rust,0.820206,0.773311,1.027259
+coffee leaf rust/google_0045.jpg,coffee leaf rust,coffee leaf rust,0.861945,0.848856,0.937624
+coffee leaf rust/9.jpg,coffee leaf rust,coffee leaf rust,0.914323,0.902478,0.612600
+coffee leaf rust/google_0223.jpg,coffee leaf rust,coffee leaf rust,0.848456,0.826666,0.986493
+coffee leaf rust/google_0195.jpg,coffee leaf rust,cabbage alternaria leaf spot,0.159134,0.037170,3.415031
+coffee leaf rust/3.jpg,coffee leaf rust,cabbage alternaria leaf spot,0.194393,0.146041,3.895504
+coffee leaf rust/79.jpg,coffee leaf rust,coffee leaf,0.325012,0.255979,3.162333
+coffee leaf rust/google_0069.jpg,coffee leaf rust,coffee leaf rust,0.660455,0.627692,1.930501
+coffee leaf rust/google_0091.jpg,coffee leaf rust,coffee leaf rust,0.828533,0.792124,1.038907
+coffee leaf rust/google_0287.jpg,coffee leaf rust,apple rust,0.114855,0.020001,3.751037
+coffee leaf rust/63.jpg,coffee leaf rust,coffee leaf rust,0.797794,0.775255,1.267529
+coffee leaf rust/google_0001.jpg,coffee leaf rust,coffee leaf rust,0.475210,0.283041,2.237944
+coffee leaf rust/google_0038.jpg,coffee leaf rust,coffee leaf rust,0.978859,0.976763,0.187729
+coffee leaf rust/35.jpg,coffee leaf rust,bean rust,0.392680,0.278801,2.818008
+coffee leaf rust/google_0106.jpg,coffee leaf rust,coffee leaf rust,0.896091,0.845842,0.621720
+coffee leaf rust/171.jpg,coffee leaf rust,coffee leaf rust,0.881673,0.846842,0.767909
+coffee leaf rust/google_0089.jpg,coffee leaf rust,coffee leaf rust,0.949578,0.945159,0.402981
+coffee leaf rust/google_0134.jpg,coffee leaf rust,coffee leaf rust,0.882681,0.838483,0.735248
+corn gray leaf spot/google_0101.jpg,corn gray leaf spot,corn gray leaf spot,0.802611,0.738172,1.122857
+corn gray leaf spot/2 - Copy (3).jpg,corn gray leaf spot,corn gray leaf spot,0.765432,0.705959,1.329773
+corn gray leaf spot/google_0257.jpg,corn gray leaf spot,corn gray leaf spot,0.354535,0.259152,3.210841
+corn gray leaf spot/google_0084.jpg,corn gray leaf spot,corn gray leaf spot,0.529169,0.246854,1.785591
+corn gray leaf spot/google_0074.jpg,corn gray leaf spot,corn gray leaf spot,0.256744,0.048861,2.884206
+corn gray leaf spot/google_0142.jpg,corn gray leaf spot,corn gray leaf spot,0.694288,0.608334,1.688460
+corn gray leaf spot/20.jpg,corn gray leaf spot,corn northern leaf blight,0.897187,0.882425,0.740079
+corn gray leaf spot/44.jpg,corn gray leaf spot,corn leaf,0.526797,0.387887,2.335437
+corn gray leaf spot/google_0050.jpg,corn gray leaf spot,corn gray leaf spot,0.894056,0.874930,0.734857
+corn gray leaf spot/3.jpg,corn gray leaf spot,rice blast,0.219209,0.003350,3.263374
+corn gray leaf spot/google_0140.jpg,corn gray leaf spot,corn gray leaf spot,0.290061,0.232790,3.548009
+corn gray leaf spot/google_0102.jpg,corn gray leaf spot,corn northern leaf blight,0.847570,0.718648,0.592123
+corn gray leaf spot/google_0246.jpg,corn gray leaf spot,corn gray leaf spot,0.339969,0.149106,2.731820
+corn gray leaf spot/google_0298.jpg,corn gray leaf spot,corn gray leaf spot,0.983297,0.979599,0.141686
+corn gray leaf spot/google_0296.jpg,corn gray leaf spot,corn northern leaf blight,0.800166,0.779485,1.277950
+corn gray leaf spot/google_0385.jpg,corn gray leaf spot,corn gray leaf spot,0.820337,0.752125,1.050129
+corn gray leaf spot/google_0122.jpg,corn gray leaf spot,corn gray leaf spot,0.737225,0.684477,1.570556
+corn gray leaf spot/google_0044.jpg,corn gray leaf spot,corn gray leaf spot,0.560006,0.340242,1.829271
+corn gray leaf spot/google_0118.jpg,corn gray leaf spot,corn northern leaf blight,0.785325,0.744742,1.298875
+corn gray leaf spot/google_0157.jpg,corn gray leaf spot,corn leaf,0.123602,0.018300,3.583669
+corn gray leaf spot/add (8).jpg,corn gray leaf spot,corn gray leaf spot,0.755190,0.721882,1.557709
+corn leaf/4.jpg,corn leaf,corn leaf,0.928574,0.918975,0.537600
+corn leaf/google_0148.jpg,corn leaf,corn northern leaf blight,0.393560,0.196801,2.452976
+corn leaf/google_0019.jpg,corn leaf,corn smut,0.465032,0.369390,2.557018
+corn leaf/18.jpg,corn leaf,corn leaf,0.348706,0.136364,2.649902
+corn leaf/google_0247.jpg,corn leaf,corn leaf,0.705147,0.675109,1.782083
+corn leaf/google_0115.jpg,corn leaf,corn leaf,0.692986,0.670267,1.863198
+corn leaf/15.jpg,corn leaf,rice leaf,0.292312,0.179467,3.224247
+corn leaf/19.jpg,corn leaf,ginger leaf,0.200058,0.002357,3.005652
+corn leaf/45.jpg,corn leaf,corn leaf,0.492740,0.175361,1.786974
+corn leaf/34.jpg,corn leaf,corn leaf,0.678066,0.659008,1.972889
+corn leaf/google_0010.jpg,corn leaf,corn leaf,0.944493,0.929841,0.415883
+corn leaf/google_0076.jpg,corn leaf,corn leaf,0.860780,0.817531,0.854848
+corn leaf/google_0134.jpg,corn leaf,corn leaf,0.970113,0.967702,0.254442
+corn leaf/google_0543.jpg,corn leaf,corn leaf,0.245438,0.028783,2.836377
+corn leaf/google_0225.jpg,corn leaf,corn leaf,0.393520,0.183904,2.649615
+corn northern leaf blight/google_0065.jpg,corn northern leaf blight,corn northern leaf blight,0.782819,0.760163,1.359128
+corn northern leaf blight/google_0045.jpg,corn northern leaf blight,corn gray leaf spot,0.403437,0.321133,3.060968
+corn northern leaf blight/10.jpg,corn northern leaf blight,corn northern leaf blight,0.756907,0.650693,1.262488
+corn northern leaf blight/google_0057.jpg,corn northern leaf blight,corn gray leaf spot,0.600252,0.480094,1.924689
+corn northern leaf blight/google_0075.jpg,corn northern leaf blight,corn northern leaf blight,0.675528,0.625645,1.868391
+corn northern leaf blight/16.jpg,corn northern leaf blight,corn northern leaf blight,0.985963,0.983751,0.129933
+corn northern leaf blight/google_0126.jpg,corn northern leaf blight,corn gray leaf spot,0.678833,0.646254,1.907251
+corn northern leaf blight/55.jpg,corn northern leaf blight,corn rust,0.540863,0.455765,2.302385
+corn northern leaf blight/86 - Copy.jpg,corn northern leaf blight,corn northern leaf blight,0.535303,0.404390,2.250734
+corn northern leaf blight/google_0069.jpg,corn northern leaf blight,corn northern leaf blight,0.492337,0.355039,2.403856
+corn northern leaf blight/7.jpg,corn northern leaf blight,corn northern leaf blight,0.588923,0.532827,2.235388
+corn northern leaf blight/11.jpg,corn northern leaf blight,corn gray leaf spot,0.955142,0.951165,0.351884
+corn northern leaf blight/add (10).jpg,corn northern leaf blight,corn gray leaf spot,0.632981,0.581071,2.028428
+corn northern leaf blight/google_0047.jpg,corn northern leaf blight,corn gray leaf spot,0.813949,0.799670,1.238222
+corn northern leaf blight/google_0022.jpg,corn northern leaf blight,corn northern leaf blight,0.695859,0.522351,1.367598
+corn northern leaf blight/1 - Copy (3).jpg,corn northern leaf blight,corn gray leaf spot,0.740494,0.680550,1.429109
+corn northern leaf blight/google_0014.jpg,corn northern leaf blight,garlic leaf,0.408350,0.097082,1.990970
+corn northern leaf blight/add (21).jpg,corn northern leaf blight,corn northern leaf blight,0.921136,0.898285,0.552581
+corn northern leaf blight/add (6).jpg,corn northern leaf blight,corn gray leaf spot,0.781423,0.715301,1.226659
+corn northern leaf blight/google_0149.jpg,corn northern leaf blight,corn northern leaf blight,0.747567,0.614069,1.241375
+corn northern leaf blight/google_0043.jpg,corn northern leaf blight,garlic leaf blight,0.242681,0.163110,3.423674
+corn northern leaf blight/add (22).jpg,corn northern leaf blight,corn gray leaf spot,0.378131,0.266757,2.932665
+corn rust/google_0214.jpg,corn rust,corn gray leaf spot,0.960368,0.952568,0.309978
+corn rust/74.jpg,corn rust,corn rust,0.527108,0.353076,1.979711
+corn rust/google_0008.jpg,corn rust,corn gray leaf spot,0.674289,0.542676,1.452237
+corn rust/google_0009.jpg,corn rust,corn rust,0.847092,0.826481,0.988279
+corn rust/43.jpg,corn rust,corn rust,0.433255,0.306793,2.752601
+corn rust/30.jpg,corn rust,corn rust,0.808195,0.775324,1.217930
+corn rust/google_0177.jpg,corn rust,corn rust,0.774877,0.752413,1.434143
+corn rust/google_0115.jpg,corn rust,corn rust,0.809594,0.780478,1.227294
+corn rust/google_0125.jpg,corn rust,corn rust,0.663878,0.515174,1.470174
+corn rust/73.jpg,corn rust,garlic rust,0.430375,0.018733,1.543375
+corn rust/google_0181.jpg,corn rust,corn rust,0.664863,0.590390,1.863660
+corn rust/15.jpg,corn rust,corn rust,0.751077,0.724085,1.510040
+corn rust/97.jpg,corn rust,corn northern leaf blight,0.333147,0.009347,2.462619
+corn rust/94.jpg,corn rust,corn rust,0.888503,0.880359,0.817311
+corn rust/76.jpg,corn rust,corn gray leaf spot,0.619888,0.542894,2.007182
+corn rust/google_0012.jpg,corn rust,corn rust,0.988924,0.985529,0.098554
+corn rust/80.jpg,corn rust,corn rust,0.905182,0.881144,0.664724
+corn rust/google_0139.jpg,corn rust,corn northern leaf blight,0.754349,0.603937,1.075247
+corn rust/96.jpg,corn rust,corn rust,0.603557,0.523110,2.076294
+corn rust/82.jpg,corn rust,corn rust,0.863084,0.851672,0.966385
+corn rust/google_0186.jpg,corn rust,corn rust,0.640429,0.528319,1.670536
+corn rust/google_0105.jpg,corn rust,corn rust,0.494410,0.435734,2.640596
+corn rust/66.jpg,corn rust,corn rust,0.436811,0.128102,2.039637
+corn smut/google_0321.jpg,corn smut,corn smut,0.647767,0.609417,2.034172
+corn smut/google_0155.jpg,corn smut,corn smut,0.946631,0.924181,0.365036
+corn smut/174.jpg,corn smut,corn smut,0.943117,0.933106,0.434027
+corn smut/10.jpg,corn smut,corn smut,0.645817,0.615746,2.045290
+corn smut/google_0223.jpg,corn smut,corn smut,0.663450,0.634011,1.951361
+corn smut/53.jpg,corn smut,corn northern leaf blight,0.152056,0.019365,3.546375
+corn smut/google_0234.jpg,corn smut,corn smut,0.706768,0.578045,1.337961
+corn smut/google_0195.jpg,corn smut,corn smut,0.954253,0.950049,0.371399
+corn smut/google_0150.jpg,corn smut,grape leaf spot,0.125652,0.042371,3.721391
+corn smut/google_0094.jpg,corn smut,corn smut,0.873339,0.849934,0.808075
+corn smut/166.jpg,corn smut,corn smut,0.340614,0.163713,2.997441
+corn smut/google_0000.jpg,corn smut,corn smut,0.861393,0.855387,0.989803
+corn smut/google_0219.jpg,corn smut,corn smut,0.762955,0.750298,1.528245
+corn smut/49.jpg,corn smut,corn smut,0.947932,0.941484,0.410039
+corn smut/google_0370.jpg,corn smut,lettuce mosaic virus,0.125132,0.056298,3.803765
+corn smut/google_0028.jpg,corn smut,corn smut,0.965930,0.962402,0.280874
+corn smut/google_0169.jpg,corn smut,corn smut,0.977789,0.969850,0.174038
+corn smut/161.jpg,corn smut,corn smut,0.680489,0.628036,1.811152
+corn smut/google_0001.jpg,corn smut,corn smut,0.907449,0.901596,0.687598
+corn smut/google_0027.jpg,corn smut,corn smut,0.980210,0.976756,0.171152
+corn smut/google_0122.jpg,corn smut,corn smut,0.924702,0.919781,0.556620
+corn smut/google_0018.jpg,corn smut,corn smut,0.609192,0.535412,2.089413
+corn smut/google_0263.jpg,corn smut,corn smut,0.612808,0.513352,1.978679
+corn smut/35.jpg,corn smut,corn smut,0.769771,0.750124,1.448542
+corn smut/google_0063.jpg,corn smut,corn smut,0.814940,0.794292,1.150873
+corn smut/google_0134.jpg,corn smut,corn smut,0.851543,0.828028,0.977820
+corn smut/google_0188.jpg,corn smut,corn smut,0.941107,0.933882,0.443136
+corn smut/66.jpg,corn smut,corn smut,0.275827,0.214982,3.446383
+corn smut/39.jpg,corn smut,corn smut,0.901335,0.889017,0.713226
+cucumber angular leaf spot/google_0036.jpg,cucumber angular leaf spot,broccoli downy mildew,0.544718,0.396643,1.922114
+cucumber angular leaf spot/130.jpg,cucumber angular leaf spot,cucumber angular leaf spot,0.159354,0.089974,3.891945
+cucumber angular leaf spot/160.jpg,cucumber angular leaf spot,cucumber angular leaf spot,0.975855,0.970897,0.194609
+cucumber angular leaf spot/google_0077.jpg,cucumber angular leaf spot,cucumber angular leaf spot,0.284168,0.197960,3.278117
+cucumber angular leaf spot/google_0011.jpg,cucumber angular leaf spot,cucumber angular leaf spot,0.146326,0.004644,3.490994
+cucumber angular leaf spot/185.jpg,cucumber angular leaf spot,cucumber leaf,0.194509,0.090057,3.422524
+cucumber angular leaf spot/232.jpg,cucumber angular leaf spot,cucumber angular leaf spot,0.809809,0.769136,1.126841
+cucumber angular leaf spot/62.jpg,cucumber angular leaf spot,cucumber angular leaf spot,0.612066,0.520871,1.929763
+cucumber angular leaf spot/23.jpg,cucumber angular leaf spot,cucumber angular leaf spot,0.849869,0.839357,1.030040
+cucumber angular leaf spot/43.jpg,cucumber angular leaf spot,cucumber angular leaf spot,0.924846,0.919692,0.575819
+cucumber angular leaf spot/google_0055.jpg,cucumber angular leaf spot,bean halo blight,0.323227,0.152744,2.956141
+cucumber angular leaf spot/49.jpg,cucumber angular leaf spot,cucumber angular leaf spot,0.341875,0.238228,2.919420
+cucumber angular leaf spot/269.jpg,cucumber angular leaf spot,cucumber angular leaf spot,0.123422,0.013225,3.638386
+cucumber angular leaf spot/google_0117.jpg,cucumber angular leaf spot,cabbage alternaria leaf spot,0.672225,0.611417,1.682069
+cucumber angular leaf spot/266.jpg,cucumber angular leaf spot,cucumber angular leaf spot,0.944493,0.938711,0.440953
+cucumber angular leaf spot/google_0014.jpg,cucumber angular leaf spot,lettuce downy mildew,0.168560,0.077019,3.461147
+cucumber angular leaf spot/70.jpg,cucumber angular leaf spot,cabbage leaf,0.427003,0.247145,2.404627
+cucumber angular leaf spot/41.jpg,cucumber angular leaf spot,cucumber angular leaf spot,0.755499,0.731041,1.541072
+cucumber angular leaf spot/google_0013.jpg,cucumber angular leaf spot,cucumber angular leaf spot,0.437791,0.389313,2.958592
+cucumber angular leaf spot/292.jpg,cucumber angular leaf spot,cucumber angular leaf spot,0.705630,0.634436,1.531625
+cucumber angular leaf spot/google_0061.jpg,cucumber angular leaf spot,tomato bacterial leaf spot,0.378752,0.322834,3.072785
+cucumber angular leaf spot/152.jpg,cucumber angular leaf spot,cucumber bacterial wilt,0.170677,0.093002,3.719079
+cucumber angular leaf spot/14.jpg,cucumber angular leaf spot,cucumber angular leaf spot,0.776446,0.713262,1.311490
+cucumber angular leaf spot/143.jpg,cucumber angular leaf spot,cucumber angular leaf spot,0.868340,0.848350,0.895438
+cucumber angular leaf spot/303.jpg,cucumber angular leaf spot,cucumber angular leaf spot,0.345677,0.099470,2.537194
+cucumber bacterial wilt/google_0082.jpg,cucumber bacterial wilt,cucumber leaf,0.180358,0.082284,3.544967
+cucumber bacterial wilt/google_0255 - Copy.jpg,cucumber bacterial wilt,zucchini yellow mosaic virus,0.489227,0.429858,2.576414
+cucumber bacterial wilt/google_0189.jpg,cucumber bacterial wilt,tobacco leaf,0.135627,0.004151,3.293420
+cucumber bacterial wilt/121.jpg,cucumber bacterial wilt,squash leaf,0.150878,0.060403,3.573906
+cucumber bacterial wilt/google_0217.jpg,cucumber bacterial wilt,bean mosaic virus,0.126738,0.000148,3.732361
+cucumber bacterial wilt/46.jpg,cucumber bacterial wilt,cucumber bacterial wilt,0.272961,0.165906,3.319389
+cucumber bacterial wilt/google_0161.jpg,cucumber bacterial wilt,cucumber bacterial wilt,0.950243,0.943424,0.382202
+cucumber bacterial wilt/91.jpg,cucumber bacterial wilt,cucumber bacterial wilt,0.184470,0.096043,3.591402
+cucumber bacterial wilt/25.jpg,cucumber bacterial wilt,cucumber bacterial wilt,0.457748,0.207006,2.152650
+cucumber bacterial wilt/26.jpg,cucumber bacterial wilt,cucumber bacterial wilt,0.853112,0.835917,0.976155
+cucumber bacterial wilt/95.jpg,cucumber bacterial wilt,cucumber bacterial wilt,0.917754,0.906713,0.584276
+cucumber bacterial wilt/google_0043.jpg,cucumber bacterial wilt,broccoli leaf,0.123086,0.003914,3.715885
+cucumber bacterial wilt/google_0100.jpg,cucumber bacterial wilt,cucumber bacterial wilt,0.856863,0.838133,0.936687
+cucumber bacterial wilt/37.jpg,cucumber bacterial wilt,cucumber bacterial wilt,0.167396,0.007316,3.438630
+cucumber leaf/10.jpg,cucumber leaf,cucumber leaf,0.329213,0.224982,2.834425
+cucumber leaf/186.jpg,cucumber leaf,squash leaf,0.597013,0.290161,1.105820
+cucumber leaf/google_0193.jpg,cucumber leaf,bean leaf,0.902953,0.888385,0.665767
+cucumber leaf/google_0099.jpg,cucumber leaf,soybean leaf,0.409990,0.306047,2.796952
+cucumber leaf/192.jpg,cucumber leaf,cucumber leaf,0.551673,0.266760,1.587544
+cucumber leaf/google_0132.jpg,cucumber leaf,cucumber leaf,0.849520,0.821333,0.931293
+cucumber leaf/google_0111.jpg,cucumber leaf,cucumber leaf,0.313470,0.202238,3.125463
+cucumber leaf/181.jpg,cucumber leaf,cucumber leaf,0.418788,0.042485,1.830185
+cucumber leaf/google_0285.jpg,cucumber leaf,grape leaf,0.259384,0.199991,3.447055
+cucumber leaf/google_0000.jpg,cucumber leaf,cucumber leaf,0.252789,0.031849,2.998123
+cucumber leaf/136.jpg,cucumber leaf,cucumber leaf,0.365361,0.237102,2.775621
+cucumber leaf/google_0066.jpg,cucumber leaf,bean halo blight,0.579711,0.492505,1.969956
+cucumber leaf/google_0229.jpg,cucumber leaf,eggplant leaf,0.196182,0.025335,3.196034
+cucumber leaf/google_0236.jpg,cucumber leaf,soybean leaf,0.823538,0.758383,0.957582
+cucumber leaf/google_0004.jpg,cucumber leaf,cucumber leaf,0.663972,0.440512,1.266654
+cucumber leaf/189 - Copy (2).jpg,cucumber leaf,cucumber leaf,0.929529,0.921171,0.531154
+cucumber leaf/google_0364.jpg,cucumber leaf,cucumber leaf,0.832501,0.804231,1.018708
+cucumber leaf/google_0296.jpg,cucumber leaf,cucumber leaf,0.980669,0.974440,0.158653
+cucumber leaf/google_0380.jpg,cucumber leaf,tomato bacterial leaf spot,0.157050,0.091254,3.721384
+cucumber leaf/google_0272.jpg,cucumber leaf,cucumber leaf,0.985408,0.982687,0.128410
+cucumber leaf/60.jpg,cucumber leaf,cucumber leaf,0.863514,0.808413,0.822189
+cucumber leaf/google_0120.jpg,cucumber leaf,cucumber leaf,0.959235,0.952429,0.314766
+cucumber leaf/78.jpg,cucumber leaf,cucumber angular leaf spot,0.834370,0.797301,1.021904
+cucumber leaf/google_0030.jpg,cucumber leaf,cucumber leaf,0.970530,0.949779,0.181688
+cucumber leaf/199.jpg,cucumber leaf,squash powdery mildew,0.334559,0.023635,2.402744
+cucumber leaf/google_0160.jpg,cucumber leaf,cucumber leaf,0.705393,0.505859,1.135561
+cucumber leaf/52.jpg,cucumber leaf,cucumber leaf,0.833043,0.699047,0.669672
+cucumber leaf/151.jpg,cucumber leaf,cucumber leaf,0.473426,0.180091,2.006907
+cucumber leaf/google_0367.jpg,cucumber leaf,cucumber leaf,0.127628,0.008955,3.386049
+cucumber leaf/google_0360.jpg,cucumber leaf,squash leaf,0.538333,0.268314,1.567426
+cucumber leaf/google_0095.jpg,cucumber leaf,squash leaf,0.355814,0.189525,2.834039
+cucumber leaf/168.jpg,cucumber leaf,cucumber leaf,0.779873,0.622854,0.900210
+cucumber leaf/google_0225.jpg,cucumber leaf,cucumber leaf,0.669091,0.566203,1.618905
+cucumber leaf/google_0107.jpg,cucumber leaf,soybean leaf,0.452999,0.325078,2.271540
+cucumber powdery mildew/74.jpg,cucumber powdery mildew,cucumber angular leaf spot,0.612449,0.448240,1.776036
+cucumber powdery mildew/google_0170.jpg,cucumber powdery mildew,cucumber leaf,0.929438,0.912576,0.490286
+cucumber powdery mildew/google_0042.jpg,cucumber powdery mildew,squash powdery mildew,0.356016,0.276185,3.038773
+cucumber powdery mildew/89.jpg,cucumber powdery mildew,grape downy mildew,0.884498,0.867166,0.797766
+cucumber powdery mildew/google_0131.jpg,cucumber powdery mildew,basil downy mildew,0.818314,0.786341,1.087916
+cucumber powdery mildew/google_0110.jpg,cucumber powdery mildew,cucumber powdery mildew,0.955319,0.941103,0.335366
+cucumber powdery mildew/154.jpg,cucumber powdery mildew,tomato leaf mold,0.826245,0.798004,1.090426
+cucumber powdery mildew/121.jpg,cucumber powdery mildew,cucumber powdery mildew,0.792263,0.769960,1.336718
+cucumber powdery mildew/244.jpg,cucumber powdery mildew,cucumber powdery mildew,0.404162,0.188163,2.457161
+cucumber powdery mildew/229.jpg,cucumber powdery mildew,cucumber powdery mildew,0.763654,0.632283,1.140962
+cucumber powdery mildew/149.jpg,cucumber powdery mildew,bean leaf,0.136452,0.026080,3.468152
+cucumber powdery mildew/google_0181.jpg,cucumber powdery mildew,squash powdery mildew,0.734914,0.637772,1.396616
+cucumber powdery mildew/141.jpg,cucumber powdery mildew,cucumber powdery mildew,0.739065,0.711929,1.604996
+cucumber powdery mildew/176.jpg,cucumber powdery mildew,cucumber powdery mildew,0.976693,0.967443,0.181572
+cucumber powdery mildew/137.jpg,cucumber powdery mildew,cucumber powdery mildew,0.459968,0.246050,2.254666
+cucumber powdery mildew/223.jpg,cucumber powdery mildew,squash powdery mildew,0.756525,0.669091,1.345435
+cucumber powdery mildew/google_0012.jpg,cucumber powdery mildew,squash powdery mildew,0.229200,0.114541,3.298528
+cucumber powdery mildew/26.jpg,cucumber powdery mildew,cucumber powdery mildew,0.821023,0.810115,1.200714
+cucumber powdery mildew/google_0046.jpg,cucumber powdery mildew,squash powdery mildew,0.931488,0.915942,0.477938
+cucumber powdery mildew/google_0089.jpg,cucumber powdery mildew,cucumber powdery mildew,0.325847,0.293348,3.377427
+cucumber powdery mildew/google_0092.jpg,cucumber powdery mildew,cucumber powdery mildew,0.504951,0.170141,1.605193
+cucumber powdery mildew/77.jpg,cucumber powdery mildew,cucumber powdery mildew,0.393821,0.288557,2.830256
+cucumber powdery mildew/159.jpg,cucumber powdery mildew,squash powdery mildew,0.461620,0.012372,1.299079
+eggplant cercospora leaf spot/185.jpg,eggplant cercospora leaf spot,grape black rot,0.122100,0.020737,3.502993
+eggplant cercospora leaf spot/google_0048.jpg,eggplant cercospora leaf spot,grapevine leafroll disease,0.313669,0.234306,3.179744
+eggplant cercospora leaf spot/google_0197.jpg,eggplant cercospora leaf spot,tomato bacterial leaf spot,0.193008,0.082064,3.165295
+eggplant cercospora leaf spot/google_0058.jpg,eggplant cercospora leaf spot,eggplant cercospora leaf spot,0.601796,0.506204,2.006852
+eggplant cercospora leaf spot/15.jpg,eggplant cercospora leaf spot,eggplant cercospora leaf spot,0.451566,0.102652,1.819705
+eggplant cercospora leaf spot/8 - Copy.jpg,eggplant cercospora leaf spot,tomato septoria leaf spot,0.267839,0.032509,2.320177
+eggplant cercospora leaf spot/google_0018.jpg,eggplant cercospora leaf spot,eggplant cercospora leaf spot,0.813652,0.747230,1.072282
+eggplant cercospora leaf spot/google_0095.jpg,eggplant cercospora leaf spot,citrus canker,0.084042,0.004849,3.957503
+eggplant leaf/google_0056.jpg,eggplant leaf,cucumber leaf,0.308497,0.031133,2.604708
+eggplant leaf/google_0133.jpg,eggplant leaf,eggplant leaf,0.985901,0.984253,0.128217
+eggplant leaf/google_0309.jpg,eggplant leaf,eggplant leaf,0.970193,0.967193,0.252076
+eggplant leaf/google_0224.jpg,eggplant leaf,eggplant leaf,0.779889,0.746337,1.322713
+eggplant leaf/186.jpg,eggplant leaf,eggplant leaf,0.558100,0.474901,2.149507
+eggplant leaf/4.jpg,eggplant leaf,eggplant leaf,0.316225,0.189187,3.055673
+eggplant leaf/67.jpg,eggplant leaf,blueberry leaf,0.223012,0.064166,3.165429
+eggplant leaf/google_0226.jpg,eggplant leaf,eggplant leaf,0.798974,0.779803,1.240033
+eggplant leaf/google_0244.jpg,eggplant leaf,eggplant leaf,0.808319,0.771021,1.165351
+eggplant leaf/62.jpg,eggplant leaf,potato late blight,0.193581,0.004386,3.056224
+eggplant leaf/google_0002.jpg,eggplant leaf,eggplant leaf,0.933784,0.928903,0.508191
+eggplant leaf/google_0282.jpg,eggplant leaf,eggplant leaf,0.970312,0.965014,0.234087
+eggplant leaf/google_0262.jpg,eggplant leaf,cucumber leaf,0.428073,0.325229,2.578682
+eggplant leaf/google_0004.jpg,eggplant leaf,eggplant leaf,0.288974,0.144396,3.176049
+eggplant leaf/7.jpg,eggplant leaf,eggplant leaf,0.508087,0.413689,2.365304
+eggplant leaf/google_0073.jpg,eggplant leaf,eggplant leaf,0.981259,0.974517,0.152589
+eggplant leaf/google_0212.jpg,eggplant leaf,eggplant leaf,0.541431,0.421960,2.295174
+eggplant leaf/google_0038.jpg,eggplant leaf,eggplant leaf,0.376266,0.284208,3.001663
+eggplant leaf/google_0012.jpg,eggplant leaf,eggplant leaf,0.596285,0.515643,2.082699
+eggplant leaf/34.jpg,eggplant leaf,banana panama disease,0.254048,0.003411,2.874138
+eggplant leaf/212.jpg,eggplant leaf,broccoli leaf,0.132887,0.060096,3.799505
+eggplant leaf/google_0093.jpg,eggplant leaf,eggplant leaf,0.948021,0.943467,0.408237
+eggplant leaf/google_0060.jpg,eggplant leaf,eggplant leaf,0.332989,0.272124,3.151533
+eggplant leaf/77.jpg,eggplant leaf,potato leaf,0.201183,0.102696,3.399242
+garlic leaf/google_0051.jpg,garlic leaf,garlic rust,0.934328,0.924295,0.488041
+garlic leaf/google_0193.jpg,garlic leaf,rice leaf,0.661621,0.507014,1.623826
+garlic leaf/263.jpg,garlic leaf,garlic leaf,0.486955,0.384577,2.439723
+garlic leaf/google_0084.jpg,garlic leaf,garlic leaf,0.791986,0.737457,1.251744
+garlic leaf/google_0077.jpg,garlic leaf,peach leaf,0.116294,0.043440,3.860201
+garlic leaf/google_0009.jpg,garlic leaf,rice leaf,0.441301,0.090262,1.917410
+garlic leaf/207.jpg,garlic leaf,garlic leaf,0.497592,0.325420,2.356802
+garlic leaf/333.jpg,garlic leaf,rice sheath blight,0.198289,0.100549,3.462896
+garlic leaf/google_0037.jpg,garlic leaf,garlic rust,0.336297,0.117623,2.128066
+garlic leaf/44.jpg,garlic leaf,garlic leaf,0.873543,0.863604,0.901792
+garlic leaf/google_0031.jpg,garlic leaf,garlic leaf,0.783541,0.761178,1.385312
+garlic leaf/google_0172.jpg,garlic leaf,bean leaf,0.119334,0.008995,3.573293
+garlic leaf/79.jpg,garlic leaf,garlic leaf,0.131322,0.000035,3.697093
+garlic leaf/90.jpg,garlic leaf,garlic leaf,0.915753,0.910635,0.631625
+garlic leaf/30.jpg,garlic leaf,garlic leaf blight,0.540472,0.504834,2.543396
+garlic leaf/341.jpg,garlic leaf,garlic leaf,0.742525,0.591605,1.141770
+garlic leaf/81.jpg,garlic leaf,garlic leaf,0.372823,0.284069,3.033257
+garlic leaf/212.jpg,garlic leaf,garlic leaf,0.488096,0.357488,2.470394
+garlic leaf/google_0118.jpg,garlic leaf,garlic rust,0.413586,0.277629,2.620892
+garlic leaf/249.jpg,garlic leaf,garlic leaf,0.600637,0.471529,1.902943
+garlic leaf/14.jpg,garlic leaf,garlic leaf,0.535747,0.507726,2.595696
+garlic leaf/google_0235.jpg,garlic leaf,garlic leaf blight,0.259628,0.149204,3.343205
+garlic leaf blight/17 - Copy (3).jpg,garlic leaf blight,garlic leaf blight,0.240914,0.181879,3.488875
+garlic leaf blight/101.jpg,garlic leaf blight,garlic leaf blight,0.909053,0.896929,0.638747
+garlic leaf blight/google_0065.jpg,garlic leaf blight,garlic leaf blight,0.694526,0.661093,1.751361
+garlic leaf blight/google_0226.jpg,garlic leaf blight,garlic leaf blight,0.400569,0.058698,2.097686
+garlic leaf blight/google_0302 - Copy (2).jpg,garlic leaf blight,garlic rust,0.216376,0.097084,3.451516
+garlic leaf blight/google_0163.jpg,garlic leaf blight,garlic leaf,0.303621,0.061994,2.454423
+garlic leaf blight/google_0159 - Copy.jpg,garlic leaf blight,garlic leaf blight,0.125835,0.010175,3.596206
+garlic leaf blight/24.jpg,garlic leaf blight,garlic leaf blight,0.325036,0.235050,3.165858
+garlic leaf blight/163.jpg,garlic leaf blight,garlic leaf blight,0.610567,0.533988,2.016187
+garlic leaf blight/google_0004.jpg,garlic leaf blight,corn leaf,0.127492,0.002210,3.831641
+garlic leaf blight/google_0032.jpg,garlic leaf blight,rice sheath blight,0.754545,0.715092,1.476949
+garlic leaf blight/29.jpg,garlic leaf blight,garlic leaf blight,0.363537,0.260021,2.862425
+garlic leaf blight/52.jpg,garlic leaf blight,garlic leaf blight,0.575595,0.468339,2.094928
+garlic leaf blight/39.jpg,garlic leaf blight,garlic leaf blight,0.582950,0.538132,2.300202
+garlic rust/335.jpg,garlic rust,garlic rust,0.162624,0.062544,3.615262
+garlic rust/4.jpg,garlic rust,garlic rust,0.654427,0.464961,1.442618
+garlic rust/122.jpg,garlic rust,garlic leaf blight,0.209721,0.123582,3.527095
+garlic rust/53.jpg,garlic rust,garlic leaf blight,0.281255,0.123246,3.092364
+garlic rust/google_0128.jpg,garlic rust,garlic rust,0.345819,0.160776,2.514188
+garlic rust/google_0002.jpg,garlic rust,garlic leaf blight,0.970322,0.966964,0.243414
+garlic rust/234.jpg,garlic rust,garlic rust,0.832151,0.765093,0.883279
+garlic rust/google_0088.jpg,garlic rust,garlic rust,0.183570,0.048180,3.595035
+garlic rust/247.jpg,garlic rust,garlic rust,0.694310,0.655080,1.783993
+garlic rust/290.jpg,garlic rust,corn gray leaf spot,0.100841,0.041976,3.933401
+garlic rust/29.jpg,garlic rust,garlic rust,0.946598,0.921644,0.364368
+garlic rust/94.jpg,garlic rust,garlic leaf,0.296035,0.059558,2.888150
+garlic rust/109.jpg,garlic rust,corn rust,0.180605,0.023013,3.137836
+garlic rust/96.jpg,garlic rust,garlic leaf,0.630197,0.562012,1.980806
+garlic rust/2.jpg,garlic rust,garlic rust,0.907913,0.893246,0.657375
+garlic rust/32.jpg,garlic rust,garlic rust,0.894866,0.877270,0.736793
+ginger leaf/google_0051.jpg,ginger leaf,peach leaf,0.194928,0.028296,2.959889
+ginger leaf/4.jpg,ginger leaf,ginger leaf,0.975817,0.969984,0.202963
+ginger leaf/google_0075.jpg,ginger leaf,garlic leaf,0.338706,0.194165,2.957902
+ginger leaf/google_0136.jpg,ginger leaf,garlic leaf,0.215910,0.088679,3.345384
+ginger leaf/google_0037.jpg,ginger leaf,ginger leaf,0.202460,0.072196,3.356376
+ginger leaf/google_0150.jpg,ginger leaf,garlic leaf blight,0.183875,0.065535,3.609919
+ginger leaf/59.jpg,ginger leaf,garlic leaf,0.141897,0.078040,3.867294
+ginger leaf/google_0203.jpg,ginger leaf,cabbage alternaria leaf spot,0.134477,0.022208,3.633698
+ginger leaf/google_0262.jpg,ginger leaf,plum leaf,0.340204,0.178252,2.930938
+ginger leaf/7.jpg,ginger leaf,garlic leaf,0.447949,0.413751,3.011991
+ginger leaf/11.jpg,ginger leaf,ginger leaf,0.672572,0.617825,1.728108
+ginger leaf/63.jpg,ginger leaf,garlic rust,0.311961,0.249482,3.238287
+ginger leaf/93.jpg,ginger leaf,potato leaf,0.193839,0.086358,3.408809
+ginger leaf/google_0015.jpg,ginger leaf,ginger leaf,0.391802,0.311236,3.024157
+ginger leaf/google_0109.jpg,ginger leaf,ginger leaf,0.899675,0.864288,0.605746
+ginger leaf/77.jpg,ginger leaf,ginger leaf spot,0.621909,0.557131,2.041010
+ginger leaf/google_0174.jpg,ginger leaf,ginger leaf,0.202529,0.102205,3.574955
+ginger leaf spot/105.jpg,ginger leaf spot,ginger leaf spot,0.943338,0.930988,0.420264
+ginger leaf spot/google_0011.jpg,ginger leaf spot,ginger sheath blight,0.898513,0.880947,0.706861
+ginger leaf spot/62.jpg,ginger leaf spot,garlic rust,0.429499,0.221395,2.188584
+ginger leaf spot/7.jpg,ginger leaf spot,ginger leaf spot,0.908632,0.890525,0.626374
+ginger leaf spot/88.jpg,ginger leaf spot,rice blast,0.527720,0.232217,1.693680
+ginger leaf spot/96.jpg,ginger leaf spot,garlic leaf,0.434197,0.370005,2.972348
+ginger leaf spot/82.jpg,ginger leaf spot,garlic rust,0.361796,0.236619,2.581459
+ginger leaf spot/32.jpg,ginger leaf spot,ginger leaf,0.650469,0.593401,1.967711
+ginger sheath blight/101.jpg,ginger sheath blight,rice leaf,0.828002,0.813157,1.153978
+ginger sheath blight/google_0021.jpg,ginger sheath blight,ginger leaf,0.226900,0.073112,3.081991
+ginger sheath blight/3.jpg,ginger sheath blight,banana panama disease,0.269852,0.191150,3.261074
+ginger sheath blight/79.jpg,ginger sheath blight,rice sheath blight,0.760273,0.663441,1.307577
+ginger sheath blight/21.jpg,ginger sheath blight,rice sheath blight,0.489498,0.093176,1.436763
+ginger sheath blight/161.jpg,ginger sheath blight,rice sheath blight,0.861654,0.853836,0.976938
+ginger sheath blight/52.jpg,ginger sheath blight,rice sheath blight,0.884058,0.862359,0.776131
+ginger sheath blight/32.jpg,ginger sheath blight,garlic rust,0.582279,0.527152,2.241505
+grape black rot/google_0133.jpg,grape black rot,grape leaf spot,0.273294,0.146734,3.223011
+grape black rot/google_0003.jpg,grape black rot,grape black rot,0.644432,0.585486,1.942217
+grape black rot/40.jpg,grape black rot,grape black rot,0.940196,0.933156,0.462732
+grape black rot/74.jpg,grape black rot,plum pocket disease,0.234216,0.157526,3.426571
+grape black rot/google_0283.jpg,grape black rot,grape black rot,0.884581,0.870804,0.795510
+grape black rot/google_0036 - Copy.jpg,grape black rot,grape black rot,0.963010,0.960672,0.312679
+grape black rot/12.jpg,grape black rot,grape black rot,0.406760,0.332751,3.002093
+grape black rot/google_0130.jpg,grape black rot,grape black rot,0.777454,0.753466,1.413527
+grape black rot/google_0234.jpg,grape black rot,grape black rot,0.380204,0.150280,2.685524
+grape black rot/google_0037.jpg,grape black rot,grape black rot,0.842257,0.717327,0.640381
+grape black rot/44.jpg,grape black rot,tomato late blight,0.829979,0.792972,1.022072
+grape black rot/23.jpg,grape black rot,grape black rot,0.803365,0.741370,1.181217
+grape black rot/18.jpg,grape black rot,grape downy mildew,0.503169,0.080651,1.196826
+grape black rot/178.jpg,grape black rot,grape black rot,0.940251,0.909537,0.390091
+grape black rot/49.jpg,grape black rot,grape black rot,0.954286,0.950875,0.373773
+grape black rot/google_0028.jpg,grape black rot,grape black rot,0.843424,0.775074,0.917837
+grape black rot/google_0040.jpg,grape black rot,cherry leaf spot,0.090037,0.009029,3.882310
+grape black rot/google_0018.jpg,grape black rot,grape black rot,0.593318,0.308351,1.415127
+grape black rot/34.jpg,grape black rot,tomato bacterial leaf spot,0.314558,0.163877,3.021940
+grape black rot/33.jpg,grape black rot,grape black rot,0.813634,0.768016,1.166294
+grape black rot/155.jpg,grape black rot,grape black rot,0.989570,0.987431,0.094295
+grape black rot/google_0260.jpg,grape black rot,grape black rot,0.860504,0.838741,0.921971
+grape black rot/37.jpg,grape black rot,grape black rot,0.923332,0.918015,0.586975
+grape downy mildew/38.jpg,grape downy mildew,grape downy mildew,0.602645,0.250948,1.006765
+grape downy mildew/google_0045.jpg,grape downy mildew,grape black rot,0.150412,0.032407,3.450060
+grape downy mildew/google_0153.jpg,grape downy mildew,grape downy mildew,0.575260,0.295107,1.352967
+grape downy mildew/10.jpg,grape downy mildew,grape black rot,0.938250,0.927900,0.466126
+grape downy mildew/google_0041.jpg,grape downy mildew,grape leaf spot,0.124932,0.021190,3.620028
+grape downy mildew/google_0193.jpg,grape downy mildew,grape downy mildew,0.683055,0.638822,1.830648
+grape downy mildew/243 - Copy (2).jpg,grape downy mildew,grape downy mildew,0.923812,0.888327,0.474814
+grape downy mildew/68.jpg,grape downy mildew,grape downy mildew,0.492335,0.430944,2.583384
+grape downy mildew/260.jpg,grape downy mildew,grape downy mildew,0.870800,0.853859,0.884270
+grape downy mildew/google_0074.jpg,grape downy mildew,grape downy mildew,0.188270,0.117672,3.503662
+grape downy mildew/google_0363.jpg,grape downy mildew,squash leaf,0.168435,0.002687,3.055172
+grape downy mildew/google_0215.jpg,grape downy mildew,grape leaf spot,0.500490,0.426083,2.531305
+grape downy mildew/106.jpg,grape downy mildew,grape black rot,0.661715,0.488043,1.516256
+grape downy mildew/google_0255.jpg,grape downy mildew,grape downy mildew,0.617751,0.550383,2.003996
+grape downy mildew/google_0094.jpg,grape downy mildew,grape downy mildew,0.693291,0.577704,1.521947
+grape downy mildew/232.jpg,grape downy mildew,grape downy mildew,0.938592,0.925958,0.446365
+grape downy mildew/275.jpg,grape downy mildew,grape downy mildew,0.621161,0.532184,1.935063
+grape downy mildew/google_0238.jpg,grape downy mildew,grape downy mildew,0.369271,0.303887,3.019310
+grape downy mildew/221.jpg,grape downy mildew,grape downy mildew,0.624689,0.514677,1.773098
+grape downy mildew/google_0081.jpg,grape downy mildew,grape downy mildew,0.653872,0.612336,1.937212
+grape downy mildew/google_0083.jpg,grape downy mildew,grape downy mildew,0.520078,0.467705,2.526178
+grape downy mildew/114.jpg,grape downy mildew,grape downy mildew,0.406644,0.276074,2.672694
+grape downy mildew/google_0062.jpg,grape downy mildew,grape leaf spot,0.353461,0.219640,2.817111
+grape downy mildew/google_0108.jpg,grape downy mildew,grape downy mildew,0.811874,0.731431,0.995415
+grape downy mildew/google_0104.jpg,grape downy mildew,grape downy mildew,0.865061,0.785180,0.695813
+grape downy mildew/google_0113.jpg,grape downy mildew,grape downy mildew,0.377910,0.316007,3.137486
+grape downy mildew/google_0191.jpg,grape downy mildew,apple rust,0.518088,0.452164,2.400455
+grape downy mildew/google_0141.jpg,grape downy mildew,grape downy mildew,0.451389,0.354008,2.612597
+grape downy mildew/97.jpg,grape downy mildew,grape downy mildew,0.893655,0.879524,0.731475
+grape downy mildew/91.jpg,grape downy mildew,squash powdery mildew,0.409902,0.234355,2.382839
+grape downy mildew/google_0256.jpg,grape downy mildew,grape black rot,0.699435,0.441790,0.910634
+grape downy mildew/google_0213.jpg,grape downy mildew,strawberry anthracnose,0.238718,0.176339,3.389850
+grape downy mildew/google_0030.jpg,grape downy mildew,grape downy mildew,0.337877,0.203847,2.900472
+grape downy mildew/201.jpg,grape downy mildew,grape downy mildew,0.780765,0.726333,1.266452
+grape downy mildew/182.jpg,grape downy mildew,grape downy mildew,0.816333,0.747139,1.047575
+grape downy mildew/google_0123.jpg,grape downy mildew,tomato septoria leaf spot,0.229862,0.092449,2.973322
+grape downy mildew/google_0147.jpg,grape downy mildew,grape downy mildew,0.289972,0.102285,3.009031
+grape downy mildew/google_0426.jpg,grape downy mildew,grape downy mildew,0.847843,0.833567,1.032650
+grape downy mildew/272 - Copy.jpg,grape downy mildew,grape downy mildew,0.788890,0.767859,1.314216
+grape leaf/87.jpg,grape leaf,grape leaf,0.868406,0.850458,0.871708
+grape leaf/40.jpg,grape leaf,grape leaf,0.852467,0.827913,0.976869
+grape leaf/122.jpg,grape leaf,grape leaf,0.366582,0.186269,2.781644
+grape leaf/103.jpg,grape leaf,grape downy mildew,0.671450,0.624695,1.860876
+grape leaf/125.jpg,grape leaf,grape leaf,0.767431,0.692747,1.291146
+grape leaf/181.jpg,grape leaf,grape leaf,0.713335,0.652968,1.647270
+grape leaf/178.jpg,grape leaf,grape leaf,0.282158,0.020724,2.651876
+grape leaf/21.jpg,grape leaf,grape leaf,0.514606,0.427247,2.399042
+grape leaf/google_0246.jpg,grape leaf,eggplant leaf,0.112950,0.003407,3.512089
+grape leaf/49.jpg,grape leaf,grape leaf,0.975690,0.972562,0.206245
+grape leaf/google_0059.jpg,grape leaf,grape leaf,0.975156,0.971034,0.211350
+grape leaf/26.jpg,grape leaf,grape leaf,0.521066,0.450375,2.489586
+grape leaf/33.jpg,grape leaf,maple leaf,0.730490,0.674666,1.461875
+grape leaf/143.jpg,grape leaf,grape leaf,0.269618,0.122597,3.361903
+grape leaf/2.jpg,grape leaf,apple mosaic virus,0.374326,0.314555,3.099392
+grape leaf/52.jpg,grape leaf,grape leaf,0.716150,0.635872,1.567789
+grape leaf/179.jpg,grape leaf,grape downy mildew,0.137799,0.004752,3.531477
+grape leaf/50.jpg,grape leaf,grape leaf,0.414108,0.329201,2.816638
+grape leaf/64.jpg,grape leaf,grape leaf,0.572686,0.485132,1.968875
+grape leaf/66.jpg,grape leaf,grape leaf,0.503436,0.395458,2.491558
+grape leaf spot/google_0077 - Copy (3).jpg,grape leaf spot,grape leaf spot,0.270303,0.199424,3.374825
+grape leaf spot/44.jpg,grape leaf spot,grape black rot,0.897974,0.876246,0.717058
+grape leaf spot/15.jpg,grape leaf spot,eggplant cercospora leaf spot,0.356694,0.246630,3.066816
+grape leaf spot/25.jpg,grape leaf spot,grape leaf,0.905743,0.885418,0.654044
+grape leaf spot/140.jpg,grape leaf spot,grape leaf spot,0.292001,0.176747,3.142607
+grape leaf spot/google_0077 - Copy (2).jpg,grape leaf spot,grape leaf spot,0.539670,0.421052,2.226417
+grape leaf spot/2.jpg,grape leaf spot,squash powdery mildew,0.354298,0.238931,2.936898
+grape leaf spot/155.jpg,grape leaf spot,grape leaf spot,0.671183,0.641111,1.936111
+grape leaf spot/google_0046.jpg,grape leaf spot,tomato early blight,0.629845,0.421376,1.421860
+grape leaf spot/google_0060.jpg,grape leaf spot,potato early blight,0.556094,0.276648,1.599558
+grapevine leafroll disease/10.jpg,grapevine leafroll disease,grape leaf spot,0.370720,0.147615,2.650888
+grapevine leafroll disease/4.jpg,grapevine leafroll disease,grapevine leafroll disease,0.532436,0.408315,2.277074
+grapevine leafroll disease/71.jpg,grapevine leafroll disease,squash leaf,0.115185,0.042816,3.578840
+grapevine leafroll disease/google_0072.jpg,grapevine leafroll disease,grapevine leafroll disease,0.962409,0.944878,0.261943
+grapevine leafroll disease/google_0004 - Copy (7).jpg,grapevine leafroll disease,grapevine leafroll disease,0.601036,0.560338,2.187535
+grapevine leafroll disease/google_0108.jpg,grapevine leafroll disease,grape leaf spot,0.492468,0.350765,2.296883
+grapevine leafroll disease/google_0116 - Copy.jpg,grapevine leafroll disease,grapevine leafroll disease,0.953937,0.945790,0.352832
+grapevine leafroll disease/22.jpg,grapevine leafroll disease,grape leaf,0.517341,0.444799,2.447703
+grapevine leafroll disease/google_0211.jpg,grapevine leafroll disease,grapevine leafroll disease,0.521371,0.408332,2.279358
+grapevine leafroll disease/google_0006.jpg,grapevine leafroll disease,grapevine leafroll disease,0.262062,0.056915,3.077655
+grapevine leafroll disease/google_0043.jpg,grapevine leafroll disease,grapevine leafroll disease,0.849518,0.809743,0.923894
+grapevine leafroll disease/google_0004 - Copy.jpg,grapevine leafroll disease,grapevine leafroll disease,0.208494,0.120748,3.462078
+grapevine leafroll disease/google_0182.jpg,grapevine leafroll disease,grape downy mildew,0.311139,0.208099,3.112631
+lettuce downy mildew/340.jpg,lettuce downy mildew,potato late blight,0.306055,0.163883,3.005777
+lettuce downy mildew/8.jpg,lettuce downy mildew,lettuce downy mildew,0.727189,0.610055,1.365644
+lettuce downy mildew/53.jpg,lettuce downy mildew,lettuce downy mildew,0.782783,0.728172,1.288722
+lettuce downy mildew/184.jpg,lettuce downy mildew,lettuce downy mildew,0.330197,0.059213,2.611426
+lettuce downy mildew/3.jpg,lettuce downy mildew,lettuce mosaic virus,0.572222,0.418869,1.800972
+lettuce downy mildew/193.jpg,lettuce downy mildew,lettuce downy mildew,0.257881,0.198061,3.421392
+lettuce downy mildew/65.jpg,lettuce downy mildew,lettuce mosaic virus,0.961315,0.948152,0.283774
+lettuce downy mildew/google_0040.jpg,lettuce downy mildew,cucumber powdery mildew,0.946909,0.920586,0.355695
+lettuce downy mildew/60.jpg,lettuce downy mildew,lettuce downy mildew,0.674439,0.473446,1.319102
+lettuce downy mildew/15.jpg,lettuce downy mildew,lettuce downy mildew,0.549118,0.455208,2.259587
+lettuce downy mildew/78.jpg,lettuce downy mildew,lettuce mosaic virus,0.983354,0.979516,0.135952
+lettuce leaf/google_0200.jpg,lettuce leaf,lettuce leaf,0.304513,0.187007,3.088718
+lettuce leaf/google_0056.jpg,lettuce leaf,lettuce mosaic virus,0.601359,0.367817,1.608760
+lettuce leaf/google_0054.jpg,lettuce leaf,lettuce leaf,0.929644,0.926063,0.554966
+lettuce leaf/google_0242.jpg,lettuce leaf,lettuce leaf,0.249186,0.167439,3.537584
+lettuce leaf/google_0409.jpg,lettuce leaf,tomato leaf,0.095853,0.008112,3.755583
+lettuce leaf/google_0372.jpg,lettuce leaf,basil leaf,0.810602,0.791299,1.265958
+lettuce leaf/google_0281.jpg,lettuce leaf,lettuce leaf,0.638483,0.556169,2.011986
+lettuce leaf/12.jpg,lettuce leaf,lettuce leaf,0.796551,0.768823,1.297317
+lettuce leaf/google_0336.jpg,lettuce leaf,lettuce leaf,0.432551,0.373332,2.925124
+lettuce leaf/google_0416.jpg,lettuce leaf,lettuce leaf,0.416788,0.251474,2.713022
+lettuce leaf/google_0142.jpg,lettuce leaf,lettuce leaf,0.818827,0.772450,1.084914
+lettuce leaf/google_0262.jpg,lettuce leaf,lettuce leaf,0.830040,0.814047,1.151240
+lettuce leaf/google_0088.jpg,lettuce leaf,lettuce mosaic virus,0.319717,0.024725,2.460919
+lettuce leaf/google_0412.jpg,lettuce leaf,lettuce leaf,0.926044,0.919658,0.559665
+lettuce leaf/google_0376.jpg,lettuce leaf,lettuce leaf,0.730774,0.624419,1.370706
+lettuce leaf/google_0293.jpg,lettuce leaf,apple leaf,0.182146,0.021847,3.029428
+lettuce leaf/google_0177.jpg,lettuce leaf,lettuce leaf,0.686874,0.559679,1.506648
+lettuce leaf/google_0026.jpg,lettuce leaf,lettuce leaf,0.514564,0.399363,2.339767
+lettuce leaf/google_0296.jpg,lettuce leaf,lettuce leaf,0.589096,0.494501,2.006677
+lettuce leaf/google_0173.jpg,lettuce leaf,lettuce leaf,0.862361,0.824206,0.859515
+lettuce leaf/google_0349.jpg,lettuce leaf,lettuce leaf,0.344428,0.226995,2.938011
+lettuce leaf/google_0096.jpg,lettuce leaf,lettuce leaf,0.546979,0.425746,2.263262
+lettuce leaf/google_0315.jpg,lettuce leaf,lettuce leaf,0.958593,0.955743,0.343448
+lettuce leaf/google_0227.jpg,lettuce leaf,cabbage leaf,0.738127,0.638552,1.270520
+lettuce mosaic virus/8.jpg,lettuce mosaic virus,tobacco mosaic virus,0.171223,0.003955,3.341041
+lettuce mosaic virus/16.jpg,lettuce mosaic virus,lettuce downy mildew,0.418788,0.257284,2.497159
+lettuce mosaic virus/google_0050.jpg,lettuce mosaic virus,lettuce mosaic virus,0.211088,0.125658,3.613944
+lettuce mosaic virus/google_0040 - Copy.jpg,lettuce mosaic virus,lettuce mosaic virus,0.311023,0.034348,2.700191
+lettuce mosaic virus/google_0088.jpg,lettuce mosaic virus,lettuce mosaic virus,0.909673,0.854827,0.494539
+lettuce mosaic virus/google_0141.jpg,lettuce mosaic virus,lettuce mosaic virus,0.813414,0.795675,1.243228
+lettuce mosaic virus/97.jpg,lettuce mosaic virus,tomato yellow leaf curl virus,0.537867,0.433319,2.173179
+lettuce mosaic virus/google_0061 - Copy.jpg,lettuce mosaic virus,lettuce mosaic virus,0.312992,0.201915,2.971322
+lettuce mosaic virus/google_0010.jpg,lettuce mosaic virus,lettuce mosaic virus,0.161660,0.074136,3.564380
+lettuce mosaic virus/google_0049 - Copy (6).jpg,lettuce mosaic virus,lettuce mosaic virus,0.247041,0.008500,3.099870
+maple leaf/295.jpg,maple leaf,grape leaf,0.938405,0.924629,0.456170
+maple leaf/156.jpg,maple leaf,maple leaf,0.932859,0.902684,0.432299
+maple leaf/413.jpg,maple leaf,maple leaf,0.960323,0.957671,0.326018
+maple leaf/254.jpg,maple leaf,maple leaf,0.953907,0.946911,0.365137
+maple leaf/133.jpg,maple leaf,maple leaf,0.510572,0.251506,1.714186
+maple leaf/8.jpg,maple leaf,maple leaf,0.954827,0.952533,0.373908
+maple leaf/322.jpg,maple leaf,maple leaf,0.941148,0.914758,0.387866
+maple leaf/283.jpg,maple leaf,cherry leaf,0.128412,0.020092,3.625008
+maple leaf/181.jpg,maple leaf,maple leaf,0.952689,0.948291,0.380270
+maple leaf/332.jpg,maple leaf,maple leaf,0.870331,0.848819,0.863803
+maple leaf/319.jpg,maple leaf,maple leaf,0.959764,0.956355,0.336642
+maple leaf/google_0088.jpg,maple leaf,maple leaf,0.602434,0.466347,1.922447
+maple leaf/21.jpg,maple leaf,maple leaf,0.984843,0.981978,0.132404
+maple leaf/114.jpg,maple leaf,maple leaf,0.892006,0.885322,0.792722
+maple leaf/407.jpg,maple leaf,cucumber leaf,0.537523,0.465883,2.283585
+maple leaf/266.jpg,maple leaf,maple leaf,0.697862,0.510632,1.178629
+maple leaf/22.jpg,maple leaf,maple leaf,0.652519,0.621465,2.035009
+maple leaf/402.jpg,maple leaf,maple leaf,0.948538,0.946165,0.422978
+maple leaf/81.jpg,maple leaf,maple leaf,0.861665,0.833609,0.910441
+maple leaf/339.jpg,maple leaf,maple leaf,0.317985,0.175820,2.921931
+maple leaf/316.jpg,maple leaf,maple leaf,0.957429,0.946064,0.321691
+maple leaf/405.jpg,maple leaf,maple leaf,0.547445,0.481806,2.399240
+maple leaf/109.jpg,maple leaf,maple leaf,0.959526,0.953473,0.324364
+maple leaf/25.jpg,maple leaf,maple leaf,0.790858,0.749184,1.316893
+maple leaf/95.jpg,maple leaf,maple leaf,0.582590,0.489803,2.150501
+maple leaf/14.jpg,maple leaf,maple leaf,0.991606,0.989444,0.075854
+maple leaf/28.jpg,maple leaf,maple leaf,0.800989,0.775998,1.228302
+maple leaf/357.jpg,maple leaf,maple leaf,0.590976,0.548792,2.266763
+maple leaf/google_0166.jpg,maple leaf,maple leaf,0.986006,0.985058,0.130080
+maple leaf/57.jpg,maple leaf,maple leaf,0.900226,0.890559,0.708352
+maple leaf/310.jpg,maple leaf,cucumber leaf,0.156448,0.011785,3.391408
+maple tar spot/google_0101.jpg,maple tar spot,eggplant cercospora leaf spot,0.167941,0.036965,3.250349
+maple tar spot/google_0099.jpg,maple tar spot,zucchini yellow mosaic virus,0.300656,0.137421,3.015305
+maple tar spot/google_0072.jpg,maple tar spot,maple tar spot,0.908361,0.887540,0.640519
+maple tar spot/google_0094.jpg,maple tar spot,maple tar spot,0.500675,0.446067,2.486518
+maple tar spot/google_0102.jpg,maple tar spot,maple tar spot,0.946398,0.937863,0.414228
+maple tar spot/google_0088.jpg,maple tar spot,maple tar spot,0.899509,0.888604,0.728029
+maple tar spot/google_0028.jpg,maple tar spot,maple tar spot,0.228572,0.068187,3.122715
+maple tar spot/google_0117.jpg,maple tar spot,eggplant cercospora leaf spot,0.092174,0.017921,3.894648
+maple tar spot/google_0205.jpg,maple tar spot,maple tar spot,0.102136,0.005757,3.516325
+maple tar spot/google_0161.jpg,maple tar spot,maple tar spot,0.936178,0.930355,0.499774
+maple tar spot/google_0013.jpg,maple tar spot,maple tar spot,0.884956,0.861136,0.765383
+maple tar spot/google_0012.jpg,maple tar spot,maple tar spot,0.119864,0.049037,3.801955
+maple tar spot/google_0043.jpg,maple tar spot,maple tar spot,0.771163,0.747240,1.445877
+maple tar spot/google_0182.jpg,maple tar spot,maple tar spot,0.946798,0.943195,0.425481
+peach leaf/13.jpg,peach leaf,plum leaf,0.274304,0.023014,2.819732
+peach leaf/147.jpg,peach leaf,cherry leaf,0.388395,0.266055,2.726765
+peach leaf/8.jpg,peach leaf,plum leaf,0.196557,0.007208,2.720241
+peach leaf/google_0328.jpg,peach leaf,apple leaf,0.774627,0.710847,1.159539
+peach leaf/google_0000.jpg,peach leaf,blueberry leaf,0.252032,0.010639,2.939707
+peach leaf/google_0311.jpg,peach leaf,peach leaf,0.501304,0.396619,2.293078
+peach leaf/google_0339.jpg,peach leaf,peach leaf,0.965227,0.959358,0.279263
+peach leaf/google_0178.jpg,peach leaf,peach leaf,0.722415,0.697272,1.653840
+peach leaf/178.jpg,peach leaf,peach leaf,0.519818,0.426376,2.323445
+peach leaf/146 - Copy.jpg,peach leaf,peach leaf,0.991368,0.990084,0.080341
+peach leaf/google_0083.jpg,peach leaf,bell pepper leaf,0.123549,0.043766,3.866357
+peach leaf/170.jpg,peach leaf,blueberry leaf,0.512762,0.433119,2.325898
+peach leaf/164.jpg,peach leaf,banana panama disease,0.215241,0.146877,3.659566
+peach leaf/34.jpg,peach leaf,peach leaf,0.563120,0.505156,2.285536
+peach leaf/227.jpg,peach leaf,peach leaf,0.464788,0.397713,2.775416
+peach leaf curl/47.jpg,peach leaf curl,peach leaf curl,0.224801,0.108242,2.933310
+peach leaf curl/google_0303.jpg,peach leaf curl,peach leaf curl,0.980361,0.978350,0.170719
+peach leaf curl/40.jpg,peach leaf curl,peach leaf curl,0.079644,0.007305,3.874821
+peach leaf curl/google_0064.jpg,peach leaf curl,peach leaf curl,0.613515,0.516772,1.937869
+peach leaf curl/google_0207.jpg,peach leaf curl,peach leaf curl,0.369519,0.303186,3.200803
+peach leaf curl/google_0150.jpg,peach leaf curl,peach leaf curl,0.965831,0.957859,0.265918
+peach leaf curl/google_0247.jpg,peach leaf curl,tomato mosaic virus,0.182009,0.015633,3.385134
+peach leaf curl/google_0004.jpg,peach leaf curl,peach leaf curl,0.585102,0.491572,2.067448
+peach leaf curl/google_0220.jpg,peach leaf curl,tomato yellow leaf curl virus,0.291741,0.192515,3.129125
+peach leaf curl/google_0049.jpg,peach leaf curl,peach leaf curl,0.992513,0.990846,0.068460
+peach leaf curl/google_0067.jpg,peach leaf curl,tobacco leaf,0.205949,0.049988,3.210749
+peach leaf curl/google_0204.jpg,peach leaf curl,peach leaf curl,0.586903,0.523771,2.227066
+peach leaf curl/google_0317.jpg,peach leaf curl,peach leaf curl,0.874617,0.848296,0.825321
+peach leaf curl/google_0038.jpg,peach leaf curl,peach leaf curl,0.963073,0.960192,0.305972
+peach leaf curl/25.jpg,peach leaf curl,peach leaf curl,0.787976,0.731589,1.210979
+peach leaf curl/google_0126 - Copy.jpg,peach leaf curl,lettuce downy mildew,0.400116,0.274417,2.624290
+peach leaf curl/6.jpg,peach leaf curl,blueberry rust,0.141245,0.044372,3.502186
+peach leaf curl/google_0012.jpg,peach leaf curl,peach leaf curl,0.936991,0.933738,0.495471
+peach leaf curl/google_0196 - Copy.jpg,peach leaf curl,peach leaf curl,0.163585,0.078787,3.714527
+peach leaf curl/33.jpg,peach leaf curl,peach leaf curl,0.971839,0.969733,0.235865
+peach leaf curl/google_0165.jpg,peach leaf curl,peach leaf curl,0.987184,0.985756,0.118038
+peach leaf curl/google_0089.jpg,peach leaf curl,peach leaf curl,0.736447,0.681562,1.543158
+peach leaf curl/google_0060.jpg,peach leaf curl,peach leaf curl,0.232231,0.128887,3.346883
+plum leaf/google_0056.jpg,plum leaf,peach leaf curl,0.202935,0.005434,3.233923
+plum leaf/183.jpg,plum leaf,cherry powdery mildew,0.229617,0.144429,3.438124
+plum leaf/459.jpg,plum leaf,plum leaf,0.159232,0.004307,3.502897
+plum leaf/368.jpg,plum leaf,plum leaf,0.599993,0.503258,2.028777
+plum leaf/google_0064.jpg,plum leaf,plum leaf,0.640294,0.591400,1.987650
+plum leaf/74.jpg,plum leaf,blueberry leaf,0.182324,0.051210,3.154790
+plum leaf/263.jpg,plum leaf,plum leaf,0.709147,0.634233,1.534456
+plum leaf/google_0208.jpg,plum leaf,plum pocket disease,0.474772,0.312767,2.445997
+plum leaf/google_0209.jpg,plum leaf,plum leaf,0.463124,0.358255,2.609948
+plum leaf/google_0011.jpg,plum leaf,plum leaf,0.963830,0.960149,0.288070
+plum leaf/424.jpg,plum leaf,apple leaf,0.148035,0.056368,3.733246
+plum leaf/277.jpg,plum leaf,soybean leaf,0.418751,0.264291,2.512794
+plum leaf/59.jpg,plum leaf,plum leaf,0.206480,0.142767,3.647333
+plum leaf/google_0203.jpg,plum leaf,grape black rot,0.434176,0.311860,2.596164
+plum leaf/google_0031.jpg,plum leaf,cherry leaf,0.486487,0.182062,1.885260
+plum leaf/369.jpg,plum leaf,plum leaf,0.323644,0.150704,2.680656
+plum leaf/279.jpg,plum leaf,apple mosaic virus,0.155861,0.030246,3.313556
+plum leaf/49.jpg,plum leaf,plum leaf,0.477438,0.278315,2.032908
+plum leaf/162.jpg,plum leaf,plum leaf,0.284691,0.116613,2.565871
+plum leaf/410.jpg,plum leaf,grape downy mildew,0.270012,0.077766,2.969165
+plum leaf/266.jpg,plum leaf,citrus greening disease,0.215061,0.053087,2.884183
+plum leaf/176.jpg,plum leaf,cabbage leaf,0.223925,0.176525,3.649694
+plum leaf/41.jpg,plum leaf,maple leaf,0.926149,0.919815,0.564078
+plum leaf/76.jpg,plum leaf,cucumber leaf,0.189610,0.072615,3.273261
+plum leaf/95.jpg,plum leaf,plum leaf,0.595152,0.467257,1.957657
+plum leaf/google_0043.jpg,plum leaf,bell pepper leaf,0.163480,0.040898,3.465433
+plum leaf/35.jpg,plum leaf,plum leaf,0.271308,0.080183,2.889434
+plum leaf/google_0030.jpg,plum leaf,plum leaf,0.545556,0.488220,2.319140
+plum leaf/2.jpg,plum leaf,cherry leaf,0.374461,0.251289,2.803878
+plum leaf/google_0090.jpg,plum leaf,corn leaf,0.179439,0.045877,3.528782
+plum leaf/206.jpg,plum leaf,plum leaf,0.815983,0.756852,0.954760
+plum leaf/google_0105.jpg,plum leaf,raspberry leaf,0.738173,0.706949,1.571518
+plum pocket disease/google_0074.jpg,plum pocket disease,apple leaf,0.085259,0.005016,3.835258
+plum pocket disease/google_0004.jpg,plum pocket disease,plum pocket disease,0.734812,0.716004,1.642668
+plum pocket disease/google_0059.jpg,plum pocket disease,apple black rot,0.197102,0.080811,3.375888
+plum pocket disease/google_0027.jpg,plum pocket disease,citrus canker,0.435625,0.312200,2.527070
+plum pocket disease/google_0038.jpg,plum pocket disease,tomato late blight,0.273947,0.152246,3.277379
+plum pocket disease/google_0043.jpg,plum pocket disease,plum pocket disease,0.201927,0.111298,3.565107
+plum pocket disease/google_0010.jpg,plum pocket disease,plum leaf,0.549346,0.440804,2.357995
+potato early blight/47.jpg,potato early blight,potato late blight,0.899456,0.876091,0.684096
+potato early blight/google_0276.jpg,potato early blight,grape leaf spot,0.178188,0.018366,3.175106
+potato early blight/google_0056.jpg,potato early blight,tomato bacterial leaf spot,0.541386,0.349288,1.681245
+potato early blight/google_0133.jpg,potato early blight,tomato early blight,0.795739,0.625987,0.726736
+potato early blight/google_0054.jpg,potato early blight,tomato early blight,0.325643,0.244559,3.259297
+potato early blight/19 - Copy.jpg,potato early blight,potato early blight,0.727988,0.513298,0.947389
+potato early blight/google_0252.jpg,potato early blight,potato early blight,0.429543,0.083092,1.760175
+potato early blight/google_0080.jpg,potato early blight,potato late blight,0.539398,0.355959,1.997186
+potato early blight/google_0011.jpg,potato early blight,tomato bacterial leaf spot,0.520088,0.457043,2.405768
+potato early blight/google_0111.jpg,potato early blight,tomato early blight,0.734408,0.687781,1.503257
+potato early blight/55.jpg,potato early blight,potato early blight,0.572410,0.487875,2.176469
+potato early blight/23.jpg,potato early blight,potato early blight,0.906217,0.891775,0.657691
+potato early blight/google_0202.jpg,potato early blight,potato early blight,0.584108,0.414625,1.868914
+potato early blight/google_0178.jpg,potato early blight,potato late blight,0.376916,0.038445,2.100247
+potato early blight/google_0352.jpg,potato early blight,potato early blight,0.973866,0.968764,0.214300
+potato early blight/21.jpg,potato early blight,lettuce downy mildew,0.168973,0.061722,3.449150
+potato early blight/65.jpg,potato early blight,tomato septoria leaf spot,0.290123,0.122096,2.802833
+potato early blight/70.jpg,potato early blight,cauliflower alternaria leaf spot,0.316209,0.143121,2.669509
+potato early blight/google_0277.jpg,potato early blight,potato early blight,0.370285,0.286670,3.009122
+potato early blight/google_0306 - Copy (8).jpg,potato early blight,potato early blight,0.945834,0.931881,0.398503
+potato early blight/google_0031 - Copy.jpg,potato early blight,potato early blight,0.914684,0.897117,0.601641
+potato early blight/google_0225.jpg,potato early blight,tomato early blight,0.639179,0.437324,1.443969
+potato late blight/38.jpg,potato late blight,potato late blight,0.970672,0.962527,0.235213
+potato late blight/86.jpg,potato late blight,cherry powdery mildew,0.305559,0.190618,3.124337
+potato late blight/30 - Copy.jpg,potato late blight,apple rust,0.368011,0.217951,2.791221
+potato late blight/google_0240 - Copy.jpg,potato late blight,tomato early blight,0.550563,0.459343,2.254212
+potato late blight/56.jpg,potato late blight,potato early blight,0.619353,0.579501,2.114174
+potato late blight/85.jpg,potato late blight,potato late blight,0.140187,0.061742,3.771288
+potato late blight/44.jpg,potato late blight,potato late blight,0.890515,0.859129,0.737576
+potato late blight/18.jpg,potato late blight,potato leaf,0.381529,0.184735,2.306617
+potato late blight/80 - Copy.jpg,potato late blight,peach leaf curl,0.091098,0.004825,3.780879
+potato late blight/google_0039 - Copy (3).jpg,potato late blight,potato late blight,0.854565,0.807840,0.898970
+potato late blight/google_0097.jpg,potato late blight,potato late blight,0.730571,0.690924,1.622399
+potato late blight/google_0078.jpg,potato late blight,tomato early blight,0.257198,0.114860,3.192923
+potato late blight/google_0152.jpg,potato late blight,tomato early blight,0.569016,0.383648,1.494552
+potato late blight/google_0271.jpg,potato late blight,potato late blight,0.121835,0.020537,3.387704
+potato late blight/google_0110 - Copy.jpg,potato late blight,apple black rot,0.321635,0.218508,3.038161
+potato late blight/34 - Copy.jpg,potato late blight,potato late blight,0.604257,0.557909,2.154653
+potato late blight/google_0303 - Copy (2).jpg,potato late blight,potato late blight,0.433787,0.145499,2.137477
+potato late blight/78.jpg,potato late blight,potato late blight,0.909028,0.891972,0.654061
+potato late blight/34.jpg,potato late blight,carrot cavity spot,0.319767,0.205612,2.966884
+potato late blight/96.jpg,potato late blight,potato late blight,0.613063,0.389244,1.357375
+potato late blight/add (2).jpg,potato late blight,potato late blight,0.962056,0.954436,0.294040
+potato late blight/2.jpg,potato late blight,potato late blight,0.426712,0.174693,1.625348
+potato late blight/70 - Copy (3).jpg,potato late blight,potato late blight,0.508617,0.466571,2.649041
+potato late blight/google_0225.jpg,potato late blight,potato late blight,0.890539,0.859220,0.698066
+potato leaf/google_0143.jpg,potato leaf,potato leaf,0.532821,0.343274,1.796835
+potato leaf/google_0064.jpg,potato leaf,potato leaf,0.200842,0.084466,3.360483
+potato leaf/4.jpg,potato leaf,potato leaf,0.771031,0.627711,1.019873
+potato leaf/53.jpg,potato leaf,soybean leaf,0.813436,0.743265,1.068090
+potato leaf/google_0128.jpg,potato leaf,potato leaf,0.193477,0.038418,3.590431
+potato leaf/google_0656.jpg,potato leaf,potato leaf,0.814706,0.779999,1.120950
+potato leaf/google_0219.jpg,potato leaf,potato leaf,0.661688,0.413556,1.130957
+potato leaf/google_0088.jpg,potato leaf,basil leaf,0.512183,0.336397,2.037540
+potato leaf/google_0047.jpg,potato leaf,soybean leaf,0.228000,0.047183,3.002706
+potato leaf/google_0129.jpg,potato leaf,potato leaf,0.956087,0.945823,0.328904
+potato leaf/google_0205.jpg,potato leaf,potato leaf,0.923636,0.912770,0.561446
+potato leaf/70.jpg,potato leaf,potato leaf,0.268846,0.174149,3.116812
+potato leaf/google_0576.jpg,potato leaf,garlic leaf,0.224803,0.100833,3.630386
+potato leaf/41.jpg,potato leaf,basil leaf,0.346336,0.058236,2.357459
+potato leaf/95.jpg,potato leaf,potato leaf,0.728102,0.680867,1.546762
+potato leaf/google_0137.jpg,potato leaf,potato leaf,0.324594,0.228839,3.069076
+potato leaf/google_0139.jpg,potato leaf,apple leaf,0.309712,0.026163,2.670128
+potato leaf/google_0667.jpg,potato leaf,potato leaf,0.879874,0.857093,0.811445
+potato leaf/google_0677.jpg,potato leaf,potato leaf,0.318804,0.024855,2.264404
+potato leaf/28.jpg,potato leaf,potato leaf,0.298737,0.211074,3.291004
+potato leaf/google_0292.jpg,potato leaf,tomato leaf,0.873875,0.840314,0.761211
+potato leaf/google_0562.jpg,potato leaf,potato leaf,0.502111,0.329250,2.148821
+potato leaf/google_0218.jpg,potato leaf,potato leaf,0.876892,0.860616,0.824253
+potato leaf/google_0123.jpg,potato leaf,basil leaf,0.586109,0.553462,2.309606
+potato leaf/39.jpg,potato leaf,potato leaf,0.558617,0.318711,1.585973
+raspberry leaf/47.jpg,raspberry leaf,raspberry leaf,0.791492,0.772315,1.345126
+raspberry leaf/google_0054.jpg,raspberry leaf,raspberry leaf,0.664915,0.538044,1.693448
+raspberry leaf/40.jpg,raspberry leaf,raspberry leaf,0.571244,0.482538,2.127857
+raspberry leaf/56.jpg,raspberry leaf,raspberry leaf,0.820410,0.721407,0.886844
+raspberry leaf/85.jpg,raspberry leaf,raspberry leaf,0.789518,0.709168,1.204506
+raspberry leaf/55.jpg,raspberry leaf,raspberry leaf,0.922913,0.898076,0.515286
+raspberry leaf/google_0002.jpg,raspberry leaf,raspberry leaf,0.175518,0.065709,3.786609
+raspberry leaf/google_0004.jpg,raspberry leaf,raspberry leaf,0.753725,0.726545,1.573861
+raspberry leaf/49.jpg,raspberry leaf,raspberry leaf,0.386599,0.300723,2.936669
+raspberry leaf/7.jpg,raspberry leaf,raspberry leaf,0.571894,0.313308,1.694496
+raspberry leaf/google_0205.jpg,raspberry leaf,strawberry leaf,0.643406,0.558734,1.869928
+raspberry leaf/107.jpg,raspberry leaf,raspberry leaf,0.270189,0.068692,2.866491
+raspberry leaf/google_0001.jpg,raspberry leaf,raspberry leaf,0.963748,0.960002,0.299924
+raspberry leaf/19.jpg,raspberry leaf,strawberry leaf,0.475025,0.162216,1.938606
+raspberry leaf/25.jpg,raspberry leaf,raspberry leaf,0.642824,0.620005,2.147710
+raspberry leaf/33.jpg,raspberry leaf,raspberry leaf,0.722185,0.655668,1.622580
+raspberry leaf/google_0180.jpg,raspberry leaf,cucumber leaf,0.118908,0.041255,3.804682
+raspberry leaf/37.jpg,raspberry leaf,cherry leaf,0.647790,0.516397,1.687763
+rice blast/86.jpg,rice blast,rice blast,0.547940,0.503446,2.535571
+rice blast/google_0075.jpg,rice blast,garlic rust,0.477788,0.365776,2.691180
+rice blast/google_0111.jpg,rice blast,rice blast,0.932722,0.923560,0.490035
+rice blast/69.jpg,rice blast,rice blast,0.340924,0.129253,2.708584
+rice blast/18.jpg,rice blast,rice sheath blight,0.806594,0.726612,1.093532
+rice blast/49.jpg,rice blast,rice blast,0.456103,0.316595,2.371831
+rice blast/120.jpg,rice blast,corn gray leaf spot,0.344773,0.271790,3.271248
+rice blast/73.jpg,rice blast,rice blast,0.822045,0.786623,1.110377
+rice blast/google_0027.jpg,rice blast,rice sheath blight,0.626890,0.380705,1.389816
+rice blast/26.jpg,rice blast,rice blast,0.873323,0.831136,0.808186
+rice blast/google_0138 - Copy.jpg,rice blast,rice blast,0.217075,0.015370,3.044475
+rice blast/google_0106.jpg,rice blast,rice leaf,0.628524,0.536164,1.976121
+rice blast/151.jpg,rice blast,rice blast,0.954636,0.949034,0.371150
+rice blast/146.jpg,rice blast,rice blast,0.947624,0.944331,0.424818
+rice leaf/38.jpg,rice leaf,rice leaf,0.924575,0.886514,0.473645
+rice leaf/174.jpg,rice leaf,rice leaf,0.917514,0.904344,0.587990
+rice leaf/54.jpg,rice leaf,rice blast,0.684499,0.561768,1.616488
+rice leaf/68.jpg,rice leaf,rice leaf,0.592449,0.476180,1.978177
+rice leaf/135.jpg,rice leaf,rice leaf,0.437358,0.327624,2.616325
+rice leaf/333.jpg,rice leaf,garlic leaf,0.471152,0.344571,2.566074
+rice leaf/259.jpg,rice leaf,rice leaf,0.765135,0.715464,1.464730
+rice leaf/166.jpg,rice leaf,rice leaf,0.969707,0.966100,0.256884
+rice leaf/221.jpg,rice leaf,rice leaf,0.894311,0.873009,0.744804
+rice leaf/224.jpg,rice leaf,rice leaf,0.560937,0.451598,2.254788
+rice leaf/167.jpg,rice leaf,rice leaf,0.536013,0.377305,2.053138
+rice leaf/229.jpg,rice leaf,rice leaf,0.922395,0.917916,0.601524
+rice leaf/293.jpg,rice leaf,rice leaf,0.988538,0.987724,0.109457
+rice leaf/70.jpg,rice leaf,rice sheath blight,0.527226,0.240826,1.800658
+rice leaf/264.jpg,rice leaf,rice leaf,0.822373,0.785863,1.061757
+rice leaf/191.jpg,rice leaf,rice leaf,0.932493,0.924539,0.523790
+rice leaf/202.jpg,rice leaf,rice leaf,0.948887,0.946210,0.420643
+rice leaf/96.jpg,rice leaf,rice leaf,0.319229,0.260232,3.391649
+rice leaf/299.jpg,rice leaf,rice leaf,0.960289,0.954331,0.318369
+rice leaf/201.jpg,rice leaf,rice leaf,0.393396,0.185499,2.707270
+rice leaf/151.jpg,rice leaf,rice leaf,0.884305,0.851684,0.756240
+rice leaf/189.jpg,rice leaf,rice leaf,0.912199,0.908921,0.677858
+rice leaf/117.jpg,rice leaf,rice leaf,0.885309,0.873907,0.837958
+rice leaf/77.jpg,rice leaf,rice leaf,0.564482,0.486124,2.382979
+rice leaf/267.jpg,rice leaf,rice leaf,0.935665,0.931827,0.512836
+rice sheath blight/87.jpg,rice sheath blight,rice sheath blight,0.470160,0.122073,1.807451
+rice sheath blight/google_0111 - Copy.jpg,rice sheath blight,rice sheath blight,0.946533,0.942998,0.432994
+rice sheath blight/google_0041.jpg,rice sheath blight,rice sheath blight,0.939899,0.922554,0.444535
+rice sheath blight/97 - Copy.jpg,rice sheath blight,rice sheath blight,0.969842,0.967443,0.261170
+rice sheath blight/145.jpg,rice sheath blight,rice blast,0.235577,0.036495,3.088260
+rice sheath blight/google_0198.jpg,rice sheath blight,garlic rust,0.292105,0.230551,3.442094
+rice sheath blight/google_0009.jpg,rice sheath blight,rice blast,0.163260,0.080449,3.723398
+rice sheath blight/google_0016.jpg,rice sheath blight,rice sheath blight,0.879403,0.834716,0.762278
+rice sheath blight/google_0048 - Copy.jpg,rice sheath blight,rice sheath blight,0.832305,0.739422,0.889492
+rice sheath blight/190.jpg,rice sheath blight,garlic leaf blight,0.755161,0.644284,1.157462
+rice sheath blight/google_0123 - Copy.jpg,rice sheath blight,rice sheath blight,0.796605,0.765747,1.262166
+rice sheath blight/google_0114.jpg,rice sheath blight,rice sheath blight,0.897852,0.883023,0.751248
+rice sheath blight/google_0083.jpg,rice sheath blight,rice sheath blight,0.649091,0.390874,1.247385
+rice sheath blight/google_0052.jpg,rice sheath blight,rice sheath blight,0.721484,0.656033,1.571838
+rice sheath blight/google_0034.jpg,rice sheath blight,rice sheath blight,0.738038,0.694798,1.582137
+rice sheath blight/73.jpg,rice sheath blight,rice blast,0.333525,0.078020,2.521572
+rice sheath blight/60.jpg,rice sheath blight,rice sheath blight,0.428244,0.151586,2.146905
+rice sheath blight/140.jpg,rice sheath blight,rice blast,0.950597,0.946597,0.397470
+rice sheath blight/google_0139.jpg,rice sheath blight,rice sheath blight,0.725990,0.660011,1.544078
+rice sheath blight/google_0024.jpg,rice sheath blight,rice sheath blight,0.830857,0.795195,1.114807
+rice sheath blight/52.jpg,rice sheath blight,ginger sheath blight,0.673478,0.440630,1.218713
+rice sheath blight/213 - Copy.jpg,rice sheath blight,rice sheath blight,0.921915,0.915310,0.583468
+rice sheath blight/google_0089.jpg,rice sheath blight,rice sheath blight,0.916010,0.907869,0.638449
+rice sheath blight/159.jpg,rice sheath blight,rice sheath blight,0.951186,0.943163,0.390857
+rice sheath blight/32.jpg,rice sheath blight,rice sheath blight,0.858300,0.788098,0.811885
+soybean leaf/272.jpg,soybean leaf,cherry powdery mildew,0.153808,0.056107,3.623333
+soybean leaf/87.jpg,soybean leaf,bean leaf,0.262766,0.144080,3.330287
+soybean leaf/147.jpg,soybean leaf,soybean leaf,0.902370,0.875595,0.636172
+soybean leaf/google_0556.jpg,soybean leaf,tomato mosaic virus,0.223168,0.121942,3.387580
+soybean leaf/4.jpg,soybean leaf,grape downy mildew,0.091719,0.020727,3.930792
+soybean leaf/284.jpg,soybean leaf,cucumber leaf,0.236519,0.102617,3.254428
+soybean leaf/99.jpg,soybean leaf,potato early blight,0.237798,0.112996,3.271045
+soybean leaf/google_0371.jpg,soybean leaf,soybean leaf,0.413917,0.230148,2.401248
+soybean leaf/20.jpg,soybean leaf,potato leaf,0.344611,0.154071,2.756113
+soybean leaf/44.jpg,soybean leaf,soybean leaf,0.384819,0.264342,2.793352
+soybean leaf/google_0048.jpg,soybean leaf,soybean leaf,0.331444,0.118362,2.665765
+soybean leaf/google_0422.jpg,soybean leaf,soybean leaf,0.902795,0.886025,0.655378
+soybean leaf/243.jpg,soybean leaf,soybean leaf,0.156329,0.070124,3.514358
+soybean leaf/google_0114.jpg,soybean leaf,plum leaf,0.521787,0.443796,2.292064
+soybean leaf/250.jpg,soybean leaf,potato leaf,0.222721,0.030397,2.602683
+soybean leaf/google_0557.jpg,soybean leaf,soybean leaf,0.235539,0.035614,3.098555
+soybean leaf/google_0582.jpg,soybean leaf,raspberry leaf,0.216415,0.083228,3.314457
+soybean leaf/293.jpg,soybean leaf,soybean leaf,0.468572,0.403357,2.709598
+soybean leaf/15.jpg,soybean leaf,soybean leaf,0.923609,0.891080,0.475932
+soybean leaf/252.jpg,soybean leaf,cauliflower leaf,0.447582,0.384794,2.713876
+soybean leaf/217.jpg,soybean leaf,soybean leaf,0.906004,0.879950,0.569062
+soybean leaf/28.jpg,soybean leaf,apple leaf,0.105217,0.021861,3.622883
+soybean leaf/google_0543.jpg,soybean leaf,soybean leaf,0.641493,0.586800,1.923166
+soybean leaf/google_0225.jpg,soybean leaf,soybean leaf,0.652444,0.606117,1.918087
+squash leaf/z68.jpg,squash leaf,squash leaf,0.723807,0.658136,1.477215
+squash leaf/38.jpg,squash leaf,cucumber angular leaf spot,0.314755,0.165387,3.038727
+squash leaf/zgoogle_0225.jpg,squash leaf,squash leaf,0.969093,0.964330,0.244151
+squash leaf/zgoogle_0356.jpg,squash leaf,squash leaf,0.963897,0.951804,0.267320
+squash leaf/zgoogle_0260.jpg,squash leaf,squash leaf,0.531786,0.315096,2.038001
+squash leaf/192.jpg,squash leaf,squash leaf,0.863825,0.828532,0.837262
+squash leaf/103.jpg,squash leaf,squash leaf,0.662466,0.609789,1.828987
+squash leaf/zgoogle_0079.jpg,squash leaf,squash leaf,0.986111,0.982951,0.114796
+squash leaf/16.jpg,squash leaf,squash leaf,0.886544,0.858989,0.745005
+squash leaf/zgoogle_0180.jpg,squash leaf,squash leaf,0.354474,0.212308,2.878874
+squash leaf/z1.jpg,squash leaf,squash powdery mildew,0.923834,0.898531,0.510949
+squash leaf/55.jpg,squash leaf,squash leaf,0.916998,0.869772,0.488279
+squash leaf/23.jpg,squash leaf,squash leaf,0.551793,0.292495,1.687438
+squash leaf/313.jpg,squash leaf,squash leaf,0.612122,0.565706,2.106019
+squash leaf/200.jpg,squash leaf,squash leaf,0.949239,0.944610,0.394328
+squash leaf/google_0202.jpg,squash leaf,squash leaf,0.916878,0.884454,0.533935
+squash leaf/z351.jpg,squash leaf,squash leaf,0.916749,0.894907,0.533017
+squash leaf/zgoogle_0283.jpg,squash leaf,squash leaf,0.386757,0.305485,3.054685
+squash leaf/90.jpg,squash leaf,squash leaf,0.856586,0.824312,0.897667
+squash leaf/zgoogle_0117.jpg,squash leaf,squash leaf,0.439232,0.397456,2.982487
+squash leaf/google_0004.jpg,squash leaf,squash leaf,0.623582,0.411523,1.478899
+squash leaf/zgoogle_0265.jpg,squash leaf,cauliflower leaf,0.133740,0.049168,3.672872
+squash leaf/zgoogle_0273.jpg,squash leaf,lettuce downy mildew,0.318711,0.113345,2.589843
+squash leaf/z331.jpg,squash leaf,squash leaf,0.992546,0.989509,0.067287
+squash leaf/zgoogle_0170.jpg,squash leaf,cucumber leaf,0.591210,0.462689,1.938643
+squash leaf/zgoogle_0131.jpg,squash leaf,zucchini yellow mosaic virus,0.916665,0.902679,0.583834
+squash leaf/zgoogle_0007.jpg,squash leaf,cucumber leaf,0.879987,0.857103,0.781667
+squash leaf/google_0204.jpg,squash leaf,broccoli leaf,0.395814,0.197567,2.658475
+squash leaf/google_0029.jpg,squash leaf,squash leaf,0.995197,0.991705,0.038241
+squash leaf/zgoogle_0073.jpg,squash leaf,squash leaf,0.741490,0.709796,1.523566
+squash leaf/273.jpg,squash leaf,squash leaf,0.272677,0.138135,2.933462
+squash leaf/google_0256.jpg,squash leaf,soybean leaf,0.377703,0.252559,2.747559
+squash leaf/45.jpg,squash leaf,squash leaf,0.867632,0.844295,0.871632
+squash leaf/z353.jpg,squash leaf,squash leaf,0.833780,0.820267,1.107176
+squash leaf/14.jpg,squash leaf,squash leaf,0.318833,0.180290,3.002327
+squash leaf/zgoogle_0094.jpg,squash leaf,squash leaf,0.966214,0.954506,0.237134
+squash leaf/zgoogle_0075.jpg,squash leaf,squash leaf,0.735767,0.563541,1.049978
+squash leaf/google_0156.jpg,squash leaf,cucumber leaf,0.270868,0.050763,2.561907
+squash leaf/google_0367.jpg,squash leaf,squash leaf,0.823607,0.801046,1.105484
+squash leaf/77.jpg,squash leaf,cucumber leaf,0.368922,0.312632,3.108124
+squash leaf/267.jpg,squash leaf,squash leaf,0.902672,0.895879,0.703715
+squash powdery mildew/google_0082.jpg,squash powdery mildew,squash powdery mildew,0.145324,0.032586,3.508603
+squash powdery mildew/google_0155.jpg,squash powdery mildew,squash powdery mildew,0.979474,0.970185,0.159768
+squash powdery mildew/google_0304.jpg,squash powdery mildew,cucumber powdery mildew,0.200809,0.061607,3.391727
+squash powdery mildew/54.jpg,squash powdery mildew,squash powdery mildew,0.868365,0.820376,0.752331
+squash powdery mildew/68.jpg,squash powdery mildew,cherry powdery mildew,0.476560,0.437104,2.719866
+squash powdery mildew/google_0008.jpg,squash powdery mildew,squash powdery mildew,0.767534,0.582349,0.826494
+squash powdery mildew/google_0375.jpg,squash powdery mildew,squash leaf,0.321940,0.205077,3.042189
+squash powdery mildew/google_0363.jpg,squash powdery mildew,squash powdery mildew,0.370514,0.155108,2.657897
+squash powdery mildew/google_0011.jpg,squash powdery mildew,squash powdery mildew,0.964233,0.940415,0.212459
+squash powdery mildew/106.jpg,squash powdery mildew,squash leaf,0.714677,0.679088,1.704857
+squash powdery mildew/44.jpg,squash powdery mildew,squash leaf,0.558716,0.486024,2.265064
+squash powdery mildew/google_0048.jpg,squash powdery mildew,squash powdery mildew,0.836393,0.811367,1.003483
+squash powdery mildew/google_0144.jpg,squash powdery mildew,tomato leaf mold,0.524149,0.425760,2.282626
+squash powdery mildew/google_0176.jpg,squash powdery mildew,squash powdery mildew,0.734914,0.637772,1.396616
+squash powdery mildew/google_0026.jpg,squash powdery mildew,cucumber powdery mildew,0.308553,0.050331,2.706023
+squash powdery mildew/google_0370.jpg,squash powdery mildew,squash powdery mildew,0.511669,0.351091,1.966248
+squash powdery mildew/120.jpg,squash powdery mildew,squash leaf,0.533670,0.452452,2.369257
+squash powdery mildew/15.jpg,squash powdery mildew,squash powdery mildew,0.951439,0.929867,0.331354
+squash powdery mildew/93.jpg,squash powdery mildew,squash leaf,0.612095,0.553735,2.114743
+squash powdery mildew/google_0308.jpg,squash powdery mildew,grape black rot,0.181962,0.049729,3.340914
+squash powdery mildew/25.jpg,squash powdery mildew,squash powdery mildew,0.914082,0.900081,0.607879
+squash powdery mildew/google_0006.jpg,squash powdery mildew,squash powdery mildew,0.729265,0.582972,1.267088
+squash powdery mildew/34.jpg,squash powdery mildew,cucumber powdery mildew,0.590601,0.326118,1.531630
+squash powdery mildew/google_0213.jpg,squash powdery mildew,squash powdery mildew,0.643126,0.340852,0.990855
+squash powdery mildew/33.jpg,squash powdery mildew,squash powdery mildew,0.621412,0.258887,0.791038
+squash powdery mildew/google_0326.jpg,squash powdery mildew,squash powdery mildew,0.259075,0.134725,3.123096
+squash powdery mildew/google_0010.jpg,squash powdery mildew,grape downy mildew,0.199491,0.019437,2.844700
+squash powdery mildew/google_0378.jpg,squash powdery mildew,cucumber powdery mildew,0.658977,0.395841,1.155560
+strawberry anthracnose/google_0054.jpg,strawberry anthracnose,strawberry anthracnose,0.982419,0.980087,0.156670
+strawberry anthracnose/google_0011.jpg,strawberry anthracnose,strawberry anthracnose,0.952261,0.949083,0.390354
+strawberry anthracnose/22.jpg,strawberry anthracnose,tomato septoria leaf spot,0.325732,0.150583,2.664450
+strawberry anthracnose/7 - Copy.jpg,strawberry anthracnose,corn northern leaf blight,0.116434,0.021647,3.905765
+strawberry anthracnose/7 - Copy (2).jpg,strawberry anthracnose,strawberry anthracnose,0.186612,0.061862,3.260918
+strawberry anthracnose/google_0096.jpg,strawberry anthracnose,strawberry anthracnose,0.312870,0.198811,3.217771
+strawberry anthracnose/26.jpg,strawberry anthracnose,strawberry anthracnose,0.122063,0.033556,3.532360
+strawberry anthracnose/google_0015.jpg,strawberry anthracnose,strawberry anthracnose,0.457876,0.266241,2.285196
+strawberry anthracnose/google_0090.jpg,strawberry anthracnose,strawberry anthracnose,0.800142,0.779866,1.290509
+strawberry leaf/google_0230.jpg,strawberry leaf,strawberry leaf,0.556811,0.329196,1.898963
+strawberry leaf/google_0054.jpg,strawberry leaf,strawberry leaf,0.821217,0.787272,1.140442
+strawberry leaf/google_0615.jpg,strawberry leaf,raspberry leaf,0.354658,0.125333,2.523195
+strawberry leaf/4.jpg,strawberry leaf,strawberry leaf,0.910418,0.902326,0.668616
+strawberry leaf/61.jpg,strawberry leaf,strawberry leaf,0.719481,0.692574,1.753218
+strawberry leaf/google_0423.jpg,strawberry leaf,strawberry leaf,0.946762,0.938008,0.398474
+strawberry leaf/google_0338.jpg,strawberry leaf,grape leaf,0.820925,0.789489,1.108125
+strawberry leaf/24.jpg,strawberry leaf,strawberry leaf,0.883920,0.835731,0.722894
+strawberry leaf/google_0083.jpg,strawberry leaf,strawberry leaf,0.864315,0.849892,0.956522
+strawberry leaf/google_0489.jpg,strawberry leaf,strawberry leaf,0.276448,0.058430,2.831760
+strawberry leaf/google_0240.jpg,strawberry leaf,strawberry leaf,0.770302,0.750215,1.417639
+strawberry leaf/63.jpg,strawberry leaf,strawberry leaf,0.474199,0.448870,2.888180
+strawberry leaf/google_0201.jpg,strawberry leaf,strawberry leaf,0.753251,0.657857,1.357200
+strawberry leaf/72.jpg,strawberry leaf,celery leaf,0.542572,0.482704,2.500309
+strawberry leaf/google_0629.jpg,strawberry leaf,strawberry leaf,0.958865,0.953680,0.320542
+strawberry leaf/google_0079.jpg,strawberry leaf,strawberry leaf,0.239671,0.125788,3.624925
+strawberry leaf/google_0018.jpg,strawberry leaf,strawberry leaf,0.898266,0.867156,0.677592
+strawberry leaf/28.jpg,strawberry leaf,strawberry leaf,0.636932,0.580825,2.097080
+strawberry leaf/google_0402.jpg,strawberry leaf,strawberry leaf,0.682045,0.654258,1.880598
+strawberry leaf/google_0127.jpg,strawberry leaf,cucumber leaf,0.666579,0.573433,1.583907
+strawberry leaf scorch/google_0082.jpg,strawberry leaf scorch,cherry leaf spot,0.230515,0.093246,3.401043
+strawberry leaf scorch/9.jpg,strawberry leaf scorch,strawberry leaf scorch,0.277493,0.140177,3.227828
+strawberry leaf scorch/google_0084.jpg,strawberry leaf scorch,strawberry leaf scorch,0.659620,0.601819,1.879382
+strawberry leaf scorch/google_0074.jpg,strawberry leaf scorch,strawberry leaf scorch,0.878100,0.855127,0.800124
+strawberry leaf scorch/google_0026.jpg,strawberry leaf scorch,strawberry leaf scorch,0.702180,0.647472,1.651119
+strawberry leaf scorch/6.jpg,strawberry leaf scorch,strawberry leaf scorch,0.487875,0.125520,1.571923
+strawberry leaf scorch/google_0010.jpg,strawberry leaf scorch,strawberry leaf scorch,0.371218,0.157902,2.344995
+tobacco leaf/24.jpg,tobacco leaf,tobacco mosaic virus,0.397074,0.297074,2.749789
+tobacco leaf/google_0004.jpg,tobacco leaf,blueberry leaf,0.410708,0.306351,2.553657
+tobacco leaf/27.jpg,tobacco leaf,lettuce leaf,0.235154,0.109294,3.210996
+tobacco leaf/google_0027 - Copy (2).jpg,tobacco leaf,tobacco leaf,0.706342,0.679175,1.740202
+tobacco leaf/2.jpg,tobacco leaf,banana panama disease,0.183554,0.053026,3.315806
+tobacco leaf/google_0020.jpg,tobacco leaf,tobacco leaf,0.802791,0.660165,0.828062
+tobacco leaf/31.jpg,tobacco leaf,tomato yellow leaf curl virus,0.166154,0.005817,3.483472
+tobacco mosaic virus/147.jpg,tobacco mosaic virus,bell pepper leaf,0.512650,0.358979,2.236083
+tobacco mosaic virus/190.jpg,tobacco mosaic virus,tomato mosaic virus,0.614323,0.528067,1.922023
+tobacco mosaic virus/120.jpg,tobacco mosaic virus,tobacco mosaic virus,0.419734,0.348233,2.950101
+tobacco mosaic virus/161.jpg,tobacco mosaic virus,tobacco mosaic virus,0.341003,0.148548,2.425980
+tobacco mosaic virus/20 - Copy.jpg,tobacco mosaic virus,bell pepper leaf,0.097319,0.001366,3.770456
+tobacco mosaic virus/115.jpg,tobacco mosaic virus,tobacco mosaic virus,0.924542,0.912605,0.540506
+tobacco mosaic virus/41.jpg,tobacco mosaic virus,tobacco mosaic virus,0.221676,0.093961,3.184938
+tobacco mosaic virus/google_0010.jpg,tobacco mosaic virus,apple scab,0.236162,0.153212,3.464258
+tobacco mosaic virus/39.jpg,tobacco mosaic virus,tomato yellow leaf curl virus,0.233034,0.067689,3.236390
+tomato bacterial leaf spot/google_0070.jpg,tomato bacterial leaf spot,tomato septoria leaf spot,0.969763,0.956764,0.216856
+tomato bacterial leaf spot/google_0099.jpg,tomato bacterial leaf spot,tomato early blight,0.567613,0.344607,1.586844
+tomato bacterial leaf spot/99.jpg,tomato bacterial leaf spot,tomato bacterial leaf spot,0.423972,0.259160,2.500823
+tomato bacterial leaf spot/google_0021.jpg,tomato bacterial leaf spot,tomato bacterial leaf spot,0.559584,0.353105,1.883472
+tomato bacterial leaf spot/119.jpg,tomato bacterial leaf spot,tomato early blight,0.191224,0.122447,3.609071
+tomato bacterial leaf spot/google_0111.jpg,tomato bacterial leaf spot,tomato bacterial leaf spot,0.877271,0.787092,0.556554
+tomato bacterial leaf spot/google_0328.jpg,tomato bacterial leaf spot,tomato early blight,0.938519,0.908960,0.384710
+tomato bacterial leaf spot/20.jpg,tomato bacterial leaf spot,tomato septoria leaf spot,0.891407,0.835025,0.568552
+tomato bacterial leaf spot/google_0048.jpg,tomato bacterial leaf spot,cabbage alternaria leaf spot,0.354751,0.265470,2.883923
+tomato bacterial leaf spot/google_0247.jpg,tomato bacterial leaf spot,lettuce leaf,0.176282,0.021807,3.375917
+tomato bacterial leaf spot/98.jpg,tomato bacterial leaf spot,eggplant leaf,0.391689,0.163141,2.511752
+tomato bacterial leaf spot/187.jpg,tomato bacterial leaf spot,tomato bacterial leaf spot,0.390209,0.286350,2.840126
+tomato bacterial leaf spot/google_0159.jpg,tomato bacterial leaf spot,tomato bacterial leaf spot,0.401724,0.138253,1.977246
+tomato bacterial leaf spot/google_0410.jpg,tomato bacterial leaf spot,tomato septoria leaf spot,0.676231,0.553255,1.501890
+tomato bacterial leaf spot/198.jpg,tomato bacterial leaf spot,grapevine leafroll disease,0.282139,0.166198,3.236287
+tomato bacterial leaf spot/google_0113.jpg,tomato bacterial leaf spot,tomato septoria leaf spot,0.731523,0.579305,1.148119
+tomato bacterial leaf spot/google_0059.jpg,tomato bacterial leaf spot,bell pepper leaf spot,0.583224,0.486369,1.957430
+tomato bacterial leaf spot/15.jpg,tomato bacterial leaf spot,tomato septoria leaf spot,0.965142,0.959540,0.265972
+tomato bacterial leaf spot/19.jpg,tomato bacterial leaf spot,citrus canker,0.462242,0.405804,2.783728
+tomato bacterial leaf spot/93.jpg,tomato bacterial leaf spot,tomato bacterial leaf spot,0.359161,0.029881,2.325859
+tomato bacterial leaf spot/41.jpg,tomato bacterial leaf spot,grape black rot,0.179153,0.054964,3.627670
+tomato bacterial leaf spot/45.jpg,tomato bacterial leaf spot,tomato septoria leaf spot,0.819751,0.771754,0.976839
+tomato bacterial leaf spot/google_0012.jpg,tomato bacterial leaf spot,tomato septoria leaf spot,0.117074,0.034328,3.628365
+tomato bacterial leaf spot/33.jpg,tomato bacterial leaf spot,tomato bacterial leaf spot,0.996625,0.995251,0.032324
+tomato bacterial leaf spot/google_0093.jpg,tomato bacterial leaf spot,potato early blight,0.299068,0.074438,2.522710
+tomato bacterial leaf spot/179.jpg,tomato bacterial leaf spot,tomato leaf mold,0.733880,0.654404,1.437593
+tomato bacterial leaf spot/google_0060.jpg,tomato bacterial leaf spot,tomato septoria leaf spot,0.228081,0.130473,3.330999
+tomato bacterial leaf spot/64.jpg,tomato bacterial leaf spot,apple scab,0.479121,0.304231,2.244304
+tomato early blight/google_0146.jpg,tomato early blight,tomato early blight,0.560293,0.435810,1.907145
+tomato early blight/38.jpg,tomato early blight,cherry powdery mildew,0.193890,0.065887,3.526913
+tomato early blight/1.jpg,tomato early blight,tomato early blight,0.131881,0.002222,3.403315
+tomato early blight/285.jpg,tomato early blight,cabbage alternaria leaf spot,0.211211,0.020584,3.065823
+tomato early blight/160.jpg,tomato early blight,tomato early blight,0.949693,0.925428,0.336443
+tomato early blight/google_0345.jpg,tomato early blight,tomato septoria leaf spot,0.482741,0.401072,2.552801
+tomato early blight/google_0035.jpg,tomato early blight,tomato late blight,0.991083,0.990391,0.085787
+tomato early blight/133.jpg,tomato early blight,tomato leaf mold,0.827417,0.787273,1.025965
+tomato early blight/google_0347.jpg,tomato early blight,tomato early blight,0.224950,0.149473,3.483363
+tomato early blight/google_0112.jpg,tomato early blight,tomato early blight,0.388884,0.221255,2.762104
+tomato early blight/google_0136.jpg,tomato early blight,tomato early blight,0.851865,0.787913,0.786447
+tomato early blight/177.jpg,tomato early blight,tomato early blight,0.370594,0.174583,2.441165
+tomato early blight/193.jpg,tomato early blight,tomato early blight,0.991089,0.988540,0.080296
+tomato early blight/google_0246.jpg,tomato early blight,tomato late blight,0.774274,0.734016,1.382768
+tomato early blight/google_0073.jpg,tomato early blight,cherry powdery mildew,0.304342,0.196066,3.102480
+tomato early blight/google_0177.jpg,tomato early blight,tomato septoria leaf spot,0.220346,0.110947,3.453916
+tomato early blight/238.jpg,tomato early blight,tomato early blight,0.315134,0.138806,3.010286
+tomato early blight/google_0295.jpg,tomato early blight,tomato late blight,0.471269,0.276882,2.408244
+tomato early blight/google_0272.jpg,tomato early blight,tomato leaf,0.656462,0.559113,1.837521
+tomato early blight/google_0394.jpg,tomato early blight,tomato early blight,0.937299,0.905581,0.400632
+tomato early blight/google_0167.jpg,tomato early blight,citrus canker,0.141984,0.031261,3.374962
+tomato early blight/google_0397.jpg,tomato early blight,tomato early blight,0.809208,0.676248,0.820307
+tomato early blight/137.jpg,tomato early blight,tomato early blight,0.962980,0.955024,0.283449
+tomato early blight/google_0404.jpg,tomato early blight,grape downy mildew,0.118962,0.025814,3.790906
+tomato early blight/321.jpg,tomato early blight,tomato early blight,0.504877,0.365947,2.257218
+tomato early blight/274.jpg,tomato early blight,tomato early blight,0.775532,0.709916,1.284493
+tomato early blight/google_0390.jpg,tomato early blight,tomato early blight,0.936871,0.926642,0.463636
+tomato early blight/33.jpg,tomato early blight,tomato early blight,0.654838,0.628779,2.052649
+tomato early blight/152.jpg,tomato early blight,potato early blight,0.344529,0.293170,3.202729
+tomato early blight/189.jpg,tomato early blight,tomato early blight,0.381945,0.195783,2.446979
+tomato early blight/194.jpg,tomato early blight,tomato late blight,0.428495,0.251770,2.574419
+tomato early blight/google_0400.jpg,tomato early blight,tomato bacterial leaf spot,0.828149,0.777151,0.874159
+tomato early blight/google_0095.jpg,tomato early blight,tomato septoria leaf spot,0.372207,0.265586,2.911273
+tomato early blight/39.jpg,tomato early blight,apple scab,0.448031,0.109796,1.812091
+tomato late blight/google_0155.jpg,tomato late blight,tomato early blight,0.891363,0.870798,0.706422
+tomato late blight/add (13).jpg,tomato late blight,apple rust,0.246116,0.135010,3.437625
+tomato late blight/google_0101.jpg,tomato late blight,tomato late blight,0.414443,0.360167,2.967041
+tomato late blight/101.jpg,tomato late blight,tomato bacterial leaf spot,0.935282,0.926495,0.479192
+tomato late blight/56.jpg,tomato late blight,ginger sheath blight,0.208750,0.008750,2.980646
+tomato late blight/google_0126.jpg,tomato late blight,tomato late blight,0.976704,0.973845,0.196943
+tomato late blight/google_0016.jpg,tomato late blight,potato early blight,0.600866,0.433399,1.799697
+tomato late blight/google_0050.jpg,tomato late blight,tomato late blight,0.669667,0.507700,1.504500
+tomato late blight/104.jpg,tomato late blight,tomato late blight,0.462079,0.325773,2.458158
+tomato late blight/3.jpg,tomato late blight,apple scab,0.392141,0.066498,2.171948
+tomato late blight/205.jpg,tomato late blight,tomato late blight,0.545129,0.351090,2.043261
+tomato late blight/google_0262.jpg,tomato late blight,tomato early blight,0.122632,0.027138,3.681920
+tomato late blight/google_0091.jpg,tomato late blight,tomato late blight,0.278545,0.129826,3.024190
+tomato late blight/google_0081.jpg,tomato late blight,tomato late blight,0.676777,0.535852,1.288557
+tomato late blight/108.jpg,tomato late blight,bean leaf,0.132943,0.031120,3.411679
+tomato late blight/google_0083.jpg,tomato late blight,basil downy mildew,0.204595,0.084504,3.278497
+tomato late blight/238.jpg,tomato late blight,apple scab,0.415474,0.183346,2.461919
+tomato late blight/102.jpg,tomato late blight,tomato late blight,0.975965,0.973186,0.198118
+tomato late blight/180.jpg,tomato late blight,grape downy mildew,0.203079,0.009523,2.874055
+tomato late blight/google_0059.jpg,tomato late blight,tomato leaf mold,0.491880,0.420473,2.610592
+tomato late blight/134.jpg,tomato late blight,tomato late blight,0.126909,0.008829,3.655416
+tomato late blight/add (6).jpg,tomato late blight,tomato late blight,0.378021,0.252503,2.964264
+tomato late blight/google_0263.jpg,tomato late blight,corn smut,0.120790,0.020404,3.702534
+tomato late blight/220.jpg,tomato late blight,tomato late blight,0.946010,0.940716,0.423441
+tomato late blight/google_0124.jpg,tomato late blight,tomato late blight,0.880444,0.868554,0.812761
+tomato late blight/google_0092.jpg,tomato late blight,apple rust,0.502497,0.338920,2.087321
+tomato late blight/google_0156.jpg,tomato late blight,tomato late blight,0.781847,0.739147,1.313453
+tomato late blight/google_0095.jpg,tomato late blight,tomato late blight,0.982461,0.975997,0.143582
+tomato late blight/32.jpg,tomato late blight,tomato yellow leaf curl virus,0.409392,0.335753,2.889196
+tomato leaf/13.jpg,tomato leaf,apple mosaic virus,0.161154,0.053644,3.257477
+tomato leaf/1.jpg,tomato leaf,tomato leaf,0.369012,0.263048,2.935635
+tomato leaf/google_0542.jpg,tomato leaf,peach leaf curl,0.286036,0.118861,2.917504
+tomato leaf/google_0008.jpg,tomato leaf,tomato leaf,0.868610,0.846893,0.887433
+tomato leaf/google_0269.jpg,tomato leaf,tomato leaf,0.656320,0.599430,1.859397
+tomato leaf/google_0258.jpg,tomato leaf,tomato leaf,0.265921,0.143707,3.316767
+tomato leaf/53.jpg,tomato leaf,tomato leaf,0.790076,0.769208,1.343381
+tomato leaf/16.jpg,tomato leaf,tomato leaf,0.907152,0.900465,0.683507
+tomato leaf/51.jpg,tomato leaf,tomato leaf,0.600330,0.497606,1.954192
+tomato leaf/google_0593.jpg,tomato leaf,tomato leaf,0.889914,0.844524,0.679125
+tomato leaf/google_0262.jpg,tomato leaf,eggplant leaf,0.682797,0.597604,1.593860
+tomato leaf/google_0607.jpg,tomato leaf,tomato leaf,0.949829,0.940586,0.380571
+tomato leaf/google_0445.jpg,tomato leaf,bell pepper leaf,0.160625,0.084691,3.591691
+tomato leaf/google_0577.jpg,tomato leaf,tomato leaf,0.942525,0.938340,0.444520
+tomato leaf/google_0519.jpg,tomato leaf,tomato leaf,0.781635,0.726263,1.295151
+tomato leaf/73.jpg,tomato leaf,tomato leaf,0.574026,0.496474,2.259597
+tomato leaf/google_0104.jpg,tomato leaf,tomato leaf,0.922765,0.913751,0.567647
+tomato leaf/google_0405.jpg,tomato leaf,tomato leaf,0.876100,0.862568,0.842999
+tomato leaf/google_0013.jpg,tomato leaf,tomato leaf,0.151508,0.050378,3.563565
+tomato leaf/6.jpg,tomato leaf,tomato leaf,0.935613,0.926554,0.486915
+tomato leaf/google_0063.jpg,tomato leaf,tomato leaf,0.904587,0.879777,0.631332
+tomato leaf/google_0025.jpg,tomato leaf,tomato leaf,0.658938,0.622485,1.878612
+tomato leaf mold/183.jpg,tomato leaf mold,tomato leaf mold,0.963741,0.958546,0.282133
+tomato leaf mold/186.jpg,tomato leaf mold,tomato late blight,0.967426,0.963432,0.267270
+tomato leaf mold/google_0257.jpg,tomato leaf mold,citrus canker,0.282162,0.178970,3.278113
+tomato leaf mold/99.jpg,tomato leaf mold,tomato early blight,0.221749,0.100130,3.214157
+tomato leaf mold/226.jpg,tomato leaf mold,tomato leaf mold,0.876722,0.782385,0.561716
+tomato leaf mold/google_0063 - Copy.jpg,tomato leaf mold,tomato leaf mold,0.952657,0.930224,0.317390
+tomato leaf mold/google_0226.jpg,tomato leaf mold,tomato leaf mold,0.776350,0.738614,1.337986
+tomato leaf mold/204.jpg,tomato leaf mold,tomato leaf mold,0.120041,0.019665,3.660152
+tomato leaf mold/282.jpg,tomato leaf mold,tomato leaf mold,0.566779,0.547236,2.489249
+tomato leaf mold/google_0178.jpg,tomato leaf mold,tomato leaf mold,0.242460,0.005047,2.735371
+tomato leaf mold/google_0110.jpg,tomato leaf mold,tomato leaf mold,0.773642,0.741514,1.359056
+tomato leaf mold/247.jpg,tomato leaf mold,tomato leaf mold,0.840149,0.737200,0.776563
+tomato leaf mold/198.jpg,tomato leaf mold,tomato leaf mold,0.664210,0.614096,1.903478
+tomato leaf mold/161.jpg,tomato leaf mold,tomato leaf mold,0.397141,0.281810,2.831490
+tomato leaf mold/google_0308 - Copy (2).jpg,tomato leaf mold,tomato leaf mold,0.407985,0.089688,2.104625
+tomato leaf mold/140.jpg,tomato leaf mold,tomato leaf mold,0.970642,0.959907,0.220662
+tomato leaf mold/217.jpg,tomato leaf mold,tomato leaf mold,0.952154,0.945390,0.370997
+tomato leaf mold/58 - Copy.jpg,tomato leaf mold,bean mosaic virus,0.164012,0.017424,3.450924
+tomato leaf mold/google_0277.jpg,tomato leaf mold,tomato leaf mold,0.513409,0.309611,2.084086
+tomato leaf mold/google_0024.jpg,tomato leaf mold,tomato leaf mold,0.971101,0.966311,0.241650
+tomato leaf mold/google_0007.jpg,tomato leaf mold,tomato leaf mold,0.602016,0.547082,2.099003
+tomato leaf mold/262.jpg,tomato leaf mold,bell pepper leaf spot,0.154918,0.079629,3.647496
+tomato leaf mold/32.jpg,tomato leaf mold,tomato leaf mold,0.600365,0.478465,1.959992
+tomato leaf mold/267.jpg,tomato leaf mold,tomato leaf mold,0.265254,0.132637,2.991779
+tomato mosaic virus/1.jpg,tomato mosaic virus,tomato yellow leaf curl virus,0.817607,0.776246,1.062416
+tomato mosaic virus/230.jpg,tomato mosaic virus,tomato mosaic virus,0.718357,0.520285,1.078110
+tomato mosaic virus/google_0193.jpg,tomato mosaic virus,zucchini yellow mosaic virus,0.374901,0.311681,3.158269
+tomato mosaic virus/google_0008.jpg,tomato mosaic virus,grapevine leafroll disease,0.330431,0.248013,3.184984
+tomato mosaic virus/16.jpg,tomato mosaic virus,tomato yellow leaf curl virus,0.579085,0.475473,2.071993
+tomato mosaic virus/184.jpg,tomato mosaic virus,bean mosaic virus,0.845204,0.818072,0.982308
+tomato mosaic virus/245.jpg,tomato mosaic virus,bean mosaic virus,0.718092,0.672745,1.634800
+tomato mosaic virus/google_0037.jpg,tomato mosaic virus,tomato mosaic virus,0.338417,0.253386,3.017183
+tomato mosaic virus/google_0140.jpg,tomato mosaic virus,tomato mosaic virus,0.393208,0.266854,2.752453
+tomato mosaic virus/google_0164.jpg,tomato mosaic virus,tomato mosaic virus,0.316513,0.006127,2.475587
+tomato mosaic virus/153.jpg,tomato mosaic virus,tomato yellow leaf curl virus,0.799514,0.707575,1.073150
+tomato mosaic virus/200.jpg,tomato mosaic virus,tomato yellow leaf curl virus,0.247736,0.111656,3.186198
+tomato mosaic virus/google_0200 - Copy (2).jpg,tomato mosaic virus,tomato mosaic virus,0.554026,0.474703,2.198470
+tomato mosaic virus/30.jpg,tomato mosaic virus,tomato mosaic virus,0.507204,0.130558,1.395121
+tomato mosaic virus/167.jpg,tomato mosaic virus,tomato mosaic virus,0.694434,0.584387,1.550247
+tomato mosaic virus/google_0017.jpg,tomato mosaic virus,tomato mosaic virus,0.207225,0.009126,3.098664
+tomato mosaic virus/google_0044.jpg,tomato mosaic virus,broccoli leaf,0.196124,0.121437,3.583540
+tomato mosaic virus/35.jpg,tomato mosaic virus,tomato mosaic virus,0.641015,0.406852,1.363133
+tomato mosaic virus/google_0063.jpg,tomato mosaic virus,tomato yellow leaf curl virus,0.680973,0.529160,1.411304
+tomato septoria leaf spot/174.jpg,tomato septoria leaf spot,tomato bacterial leaf spot,0.785861,0.742339,1.223337
+tomato septoria leaf spot/10.jpg,tomato septoria leaf spot,tomato bacterial leaf spot,0.490017,0.322461,2.025054
+tomato septoria leaf spot/google_0283.jpg,tomato septoria leaf spot,tomato bacterial leaf spot,0.737006,0.688754,1.484780
+tomato septoria leaf spot/google_0223.jpg,tomato septoria leaf spot,tomato septoria leaf spot,0.776686,0.614610,0.903118
+tomato septoria leaf spot/google_0226.jpg,tomato septoria leaf spot,bell pepper leaf spot,0.816086,0.786293,1.074961
+tomato septoria leaf spot/google_0219.jpg,tomato septoria leaf spot,tomato septoria leaf spot,0.276692,0.194859,3.301329
+tomato septoria leaf spot/google_0081.jpg,tomato septoria leaf spot,tomato septoria leaf spot,0.220346,0.110947,3.453916
+tomato septoria leaf spot/google_0261.jpg,tomato septoria leaf spot,tomato bacterial leaf spot,0.093382,0.021227,3.818653
+tomato septoria leaf spot/google_0022.jpg,tomato septoria leaf spot,tomato septoria leaf spot,0.570472,0.481258,1.981511
+tomato septoria leaf spot/google_0266 - Copy.jpg,tomato septoria leaf spot,potato early blight,0.535897,0.161932,1.229820
+tomato septoria leaf spot/88.jpg,tomato septoria leaf spot,tomato bacterial leaf spot,0.190632,0.037252,3.281401
+tomato septoria leaf spot/google_0140 - Copy.jpg,tomato septoria leaf spot,tomato early blight,0.397498,0.247155,2.635894
+tomato septoria leaf spot/google_0063.jpg,tomato septoria leaf spot,tomato septoria leaf spot,0.228834,0.107287,3.259332
+tomato septoria leaf spot/google_0231.jpg,tomato septoria leaf spot,tomato bacterial leaf spot,0.513362,0.388686,2.207572
+tomato septoria leaf spot/google_0093.jpg,tomato septoria leaf spot,eggplant cercospora leaf spot,0.425262,0.196107,1.888337
+tomato septoria leaf spot/google_0020.jpg,tomato septoria leaf spot,tomato bacterial leaf spot,0.234054,0.003062,2.903711
+tomato septoria leaf spot/195.jpg,tomato septoria leaf spot,tomato septoria leaf spot,0.712056,0.580442,1.430154
+tomato septoria leaf spot/37.jpg,tomato septoria leaf spot,cherry leaf spot,0.282535,0.168807,3.203961
+tomato septoria leaf spot/google_0134.jpg,tomato septoria leaf spot,tomato leaf mold,0.262023,0.034662,2.659514
+tomato septoria leaf spot/google_0103.jpg,tomato septoria leaf spot,tomato leaf mold,0.357786,0.242402,3.002246
+tomato septoria leaf spot/google_0127.jpg,tomato septoria leaf spot,tomato septoria leaf spot,0.145968,0.007900,3.516952
+tomato septoria leaf spot/google_0147.jpg,tomato septoria leaf spot,basil leaf,0.321764,0.219814,3.086545
+tomato yellow leaf curl virus/google_0146.jpg,tomato yellow leaf curl virus,zucchini yellow mosaic virus,0.193030,0.113111,3.583935
+tomato yellow leaf curl virus/13.jpg,tomato yellow leaf curl virus,tomato mosaic virus,0.889282,0.871501,0.743482
+tomato yellow leaf curl virus/40.jpg,tomato yellow leaf curl virus,tomato mosaic virus,0.968538,0.956028,0.233177
+tomato yellow leaf curl virus/68.jpg,tomato yellow leaf curl virus,tomato mosaic virus,0.982317,0.978159,0.151422
+tomato yellow leaf curl virus/google_0021.jpg,tomato yellow leaf curl virus,celery early blight,0.292362,0.047830,2.722656
+tomato yellow leaf curl virus/google_0111.jpg,tomato yellow leaf curl virus,tomato mosaic virus,0.479932,0.060181,1.307558
+tomato yellow leaf curl virus/59.jpg,tomato yellow leaf curl virus,tomato mosaic virus,0.486014,0.314865,2.204915
+tomato yellow leaf curl virus/google_0049.jpg,tomato yellow leaf curl virus,tomato yellow leaf curl virus,0.268643,0.080111,2.866817
+tomato yellow leaf curl virus/22.jpg,tomato yellow leaf curl virus,tomato mosaic virus,0.396520,0.128627,2.210797
+tomato yellow leaf curl virus/google_0013.jpg,tomato yellow leaf curl virus,tomato mosaic virus,0.298980,0.115749,2.653920
+tomato yellow leaf curl virus/google_0100.jpg,tomato yellow leaf curl virus,tomato mosaic virus,0.391585,0.151643,2.343515
+tomato yellow leaf curl virus/152.jpg,tomato yellow leaf curl virus,tomato mosaic virus,0.980095,0.976784,0.172233
+tomato yellow leaf curl virus/google_0092.jpg,tomato yellow leaf curl virus,bell pepper leaf,0.694033,0.614058,1.617899
+tomato yellow leaf curl virus/227.jpg,tomato yellow leaf curl virus,tomato mosaic virus,0.967245,0.951774,0.229408
+tomato yellow leaf curl virus/google_0105.jpg,tomato yellow leaf curl virus,tomato yellow leaf curl virus,0.804346,0.720040,1.068100
+tomato yellow leaf curl virus/32.jpg,tomato yellow leaf curl virus,tomato bacterial leaf spot,0.168738,0.068888,3.558972
+tomato yellow leaf curl virus/google_0072 - Copy.jpg,tomato yellow leaf curl virus,tomato mosaic virus,0.542546,0.434007,2.143235
+zucchini yellow mosaic virus/160.jpg,zucchini yellow mosaic virus,zucchini yellow mosaic virus,0.935224,0.926841,0.459295
+zucchini yellow mosaic virus/105.jpg,zucchini yellow mosaic virus,zucchini yellow mosaic virus,0.953010,0.944839,0.341014
+zucchini yellow mosaic virus/google_0087.jpg,zucchini yellow mosaic virus,zucchini yellow mosaic virus,0.468059,0.369082,2.432518
+zucchini yellow mosaic virus/google_0223.jpg,zucchini yellow mosaic virus,bean mosaic virus,0.384794,0.221121,2.475884
+zucchini yellow mosaic virus/google_0209.jpg,zucchini yellow mosaic virus,zucchini yellow mosaic virus,0.472209,0.354522,2.443771
+zucchini yellow mosaic virus/google_0095 - Copy.jpg,zucchini yellow mosaic virus,squash powdery mildew,0.336209,0.146159,2.808434
+zucchini yellow mosaic virus/google_0011.jpg,zucchini yellow mosaic virus,potato late blight,0.227035,0.028643,2.730699
+zucchini yellow mosaic virus/google_0037.jpg,zucchini yellow mosaic virus,zucchini yellow mosaic virus,0.939536,0.904006,0.356930
+zucchini yellow mosaic virus/google_0112 - Copy.jpg,zucchini yellow mosaic virus,zucchini yellow mosaic virus,0.735792,0.682722,1.321055
+zucchini yellow mosaic virus/google_0038.jpg,zucchini yellow mosaic virus,zucchini yellow mosaic virus,0.309810,0.097805,2.938613
+zucchini yellow mosaic virus/46.jpg,zucchini yellow mosaic virus,tobacco mosaic virus,0.522340,0.465858,2.412380
+zucchini yellow mosaic virus/25.jpg,zucchini yellow mosaic virus,squash powdery mildew,0.529751,0.492928,2.530014
+zucchini yellow mosaic virus/34.jpg,zucchini yellow mosaic virus,squash leaf,0.120492,0.021826,3.745840
+zucchini yellow mosaic virus/google_0043.jpg,zucchini yellow mosaic virus,tomato mosaic virus,0.142758,0.038679,3.450057
+zucchini yellow mosaic virus/71 - Copy.jpg,zucchini yellow mosaic virus,squash leaf,0.272188,0.181275,3.422282
+zucchini yellow mosaic virus/117.jpg,zucchini yellow mosaic virus,tomato mosaic virus,0.981000,0.977030,0.162637
+zucchini yellow mosaic virus/66.jpg,zucchini yellow mosaic virus,zucchini yellow mosaic virus,0.572831,0.353128,1.707553
+zucchini yellow mosaic virus/google_0147.jpg,zucchini yellow mosaic virus,zucchini yellow mosaic virus,0.939069,0.921766,0.405151

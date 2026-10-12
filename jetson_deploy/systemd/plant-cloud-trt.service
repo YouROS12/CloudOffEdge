@@ -1,0 +1,22 @@
+[Unit]
+Description=Paper 2 — Jetson Nano cloud server (TensorRT fp16 DINOv2-L + DINOv3-L + CLIP-L, QualityGate)
+After=network-online.target tailscaled.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+# __USER__ is substituted at install time by cloud/setup_jetson_trt.sh.
+User=__USER__
+WorkingDirectory=/opt/plant-deploy/deploy
+Environment=TRT_DIR=/opt/plant-deploy/trt
+Environment=SERVER_PORT=8001
+Environment=CLOUD_MODE=batch
+Environment=OPENBLAS_CORETYPE=ARMV8
+ExecStart=/opt/plant-deploy/.venv-trt/bin/python -m cloud.server_trt
+Restart=on-failure
+RestartSec=10
+StandardOutput=append:/var/log/plant-cloud-trt.log
+StandardError=append:/var/log/plant-cloud-trt.log
+
+[Install]
+WantedBy=multi-user.target
