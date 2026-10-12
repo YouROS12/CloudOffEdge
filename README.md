@@ -74,7 +74,7 @@ python experiments/scripts/make_docx.py              # optional Word version (ne
   under their own licences, and engines are specific to the device and TensorRT version;
   `jetson_deploy/` rebuilds them.
 * **Training of the cloud head** — the QualityGate fusion head is the model of El Karch
-  et al. (2025); we ship the trained head and its per-image predictions.
+  et al. (2026); we ship the trained head and its per-image predictions.
 
 ## Contact
 

@@ -148,7 +148,7 @@ features --- self-supervised DINOv2 and DINOv3 and language-supervised
 CLIP \citep{oquab2024dinov2, simeoni2025dinov3, radford2021clip} --- are
 remarkably robust to field conditions; in prior work we showed that
 fusing three such backbones reaches 80.17\,\% top-1 on PlantWild without
-any text supervision \citep{elkarch2025backbone}. Such ensembles,
+any text supervision \citep{elkarch2026backbone}. Such ensembles,
 however, total close to a billion parameters and must run on a server.
 Lightweight convolutional networks such as MobileNetV3
 \citep{howard2019mobilenetv3} run comfortably on a farm-grade device but
@@ -239,7 +239,7 @@ baselines that inject textual disease descriptions
 \citep{wei2024mvpdr}. Recent work combines foundation backbones
 \citep{jiang2025plantcafo, salman2025plantdisease} or compresses ensembles
 for deployment \citep{hasan2025deployable}. Our cloud model is the
-three-backbone QualityGate fusion of \citet{elkarch2025backbone}; this
+three-backbone QualityGate fusion of \citet{elkarch2026backbone}; this
 paper does not propose a new recogniser but asks how to deliver such a
 recogniser's accuracy to farms that cannot afford to upload every image.
 
@@ -302,7 +302,7 @@ GeForce RTX~3070 (8\,GB), an AMD Ryzen~7 7700 CPU and 64\,GB of RAM.
 
 \subsection{Cloud model: frozen foundation-backbone fusion}
 \label{sec:cloud}
-The cloud model is the QualityGate fusion of \citet{elkarch2025backbone}
+The cloud model is the QualityGate fusion of \citet{elkarch2026backbone}
 (Fig.~\ref{fig:system}, right). Three frozen backbones each produce a
 global image descriptor: DINOv2 ViT-L/14 at 336\,px
 \citep{oquab2024dinov2}, DINOv3 ViT-L/16 at 336\,px
