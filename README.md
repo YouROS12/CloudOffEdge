@@ -4,8 +4,8 @@ Code, data and manuscript for
 
 > **Diagnose locally, escalate rarely: bandwidth-efficient plant disease recognition with
 > foundation models on embedded edge–cloud hardware**
-> Youssef Natij, Hajar El Karch, Abdelkader Mezouari — submitted to *Computers and
-> Electronics in Agriculture*. Manuscript: [`paper/main.pdf`](paper/main.pdf)
+> Youssef Natij, Hajar El Karch, Abdelkader Mezouari — submitted to *Results in
+> Engineering*. Manuscript: [`paper/main.pdf`](paper/main.pdf)
 > (Word version: [`paper/main.docx`](paper/main.docx)).
 
 A MobileNetV3-Large classifier on a **Raspberry Pi 5** diagnoses every field photograph
