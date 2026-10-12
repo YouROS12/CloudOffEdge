@@ -76,7 +76,6 @@ python experiments/scripts/make_docx.py              # optional Word version (ne
 * **Training of the cloud head** — the QualityGate fusion head is the model of El Karch
   et al. (2025); we ship the trained head and its per-image predictions.
 
-## Status
+## Contact
 
-Shared for peer review. The repository will be made public, with a licence, upon
-publication. Contact: youssef.natij@uit.ac.ma.
+Youssef Natij — youssef.natij@uit.ac.ma
