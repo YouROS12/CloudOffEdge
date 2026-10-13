@@ -464,22 +464,13 @@ accuracy (76.17\,\% top-1) while escalating at most 30\,\% of images.
   \draw[->, cloudline, line width=0.6pt] (mg) |- node[pos=0.25, right, text=inkgray, font=\scriptsize]{concat} (qg.east);
   \draw[->, accent, line width=0.9pt] (jn) -- (cl);
 \end{tikzpicture}}
-\caption{System overview. Each farm node runs the edge model on every
-image, answers the farmer immediately, and computes the margin $m(x)$
-between its two most probable classes. Only uncertain images ($m<\tau$)
-are uploaded, resized to a 448\,px shorter side, to the cloud node's
-queue; the cloud processes its queue in batches, backbone by backbone
-with one chunk engine in memory at a time, and returns the ensemble's
-diagnosis (Section~\ref{sec:batch}).
-All traffic travels over an encrypted WireGuard overlay. In our testbed
-the four farm nodes are independent processes on one Raspberry Pi~5
-(Section~\ref{sec:fleet}).}
+\caption{System overview: selective edge--cloud escalation.}
 \label{fig:system}
 \end{figure*}
 
 \subsection{System architecture}
 \label{sec:architecture}
-Figure~\ref{fig:architecture} shows the system as deployed. It has three
+Figure~\ref{fig:system} summarises how one image travels through the system: each farm node runs the edge model on every image, answers the farmer immediately and computes the margin $m(x)$ between its two most probable classes; only uncertain images ($m<\tau$) are uploaded, resized to a 448\,px shorter side, to the cloud node's queue, which is processed in batches, backbone by backbone with one chunk engine in memory at a time (Section~\ref{sec:batch}), and the ensemble's diagnosis is returned. All traffic travels over an encrypted WireGuard overlay. Figure~\ref{fig:architecture} shows the system as deployed. It has three
 tiers, each a set of independent services that communicate only through
 small HTTP/JSON interfaces. The \emph{edge tier} runs one service per farm
 (\texttt{plant-edge-farm@A}\ldots\texttt{D}, managed by systemd on the
@@ -570,13 +561,7 @@ the edge.
   % ---- overlay
   \node[lab, anchor=north] at (118mm,-92mm) {All traffic between devices travels over an encrypted WireGuard overlay (Tailscale), which gives every device a stable address.};
 \end{tikzpicture}}
-\caption{System architecture as deployed. Three tiers of independent
-services communicate through HTTP/JSON interfaces: (1)~a capture is sent
-to its farm's edge service, (2)~which answers immediately; (3)~uncertain
-images are additionally queued on the cloud node, (4)~which processes its
-queue twice a day and returns the ensemble's confirmed diagnoses. In our
-testbed the four edge services share one Raspberry Pi~5
-(Section~\ref{sec:fleet}) and the operations tier runs on the workstation.}
+\caption{System architecture as deployed.}
 \label{fig:architecture}
 \end{figure*}
 
@@ -634,19 +619,16 @@ the cloud model needs: some PlantWild images exceed 12 megapixels, while
 the cloud backbones operate at 224--336\,px. Uploading at the camera's
 resolution therefore wastes most of the escalated bytes. The edge instead
 resizes an escalated image so that its shorter side is 448\,px and encodes
-it as JPEG at quality~90. Table~\ref{tab:payload} shows the trade-off
+it as JPEG at quality~90. Table~\ref{tab:payload} shows the trade-off on 300 test images
 measured with the reference cloud pipeline: at 448\,px the cloud returns
 the same diagnosis as from the original photograph for 97.7\,\% of images,
-for 2.5$\times$ fewer bytes than a full-resolution upload. The always-cloud
+for 2.5$\times$ fewer bytes than a full-resolution upload. Agreement is the fraction of images for which the cloud's diagnosis from the payload equals its diagnosis from the original file, which averages 162\,KB. The always-cloud
 baseline in the deployment uses the identical payload, so the measured
 reduction factor isolates the effect of selective escalation.
 
 \begin{table}[!htbp]
 \centering
-\caption{Escalation payload policy (300 test images, reference cloud
-pipeline). Agreement is the fraction of images for which the cloud's
-diagnosis from the payload equals its diagnosis from the original file
-(162\,KB on average).}
+\caption{Escalation payload policy.}
 \label{tab:payload}
 \small
 \begin{tabular}{@{}lrrr@{}}
@@ -787,17 +769,13 @@ port required.
                      n3/{replay: \RCloudAgreeFleet\\vs.\ workstation}}
     \node[chk, anchor=north] at ([yshift=-1.5mm]\n |- nano.south) {\t};
 \end{tikzpicture}}
-\caption{Porting the cloud ensemble to the Jetson Nano. The model is
-decoupled from its framework on the workstation and compiled chunk by chunk
-on the device; the blue labels give the fidelity check passed at each stage
-(Table~\ref{tab:fidelity}).}
+\caption{Porting the cloud ensemble to the Jetson Nano.}
 \label{fig:port-pipeline}
 \end{figure*}
 
 \begin{table*}[!htbp]
 \centering
-\caption{The decisive obstacles of the port, their causes and the
-adaptations that resolved them (all items: \mbox{\ref{app:adaptations}}).}
+\caption{Decisive obstacles of the port, their causes and the adaptations that resolved them.}
 \label{tab:port}
 \footnotesize
 \begin{tabular}{@{}L{0.19\linewidth}L{0.23\linewidth}L{0.28\linewidth}L{0.20\linewidth}@{}}
@@ -818,7 +796,7 @@ Residual on-device deviation & Pillow~8.4 decodes JPEGs differently & isolated a
 \subsection{Decouple the model from its framework}
 On the workstation, each backbone is exported to ONNX \citep{onnx2019} at
 opset~13, the newest opset that TensorRT~8.2 parses
-(Fig.~\ref{fig:port-pipeline}). Fused scaled-dot-product attention has no
+(Fig.~\ref{fig:port-pipeline}). The blue labels in the figure give the fidelity check passed at each stage, detailed in Section~\ref{sec:verify}. Fused scaled-dot-product attention has no
 opset-13 equivalent, so attention is traced in its explicit
 $\mathrm{softmax}(QK^\top/\sqrt{d})V$ form, which is mathematically
 identical. Operations that depend on the input shape --- DINOv2's bicubic
@@ -832,7 +810,7 @@ serving process on the Nano needs neither PyTorch nor its dependencies.
 \subsection{Compile within the memory ceiling}
 A whole ViT-L cannot be compiled on the Nano: TensorRT's ONNX parser alone
 peaks at 2.75\,GB of RAM for a 0.6\,GB fp16 graph, before the builder has
-started (Fig.~\ref{fig:port}b). Each backbone is therefore exported as
+started (Fig.~\ref{fig:port}b). Figure~\ref{fig:port}b compares the memory each step of the port needs with the board's shared CPU/GPU memory; the grey bars are the steps that did not fit. Each backbone is therefore exported as
 four consecutive chunks of six transformer blocks (the first also holding
 the patch embedding, the last the pooling and projection), converted to
 fp16 weights with LayerNorm arithmetic kept in fp32, and compiled into a
@@ -849,12 +827,7 @@ blocks from 612 to 157\,MB.
 \begin{figure*}[!htbp]
 \centering
 \includegraphics[width=\linewidth]{figures/fig_port.pdf}
-\caption{Why the port takes the shape it does. (a)~Largest residual-stream
-activation per transformer block over \RActNImg test images (fp32
-reference): DINOv3 carries activations of about $1.6{\times}10^{5}$ from
-its first block onwards, above the largest fp16 value, whereas DINOv2 and
-CLIP stay below 500. (b)~Memory needed at each step of the port against the
-board's shared CPU/GPU memory; grey bars did not fit.}
+\caption{Activation ranges and memory requirements of the port. (a)~Largest residual-stream activation per transformer block. (b)~Memory needed at each step of the port.}
 \label{fig:port}
 \end{figure*}
 
@@ -863,7 +836,7 @@ Half precision halves weights and load time, but it does not suit every
 backbone. Our first fp16 build of DINOv3 produced NaN features. The
 natural suspect, LayerNorm overflowing in fp16, was wrong: pinning
 LayerNorm, and then every non-convolution layer, to fp32 changed nothing.
-Profiling the reference model (Fig.~\ref{fig:port}a) located the cause:
+Profiling the reference model (Fig.~\ref{fig:port}a) on \RActNImg test images located the cause:
 DINOv3's residual stream carries activations of up to \RActDinoThree from
 its first block onwards, beyond the largest fp16 value (65\,504), whereas
 DINOv2 and CLIP peak at \RActDinoTwo and \RActClip. DINOv2 therefore runs
@@ -902,7 +875,7 @@ cloud nodes with more memory; we did not test it.
 To quantify the design on the device, we replayed \RNanoRuns batches of
 \RNanoBatchN escalated images --- the median batch of the replay, with the
 same payload --- while sampling RAM and the board's input power rail with
-\texttt{tegrastats} about eight times per second (Fig.~\ref{fig:nano-flush}).
+\texttt{tegrastats} about eight times per second (Fig.~\ref{fig:nano-flush}). In the figure, shading marks the backbone being processed; the twelve dips in power are the twelve chunk-engine loads, between which the GPU passes all queued images through the resident chunk. The dashed lines mark the board's total shared memory and its idle power draw.
 Memory use never exceeds \RNanoPeakGB\,GB of the \RNanoTotalGB\,GB
 (\RNanoIdleGB\,GB at idle, including the operating system and the idle
 server): processing a batch adds only about \RNanoRiseGB\,GB, the
@@ -916,20 +889,14 @@ images.
 \begin{figure*}[!htbp]
 \centering
 \includegraphics[width=\linewidth]{figures/fig_nano_flush.pdf}
-\caption{Memory and power of the Jetson Nano during one batch of
-\RNanoBatchN escalated images, measured with \texttt{tegrastats}. Shading
-marks the backbone being processed. Each backbone runs as four chunk
-engines loaded one at a time: the twelve dips in power are the twelve
-engine loads, between which the GPU processes all queued images through
-the resident chunk. The dashed line in the upper panel is the board's total
-shared memory; in the lower panel, the idle power draw.}
+\caption{Jetson Nano memory and board power during one batch of \RNanoBatchN escalated images.}
 \label{fig:nano-flush}
 \end{figure*}
 
 \subsection{Verify every stage}
 \label{sec:verify}
 A port is only useful if it computes the same function, so we verify each
-stage against the reference pipeline (Table~\ref{tab:fidelity}). The
+stage against the reference pipeline (Table~\ref{tab:fidelity}). Workstation checks compare against the PyTorch reference; checks on the Nano compare TensorRT outputs with reference features computed on the workstation. The
 exported graphs match PyTorch to a cosine similarity of 1.000000, the
 NumPy preprocessing reproduces the reference tensors exactly, and the
 NumPy head matches the original to within $3{\times}10^{-6}$ in the
@@ -952,9 +919,7 @@ library difference (Pillow).
 
 \begin{table}[!htbp]
 \centering
-\caption{Fidelity of the embedded cloud pipeline, verified stage by stage.
-Desktop checks compare against the PyTorch reference; Nano checks compare
-TensorRT outputs against reference features computed on the desktop.}
+\caption{Fidelity of the embedded cloud pipeline, stage by stage.}
 \label{tab:fidelity}
 \small
 \begin{tabular}{@{}L{0.28\linewidth}L{0.36\linewidth}r@{}}
@@ -993,7 +958,7 @@ Full pipeline (Nano, replay)    & agreement with offline cloud predictions, ever
 \label{sec:res-capacity}
 
 Table~\ref{tab:edge} and Fig.~\ref{fig:offload} compare the three edge
-models. With MobileNetV3-Small as the edge (61.08\,\% top-1), the margin
+models. For each model we report the smallest escalation rate at which margin escalation reaches 95\,\% of always-cloud accuracy (76.17\,\%), denoted escalation @95\,\%. In Fig.~\ref{fig:offload}a, dots mark where each model first reaches this target; Fig.~\ref{fig:offload}b plots edge compute against the escalation each model needs, with bubble area proportional to the parameter count, and the dotted lines mark the 30\,\% escalation budget. With MobileNetV3-Small as the edge (61.08\,\% top-1), the margin
 rule reaches the 95\,\% target only at 43.5\,\% escalation, failing the
 pre-specified criterion. This failure is not a weakness of the margin
 rule: a learned router trained on the same edge outputs gained only two
@@ -1013,9 +978,7 @@ for the remainder of the paper.
 
 \begin{table}[!htbp]
 \centering
-\caption{Edge models on the PlantWild test split. ``Escalation @95\,\%'' is
-the smallest escalation rate at which margin escalation reaches 95\,\% of
-always-cloud accuracy (76.17\,\%).}
+\caption{Edge models on the PlantWild test split.}
 \label{tab:edge}
 \small
 \setlength{\tabcolsep}{4pt}
@@ -1033,12 +996,7 @@ EfficientNet-B0   & 4.12\,M & 0.400 & 69.35\,\% & 21.7\,\% & pass \\
 \begin{figure*}[!htbp]
 \centering
 \includegraphics[width=\linewidth]{figures/fig_capacity.pdf}
-\caption{Edge capacity sets the operating point. (a)~Accuracy versus
-escalation rate under margin escalation for the three edge models; dots
-mark where each first reaches the 95\,\% target. (b)~Edge compute against
-the escalation each model needs to reach the target; bubble area is
-proportional to the parameter count. The dotted lines mark the 30\,\%
-escalation budget.}
+\caption{Edge capacity and the escalation it requires. (a)~Accuracy versus escalation rate. (b)~Edge compute versus escalation needed for the 95\,\% target.}
 \label{fig:offload}
 \end{figure*}
 
@@ -1054,7 +1012,7 @@ gain; it does not depend on the cloud model, which is unchanged.
 \label{sec:res-headline}
 
 Table~\ref{tab:headline} and Fig.~\ref{fig:pareto} place the operating
-points on the bandwidth axis. With the validation-calibrated threshold,
+points on the bandwidth axis. Absolute traffic uses the measured mean payload $S=\RSKb$\,KB (Section~\ref{sec:bw}); the reduction factor does not depend on $S$. In the figure, the ring marks the operating point with the validation-calibrated threshold, the shaded region the pre-specified success criterion, and the light curve the oracle router, an upper bound for any escalation rule; the lower block of the table reads both routers' test curves at the same accuracy, for comparison only. With the validation-calibrated threshold,
 margin escalation from MobileNetV3-Large reaches 75.82\,\% top-1 on the
 test split --- 94.6\,\% of always-cloud accuracy --- while escalating
 18.6\,\% of images: \ROffKbOp\,KB per diagnosis instead of \RSKb\,KB, a
@@ -1074,10 +1032,7 @@ interpret.
 
 \begin{table}[!htbp]
 \centering
-\caption{Operating points on the PlantWild test split (offline). Absolute
-bandwidth uses the measured mean payload $S{=}\RSKb$\,KB; the reduction
-factor does not depend on $S$. The lower block reads both routers' test curves at the
-same accuracy, for comparison only.}
+\caption{Operating points on the PlantWild test split (offline).}
 \label{tab:headline}
 \small
 \begin{tabular}{@{}L{0.40\linewidth}rrrr@{}}
@@ -1098,25 +1053,18 @@ Cloud-supervised verifier                   & \ROffKbVer &  29.9\,\% & 76.29\,\%
 \begin{figure*}[!htbp]
 \centering
 \includegraphics[width=\linewidth]{figures/fig_pareto.pdf}
-\caption{Accuracy versus mean uplink traffic per diagnosis (offline, test
-split, measured mean payload $S{=}\RSKb$\,KB). The ring marks the operating point
-of MobileNetV3-L with the validation-calibrated threshold; the shaded
-region is the pre-specified success criterion; the light curve is the
-oracle router, an upper bound for any escalation rule.}
+\caption{Accuracy versus mean uplink per diagnosis (offline, test split).}
 \label{fig:pareto}
 \end{figure*}
 
 \begin{figure*}[!htbp]
 \centering
 \includegraphics[width=\linewidth]{figures/fig_flow.pdf}
-\caption{Where the 3\,677 test images go at the calibrated threshold.
-Band widths are proportional to image counts; blue bands are escalated
-images. Escalation rescues 289 edge errors and overturns 50 correct edge
-predictions.}
+\caption{Flow of the 3\,677 test images at the calibrated threshold.}
 \label{fig:flow}
 \end{figure*}
 
-Figure~\ref{fig:flow} follows every test image through the system. Of
+Figure~\ref{fig:flow} follows every test image through the system. Band widths are proportional to image counts, and escalated images are drawn in blue. Of
 the 684 escalated images, 468 (68\,\%) were edge errors, so the margin
 spends uplink overwhelmingly where it is needed; the cloud rescues 289 of
 them and overturns 50 correct edge predictions, a net gain of 239
@@ -1126,14 +1074,12 @@ edge errors are made with a confident margin and never leave the farm.
 \begin{figure*}[!htbp]
 \centering
 \includegraphics[width=\linewidth]{figures/fig_crops.pdf}
-\caption{Per-crop accuracy before and after escalation (left) and the
-share of images escalated (right), at the calibrated threshold. Letters
-give each crop's farm in the replay (Section~\ref{sec:fleet}).}
+\caption{Per-crop accuracy before and after escalation, and per-crop escalation rate.}
 \label{fig:crops}
 \end{figure*}
 
 The rule also adapts across crops without any per-crop tuning
-(Fig.~\ref{fig:crops}). Escalation ranges from 3\,\% of raspberry images
+(Fig.~\ref{fig:crops}). The figure shows, per crop, accuracy before and after escalation and the share of images escalated; the letters give each crop's farm in the replay (Section~\ref{sec:fleet}). Escalation ranges from 3\,\% of raspberry images
 to 36\,\% of bean images, and it is strongly anti-correlated with the edge
 model's accuracy on the crop (Pearson $r=-0.85$): bandwidth flows to the
 crops the edge finds hardest, which are also those that gain most ---
@@ -1199,11 +1145,7 @@ Cloud-supervised MLP verifier (best of 3 targets) & 0.731 \\
 \begin{figure*}[!htbp]
 \centering
 \includegraphics[width=\linewidth]{figures/fig_tax.pdf}
-\caption{The cloud-supervised verifier against scalar signals. (a)~AUC for
-identifying useful escalations. (b)~Uplink per diagnosis at 95\,\% of
-cloud accuracy, read off the test curves: the verifier pays a 2.67\,KB
-message for every image and still needs more escalations than the
-margin.}
+\caption{Cloud-supervised verifier versus scalar signals. (a)~Ranking quality (AUC). (b)~Uplink per diagnosis at 95\,\% of cloud accuracy.}
 \label{fig:verifier}
 \end{figure*}
 
@@ -1212,7 +1154,7 @@ margin.}
 Section~\ref{sec:res-capacity} showed that edge capacity sets the
 operating point. A more capable edge model need not be a larger one: the
 cloud ensemble can teach it. We tested this in two ways
-(Table~\ref{tab:teacher}).
+(Table~\ref{tab:teacher}). Both edge models are evaluated with the same pipeline and with thresholds calibrated on validation; the original model's figures agree with Table~\ref{tab:headline} to within 0.1 point.
 
 \paragraph{Distillation before deployment} We retrained MobileNetV3-Large
 with the recipe and split of Section~\ref{sec:edge}, adding to the loss the
@@ -1235,7 +1177,7 @@ for free. To test whether it can keep improving the deployed edge model, we
 split the test set per class into a first ``week'' of \RLoopNWeek images,
 whose \RLoopNEsc escalated images are used to fine-tune the deployed model
 (eight short epochs, mixed with replayed training images), and a second
-week for evaluation. One week of escalations did not improve the edge
+week for evaluation. Its results are reported on the second week, with escalation @95\,\% read off the test curve. One week of escalations did not improve the edge
 model, whatever labels the escalated images carried, and the escalation
 needed for the target rose. A control that fine-tunes on replayed training
 images alone shows that part of this loss comes from the extra fine-tuning
@@ -1249,12 +1191,7 @@ before deployment is, by contrast, an immediate gain.
 
 \begin{table}[!htbp]
 \centering
-\caption{The ensemble as a teacher. Upper block: full test split, threshold
-calibrated on validation for each model (same evaluation pipeline for both;
-the original model's figures agree with Table~\ref{tab:headline} to within
-0.1 point). Lower block:
-one-week loop pilot, evaluated on the second week; ``escalation @95\,\%'' is
-read off the test curve.}
+\caption{The ensemble as a teacher: distillation and one-week loop pilot.}
 \label{tab:teacher}
 \footnotesize
 \setlength{\tabcolsep}{4pt}
@@ -1280,7 +1217,7 @@ True label (farmer)         & \RLoopOracleEdge\,\% & & & & \RLoopOracleEsc\,\% \
 \subsection{On-device latency and energy}
 \label{sec:res-latency}
 
-Table~\ref{tab:latency} reports latencies measured on the devices. On
+Table~\ref{tab:latency} reports latencies measured on the devices. Each measurement is for a single image (batch size 1); replay values are medians over the seven-day replay. On
 the Raspberry Pi~5, MobileNetV3-Large runs in 65.5\,ms per image (fp32,
 $224{\times}224$, mean of 200 runs after warm-up, no thermal throttling).
 A FLOPs-based projection from the device's nominal throughput had
@@ -1294,7 +1231,7 @@ images in it. Because escalation is deferred, none of this is on the
 farmer's critical path: the farm answers in a median of \RAnswerMs\,ms
 (95\,\% of images within \RAnswerPNinetyFiveMs\,ms; \RAnswerEscMs\,ms at
 the median for escalated images, which include the upload to the cloud
-queue), and the ensemble's confirmation arrives with the next batch.
+queue), and the ensemble's confirmation arrives with the next batch. Figure~\ref{fig:fleet-latency}a shows this time to the farmer's answer for every image of the replay: escalated images are answered by the edge immediately, the upload to the cloud queue included, and confirmed by the cloud at the next batch. Figure~\ref{fig:fleet-latency}b breaks the cost of one escalation into edge inference on the Pi, upload and Nano compute, excluding the wait for the next batch and the per-batch model loading.
 
 Energy was measured on both devices. On the Pi, the power-management IC
 reports the voltage and current of every supply rail; over \RPiN edge
@@ -1311,8 +1248,7 @@ bandwidth saving.
 
 \begin{table}[!htbp]
 \centering
-\caption{Latency measured on the embedded devices (single image, batch
-size 1). Replay values are medians over the seven-day replay.}
+\caption{Latency measured on the embedded devices.}
 \label{tab:latency}
 \small
 \begin{tabular}{@{}L{0.19\linewidth}L{0.56\linewidth}r@{}}
@@ -1346,7 +1282,7 @@ for the same images at the same threshold (18.6\,\%), as expected from
 the edge node's agreement with the offline model (Table~\ref{tab:fidelity}).
 The farms uploaded \RUpMB\,MB in total, against \RCloudOnlyMB\,MB had
 every image been sent with the same payload: a \RReduction-fold reduction
-in the bytes actually uploaded (Fig.~\ref{fig:fleet}). The offline model
+in the bytes actually uploaded (Fig.~\ref{fig:fleet}). The figure shows the escalations per simulated hour, by farm, with nights shaded, and the cumulative uploaded bytes against the same images uploaded with the same payload by an always-cloud design; its green curve is the second replay (Section~\ref{sec:res-improved}). The offline model
 of Eq.~\eqref{eq:bw} predicted \ROffKbOp\,KB per diagnosis; the devices
 measured \RKbPerImg. The system delivered
 \RAcc correct diagnoses, against \REdgeAcc for the edge alone. On the
@@ -1369,14 +1305,11 @@ single global threshold therefore translates into farm-specific uplink
 budgets that follow how hard each farm's crops are for the edge model,
 which a deployment can monitor and, if needed, tune per farm.
 Figure~\ref{fig:console} shows the operations console at the end of the
-replay.
+replay. It displays the simulated clock and node status, fleet indicators, escalations per simulated hour, per-farm cards, the topology, latency by stage and a feed of the most recent diagnoses.
 
 \begin{table}[!htbp]
 \centering
-\caption{Measured results of the seven-day replay, per farm.
-Upload volumes are JPEG bytes actually sent; ``Always-cloud'' is the
-volume had every image been uploaded with the same payload (448\,px
-shorter side, JPEG q90).}
+\caption{Per-farm results of the seven-day replay.}
 \label{tab:fleet}
 \footnotesize
 \setlength{\tabcolsep}{4pt}
@@ -1398,41 +1331,28 @@ All farms            & 3\,677 & \REscRate & \RUpMB & \RCloudOnlyMB & \RReduction
 \begin{figure*}[!htbp]
 \centering
 \includegraphics[width=\linewidth]{figures/fig_fleet_timeline.pdf}
-\caption{The seven-day replay on the embedded testbed. Top: escalations per
-simulated hour, by farm (shaded: night, no captures). Bottom: cumulative
-uploaded bytes, measured image by image, against the same images uploaded
-with the same payload by an always-cloud design; the green curve is the
-second replay, with the distilled edge model
-(Section~\ref{sec:res-improved}).}
+\caption{Escalations per simulated hour and cumulative uplink over the seven-day replay.}
 \label{fig:fleet}
 \end{figure*}
 
 \begin{figure*}[!htbp]
 \centering
 \includegraphics[width=\linewidth]{figures/fig_fleet_latency.pdf}
-\caption{Measured latency during the replay. (a)~Time until the farmer
-receives an answer, per image (log scale); escalated images are answered
-by the edge immediately (including the upload to the cloud queue) and
-confirmed by the cloud at the next batch. (b)~Median cost of one
-escalation by stage: edge inference on the Pi, upload, and Nano compute
-(excluding the wait for the next batch and the per-batch model loading).}
+\caption{Measured latency during the replay. (a)~Time to the farmer's answer, per image. (b)~Median cost of one escalation, by stage.}
 \label{fig:fleet-latency}
 \end{figure*}
 
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=\linewidth]{figures/fig_fleet_vs_offline.pdf}
-\caption{Escalation rate per farm: predicted from the offline margins
-(grey) and measured on the devices (colour).}
+\caption{Escalation rate per farm: offline prediction and on-device measurement.}
 \label{fig:fleet-offline}
 \end{figure}
 
 \begin{figure*}[!htbp]
 \centering
 \includegraphics[width=\linewidth]{figures/fig_console.jpg}
-\caption{Operations console during the replay: simulated clock and node
-status, fleet indicators, escalations per simulated hour, per-farm cards,
-topology, latency by stage and a feed of the most recent diagnoses.}
+\caption{Operations console during the replay.}
 \label{fig:console}
 \end{figure*}
 
@@ -1446,7 +1366,7 @@ the seven-day replay with identical images, schedule, payload and batch
 times. The distilled model's threshold was recalibrated on validation by
 the rule of Section~\ref{sec:router} ($\tau=\RImpTau$), and before the run
 the deployed edge reproduced the distilled model's offline predictions on
-300 of 300 test images. Table~\ref{tab:replays} compares the two replays.
+300 of 300 test images. Table~\ref{tab:replays} compares the two replays. Device energy per diagnosis combines the Pi's energy per image with the Nano's energy per escalated image, both measured in replay-sized batches of 48 (Section~\ref{sec:batch}).
 
 The edge escalated \RImpNEsc images (\RImpEscRate, against the offline
 prediction of \RImpOffEscRate), and the farms uploaded \RImpUpMB\,MB
@@ -1468,11 +1388,7 @@ workstation's offline predictions on \RImpCloudAgree escalated images.
 
 \begin{table}[!htbp]
 \centering
-\caption{The two seven-day replays on the embedded testbed: identical
-images, schedule and payload; replay~2 uses the distilled edge model and
-fp16 CLIP. Device energy per diagnosis combines the Pi's energy per image
-with the Nano's energy per escalated image, measured in replay-sized
-batches of 48 (Section~\ref{sec:batch}).}
+\caption{The two seven-day replays on the embedded testbed.}
 \label{tab:replays}
 \small
 \begin{tabular}{@{}L{0.46\linewidth}rr@{}}
@@ -1766,12 +1682,12 @@ C4 & A second, improved configuration (Section~\ref{sec:res-improved}) had to ru
 \section{Embedded testbed}
 \label{app:testbed}
 \setcounter{table}{0}\setcounter{figure}{0}\setcounter{equation}{0}
+Figure~\ref{fig:setup} shows the testbed: the Raspberry Pi~5 (edge tier, four virtual farm nodes) and the Jetson Nano 4\,GB (cloud tier), connected over the WireGuard overlay.
+
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.85\linewidth]{figures/setup_photo.jpg}
-\caption{The embedded testbed: Raspberry Pi~5 (edge, four virtual farm
-nodes) and Jetson Nano 4\,GB (cloud tier), connected over the WireGuard
-overlay.}
+\caption{The embedded testbed.}
 \label{fig:setup}
 \end{figure}}{}
 
