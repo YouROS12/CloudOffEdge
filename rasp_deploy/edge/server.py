@@ -122,6 +122,8 @@ class EdgeState:
 
         # HTTP client to cloud (lazy: only opened if a request actually escalates)
         self._http: httpx.Client | None = None
+        # background uploads (escalation_mode == "background"): one worker, in order
+        self._uploads = None
 
         # Stats + dashboard heartbeat
         self.stats = StatTracker(role="edge")
@@ -153,6 +155,20 @@ class EdgeState:
                 timeout=self.cfg.edge.cloud_timeout_s,
             )
         return self._http
+
+    def upload_in_background(self, cloud_req: "ClassifyRequest", rid: str) -> None:
+        """Queue an escalation for upload; the answer does not wait for it."""
+        if self._uploads is None:
+            from concurrent.futures import ThreadPoolExecutor
+            self._uploads = ThreadPoolExecutor(max_workers=1, thread_name_prefix="upload")
+
+        def send():
+            try:
+                with httpx.Client(base_url=self.cfg.edge.cloud_url, timeout=self.cfg.edge.cloud_timeout_s) as c:
+                    c.post("/enqueue", json=cloud_req.dict()).raise_for_status()
+            except Exception as e:  # the farmer already has the edge answer
+                log.warning("rid=%s background upload failed (%s)", rid, e)
+        self._uploads.submit(send)
 
     @torch.no_grad()
     def predict(self, image: Image.Image) -> tuple[EdgePrediction, np.ndarray]:
@@ -245,29 +261,35 @@ def predict(req: PredictRequest) -> PredictResponse:
                              quality=state.cfg.edge.jpeg_quality)
         cloud_req = ClassifyRequest(image_b64=b64, image_kb=kb, request_id=rid)
         deferred = state.cfg.edge.escalation_mode == "deferred"
-        try:
-            r = state.http_client().post("/enqueue" if deferred else "/classify", json=cloud_req.dict())
-            r.raise_for_status()
-            if deferred:
-                # The image is on the cloud's queue; answer with the edge label
-                # now, the cloud diagnosis follows at the next batch flush.
-                job_id = r.json()["job_id"]
+        if state.cfg.edge.escalation_mode == "background":
+            # Answer now; the upload runs on a background queue. Bytes are counted when
+            # queued (delivery failures are only logged).
+            state.upload_in_background(cloud_req, rid)
+            label, confidence, source, bw_kb = edge_pred.label, edge_pred.confidence, "pending", kb
+        else:
+            try:
+                r = state.http_client().post("/enqueue" if deferred else "/classify", json=cloud_req.dict())
+                r.raise_for_status()
+                if deferred:
+                    # The image is on the cloud's queue; answer with the edge label
+                    # now, the cloud diagnosis follows at the next batch flush.
+                    job_id = r.json()["job_id"]
+                    label = edge_pred.label
+                    confidence = edge_pred.confidence
+                    source = "pending"
+                else:
+                    cloud_pred = ClassifyResponse(**r.json())
+                    label = cloud_pred.label
+                    confidence = cloud_pred.confidence
+                    source = "cloud"
+                bw_kb = kb
+            except Exception as e:
+                # Nothing was delivered, so nothing is billed: bw_kb stays 0.
+                log.warning("rid=%s cloud call failed (%s); falling back to edge", rid, e)
                 label = edge_pred.label
                 confidence = edge_pred.confidence
-                source = "pending"
-            else:
-                cloud_pred = ClassifyResponse(**r.json())
-                label = cloud_pred.label
-                confidence = cloud_pred.confidence
-                source = "cloud"
-            bw_kb = kb
-        except Exception as e:
-            # Nothing was delivered, so nothing is billed: bw_kb stays 0.
-            log.warning("rid=%s cloud call failed (%s); falling back to edge", rid, e)
-            label = edge_pred.label
-            confidence = edge_pred.confidence
-            source = "edge"
-            route = False
+                source = "edge"
+                route = False
     else:
         label = edge_pred.label
         confidence = edge_pred.confidence

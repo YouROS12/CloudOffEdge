@@ -1,0 +1,19 @@
+{
+ "edge": "MobileNetV3-Small",
+ "target_acc": 0.7616535218928474,
+ "esc_for_95": {
+  "learned_probs": 0.4128365515365787,
+  "learned_probs_dinov2": 0.420179494152842
+ },
+ "epochs": {
+  "probs": 20,
+  "probs_dinov2": 40
+ },
+ "test_auc_useful": {
+  "learned_probs": 0.7854582908508292,
+  "learned_probs_dinov2": 0.7683237270854575,
+  "max_prob": 0.7816741921388295,
+  "margin": 0.785113298237583,
+  "entropy": 0.761538109407187
+ }
+}

@@ -1,0 +1,41 @@
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+[PlantWild] Using MVPDR-native layout (images/ directory)
+[PlantWild] Loading split from <home>\Desktop\TurboQuant\PlantEdge\data\PlantWild\trainval.txt
+[PlantWild] 89 classes | train=13045 | val=1820 | test=3677
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+[loop] baseline edge accuracy on the full test split: 0.6930 (paper: 0.6932)
+[loop] week1=1812 week2=1865 escalated in week1=344 (cloud correct on 228)
+none {'edge_acc': 0.6895442605018616, 'esc_at_tau': 0.18176943063735962, 'acc_at_tau': 0.753887414932251, 'cloud_acc': 0.795174241065979, 'esc_for_95': 0.18605898123324396}
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+    {'epoch': 0, 'loss': 0.2784, 'elapsed_s': 20.6297}
+    {'epoch': 1, 'loss': 0.272, 'elapsed_s': 24.9035}
+    {'epoch': 2, 'loss': 0.2698, 'elapsed_s': 28.8699}
+    {'epoch': 3, 'loss': 0.2649, 'elapsed_s': 32.9808}
+    {'epoch': 4, 'loss': 0.2646, 'elapsed_s': 36.8941}
+    {'epoch': 5, 'loss': 0.2661, 'elapsed_s': 41.16}
+    {'epoch': 6, 'loss': 0.2607, 'elapsed_s': 45.2494}
+    {'epoch': 7, 'loss': 0.262, 'elapsed_s': 49.4673}
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+replay {'edge_acc': 0.6857908964157104, 'esc_at_tau': 0.20107237994670868, 'acc_at_tau': 0.7576407790184021, 'cloud_acc': 0.795174241065979, 'esc_for_95': 0.19785522788203752, 'n_stream': 0}

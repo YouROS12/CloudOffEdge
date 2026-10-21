@@ -1,5 +1,5 @@
 {
- "host": "azze@100.87.131.25",
+ "host": "user@jetson.local",
  "interval_ms": 100,
  "runs": [
   {

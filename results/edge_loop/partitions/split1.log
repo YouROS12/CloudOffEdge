@@ -1,0 +1,141 @@
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+[PlantWild] Using MVPDR-native layout (images/ directory)
+[PlantWild] Loading split from <home>\Desktop\TurboQuant\PlantEdge\data\PlantWild\trainval.txt
+[PlantWild] 89 classes | train=13045 | val=1820 | test=3677
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+[loop] baseline edge accuracy on the full test split: 0.6930 (paper: 0.6932)
+[loop] week1=1812 week2=1865 escalated in week1=344 (cloud correct on 228)
+none {'edge_acc': 0.6895442605018616, 'esc_at_tau': 0.18176943063735962, 'acc_at_tau': 0.753887414932251, 'cloud_acc': 0.795174241065979, 'esc_for_95': 0.18605898123324396}
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+    {'epoch': 0, 'loss': 0.2784, 'elapsed_s': 21.3069}
+    {'epoch': 1, 'loss': 0.272, 'elapsed_s': 26.0337}
+    {'epoch': 2, 'loss': 0.2698, 'elapsed_s': 30.712}
+    {'epoch': 3, 'loss': 0.2649, 'elapsed_s': 35.565}
+    {'epoch': 4, 'loss': 0.2646, 'elapsed_s': 40.0448}
+    {'epoch': 5, 'loss': 0.2661, 'elapsed_s': 44.4455}
+    {'epoch': 6, 'loss': 0.2607, 'elapsed_s': 49.0584}
+    {'epoch': 7, 'loss': 0.262, 'elapsed_s': 53.7765}
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+replay {'edge_acc': 0.6857908964157104, 'esc_at_tau': 0.20107237994670868, 'acc_at_tau': 0.7576407790184021, 'cloud_acc': 0.795174241065979, 'esc_for_95': 0.19785522788203752, 'n_stream': 0}
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+    {'epoch': 0, 'loss': 0.9686, 'elapsed_s': 18.0015}
+    {'epoch': 1, 'loss': 0.4791, 'elapsed_s': 25.6672}
+    {'epoch': 2, 'loss': 0.3267, 'elapsed_s': 33.2136}
+    {'epoch': 3, 'loss': 0.2975, 'elapsed_s': 40.628}
+    {'epoch': 4, 'loss': 0.2936, 'elapsed_s': 48.5043}
+    {'epoch': 5, 'loss': 0.2827, 'elapsed_s': 56.2969}
+    {'epoch': 6, 'loss': 0.2764, 'elapsed_s': 63.7645}
+    {'epoch': 7, 'loss': 0.2781, 'elapsed_s': 71.6045}
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+hard {'edge_acc': 0.6798927783966064, 'esc_at_tau': 0.16836461424827576, 'acc_at_tau': 0.7351206541061401, 'cloud_acc': 0.795174241065979, 'esc_for_95': 0.2450402144772118, 'n_stream': 344}
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+    {'epoch': 0, 'loss': 0.9833, 'elapsed_s': 17.6173}
+    {'epoch': 1, 'loss': 0.5609, 'elapsed_s': 24.9743}
+    {'epoch': 2, 'loss': 0.4279, 'elapsed_s': 32.2991}
+    {'epoch': 3, 'loss': 0.3928, 'elapsed_s': 39.8567}
+    {'epoch': 4, 'loss': 0.3823, 'elapsed_s': 47.6047}
+    {'epoch': 5, 'loss': 0.3689, 'elapsed_s': 55.3377}
+    {'epoch': 6, 'loss': 0.3597, 'elapsed_s': 62.7083}
+    {'epoch': 7, 'loss': 0.3588, 'elapsed_s': 70.4124}
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+soft {'edge_acc': 0.6879356503486633, 'esc_at_tau': 0.19195710122585297, 'acc_at_tau': 0.743163526058197, 'cloud_acc': 0.795174241065979, 'esc_for_95': 0.2487935656836461, 'n_stream': 344}
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+    {'epoch': 0, 'loss': 0.5784, 'elapsed_s': 16.4229}
+    {'epoch': 1, 'loss': 0.3697, 'elapsed_s': 22.1309}
+    {'epoch': 2, 'loss': 0.3306, 'elapsed_s': 28.2219}
+    {'epoch': 3, 'loss': 0.3133, 'elapsed_s': 34.0986}
+    {'epoch': 4, 'loss': 0.3087, 'elapsed_s': 39.9932}
+    {'epoch': 5, 'loss': 0.303, 'elapsed_s': 45.9327}
+    {'epoch': 6, 'loss': 0.3017, 'elapsed_s': 51.7394}
+    {'epoch': 7, 'loss': 0.2962, 'elapsed_s': 57.5845}
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+soft_conf {'edge_acc': 0.6879356503486633, 'esc_at_tau': 0.18284182250499725, 'acc_at_tau': 0.7485254406929016, 'cloud_acc': 0.795174241065979, 'esc_for_95': 0.2225201072386059, 'n_stream': 129}
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+    {'epoch': 0, 'loss': 1.0329, 'elapsed_s': 16.9511}
+    {'epoch': 1, 'loss': 0.5329, 'elapsed_s': 24.0069}
+    {'epoch': 2, 'loss': 0.3547, 'elapsed_s': 30.5648}
+    {'epoch': 3, 'loss': 0.3156, 'elapsed_s': 37.4879}
+    {'epoch': 4, 'loss': 0.2933, 'elapsed_s': 44.0799}
+    {'epoch': 5, 'loss': 0.2857, 'elapsed_s': 50.761}
+    {'epoch': 6, 'loss': 0.2825, 'elapsed_s': 57.5405}
+    {'epoch': 7, 'loss': 0.2801, 'elapsed_s': 64.3633}
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+oracle {'edge_acc': 0.6788203716278076, 'esc_at_tau': 0.1753351241350174, 'acc_at_tau': 0.7335120439529419, 'cloud_acc': 0.795174241065979, 'esc_for_95': 0.2670241286863271, 'n_stream': 344}

@@ -1,5 +1,5 @@
 [PlantWild] Using MVPDR-native layout (images/ directory)
-[PlantWild] Loading split from C:\Users\Youssef\Desktop\TurboQuant\PlantEdge\data\PlantWild\trainval.txt
+[PlantWild] Loading split from <home>\Desktop\TurboQuant\PlantEdge\data\PlantWild\trainval.txt
 [PlantWild] 89 classes | train=13045 | val=1820 | test=3677
     {'epoch': 0, 'loss': 2.6024, 'elapsed_s': 50.7483, 'val_accuracy': 0.4057, 'val_macro_f1': 0.3487}
     {'epoch': 1, 'loss': 1.2179, 'elapsed_s': 93.317, 'val_accuracy': 0.5541, 'val_macro_f1': 0.4984}

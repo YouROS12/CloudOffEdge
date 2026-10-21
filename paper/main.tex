@@ -85,25 +85,24 @@ expert accuracy but need every photograph uploaded over weak, metered
 rural links. We study selective edge--cloud inference as the middle
 ground, evaluated by uplink traffic, the binding constraint on farms. On
 PlantWild (18\,542 in-the-wild images, 89
-classes), a MobileNetV3-Large edge classifier escalates an image to an
-ensemble of three frozen foundation backbones only when the gap between
-its two most probable classes falls below a threshold calibrated on
-validation data. The rule escalates 18.6\,\% of test images and retains
-94.6\,\% of always-cloud accuracy (75.82\,\% vs.\ 80.17\,\% top-1),
-cutting uplink traffic 5.4-fold. Edge-model capacity, not router
+classes), a MobileNetV3-Large edge classifier escalates an image to a
+three-backbone foundation-model ensemble only when its two most probable
+classes are closer than a validation-calibrated threshold. The rule escalates 18.6\,\% of test images and retains
+94.6\,\% of always-cloud accuracy, cutting uplink traffic 5.4-fold. Edge-model capacity, not router
 sophistication, sets this operating point: a weaker edge model needs
-43.5\,\% escalation for the same target, and a cloud-supervised verifier
+\REscNFSmall\,\% escalation for the same target, and a cloud-supervised verifier
 ranks useful escalations worse than the margin (AUC 0.731 vs.\ 0.810) and
-adds an always-on message. We then deploy the system on a Raspberry
-Pi~5 and an end-of-life 4\,GB Jetson Nano, porting the ensemble through
-framework-free, chunk-by-chunk TensorRT inference. In a replayed
-seven-day, four-farm deployment, it uploads \RReduction{}$\times$ less
-than always-cloud, answers on the farm in \RAnswerMs\,ms (median) and
-confirms each escalated image with \RCloudS\,s of Nano compute; distilling
-the ensemble into the edge model raises the measured saving to
-\RImpReduction{}$\times$. Selective
-escalation thus makes foundation-model accuracy affordable on rural links
-with commodity embedded hardware.
+adds an always-on message. We deploy the system on a Raspberry Pi~5 and
+an end-of-life 4\,GB Jetson Nano, porting the ensemble to
+framework-free, chunk-by-chunk TensorRT inference. In an emulated
+seven-day, four-farm deployment, it uploads
+\RReduction{}$\times$ less than always-cloud, answers on the farm in
+\RAnswerMs\,ms (median) and confirms each escalated image with \RCloudS\,s
+of Nano compute. Distilling the ensemble into the same edge model, at no
+cost on the device, raises the measured saving to
+\RImpReduction{}$\times$ and cuts device energy per diagnosis by a third.
+Selective escalation thus brings foundation-model accuracy to rural
+links on commodity hardware.
 \end{abstract}
 
 \begin{highlights}
@@ -111,7 +110,7 @@ with commodity embedded hardware.
 \item 18.6\,\% escalation retains 94.6\,\% of cloud accuracy with 5.4$\times$ less uplink
 \item Edge-model capacity, not router complexity, sets the trade-off
 \item A 0.9-billion-parameter ensemble runs on an end-of-life 4\,GB Jetson Nano
-\item A seven-day, four-farm replay on the devices measures up to 8$\times$ less uplink
+\item Four-farm emulation on the devices: 5.4$\times$ less uplink, 8$\times$ with a distilled edge
 \end{highlights}
 
 \begin{keyword}
@@ -196,9 +195,11 @@ ask three questions:
       uplink traffic (Section~\ref{sec:res-headline}).
 \item \textbf{Evidence that edge capacity, not router cleverness, sets the
       operating point.} Upgrading the edge model halves the required
-      escalation rate (43.5\,\% $\rightarrow$ 20.5\,\%), and distilling the
-      ensemble into the same edge model raises the uplink saving measured
-      on the devices from \RReduction- to \RImpReduction-fold, whereas a
+      escalation rate (\REscNFSmall\,\% $\rightarrow$ \REscNFLarge\,\%), and distilling the
+      ensemble into the same edge model --- once, before deployment, with
+      no change on the device --- raises the uplink saving measured on the
+      devices from \RReduction- to \RImpReduction-fold, and from
+      \RBaseRed- to \RIsoRed-fold at equal accuracy, whereas a
       learned edge-side router saves only two points of escalation and a
       cloud-supervised verifier does worse than the scalar margin while
       adding a permanent message overhead
@@ -217,9 +218,9 @@ ask three questions:
       (Section~\ref{sec:port} and \mbox{\ref{app:adaptations}}).
 \item \textbf{A trace-driven, hardware-in-the-loop emulation of a
       multi-farm week.} Four virtual farms with distinct crop portfolios
-      replay a seven-day capture schedule against the real devices, yielding
+      play back a seven-day capture schedule on the real devices, yielding
       measured per-image latency, per-farm upload volume, cloud load and
-      device energy, for the original and an improved configuration
+            device energy, for the original and the distilled edge model
       (Sections~\ref{sec:res-fleet} and~\ref{sec:res-improved}).
 \end{itemize}
 
@@ -327,7 +328,8 @@ the test split, and we refer to it as \emph{always-cloud}.
 
 \subsection{Edge models}
 \label{sec:edge}
-We consider three ImageNet-pretrained networks that fit a farm-grade CPU:
+We consider three ImageNet-pretrained convolutional networks that fit a
+farm-grade CPU:
 MobileNetV3-Small, MobileNetV3-Large \citep{howard2019mobilenetv3} and
 EfficientNet-B0 \citep{tan2019efficientnet}. Each is fine-tuned end to
 end at $224{\times}224$ for 30 epochs with AdamW
@@ -335,9 +337,10 @@ end at $224{\times}224$ for 30 epochs with AdamW
 $10^{-4}$, batch 64, cosine schedule with 5\,\% linear warm-up), focal
 loss \citep{lin2017focal} with $\gamma{=}2$ and label smoothing 0.1, and
 random resized crops (scale 0.6--1.0), horizontal flips and colour
-jitter. The checkpoint with the best macro-F1 on a stratified 10\,\% hold-out
-of the training split is kept, so that the 1\,820 validation images remain
-unseen until the escalation threshold is calibrated on them.
+jitter. The models are trained on 11\,778 of the 13\,045 training images; the
+remaining 1\,267 (10\,\% of each class, rounded down) select the
+checkpoint with the best macro-F1, so that the 1\,820 validation images
+remain unseen until the escalation threshold is calibrated on them.
 
 \subsection{Margin-based escalation}
 \label{sec:router}
@@ -354,14 +357,25 @@ $\tau$ traces an accuracy--escalation curve; we also evaluate the
 maximum probability $p_{(1)}$ and the predictive entropy as alternative
 signals, two learned edge-side routers, and an \emph{oracle} that
 escalates exactly those images the edge gets wrong and the cloud gets
-right --- an upper bound for any escalation rule.
+right --- an upper bound for any escalation rule. The learned routers are
+perceptrons with two hidden layers of 128 units (layer normalisation of
+the input, GELU, dropout 0.4, AdamW with learning
+rate $10^{-3}$ and weight decay $10^{-3}$, cosine schedule) that predict
+a \emph{useful escalation} (edge wrong, cloud right) from the edge
+model's softmax and its three scalar scores, and, for the second router,
+also from the 1\,024-dimensional DINOv2 descriptor of the image. They are
+trained on the validation split, with the number of epochs chosen by
+five-fold cross-validation within it, and evaluated on the test split.
 
 \paragraph{Threshold calibration} The deployed threshold is fixed before
 any test image is seen: $\tau$ is the smallest value whose
 \emph{validation} accuracy reaches 95\,\% of the cloud model's validation
 accuracy. For MobileNetV3-Large this gives $\tau = 0.138$, which escalates
 19.3\,\% of validation images. The same $\tau$ is then applied unchanged to
-the test split and to the deployment. Full accuracy--escalation curves,
+the test split and to the deployment. Because $\tau$ is estimated from
+1\,820 images, we also report its sampling variability by recalibrating
+it on 2\,000 bootstrap resamples of the validation split
+(Section~\ref{sec:res-headline}). Full accuracy--escalation curves,
 which do not depend on any particular $\tau$, are used only to compare
 routers and edge models.
 
@@ -395,9 +409,17 @@ embedding, its 89-dimensional softmax and its uncertainty scores. It is
 trained to predict one of three targets --- \emph{useful escalation}
 (edge wrong, cloud right), \emph{cloud disagrees} with the edge, or
 \emph{cloud correct} --- and the image is escalated when the verifier's
-score exceeds a threshold. Because the verifier needs the embedding of
-every image, it adds an always-on message of
-$M = 2 \times (1\,280 + 89)$\,bytes $= 2.67$\,KB in half precision.
+score exceeds a threshold. The perceptron has two hidden layers (512
+and 256 units for the first target, 256 and 128 for the others; layer
+normalisation of the input, GELU, dropout 0.3) and is trained with a
+class-weighted binary cross-entropy (AdamW, learning rate
+$3{\times}10^{-4}$, weight decay $10^{-4}$, 40 epochs) on the validation
+split, of which 20\,\% select the checkpoint by AUC; it is evaluated on
+the test split. Because the verifier needs the embedding of every image,
+it adds an always-on message of
+$M = 2 \times (1\,280 + 89)$\,bytes $= 2.67$\,KB in half precision; the
+three scalar scores are functions of the softmax and are recomputed on
+the cloud, so they add no bytes.
 
 \subsection{Success criterion}
 \label{sec:criterion}
@@ -470,7 +492,7 @@ accuracy (76.17\,\% top-1) while escalating at most 30\,\% of images.
 
 \subsection{System architecture}
 \label{sec:architecture}
-Figure~\ref{fig:system} summarises how one image travels through the system: each farm node runs the edge model on every image, answers the farmer immediately and computes the margin $m(x)$ between its two most probable classes; only uncertain images ($m<\tau$) are uploaded, resized to a 448\,px shorter side, to the cloud node's queue, which is processed in batches, backbone by backbone with one chunk engine in memory at a time (Section~\ref{sec:batch}), and the ensemble's diagnosis is returned. All traffic travels over an encrypted WireGuard overlay. Figure~\ref{fig:architecture} shows the system as deployed. It has three
+Figure~\ref{fig:system} summarises how one image travels through the system: each farm node runs the edge model on every image, answers the farmer without waiting for the ensemble and computes the margin $m(x)$ between its two most probable classes; only uncertain images ($m<\tau$) are uploaded, resized to a 448\,px shorter side, to the cloud node's queue, which is processed in batches, backbone by backbone with one chunk engine in memory at a time (Section~\ref{sec:batch}), and the ensemble's diagnosis is returned. All traffic travels over an encrypted WireGuard overlay. Figure~\ref{fig:architecture} shows the system as deployed. It has three
 tiers, each a set of independent services that communicate only through
 small HTTP/JSON interfaces. The \emph{edge tier} runs one service per farm
 (\texttt{plant-edge-farm@A}\ldots\texttt{D}, managed by systemd on the
@@ -478,10 +500,11 @@ Raspberry Pi~5); the \emph{cloud tier} runs a single service
 (\texttt{plant-cloud-trt} on the Jetson Nano); and an \emph{operations
 tier} on a workstation drives the experiment, records every event and
 displays the fleet's state. Four paths connect them. A capture is sent to
-its farm's edge service (path~1), which answers immediately with its own
-diagnosis, margin and upload size (path~2). Only if the margin is below
-$\tau$ does the edge service also resize the image and place it on the
-cloud's queue (path~3), so the answer path never waits for the cloud. Twice
+its farm's edge service (path~1), which answers with its own diagnosis,
+margin and upload size (path~2). Only if the margin is below $\tau$ does
+the edge service also resize the image and place it on the cloud's queue
+(path~3), before answering; the answer therefore waits for the upload to
+be acknowledged but never for the cloud's diagnosis. Twice
 a day the queue is processed as one batch and the ensemble's confirmed
 diagnoses are returned (path~4). Because the tiers share nothing but these
 interfaces, a farm can be added by starting one more edge service, and the
@@ -502,7 +525,7 @@ the edge.
   num/.style={circle, fill=accent, text=white, inner sep=0.8pt, font=\scriptsize\bfseries},
   lab/.style={font=\scriptsize, text=inkgray, align=center}]
   % ---- operations tier (workstation)
-  \node[box] (sim)  at (22mm,-14mm) {\textbf{Fleet emulator}\\{\color{inkgray}\scriptsize replays the capture trace of four farms}};
+  \node[box] (sim)  at (22mm,-14mm) {\textbf{Fleet emulator}\\{\color{inkgray}\scriptsize plays back the capture trace of four farms}};
   \node[box] (logs) at (22mm,-44mm) {\textbf{Per-image logs}\\{\color{inkgray}\scriptsize decisions, bytes,\\latencies, diagnoses}};
   \node[box] (con)  at (22mm,-70mm) {\textbf{Operations console}\\{\color{inkgray}\scriptsize live fleet state; polls every node}};
   \begin{scope}[on background layer]
@@ -609,37 +632,55 @@ Each edge node is a stateless HTTP service. For every image it decodes
 the JPEG, applies the edge model, computes the margin and, if
 $m(x)<\tau$, forwards the image to the cloud node; the uploaded byte count
 is recorded per image once the cloud acknowledges it. Escalation is
-\emph{deferred}: the node places the image on the cloud node's queue and
-immediately returns its own label, so the farmer is never blocked by the
-cloud; the ensemble's diagnosis follows when the queue is processed
-(Section~\ref{sec:batch}).
+\emph{deferred}: the node uploads the image to the cloud node's queue and
+returns its own label as soon as the upload is acknowledged, so the
+farmer never waits for the ensemble's diagnosis, which follows when the
+queue is processed (Section~\ref{sec:batch}). The upload itself, however,
+is on the answer path of our prototype: it adds \RNetMs\,ms (median) on
+the testbed's local network, about \RUplinkS\,s for a median payload on a
+\RUplinkMbps\,Mbit/s rural uplink, and up to the 60\,s request timeout if
+the cloud node cannot be reached, after which the node answers with its
+own label. All latencies reported in this paper include this upload. A
+production node should upload from a background queue so that the answer
+never waits for the network; the released edge server offers this as an
+option, which was added after the measurements and is not evaluated
+here.
 
 \paragraph{Escalation payload} Field photographs are often far larger than
 the cloud model needs: some PlantWild images exceed 12 megapixels, while
 the cloud backbones operate at 224--336\,px. Uploading at the camera's
 resolution therefore wastes most of the escalated bytes. The edge instead
 resizes an escalated image so that its shorter side is 448\,px and encodes
-it as JPEG at quality~90. Table~\ref{tab:payload} shows the trade-off on 300 test images
-measured with the reference cloud pipeline: at 448\,px the cloud returns
-the same diagnosis as from the original photograph for 97.7\,\% of images,
-for 2.5$\times$ fewer bytes than a full-resolution upload. Agreement is the fraction of images for which the cloud's diagnosis from the payload equals its diagnosis from the original file, which averages 162\,KB. The always-cloud
+it as JPEG at quality~90. The policy is chosen on the validation split,
+so that no test image informs a design choice: Table~\ref{tab:payload}
+shows the trade-off on its \RPayN images, measured with the reference
+cloud pipeline. Agreement is the fraction of images for which the cloud's
+diagnosis from the payload equals its diagnosis from the original file,
+and KB are mean sizes over the same images (the original files average
+\RPayOrigKb\,KB on disk). Among the downscaled payloads, 448\,px at
+quality~90 keeps the highest agreement (\RPayFourFourEightAgree) with no
+loss of cloud accuracy, for \RPayRatio$\times$ fewer bytes than the
+full-resolution image at the same quality; a 336\,px payload would save
+another 30\,\% of the bytes at a small cost in agreement and accuracy.
+The always-cloud
 baseline in the deployment uses the identical payload, so the measured
 reduction factor isolates the effect of selective escalation.
 
 \begin{table}[!htbp]
 \centering
-\caption{Escalation payload policy.}
+\caption{Escalation payload policy (validation split).}
 \label{tab:payload}
 \small
 \begin{tabular}{@{}lrrr@{}}
 \toprule
 \textbf{Payload} & \textbf{KB / escalation} & \textbf{Agreement} & \textbf{Cloud top-1} \\
 \midrule
-Full resolution, JPEG q90         & 149.0 & ---       & 81.0\,\% \\
-\textbf{Shorter side 448\,px, q90} & \textbf{59.7} & \textbf{97.7\,\%} & \textbf{82.0\,\%} \\
-Shorter side 336\,px, q95         &  58.2 & 96.3\,\% & 80.3\,\% \\
-Shorter side 336\,px, q90         &  42.7 & 95.7\,\% & 80.0\,\% \\
-Shorter side 224\,px, q90         &  23.1 & 93.7\,\% & 79.3\,\% \\
+Original file                     & \RPayOrigKb & --- & \RPayOrigAcc \\
+Full resolution, JPEG q90         & \RPayFullKb & \RPayFullAgree & \RPayFullAcc \\
+\textbf{Shorter side 448\,px, q90} & \textbf{\RPayFourFourEightKb} & \textbf{\RPayFourFourEightAgree} & \textbf{\RPayFourFourEightAcc} \\
+Shorter side 336\,px, q95         & \RPayThreeThreeSixQNinetyFiveKb & \RPayThreeThreeSixQNinetyFiveAgree & \RPayThreeThreeSixQNinetyFiveAcc \\
+Shorter side 336\,px, q90         & \RPayThreeThreeSixKb & \RPayThreeThreeSixAgree & \RPayThreeThreeSixAcc \\
+Shorter side 224\,px, q90         & \RPayTwoTwoFourKb & \RPayTwoTwoFourAgree & \RPayTwoTwoFourAcc \\
 \bottomrule
 \end{tabular}
 \end{table} If the
@@ -653,12 +694,15 @@ availability. The deployment uses the validation-calibrated $\tau = 0.138$
 A field deployment spans days, with hours between captures. To study
 that regime within an experimental session we use trace-driven,
 hardware-in-the-loop emulation rather than simulation: a recorded
-workload (the test images, arranged into a week of captures) is replayed
-through the real devices and the real network, so that every inference,
+workload (the test images, arranged into a week of captures) is played back through the real devices and the real network, so that every inference,
 every transfer and every byte is executed and measured rather than
 modelled. Only the clock is compressed --- idle time between captures is
 skipped --- and we refer to its time axis as simulated hours and days. We
-call this experiment the \emph{replay} below.
+call this experiment an \emph{emulated deployment}, or the
+\emph{emulation} for short. It was run twice: the \emph{baseline
+deployment} uses the original edge model, and the \emph{distilled
+deployment} (Section~\ref{sec:res-improved}) the edge model distilled
+from the ensemble.
 
 \paragraph{Virtual farms} Four farm nodes run as independent edge
 processes on the Raspberry Pi~5, each with its own identifier, port,
@@ -677,15 +721,14 @@ split exactly once.
 daylight hours (07:00--19:00) of seven simulated days, giving 84 capture
 hours per farm; within an hour, requests from different farms are
 interleaved. One simulated hour lasts at least one second of wall-clock
-time and is stretched when its captures take longer, so the replay never
-drops or overlaps work.
+time and is stretched when its captures take longer, so the emulation never drops or overlaps work.
 
 \paragraph{What is and is not emulated} Requests are issued one at a
 time, so every edge latency is that of a single request on an otherwise
 idle device --- exactly what a farm owning its own Pi would observe.
 Upload sizes, escalation decisions, diagnoses and per-stage latencies
 (edge inference, network, cloud inference) are measured for every image.
-What the replay compresses is idle time; what it emulates is the
+What the emulation compresses is idle time; what it emulates is the
 multiplicity of edge devices. Table~\ref{tab:provenance} lists the
 provenance of every quantity reported in this paper.
 
@@ -765,8 +808,8 @@ port required.
   \draw[->, accent, line width=1.1pt] (w4) -- (n1);
   % ---- checks
   \foreach \n/\t in {w2/{cosine 1.000000\\vs.\ PyTorch}, w3/{chain = full model\\cosine 1.000000},
-                     w4/{cosine $\geq$\,0.9999\\vs.\ fp32 graph}, n2/{engines: \REngAgree\\top-1 agreement},
-                     n3/{replay: \RCloudAgreeFleet\\vs.\ workstation}}
+                     w4/{weight rounding: cosine\\$\geq$\,0.9999 vs.\ fp32 graph}, n2/{engines: \REngAgree\\top-1 agreement},
+                     n3/{deployment: \RCloudAgreeFleet\\vs.\ workstation}}
     \node[chk, anchor=north] at ([yshift=-1.5mm]\n |- nano.south) {\t};
 \end{tikzpicture}}
 \caption{Porting the cloud ensemble to the Jetson Nano.}
@@ -787,8 +830,8 @@ Operators rejected by TensorRT~8.2 & fused attention, cubic resize, shape-depend
 A whole ViT-L cannot be compiled & ONNX parser alone peaks at 2.75\,GB & fp16 weights; four chunks of six blocks & chained chunks cosine 1.000000 \\
 969\,MB of device memory per chunk & weights fused into one opaque kernel graph & every linear layer as a $1{\times}1$ convolution & engine 612\,$\rightarrow$\,157\,MB \\
 NaN features from DINOv3 & residual stream $1.6{\times}10^{5}$, above the fp16 range & precision chosen per backbone from measured ranges & DINOv3 engine cosine \REngCosMinDinoThree \\
-Only 9 of 12 chunks fit & ${\approx}$0.35\,GB per loaded chunk & chunk-major batched inference, deferred escalation & peak \RNanoPeakGB\,GB of \RNanoTotalGB\,GB \\
-Residual on-device deviation & Pillow~8.4 decodes JPEGs differently & isolated and measured, not correctable on JetPack~4 & \RCloudAgreeFleet\ replay agreement \\
+Only 9 of 12 chunks fit & ${\approx}$0.35\,GB per loaded fp16 chunk; fp32 chunks twice as large & chunk-major batched inference, deferred escalation & peak \RNanoPeakGB\,GB of \RNanoTotalGB\,GB \\
+Residual on-device deviation & Pillow~8.4 links a different JPEG decoder & isolated (decoding, not resampling) and measured; accepted with stock JetPack~4 packages & \RCloudAgreeFleet\ agreement in deployment \\
 \bottomrule
 \end{tabular}
 \end{table*}
@@ -803,8 +846,10 @@ identical. Operations that depend on the input shape --- DINOv2's bicubic
 resizing of its position grid, DINOv3's rotary position embedding --- are
 evaluated once for the fixed input size and stored as constants, and an
 export is rejected if any operator unsupported by TensorRT~8.2 remains.
-Image preprocessing (bicubic resize, centre crop, normalisation) and the
-QualityGate head of Eq.~\eqref{eq:qg} are re-implemented in NumPy, so the
+Image preprocessing is re-implemented without PyTorch --- Pillow
+decodes the JPEG and performs the bicubic resize, as torchvision does,
+and NumPy crops, normalises and lays out the tensor --- and the
+QualityGate head of Eq.~\eqref{eq:qg} is re-implemented in NumPy, so the
 serving process on the Nano needs neither PyTorch nor its dependencies.
 
 \subsection{Compile within the memory ceiling}
@@ -814,7 +859,10 @@ started (Fig.~\ref{fig:port}b). Figure~\ref{fig:port}b compares the memory each 
 four consecutive chunks of six transformer blocks (the first also holding
 the patch embedding, the last the pooling and projection), converted to
 fp16 weights with LayerNorm arithmetic kept in fp32, and compiled into a
-TensorRT engine \citep{nvidia2022tensorrt} one chunk at a time; at run time
+TensorRT engine \citep{nvidia2022tensorrt} one chunk at a time. Weights
+are stored in fp16 for all three backbones; the precision in which an
+engine \emph{computes} is chosen per backbone when it is built (next
+subsection); at run time
 the chunks are chained and compute exactly the full forward pass (cosine
 1.000000 against the unsplit model). A second, less visible limit
 followed: TensorRT~8.2 fuses transformer layers whose weights enter
@@ -822,7 +870,11 @@ through matrix products into one opaque kernel graph, which held 969\,MB of
 device memory for six blocks --- about 13\,bytes per parameter. Expressing
 every linear layer as the equivalent $1{\times}1$ convolution keeps the
 weights in TensorRT's native layers and shrinks the engine for the same six
-blocks from 612 to 157\,MB.
+blocks from 612 to 157\,MB. The residual stream keeps its (batch, tokens,
+channels) layout: each linear layer reshapes its input to a
+$1 \times C \times (B\,N) \times 1$ tensor, applies the convolution and
+reshapes the result back, and attention is computed on (batch, heads,
+tokens, head dimension) tensors as before.
 
 \begin{figure*}[!htbp]
 \centering
@@ -840,46 +892,65 @@ Profiling the reference model (Fig.~\ref{fig:port}a) on \RActNImg test images lo
 DINOv3's residual stream carries activations of up to \RActDinoThree from
 its first block onwards, beyond the largest fp16 value (65\,504), whereas
 DINOv2 and CLIP peak at \RActDinoTwo and \RActClip. DINOv2 therefore runs
-in fp16 and DINOv3 in fp32. CLIP was moved to fp32 as well while we
+in fp16 and DINOv3 in fp32. Our workstation check of the fp16-weight
+graphs (Table~\ref{tab:fidelity}) could not have revealed the overflow:
+onnxruntime's CPU provider has no fp16 kernels for these operators and
+computes them in fp32, so the check validated the rounding of the
+weights, not fp16 arithmetic --- run there, the first DINOv3 chunk's
+hidden state reaches $1.57{\times}10^{5}$ without overflowing. An fp32
+engine is built from the same fp16-weight graph with every layer pinned
+to fp32 by TensorRT's precision constraints: it keeps the rounded weights
+but computes in fp32, and the rounding is harmless, as the engines
+reproduce the fp32 reference to a cosine of at least
+\REngCosMinDinoThree. CLIP was moved to fp32 as well while we
 investigated a deviation that we later traced to the image library rather
 than to precision (Section~\ref{sec:verify}). A later check confirmed
 that fp32 is unnecessary for CLIP: fp16 CLIP engines reproduce the fp32
 ones to a cosine of at least \RClipSixteenCos on the 24 reference images,
 with the same pipeline agreement, while cutting CLIP's compute from
 \RClipThirtyTwoMs to \RClipSixteenMs\,ms per image and its loading from
-\RClipThirtyTwoLoadS to \RClipSixteenLoadS\,s. The replay reported here
-used fp32 CLIP; fp16 is the better choice for new deployments.
+\RClipThirtyTwoLoadS to \RClipSixteenLoadS\,s. The baseline deployment used fp32 CLIP; fp16 is the better choice for new deployments.
 
 \subsection{Run within the memory ceiling: chunk-major batched inference}
 \label{sec:batch}
 Even in compact form, a loaded fp16 chunk engine occupies about 0.35\,GB of
 the Nano's shared memory (157\,MB of weights on the device plus the
-runtime's host-side copy and scratch), and we measured that at most nine
-of the twelve chunks can be resident at once, even with a single activation
-buffer shared by all of them. The full ensemble therefore cannot answer
+runtime's host-side copy and scratch), and we measured, with fp16 engines
+for all three backbones, that at most nine of the twelve chunks can be
+resident at once, even with a single activation buffer shared by all of
+them. The deployed mix is larger still: an fp32 chunk engine occupies
+\RTrtChunkThirtyTwoMB\,MB on disk against \RTrtChunkSixteenMB\,MB for an
+fp16 one, and the twelve deployed engines total \RTrtDiskGB\,GB. The full ensemble therefore cannot answer
 requests synchronously on this device. We resolve the conflict with a
 design that matches how diagnoses are used on farms: an escalated image is
 \emph{queued} on the cloud node, and the edge returns its own label to the
-farmer immediately. The cloud node processes its queue in batches,
+farmer as soon as the image is queued. The cloud node processes its queue in batches,
 chunk by chunk: it loads the first chunk of DINOv2, passes every queued
 image through it, frees it, loads the next chunk, and so on through
-DINOv3 and CLIP, keeping the intermediate activations (about 2\,MB per
-image) in host memory, and finally applies the head. At no time is more
-than one chunk engine resident. In the replay the queue is processed twice
+DINOv3 and CLIP, keeping each image's intermediate hidden state (up to
+2.4\,MB for DINOv2's 577 tokens) in host memory, and finally applies the head. With its decoded
+payload and preprocessed input, a queued image holds about 4.5\,MB during a
+batch, so the released server processes queues of more than 128 images in
+sub-batches of 128 (about 0.6\,GB), reloading the engines for each; this
+cap was added after the measurements, in which no batch exceeded 61
+images. At no time is more
+than one chunk engine resident. In the emulation the queue is processed twice
 a day, after the 12:00 and 18:00 captures, so every escalated image
 receives the ensemble's diagnosis on the day it was taken; the batch
 interval trades confirmation delay for model-loading overhead. The server
 also implements a synchronous mode with all engines resident, intended for
 cloud nodes with more memory; we did not test it.
 
-To quantify the design on the device, we replayed \RNanoRuns batches of
-\RNanoBatchN escalated images --- the median batch of the replay, with the
+To quantify the design on the device, we processed \RNanoRuns batches of
+\RNanoBatchN escalated images --- the median batch of the baseline deployment, with the
 same payload --- while sampling RAM and the board's input power rail with
 \texttt{tegrastats} about eight times per second (Fig.~\ref{fig:nano-flush}). In the figure, shading marks the backbone being processed; the twelve dips in power are the twelve chunk-engine loads, between which the GPU passes all queued images through the resident chunk. The dashed lines mark the board's total shared memory and its idle power draw.
 Memory use never exceeds \RNanoPeakGB\,GB of the \RNanoTotalGB\,GB
 (\RNanoIdleGB\,GB at idle, including the operating system and the idle
-server): processing a batch adds only about \RNanoRiseGB\,GB, the
-footprint of one chunk engine. The board draws \RNanoMeanW\,W on average while processing a batch
+server): processing a batch adds about \RNanoRiseGB\,GB on average, the
+footprint of one chunk engine --- up to \RNanoRiseThirtyTwoGB\,GB while an
+fp32 engine (DINOv3, CLIP) is resident and \RNanoRiseSixteenGB\,GB for
+the fp16 DINOv2. The board draws \RNanoMeanW\,W on average while processing a batch
 (\RNanoIdleW\,W at idle, \RNanoMaxW\,W at most), and a batch takes
 \RNanoFlushMin\,min. Each escalated image costs \RNanoEImgJ\,J of board
 energy including its share of model loading, or \RNanoEIncrImgJ\,J above
@@ -908,14 +979,20 @@ reference features to a cosine of \REngCosMinDinoThree (DINOv3, fp32),
 reference top-1 prediction on \REngAgree images. The complete on-device
 pipeline agrees on \RAgree: the residual deviation (minimum cosine
 \RCosMinAll) does not come from TensorRT but from the image library ---
-Pillow~8.4, the last release for JetPack~4's Python~3.6, decodes and
-resamples JPEGs slightly differently from the workstation's Pillow~12,
-by up to 0.59 normalised units on some pixels. Over the replay, the Nano's
+Pillow~8.4, the last release for JetPack~4's Python~3.6, links a
+different JPEG decoder (IJG libjpeg~9) from the workstation's Pillow~12
+(libjpeg-turbo~3.1). On the 24 reference images the two decoders return
+different values for 36\,\% of pixels, by up to 67/255, so the
+preprocessed tensors differ by up to 0.59 normalised units; resampling is
+not involved, as both versions resize identical decoded pixels
+bit-identically. Over the baseline deployment, the Nano's
 diagnosis matches the workstation's offline prediction for
 \RCloudAgreeFleet escalated images. Isolating causes in this way ---
 engines fed identical tensors, then the complete pipeline --- is what
-separated a correctable precision problem (DINOv3) from an uncorrectable
-library difference (Pillow).
+separated a precision problem that had to be corrected (DINOv3) from a
+library difference that we accepted: removing it would require a matched
+JPEG decoder on both machines, which stock JetPack~4 packages do not
+provide.
 
 \begin{table}[!htbp]
 \centering
@@ -928,8 +1005,8 @@ library difference (Pillow).
 \midrule
 ONNX export (3 backbones)       & cosine vs.\ PyTorch, min over images & 1.000000 \\
 Chunking + $1{\times}1$-convolution form & chained chunks vs.\ unsplit model, cosine (PyTorch and ONNX) & 1.000000 \\
-fp16 weights, fp32 LayerNorm    & cosine vs.\ fp32 graph, min & $\geq$\,0.9999 \\
-NumPy preprocessing             & max.\ abs.\ difference vs.\ torchvision & 0 \\
+fp16 weights, fp32 LayerNorm    & cosine vs.\ fp32 graph, min (computed in fp32: tests weight rounding) & $\geq$\,0.9999 \\
+Pillow + NumPy preprocessing    & max.\ abs.\ difference vs.\ torchvision & 0 \\
 NumPy QualityGate head          & max.\ abs.\ logit difference & $2.9\times10^{-6}$ \\
 Full pipeline                   & agreement with offline cloud predictions & 299/300 (99.7\,\%) \\
 \midrule
@@ -944,7 +1021,7 @@ Engines + head                  & top-1 agreement with reference & \REngAgree \\
 \multicolumn{3}{@{}l}{\emph{Complete on-device pipeline (Nano image library)}} \\
 DINOv2-L / DINOv3-L / CLIP-L    & cosine vs.\ reference, min & \RCosMinDinoTwo{} / \RCosMinDinoThree{} / \RCosMinClip \\
 Full pipeline (Nano)            & top-1 agreement with reference & \RAgree \\
-Full pipeline (Nano, replay)    & agreement with offline cloud predictions, every escalated image & \RCloudAgreeFleet \\
+Full pipeline (Nano, deployment)    & agreement with offline cloud predictions, every escalated image & \RCloudAgreeFleet \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -958,21 +1035,25 @@ Full pipeline (Nano, replay)    & agreement with offline cloud predictions, ever
 \label{sec:res-capacity}
 
 Table~\ref{tab:edge} and Fig.~\ref{fig:offload} compare the three edge
-models. For each model we report the smallest escalation rate at which margin escalation reaches 95\,\% of always-cloud accuracy (76.17\,\%), denoted escalation @95\,\%. In Fig.~\ref{fig:offload}a, dots mark where each model first reaches this target; Fig.~\ref{fig:offload}b plots edge compute against the escalation each model needs, with bubble area proportional to the parameter count, and the dotted lines mark the 30\,\% escalation budget. With MobileNetV3-Small as the edge (61.08\,\% top-1), the margin
-rule reaches the 95\,\% target only at 43.5\,\% escalation, failing the
+models. For each model we report the smallest escalation rate at which margin escalation reaches 95\,\% of always-cloud accuracy (76.17\,\%), denoted escalation @95\,\%. In Fig.~\ref{fig:offload}a, dots mark where each model first reaches this target; Fig.~\ref{fig:offload}b plots edge compute against the escalation each model needs, with bubble area proportional to the parameter count, and the dotted lines mark the 30\,\% escalation budget. Escalation @95\,\% is computed exactly, image by image, by escalating
+images in increasing order of margin until the target is reached. With
+MobileNetV3-Small as the edge (61.08\,\% top-1), the margin rule reaches
+the 95\,\% target only at \REscNFSmall\,\% escalation, failing the
 pre-specified criterion. This failure is not a weakness of the margin
 rule: a learned router trained on the same edge outputs gained only two
-points (41.4\,\% escalation), and adding 1\,024-dimensional DINOv2 image
-features to the router overfitted. For this edge model, every edge-side
-signal we tried saturated at an AUC of about 0.76--0.79 for predicting useful
-escalations --- the information an edge-side router can see is bounded
+points (\RRouterEsc\,\% escalation), and adding 1\,024-dimensional DINOv2
+image features to the router lowered its AUC from \RRouterAuc to
+\RRouterDinoAuc (\RRouterDinoEsc\,\% escalation), a sign of overfitting
+the 1\,820 validation images. For this edge model, every edge-side signal
+we tried saturated at an AUC of \RSmallAucLo--\RSmallAucHi for predicting
+useful escalations --- the information an edge-side router can see is bounded
 by the edge model itself.
 
 Replacing the edge model changes the picture. MobileNetV3-Large raises
 edge accuracy by 8.2 points to 69.32\,\% and halves the required
-escalation to 20.5\,\%, comfortably passing the criterion.
+escalation to \REscNFLarge\,\%, comfortably passing the criterion.
 EfficientNet-B0 reaches the same edge accuracy (69.35\,\%) but needs
-slightly more escalation (21.7\,\%) and 1.8$\times$ the
+slightly more escalation (\REscNFEff\,\%) and 1.8$\times$ the
 multiply--accumulate operations, so MobileNetV3-Large is our edge model
 for the remainder of the paper.
 
@@ -986,9 +1067,9 @@ for the remainder of the paper.
 \toprule
 \textbf{Edge model} & \textbf{Params} & \textbf{GMACs} & \textbf{Top-1} & \textbf{Esc.\ @95\,\%} & \textbf{Criterion} \\
 \midrule
-MobileNetV3-Small & 1.61\,M & 0.059 & 61.08\,\% & 43.5\,\% & fail \\
-\textbf{MobileNetV3-Large} & \textbf{4.32\,M} & \textbf{0.225} & \textbf{69.32\,\%} & \textbf{20.5\,\%} & \textbf{pass} \\
-EfficientNet-B0   & 4.12\,M & 0.400 & 69.35\,\% & 21.7\,\% & pass \\
+MobileNetV3-Small & 1.61\,M & 0.059 & 61.08\,\% & \REscNFSmall\,\% & fail \\
+\textbf{MobileNetV3-Large} & \textbf{4.32\,M} & \textbf{0.225} & \textbf{69.32\,\%} & \textbf{\REscNFLarge\,\%} & \textbf{pass} \\
+EfficientNet-B0   & 4.12\,M & 0.400 & 69.35\,\% & \REscNFEff\,\% & pass \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -1002,7 +1083,7 @@ EfficientNet-B0   & 4.12\,M & 0.400 & 69.35\,\% & 21.7\,\% & pass \\
 
 The oracle curve in Fig.~\ref{fig:pareto} and the last column of
 Table~\ref{tab:budgets} add a further observation. At 20\,\% escalation
-the oracle reaches 84.8\,\% with MobileNetV3-Large, \emph{above} the
+the oracle reaches \RBudTwentyOracle\,\% with MobileNetV3-Large, \emph{above} the
 always-cloud model: the edge and the cloud make partly different errors,
 so a perfect router would beat both. The gap between the practical rules
 and the oracle measures how much a better uncertainty signal could still
@@ -1018,16 +1099,28 @@ test split --- 94.6\,\% of always-cloud accuracy --- while escalating
 18.6\,\% of images: \ROffKbOp\,KB per diagnosis instead of \RSKb\,KB, a
 5.38-fold reduction. On the validation split, where $\tau$ was set, the
 rule meets the criterion by construction (95.0\,\% of cloud accuracy at
-19.3\,\% escalation); the 0.4-point shortfall on test is the honest
-generalisation gap of a threshold fixed in advance. Read directly off the
-test curve, the 95\,\% line is crossed at 20.5\,\% escalation (\ROffKbCross\,KB).
+19.3\,\% escalation); the 0.4-point shortfall on test is the
+generalisation gap of a threshold fixed in advance. Its size is what the
+calibration's sampling variability predicts: recalibrating $\tau$ on
+2\,000 bootstrap resamples of the validation split gives a test accuracy
+between \RBootPctLo and \RBootPctHi\,\% of cloud accuracy (5th--95th
+percentile; median \RBootPctMed\,\%) and an escalation rate between
+\RBootEscLo and \RBootEscHi\,\%. A deployment that must meet the target
+with high confidence can take the 95th percentile of the bootstrap
+thresholds instead ($\tau=\RConsTau$): it then delivers \RConsPct\,\% of
+cloud accuracy on test at \RConsEsc\,\% escalation, still a
+\RConsRed-fold reduction. Read directly off the test curve, the 95\,\% line
+is crossed at \REscNFLarge\,\% escalation (\ROffKbCross\,KB). Measured by
+macro-F1, which weights the 89 classes equally, the operating point
+delivers \RMfOp\,\% against \RMfEdge\,\% for the edge alone and
+\RMfCloud\,\% for always-cloud, the same ordering as top-1.
 The curve is
 markedly concave: the first escalated images are the most valuable.
-Escalating 30\,\% of images already closes 81\,\% of the gap between edge
+Escalating 30\,\% of images already closes \RGapClosedThirty\,\% of the gap between edge
 and cloud accuracy (Table~\ref{tab:budgets}), so the last fifth of that
 gap costs the remaining 70\,\% of the traffic. Table~\ref{tab:budgets} shows that the three scalar signals are
-within 1.5 points of each other at every budget; we adopt the margin
-because it ties for best at the target and is the simplest to
+within \RBudSpread points of each other at every budget; we adopt the
+margin because it ties for best at the target and is the simplest to
 interpret.
 
 \begin{table}[!htbp]
@@ -1044,8 +1137,8 @@ Edge only (MobileNetV3-L)                  &   0.0 &   0\,\% & 69.32\,\% &  86.5
 Always-cloud                                & \RSKb & 100\,\%  & 80.17\,\% & 100\,\% \\
 \midrule
 \multicolumn{5}{@{}l}{\emph{Test curves read at 95\,\% of cloud accuracy}} \\
-Margin escalation                           & \ROffKbCross &  20.5\,\% & 76.26\,\% &  95.1\,\% \\
-Cloud-supervised verifier                   & \ROffKbVer &  29.9\,\% & 76.29\,\% &  95.2\,\% \\
+Margin escalation                           & \ROffKbCross &  \REscNFLarge\,\% & \RAccNFLarge\,\% &  \RPctNFLarge\,\% \\
+Cloud-supervised verifier                   & \ROffKbVer &  \RVerEscNF\,\% & \RVerAccNF\,\% &  \RPctNFLarge\,\% \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -1079,7 +1172,7 @@ edge errors are made with a confident margin and never leave the farm.
 \end{figure*}
 
 The rule also adapts across crops without any per-crop tuning
-(Fig.~\ref{fig:crops}). The figure shows, per crop, accuracy before and after escalation and the share of images escalated; the letters give each crop's farm in the replay (Section~\ref{sec:fleet}). Escalation ranges from 3\,\% of raspberry images
+(Fig.~\ref{fig:crops}). The figure shows, per crop, accuracy before and after escalation and the share of images escalated; the letters give each crop's farm in the emulation (Section~\ref{sec:fleet}). Escalation ranges from 3\,\% of raspberry images
 to 36\,\% of bean images, and it is strongly anti-correlated with the edge
 model's accuracy on the crop (Pearson $r=-0.85$): bandwidth flows to the
 crops the edge finds hardest, which are also those that gain most ---
@@ -1096,12 +1189,12 @@ budgets, by signal.}
 \toprule
 \textbf{Escalation} & \textbf{Max.\ probability} & \textbf{Margin} & \textbf{Entropy} & \textbf{Oracle} \\
 \midrule
- 5\,\% & 71.99 & 71.85 & 71.85 & 73.92 \\
-10\,\% & 72.91 & 73.21 & 72.69 & 79.90 \\
-15\,\% & 74.41 & 74.08 & 73.95 & 84.42 \\
-20\,\% & 76.07 & 75.96 & 75.82 & 84.80 \\
-25\,\% & 77.32 & 77.05 & 76.77 & 84.80 \\
-30\,\% & 77.97 & 78.13 & 77.51 & 84.80 \\
+  5\,\% & \RBudFiveMaxP & \RBudFiveMargin & \RBudFiveEnt & \RBudFiveOracle \\
+10\,\% & \RBudTenMaxP & \RBudTenMargin & \RBudTenEnt & \RBudTenOracle \\
+15\,\% & \RBudFifteenMaxP & \RBudFifteenMargin & \RBudFifteenEnt & \RBudFifteenOracle \\
+20\,\% & \RBudTwentyMaxP & \RBudTwentyMargin & \RBudTwentyEnt & \RBudTwentyOracle \\
+25\,\% & \RBudTwentyFiveMaxP & \RBudTwentyFiveMargin & \RBudTwentyFiveEnt & \RBudTwentyFiveOracle \\
+30\,\% & \RBudThirtyMaxP & \RBudThirtyMargin & \RBudThirtyEnt & \RBudThirtyOracle \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -1114,30 +1207,53 @@ is trained with the cloud's answers might do better. It does not
 (Table~\ref{tab:auc}, Fig.~\ref{fig:verifier}). The best verifier scores
 an AUC of 0.731 for identifying useful escalations, below the scalar
 $1-m(x)$ at 0.810. On the bandwidth axis the verifier is dominated twice
-over: it needs more escalations for the same accuracy (29.9\,\% versus
-20.5\,\%) and it adds its 2.67\,KB message to every image. From
+over: it needs more escalations for the same accuracy (\RVerEscNF\,\% versus
+\REscNFLarge\,\%) and it adds its 2.67\,KB message to every image. From
 Eq.~\eqref{eq:bw}, merely breaking even would require the verifier to
 escalate $M/S \approx \RVerifierBreakEven$ points \emph{fewer} images
-than the margin rule; it escalates 9.4 points more. The tax grows as
+than the margin rule; it escalates \RVerExtra points more. The tax grows as
 payloads shrink: the more efficiently escalated images are encoded, the
-larger an always-on message is relative to them. The embedding it consumes carries no
-routing information beyond what the edge posterior already exposes for
-free.
+larger an always-on message is relative to them. The verifier's
+ranking also generalises poorly: the best target reaches an AUC of
+\RVerValAuc on its held-out validation images but \RVerAuc on test,
+the signature of a 1\,372-dimensional input fitted on 1\,820 images. On
+this evidence the embedding carries no routing information beyond what
+the edge posterior already exposes for free.
+
+Could the scalar signals themselves be improved? The edge models are
+trained with focal loss and label smoothing, which change the scale of
+their softmax, so we also calibrated the posterior by temperature
+scaling \citep{guo2017calibration} on the validation split
+($T=\RTemp$; expected calibration error on test \REceRaw before and
+\REceScaled after) and tried the margin between the two largest logits.
+Every variant is calibrated by the same rule and evaluated on test
+(Table~\ref{tab:auc}). For the original edge model, none improves on the
+plain margin by more than a few tenths of a point of escalation; for the
+distilled model of Section~\ref{sec:res-teacher}, the maximum
+probability needs 1.4 points less escalation than the margin. The
+differences between scalar signals are small compared with those between
+edge models, which is why we keep the pre-specified margin rule.
 
 \begin{table}[!htbp]
 \centering
-\caption{Ranking quality of escalation signals for identifying useful
-escalations (edge wrong, cloud right), MobileNetV3-L edge.}
+\caption{Escalation signals: ranking quality and escalation needed.}
 \label{tab:auc}
 \small
-\begin{tabular}{@{}lr@{}}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lrrrr@{}}
 \toprule
-\textbf{Signal} & \textbf{AUC} \\
+ & \multicolumn{2}{c}{\textbf{Original edge}} & \multicolumn{2}{c}{\textbf{Distilled edge}} \\
+\cmidrule(lr){2-3}\cmidrule(l){4-5}
+\textbf{Signal} & \textbf{AUC} & \textbf{Esc.\ @95\,\%} & \textbf{AUC} & \textbf{Esc.\ @95\,\%} \\
 \midrule
-$1 - $ margin                     & \textbf{0.810} \\
-$1 - $ maximum probability        & 0.807 \\
-Entropy                           & 0.790 \\
-Cloud-supervised MLP verifier (best of 3 targets) & 0.731 \\
+$1 - $ margin (deployed)          & \RSigMarginAuc & \RSigMarginEsc\,\% & \RSigKdMarginAuc & \RSigKdMarginEsc\,\% \\
+\quad temperature-scaled           & \RSigMarginTAuc & \RSigMarginTEsc\,\% & \RSigKdMarginTAuc & \RSigKdMarginTEsc\,\% \\
+$1 - $ maximum probability        & \RSigMaxPAuc & \RSigMaxPEsc\,\% & \RSigKdMaxPAuc & \RSigKdMaxPEsc\,\% \\
+\quad temperature-scaled           & \RSigMaxPTAuc & \RSigMaxPTEsc\,\% & \RSigKdMaxPTAuc & \RSigKdMaxPTEsc\,\% \\
+Entropy                           & \RSigEntAuc & \RSigEntEsc\,\% & \RSigKdEntAuc & \RSigKdEntEsc\,\% \\
+\quad temperature-scaled           & \RSigEntTAuc & \RSigEntTEsc\,\% & \RSigKdEntTAuc & \RSigKdEntTEsc\,\% \\
+$-$(logit margin)                 & \RSigLogitAuc & \RSigLogitEsc\,\% & \RSigKdLogitAuc & \RSigKdLogitEsc\,\% \\
+Cloud-supervised MLP verifier     & \RVerAuc & \RVerEscNF\,\% & --- & --- \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -1154,7 +1270,9 @@ Cloud-supervised MLP verifier (best of 3 targets) & 0.731 \\
 Section~\ref{sec:res-capacity} showed that edge capacity sets the
 operating point. A more capable edge model need not be a larger one: the
 cloud ensemble can teach it. We tested this in two ways
-(Table~\ref{tab:teacher}). Both edge models are evaluated with the same pipeline and with thresholds calibrated on validation; the original model's figures agree with Table~\ref{tab:headline} to within 0.1 point.
+(Table~\ref{tab:teacher}). Both edge models are evaluated from the same
+per-image predictions as Table~\ref{tab:headline}, with thresholds
+calibrated on validation by the rule of Section~\ref{sec:router}.
 
 \paragraph{Distillation before deployment} We retrained MobileNetV3-Large
 with the recipe and split of Section~\ref{sec:edge}, adding to the loss the
@@ -1169,33 +1287,58 @@ rule (Section~\ref{sec:router}; $\tau=\RKdTau$), it escalates
 \RKdEsc\,\% of test images instead of \RBaseEsc\,\% while delivering
 \RKdPct\,\% of cloud accuracy, so uplink traffic falls \RKdRed-fold
 instead of \RBaseRed-fold; on the test curve the 95\,\% target is reached
-at \RKdEscNF\,\% escalation instead of \RBaseEscNF\,\%.
+at \RKdEscNF\,\% escalation instead of \RBaseEscNF\,\%. Part of the
+recalibrated model's saving comes from accepting slightly lower accuracy
+(\RKdPct\,\% of cloud accuracy against \RBasePct\,\%), but most of it does
+not: to match the original model's 75.82\,\%, the distilled model needs
+\RIsoEsc\,\% escalation instead of 18.6\,\%, a \RIsoRed-fold reduction
+instead of \RBaseRed-fold. The gain costs nothing at run time and needs
+nothing the system does not already have: a stronger edge model obtained
+from the cloud model itself. Section~\ref{sec:res-improved} confirms it
+on the devices.
 
 \paragraph{Closing the loop after deployment} Every escalated image
 returns with the ensemble's verdict, a training signal the farm receives
-for free. To test whether it can keep improving the deployed edge model, we
-split the test set per class into a first ``week'' of \RLoopNWeek images,
-whose \RLoopNEsc escalated images are used to fine-tune the deployed model
-(eight short epochs, mixed with replayed training images), and a second
-week for evaluation. Its results are reported on the second week, with escalation @95\,\% read off the test curve. One week of escalations did not improve the edge
-model, whatever labels the escalated images carried, and the escalation
-needed for the target rose. A control that fine-tunes on replayed training
-images alone shows that part of this loss comes from the extra fine-tuning
-itself; but even farmer-confirmed labels do not help. The \RLoopNEsc
-images --- about four per class, and the hardest the edge sees --- are too
-few to move a model trained on 11\,778 images of the same distribution.
-The value of the loop therefore lies in accumulating escalations over many
-weeks and in adapting to farms whose images differ from the training data,
-which an in-distribution benchmark cannot show; distilling the ensemble
-before deployment is, by contrast, an immediate gain.
+for free. To test whether it can keep improving the deployed edge model,
+we split the test set per class into a first ``week'' of about
+\RLoopNWeek images, whose \RLoopNEsc escalated images are used to
+fine-tune the deployed model, and a second week of the remaining images
+for evaluation, and repeated the experiment over \RLoopParts random
+partitions. Fine-tuning runs for eight short epochs (AdamW, learning rate
+$10^{-4}$ with 10\,\% warm-up and cosine decay, the loss of the
+distillation recipe), each mixing the escalated images, repeated four
+times, with 2\,000 rehearsal images drawn from the training split by the
+original training's class-balanced sampler; the threshold stays at the
+deployed $\tau$. Because further fine-tuning perturbs a trained model by
+itself, the reference for the escalated images is a control that
+fine-tunes on rehearsal images only: it needs \RLoopCtlVsNone{}\,$\pm$\,\RLoopCtlVsNoneSd
+points more escalation than the unchanged model, consistently across
+partitions. Against this control, one week of escalations did not
+improve the edge model, whatever labels the escalated images carried
+(Table~\ref{tab:teacher}; differences in escalation @95\,\%, mean $\pm$
+standard deviation over partitions): \RLoopHardVsCtl{}\,$\pm$\,\RLoopHardVsCtlSd
+points with the ensemble's top-1 labels, \RLoopSoftVsCtl{}\,$\pm$\,\RLoopSoftVsCtlSd with
+its probabilities, \RLoopSoftConfVsCtl{}\,$\pm$\,\RLoopSoftConfVsCtlSd with its
+probabilities on confident escalations only, and \RLoopOracleVsCtl{}\,$\pm$\,\RLoopOracleVsCtlSd
+even with farmer-confirmed true labels. The fixed-threshold columns show
+the mechanism: the models fine-tuned on escalations escalate fewer images
+at $\tau$ than the control but deliver lower accuracy, so they become
+more confident on the hard cases they were shown without becoming more
+often right. The \RLoopNEsc images --- about four per class, and the
+hardest the edge sees --- are memorised rather than generalised from by a
+model trained on 11\,778 images of the same distribution. The value of
+the loop therefore lies in accumulating escalations over many weeks and
+in adapting to farms whose images differ from the training data, which
+an in-distribution benchmark cannot show; distilling the ensemble before
+deployment is, by contrast, an immediate gain.
 
 \begin{table}[!htbp]
 \centering
 \caption{The ensemble as a teacher: distillation and one-week loop pilot.}
 \label{tab:teacher}
 \footnotesize
-\setlength{\tabcolsep}{4pt}
-\begin{tabular}{@{}L{0.33\linewidth}rrrrr@{}}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}L{0.30\linewidth}rrrrr@{}}
 \toprule
 \textbf{Edge model} & \textbf{Edge} & \textbf{Escal.} & \textbf{Top-1} & \textbf{Uplink} & \textbf{Escal.} \\
  & \textbf{top-1} & & \textbf{(\% cloud)} & \textbf{reduction} & \textbf{@95\,\%} \\
@@ -1203,13 +1346,13 @@ before deployment is, by contrast, an immediate gain.
 Original MobileNetV3-L      & \RBaseEdgeAcc\,\% & \RBaseEsc\,\% & \RBaseAcc\,\% (\RBasePct) & \RBaseRed & \RBaseEscNF\,\% \\
 \textbf{Distilled from the ensemble} & \textbf{\RKdEdgeAcc\,\%} & \textbf{\RKdEsc\,\%} & \textbf{\RKdAcc\,\% (\RKdPct)} & \textbf{\RKdRed} & \textbf{\RKdEscNF\,\%} \\
 \midrule
-\multicolumn{6}{@{}l}{\emph{Loop pilot: fine-tuning on one week's \RLoopNEsc escalated images, labelled by}} \\
-No update                   & \RLoopNoneEdge\,\% & & & & \RLoopNoneEsc\,\% \\
-No new images (control)     & \RLoopReplayEdge\,\% & & & & \RLoopReplayEsc\,\% \\
-Ensemble, top-1 label       & \RLoopHardEdge\,\% & & & & \RLoopHardEsc\,\% \\
-Ensemble, probabilities     & \RLoopSoftEdge\,\% & & & & \RLoopSoftEsc\,\% \\
-Ensemble, confident only (\RLoopConfN) & \RLoopSoftConfEdge\,\% & & & & \RLoopSoftConfEsc\,\% \\
-True label (farmer)         & \RLoopOracleEdge\,\% & & & & \RLoopOracleEsc\,\% \\
+\multicolumn{6}{@{}l}{\emph{Loop pilot, week 2, mean of \RLoopParts partitions; \RLoopNEsc escalations labelled by}} \\
+No update                   & \RLoopNoneEdge\,\% & \RLoopNoneEscTau\,\% & \RLoopNoneAccTau\,\% (\RLoopNonePct) & \RLoopNoneRed & \RLoopNoneEsc{}\,$\pm$\,\RLoopNoneEscSd\,\% \\
+No new images (control)     & \RLoopReplayEdge\,\% & \RLoopReplayEscTau\,\% & \RLoopReplayAccTau\,\% (\RLoopReplayPct) & \RLoopReplayRed & \RLoopReplayEsc{}\,$\pm$\,\RLoopReplayEscSd\,\% \\
+Ensemble, top-1 label       & \RLoopHardEdge\,\% & \RLoopHardEscTau\,\% & \RLoopHardAccTau\,\% (\RLoopHardPct) & \RLoopHardRed & \RLoopHardEsc{}\,$\pm$\,\RLoopHardEscSd\,\% \\
+Ensemble, probabilities     & \RLoopSoftEdge\,\% & \RLoopSoftEscTau\,\% & \RLoopSoftAccTau\,\% (\RLoopSoftPct) & \RLoopSoftRed & \RLoopSoftEsc{}\,$\pm$\,\RLoopSoftEscSd\,\% \\
+Ensemble, confident only (\RLoopConfN) & \RLoopSoftConfEdge\,\% & \RLoopSoftConfEscTau\,\% & \RLoopSoftConfAccTau\,\% (\RLoopSoftConfPct) & \RLoopSoftConfRed & \RLoopSoftConfEsc{}\,$\pm$\,\RLoopSoftConfEscSd\,\% \\
+True label (farmer)         & \RLoopOracleEdge\,\% & \RLoopOracleEscTau\,\% & \RLoopOracleAccTau\,\% (\RLoopOraclePct) & \RLoopOracleRed & \RLoopOracleEsc{}\,$\pm$\,\RLoopOracleEscSd\,\% \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -1217,7 +1360,7 @@ True label (farmer)         & \RLoopOracleEdge\,\% & & & & \RLoopOracleEsc\,\% \
 \subsection{On-device latency and energy}
 \label{sec:res-latency}
 
-Table~\ref{tab:latency} reports latencies measured on the devices. Each measurement is for a single image (batch size 1); replay values are medians over the seven-day replay. On
+Table~\ref{tab:latency} reports latencies measured on the devices. Each measurement is for a single image (batch size 1); deployment values are medians over the baseline deployment. On
 the Raspberry Pi~5, MobileNetV3-Large runs in 65.5\,ms per image (fp32,
 $224{\times}224$, mean of 200 runs after warm-up, no thermal throttling).
 A FLOPs-based projection from the device's nominal throughput had
@@ -1228,10 +1371,12 @@ take \RMsDinoTwo, \RMsDinoThree and \RMsClip\,ms, so an escalated image costs
 \RCloudS\,s of cloud computation including preprocessing and the head;
 loading the three backbones adds \RLoadS\,s per batch, shared by all
 images in it. Because escalation is deferred, none of this is on the
-farmer's critical path: the farm answers in a median of \RAnswerMs\,ms
-(95\,\% of images within \RAnswerPNinetyFiveMs\,ms; \RAnswerEscMs\,ms at
-the median for escalated images, which include the upload to the cloud
-queue), and the ensemble's confirmation arrives with the next batch. Figure~\ref{fig:fleet-latency}a shows this time to the farmer's answer for every image of the replay: escalated images are answered by the edge immediately, the upload to the cloud queue included, and confirmed by the cloud at the next batch. Figure~\ref{fig:fleet-latency}b breaks the cost of one escalation into edge inference on the Pi, upload and Nano compute, excluding the wait for the next batch and the per-batch model loading.
+farmer's path to a diagnosis: the farm answers in a median of
+\RAnswerMs\,ms over all images (95\,\% within
+\RAnswerPNinetyFiveMs\,ms) --- \RAnswerLocalMs\,ms for images answered
+locally and \RAnswerEscMs\,ms for escalated images, whose answer waits
+for the upload to the cloud queue (Section~\ref{sec:edge-node}) --- and
+the ensemble's confirmation arrives with the next batch. Figure~\ref{fig:fleet-latency}a shows this time to the farmer's answer for every image of the baseline deployment: escalated images are answered by the edge as soon as their upload to the cloud queue is acknowledged, and confirmed by the cloud at the next batch. Figure~\ref{fig:fleet-latency}b breaks the cost of one escalation into edge inference on the Pi, upload and Nano compute, excluding the wait for the next batch and the per-batch model loading.
 
 Energy was measured on both devices. On the Pi, the power-management IC
 reports the voltage and current of every supply rail; over \RPiN edge
@@ -1257,44 +1402,50 @@ bandwidth saving.
 \midrule
 Raspberry Pi~5 & MobileNetV3-L forward (fp32, 224\,px), 200 runs & 65.5\,ms \\
                & \quad FLOPs-based projection, for reference & \emph{32.1\,ms} \\
-               & edge inference incl.\ preprocessing (replay) & \REdgeMs\,ms \\
-               & answer on the farm, end to end (replay)     & \RAnswerMs\,ms \\
+               & edge inference incl.\ preprocessing (deployment) & \REdgeMs\,ms \\
+               & answer on the farm, end to end (deployment)     & \RAnswerMs\,ms \\
                & energy per image (SoC and memory rails)     & \RPiEImgJ\,J \\
 \midrule
 Jetson Nano    & DINOv2-L/14, 336\,px (4 chunk engines, fp16) & \RMsDinoTwo\,ms \\
                & DINOv3-L/16, 336\,px (4 chunk engines, fp32) & \RMsDinoThree\,ms \\
                & CLIP-L/14, 224\,px (4 chunk engines, fp32)   & \RMsClip\,ms \\
-               & cloud compute per escalated image (replay)   & \RCloudS\,s \\
-               & loading the three backbones, per batch (replay) & \RLoadS\,s \\
+               & cloud compute per escalated image (deployment)   & \RCloudS\,s \\
+               & loading the three backbones, per batch (deployment) & \RLoadS\,s \\
                & energy per escalated image (board input)    & \RNanoEImgJ\,J \\
 \midrule
-Network        & escalation upload to the cloud queue (replay) & \RNetMs\,ms \\
+Network        & escalation upload to the cloud queue (deployment) & \RNetMs\,ms \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\subsection{Seven-day, four-farm replay}
+\subsection{Seven-day, four-farm emulated deployment}
 \label{sec:res-fleet}
 
-Over the replayed week the four farms submitted \RNImg images, and the
+Over the emulated week of the baseline deployment, the four farms submitted \RNImg images, and the
 edge escalated \RNEsc of them (\REscRate) --- the rate predicted offline
 for the same images at the same threshold (18.6\,\%), as expected from
 the edge node's agreement with the offline model (Table~\ref{tab:fidelity}).
 The farms uploaded \RUpMB\,MB in total, against \RCloudOnlyMB\,MB had
 every image been sent with the same payload: a \RReduction-fold reduction
-in the bytes actually uploaded (Fig.~\ref{fig:fleet}). The figure shows the escalations per simulated hour, by farm, with nights shaded, and the cumulative uploaded bytes against the same images uploaded with the same payload by an always-cloud design; its green curve is the second replay (Section~\ref{sec:res-improved}). The offline model
+in the bytes actually uploaded (Fig.~\ref{fig:fleet}). The figure shows the escalations per simulated hour, by farm, with nights shaded, and the cumulative uploaded bytes against the same images uploaded with the same payload by an always-cloud design; its green curve is the distilled deployment (Section~\ref{sec:res-improved}). The offline model
 of Eq.~\eqref{eq:bw} predicted \ROffKbOp\,KB per diagnosis; the devices
 measured \RKbPerImg. The system delivered
 \RAcc correct diagnoses, against \REdgeAcc for the edge alone. On the
 escalated images, the Nano's ensemble was correct on \RCloudAccEsc of
-them; the workstation's offline predictions for the same images reach
-\ROfflineCloudAccEsc, and the two agree on \RCloudAgreeFleet images
-(\RCloudAgreeFleetPct): the on-device deviation changes individual
-diagnoses but not accuracy. The cloud node processed \RNFlush batches of
+them; the workstation's offline predictions for the same images, which
+like all offline results are computed from the original full-resolution
+files, reach \ROfflineCloudAccEsc, and the two agree on \RCloudAgreeFleet
+images (\RCloudAgreeFleetPct). Running the workstation's reference
+pipeline on both inputs separates the two causes: on these images it is
+correct on \RRefEscFullAcc from the original files and on \RRefEscPayAcc
+from the 448\,px payload, so the payload itself does not cost accuracy,
+and the Nano agrees with it on \RPayNanoAgree images, the remainder being
+the decoder difference of Section~\ref{sec:verify}. The on-device
+deviation changes individual diagnoses but not accuracy. The cloud node processed \RNFlush batches of
 \RBatchMed images at the median, never received more than \RMaxPerHour
 escalations in a simulated hour, and confirmed every escalated image on
 the day it was captured (at most \RDelayMax simulated hours later). The
-whole replay took \RWallMin minutes of wall-clock time, almost all of it
+whole emulation took \RWallMin minutes of wall-clock time, almost all of it
 spent on cloud computation.
 
 The farms behave differently (Table~\ref{tab:fleet},
@@ -1303,27 +1454,32 @@ Fig.~\ref{fig:fleet-offline}): \RFarmMaxName escalated most often
 per-farm rates predicted offline from the margins of the same images. A
 single global threshold therefore translates into farm-specific uplink
 budgets that follow how hard each farm's crops are for the edge model,
-which a deployment can monitor and, if needed, tune per farm.
-Figure~\ref{fig:console} shows the operations console at the end of the
-replay. It displays the simulated clock and node status, fleet indicators, escalations per simulated hour, per-farm cards, the topology, latency by stage and a feed of the most recent diagnoses.
+which a deployment can monitor and, if needed, tune per farm. Delivered
+accuracy also differs between farms, from \RFarmBAcc (solanaceae) to
+\RFarmDAcc (market garden), but mostly because the farms' crops differ in
+difficulty for the cloud model too: measured against each farm's own
+always-cloud accuracy (last column of Table~\ref{tab:fleet}), every farm
+receives between \RFarmCPctCloud and \RFarmDPctCloud of what the ensemble
+alone would deliver, solanaceae included (\RFarmBPctCloud).
+Figure~\ref{fig:console} shows the operations console at the end of the baseline deployment. It displays the simulated clock and node status, fleet indicators, escalations per simulated hour, per-farm cards, the topology, latency by stage and a feed of the most recent diagnoses.
 
 \begin{table}[!htbp]
 \centering
-\caption{Per-farm results of the seven-day replay.}
+\caption{Per-farm results of the baseline deployment.}
 \label{tab:fleet}
 \footnotesize
-\setlength{\tabcolsep}{4pt}
-\begin{tabular}{@{}lrrrrrr@{}}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}lrrrrrrr@{}}
 \toprule
-\textbf{Farm} & \textbf{Images} & \textbf{Escal.} & \textbf{Upload} & \textbf{Always-cloud} & \textbf{Reduction} & \textbf{Top-1} \\
- & & & \textbf{(MB)} & \textbf{(MB)} & & \\
+\textbf{Farm} & \textbf{Images} & \textbf{Escal.} & \textbf{Upload} & \textbf{Always-} & \textbf{Reduc-} & \textbf{Top-1} & \textbf{Cloud} \\
+ & & & \textbf{(MB)} & \textbf{cloud (MB)} & \textbf{tion} & & \textbf{top-1} \\
 \midrule
-A --- orchard        & 1\,360 & \RFarmAEsc & \RFarmAUp & \RFarmACloud & \RFarmARed{}$\times$ & \RFarmAAcc \\
-B --- solanaceae     &   701 & \RFarmBEsc & \RFarmBUp & \RFarmBCloud & \RFarmBRed{}$\times$ & \RFarmBAcc \\
-C --- field crops    &   707 & \RFarmCEsc & \RFarmCUp & \RFarmCCloud & \RFarmCRed{}$\times$ & \RFarmCAcc \\
-D --- market garden  &   909 & \RFarmDEsc & \RFarmDUp & \RFarmDCloud & \RFarmDRed{}$\times$ & \RFarmDAcc \\
+A --- orchard        & 1\,360 & \RFarmAEsc & \RFarmAUp & \RFarmACloud & \RFarmARed{}$\times$ & \RFarmAAcc & \RFarmACeil \\
+B --- solanaceae     &   701 & \RFarmBEsc & \RFarmBUp & \RFarmBCloud & \RFarmBRed{}$\times$ & \RFarmBAcc & \RFarmBCeil \\
+C --- field crops    &   707 & \RFarmCEsc & \RFarmCUp & \RFarmCCloud & \RFarmCRed{}$\times$ & \RFarmCAcc & \RFarmCCeil \\
+D --- market garden  &   909 & \RFarmDEsc & \RFarmDUp & \RFarmDCloud & \RFarmDRed{}$\times$ & \RFarmDAcc & \RFarmDCeil \\
 \midrule
-All farms            & 3\,677 & \REscRate & \RUpMB & \RCloudOnlyMB & \RReduction{}$\times$ & \RAcc \\
+All farms            & 3\,677 & \REscRate & \RUpMB & \RCloudOnlyMB & \RReduction{}$\times$ & \RAcc & 80.2\,\% \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -1331,14 +1487,14 @@ All farms            & 3\,677 & \REscRate & \RUpMB & \RCloudOnlyMB & \RReduction
 \begin{figure*}[!htbp]
 \centering
 \includegraphics[width=\linewidth]{figures/fig_fleet_timeline.pdf}
-\caption{Escalations per simulated hour and cumulative uplink over the seven-day replay.}
+\caption{Escalations per simulated hour and cumulative uplink over the seven-day emulated deployments.}
 \label{fig:fleet}
 \end{figure*}
 
 \begin{figure*}[!htbp]
 \centering
 \includegraphics[width=\linewidth]{figures/fig_fleet_latency.pdf}
-\caption{Measured latency during the replay. (a)~Time to the farmer's answer, per image. (b)~Median cost of one escalation, by stage.}
+\caption{Measured latency during the baseline deployment. (a)~Time to the farmer's answer, per image. (b)~Median cost of one escalation, by stage.}
 \label{fig:fleet-latency}
 \end{figure*}
 
@@ -1352,48 +1508,73 @@ All farms            & 3\,677 & \REscRate & \RUpMB & \RCloudOnlyMB & \RReduction
 \begin{figure*}[!htbp]
 \centering
 \includegraphics[width=\linewidth]{figures/fig_console.jpg}
-\caption{Operations console during the replay.}
+\caption{Operations console during the baseline deployment.}
 \label{fig:console}
 \end{figure*}
 
-\subsection{Improved configuration on the devices}
+\subsection{Distilled configuration on the devices}
 \label{sec:res-improved}
-The two improvements found after the first replay --- the edge model
-distilled from the ensemble (Section~\ref{sec:res-teacher}) and CLIP in
-fp16 (Section~\ref{sec:port}) --- change no interface, so we deployed them
-on the same devices (\mbox{\ref{app:adaptations}}, item~C4) and repeated
-the seven-day replay with identical images, schedule, payload and batch
-times. The distilled model's threshold was recalibrated on validation by
-the rule of Section~\ref{sec:router} ($\tau=\RImpTau$), and before the run
-the deployed edge reproduced the distilled model's offline predictions on
-300 of 300 test images. Table~\ref{tab:replays} compares the two replays. Device energy per diagnosis combines the Pi's energy per image with the Nano's energy per escalated image, both measured in replay-sized batches of 48 (Section~\ref{sec:batch}).
+The ensemble's most effective contribution to the edge is made once,
+before deployment. Distillation (Section~\ref{sec:res-teacher}) leaves
+the edge model's architecture, size and on-device cost unchanged, so we
+deployed the distilled MobileNetV3-Large on the same devices, together
+with the other improvement found after the baseline deployment, CLIP in
+fp16 (Section~\ref{sec:port}); neither changes an interface
+(\mbox{\ref{app:adaptations}}, item~C4). We then repeated the seven-day
+emulation with identical images, schedule, payload and batch times. The
+distilled model's threshold was recalibrated on validation by the rule
+of Section~\ref{sec:router} ($\tau=\RImpTau$), and before the run the
+deployed edge reproduced the distilled model's offline predictions on
+300 of 300 test images. Table~\ref{tab:replays} compares the two
+deployments.
 
-The edge escalated \RImpNEsc images (\RImpEscRate, against the offline
-prediction of \RImpOffEscRate), and the farms uploaded \RImpUpMB\,MB
-instead of \RUpMB\,MB: \RImpKbPerImg per diagnosis, an
-\RImpReduction-fold reduction against always-cloud measured on the devices
-(Fig.~\ref{fig:fleet}). Every farm saved more than in the first replay,
-from \RImpFarmBRed-fold (solanaceae) to \RImpFarmDRed-fold (market garden).
-Delivered accuracy was \RImpAcc, against \RAcc in the first replay: both
+\paragraph{Bandwidth} The edge escalated \RImpNEsc images
+(\RImpEscRate, against the offline prediction of \RImpOffEscRate), and
+the farms uploaded \RImpUpMB\,MB instead of \RUpMB\,MB: \RImpKbPerImg per
+diagnosis, an \RImpReduction-fold reduction against always-cloud measured
+on the devices, compared with \RReduction-fold for the original edge
+model (Fig.~\ref{fig:fleet}). Every farm saved more than in the baseline
+deployment, from \RImpFarmBRed-fold (solanaceae) to \RImpFarmDRed-fold
+(market garden). Delivered accuracy was \RImpAcc, against \RAcc: both
 thresholds target 95\,\% of cloud accuracy on validation, so the stronger
-edge model spends its gain on bandwidth rather than on accuracy, trading a
-third of the uploaded bytes for under one point of accuracy. On the cloud
-node, fp16 CLIP shortened the compute per escalated image from \RCloudS to
-\RImpCloudS\,s, and the whole replay took \RImpWallMin instead of
-\RWallMin minutes of wall-clock time. With fewer and cheaper escalations, a
-diagnosis cost \RImpSysEJ\,J of device energy instead of \RSysEJ\,J, against
-\RNanoTwoEImgJ\,J for an always-cloud design on the same cloud node:
-\RImpSysERatio times less. The Nano's diagnoses agreed with the
-workstation's offline predictions on \RImpCloudAgree escalated images.
+edge model spends its gain on bandwidth rather than on accuracy. The gain
+does not depend on that choice. At equal accuracy the distilled model
+still escalates far less: offline, it matches the original model's
+delivered accuracy (75.82\,\%) at \RIsoEsc\,\% escalation instead of
+18.6\,\%, a \RIsoRed-fold reduction instead of 5.4-fold, and the baseline
+deployment's \RAcc at \RIsoRunEsc\,\% (\RIsoRunRed-fold).
+
+\paragraph{Cost on the devices} Two changes coincide in this deployment,
+and they act on different quantities. Distillation changes only how many
+images are escalated; the edge model's latency is unchanged (median
+answer \RImpAnswerMs\,ms against \RAnswerMs\,ms). fp16 CLIP changes only
+what an escalated image costs on the Nano: compute per escalated image
+fell from \RCloudS to \RImpCloudS\,s and model loading per batch from
+\RLoadS to \RImpLoadS\,s. The whole emulation took \RImpWallMin instead
+of \RWallMin minutes of wall-clock time, a reduction in proportion to the
+number of escalated images. On the Nano an escalated image costs
+\RNanoEImgJ\,J with fp32 CLIP and \RNanoTwoEImgJ\,J with fp16 CLIP in
+batches of 48, and \RNanoThreeFourEImgJ\,J in batches of
+\RNanoThreeFourN, the median batch of this deployment
+(\RNanoThreeFourRuns runs), so the smaller batches did not raise the
+energy per image. A diagnosis therefore cost \RImpSysEThreeFourJ\,J of
+device energy, against \RSysEJ\,J in the baseline deployment; at the
+fp32-CLIP energy per escalated image it would have cost
+\RImpSysEFpThirtyTwoJ\,J, so distillation accounts for nearly all of the
+saving and fp16 CLIP for the rest. Against an always-cloud design on the
+same cloud node, which spends \RNanoTwoEImgJ\,J on every image, the
+distilled configuration uses \RImpSysERatio times less device energy per
+diagnosis. The Nano's diagnoses agreed with the workstation's offline
+predictions on \RImpCloudAgree escalated images.
 
 \begin{table}[!htbp]
 \centering
-\caption{The two seven-day replays on the embedded testbed.}
+\caption{The two emulated deployments on the embedded testbed.}
 \label{tab:replays}
 \small
 \begin{tabular}{@{}L{0.46\linewidth}rr@{}}
 \toprule
- & \textbf{Replay 1} & \textbf{Replay 2} \\
+ & \textbf{Baseline} & \textbf{Distilled} \\
 \midrule
 Edge model                               & original & distilled \\
 CLIP precision on the Nano               & fp32 & fp16 \\
@@ -1404,14 +1585,17 @@ Uploaded (always-cloud: \RCloudOnlyMB\,MB) & \RUpMB\,MB & \RImpUpMB\,MB \\
 Uplink reduction                         & \RReduction{}$\times$ & \RImpReduction{}$\times$ \\
 Uplink per diagnosis                     & \RKbPerImg & \RImpKbPerImg \\
 Delivered top-1                          & \RAcc & \RImpAcc \\
+Delivered macro-F1                       & \RMfRunOne\,\% & \RMfRunTwo\,\% \\
 Edge model alone, top-1                  & \REdgeAcc & \RImpEdgeAcc \\
+Uplink reduction at equal accuracy (offline) & \RBaseRed{}$\times$ & \RIsoRed{}$\times$ \\
 \midrule
 Answer on the farm, median               & \RAnswerMs\,ms & \RImpAnswerMs\,ms \\
 Nano compute per escalated image, median & \RCloudS\,s & \RImpCloudS\,s \\
 Model loading per batch, median          & \RLoadS\,s & \RImpLoadS\,s \\
 Batches (median size)                    & \RNFlush{} (\RBatchMed) & \RImpNFlush{} (\RImpBatchMed) \\
-Device energy per diagnosis              & \RSysEJ\,J & \RImpSysEJ\,J \\
-Wall-clock time of the replay            & \RWallMin\,min & \RImpWallMin\,min \\
+Nano energy per escalated image          & \RNanoEImgJ\,J & \RNanoThreeFourEImgJ\,J \\
+Device energy per diagnosis              & \RSysEJ\,J & \RImpSysEThreeFourJ\,J \\
+Wall-clock time of the emulation         & \RWallMin\,min & \RImpWallMin\,min \\
 Nano--workstation agreement, escalated images & \RCloudAgreeFleet & \RImpCloudAgree \\
 \bottomrule
 \end{tabular}
@@ -1434,10 +1618,14 @@ architecture: distilling the ensemble into the same MobileNetV3-Large cut
 the calibrated escalation rate from \RBaseEsc to \RKdEsc\,\%
 (Section~\ref{sec:res-teacher}), and on the devices from \REscRate to
 \RImpEscRate, an \RImpReduction-fold uplink saving
-(Section~\ref{sec:res-improved}). The reason is
+(Section~\ref{sec:res-improved}). Our comparison covers convolutional
+edge models, which are what runs efficiently on the Pi's CPU with stock
+PyTorch; lightweight hybrid CNN--transformer models might align better
+with a transformer teacher, and the same comparison would tell whether
+they move the operating point further. The reason is
 informational: an edge-side router can only re-express the edge model's
 posterior, and the margin already summarises it well. The oracle shows
-that substantial headroom remains (84.8\,\% at 20\,\% escalation), but
+that substantial headroom remains (\RBudTwentyOracle\,\% at 20\,\% escalation), but
 reaching it requires information the edge does not have; a cheaper path
 to it is a stronger edge model.
 
@@ -1447,8 +1635,9 @@ negligible; on the bandwidth axis it is a fixed tax that a learned router
 must earn back through fewer escalations. For field deployments on
 metered cellular links the relevant figure is the uplink volume per farm
 and month. At the measured \RKbPerImg per diagnosis, a farm capturing
-\RImgPerDay images per day would upload \RMonthMB\,MB per month, against
-\RMonthCloudMB\,MB for always-cloud with the same payload; on a
+\RImgPerDay images per day would upload \RMonthMB\,MB in a 30-day month,
+against \RMonthCloudMB\,MB for always-cloud with the same payload, and
+with the distilled edge model \RImpMonthMB\,MB; on a
 \RUplinkMbps\,Mbit/s uplink an escalated image takes about \RUplinkS\,s to
 transmit.
 
@@ -1461,19 +1650,21 @@ removes the dependency on wide-area connectivity for the cloud tier, and
 turns a recurring service cost into a one-off hardware cost. It does not
 come for free. Each escalated image costs \RCloudS\,s of Nano compute, and
 because the full ensemble does not fit in memory, the cloud tier must
-work in batches; in the replay a batch of \RBatchMed images also paid
+work in batches; in the baseline deployment a batch of \RBatchMed images also paid
 \RLoadS\,s to load the three backbones, and the board spends
 \RNanoEImgJ\,J per escalated image (Section~\ref{sec:batch}). Selective
 escalation is what makes this affordable: at 18--19\,\% escalation the
-Nano sees one image in five, whereas an always-cloud design would multiply
-its workload, and its energy use, more than fivefold. Beyond this study,
+Nano sees one image in five, and at the distilled edge model's
+\RImpEscRate one image in eight, whereas an always-cloud design would
+multiply its workload, and its energy use, more than fivefold and
+eightfold respectively. Beyond this study,
 the port shows that hardware the software ecosystem has left behind can
 still serve current foundation models, provided memory, precision and
 fidelity are engineered explicitly; the same five principles apply to
 other legacy accelerators that farms and cooperatives already own. The batched design suits scouting and monitoring workflows, in
 which a confirmed diagnosis within hours is valuable but an instant one
-is not required; the farmer always receives the edge's answer
-immediately. A node with more memory, such as an 8\,GB module, could keep
+is not required; the farmer always receives the edge's answer without
+waiting for the ensemble. A node with more memory, such as an 8\,GB module, could keep
 all engines resident and answer synchronously; the server implements this
 mode, but we have not tested it.
 
@@ -1490,12 +1681,19 @@ exposed them; we recommend the practice for any edge--cloud deployment.
 Our study uses a single, if diverse, benchmark; PlantWild's class
 balance and capture conditions may differ from a given region. The
 escalation threshold is global; per-crop thresholds could equalise
-accuracy across farms. The replay compresses idle time and therefore
+accuracy across farms. The emulation compresses idle time and therefore
 does not capture diurnal effects, power cycling or connectivity
 outages, and its four farms share one physical Pi, so device-to-device
 variability is not represented. Each edge model was trained once, so we
-report no variance across training seeds; the same holds for the
-distillation and loop experiments. The Pi's energy covers its SoC and
+report no variance across training seeds for the edge models and the
+distillation; the bootstrap of Section~\ref{sec:res-headline} covers the
+variability of the calibrated threshold, and the loop pilot is repeated
+over \RLoopParts random partitions. The escalation threshold is a point
+estimate whose test result falls on either side of the target, and the
+benchmark has no second field dataset with the same classes on which to
+test it, so we do not claim a guarantee beyond PlantWild. In the
+prototype the farmer's answer to an escalated image waits for the upload
+to be acknowledged (Section~\ref{sec:edge-node}). The Pi's energy covers its SoC and
 memory rails only and is therefore a lower bound. In our testbed the devices share a local
 network, so measured network latencies are a best case for rural links;
 transfer times on slower links follow directly from the measured byte
@@ -1504,7 +1702,7 @@ parameter set in simulated time (two batches a day), not a measured
 quantity; its compute and loading costs are measured. Finally, the
 Nano's cloud pipeline deviates slightly from the workstation's, chiefly
 through its older image library; Table~\ref{tab:fidelity} and the
-replay-wide agreement quantify the deviation.
+deployment-wide agreement quantify the deviation.
 
 % =====================================================================
 \section{Conclusion}
@@ -1522,15 +1720,17 @@ cloud-supervised verifier pays for its own message without improving
 routing. The complete system runs on a Raspberry Pi~5 and an end-of-life
 4\,GB Jetson Nano, made possible by a port that decouples the ensemble from
 its framework and runs it one chunk engine at a time, at \RNanoEImgJ\,J
-per escalated image; a seven-day, four-farm replay on that hardware
+per escalated image; a seven-day, four-farm emulated deployment on that hardware
 confirms the
 offline trade-off: \REscRate of images escalated, uploaded bytes cut
 \RReduction-fold, and \RAcc of diagnoses correct, with a median answer
 time on the farm of \RAnswerMs\,ms and \RSysERatio times less device energy
 per diagnosis than always-cloud. Distilling the ensemble into the edge
-model, at no inference cost, raises the uplink saving measured on the
-same devices from \RReduction- to \RImpReduction-fold (\RImpKbPerImg per
-diagnosis) at \RImpAcc delivered accuracy. Future work will accumulate escalations over full seasons
+model, once and at no inference cost, raises the uplink saving measured
+on the same devices from \RReduction- to \RImpReduction-fold
+(\RImpKbPerImg per diagnosis) at \RImpAcc delivered accuracy --- and to
+\RIsoRed-fold at unchanged accuracy --- while cutting device energy per
+diagnosis from \RSysEJ to \RImpSysEThreeFourJ\,J. Future work will accumulate escalations over full seasons
 to test whether the loop from cloud to edge improves farms whose images
 differ from the training data, a gain one week of in-distribution
 escalations could not show; it will also tune thresholds per crop and
@@ -1563,7 +1763,7 @@ toolkit (chunked ONNX export, fp16 conversion, chunk-by-chunk TensorRT
 build, chunk-major runtime), the fleet emulator and operations console, the
 training, distillation, calibration and measurement scripts, the trained
 edge models and cloud head, the per-image predictions, the per-image logs
-of both replays, the activation, memory and power profiles, the TensorRT
+of both emulated deployments, the activation, memory and power profiles, the TensorRT
 verification reports and the sources of this manuscript.
 
 \section*{Declaration of generative AI and AI-assisted technologies in the
@@ -1605,7 +1805,7 @@ adaptation was verified against the reference pipeline
 \bottomrule
 \endfoot
 \multicolumn{3}{@{}p{0.92\linewidth}}{\emph{Edge node --- Raspberry Pi 5, Debian 13, Python 3.13}} \\
-A1 & Reference dependency pins (PyTorch 2.2, NumPy 1.26) have no Python 3.13 wheels for ARM64. &
+A1 & The edge requirements originally pinned PyTorch 2.2 and NumPy 1.26, which have no Python 3.13 wheels for ARM64 (the workstation reference itself uses PyTorch~2.11). &
      Version-conditional pins (PEP~508 markers): original pins below 3.13, PyTorch 2.6 / NumPy 2.2 from 3.13. \\
 A2 & One physical device must emulate several farms. &
      systemd template unit; one independent server process per farm with its own identifier and port. \\
@@ -1634,23 +1834,23 @@ B5 & DINOv2 bicubically resizes its position grid on every forward; TensorRT~8.2
 B6 & DINOv3 recomputes its rotary position embedding from the input shape on every forward, and CLIP's reshapes emit dynamic shape arithmetic; both export as conditionals (\texttt{If}) and modulo operators. &
      Rotary embedding baked as a constant for the fixed $21{\times}21$ patch grid; remaining shape arithmetic constant-folded (onnx-simplifier); export rejected if an unsupported operator remains. \\
 B7 & No PyTorch/torchvision in the serving process. &
-     NumPy/Pillow re-implementation of preprocessing (bit-identical) and of the QualityGate head (logits within $3{\times}10^{-6}$). \\
+     Preprocessing re-implemented with Pillow (JPEG decoding, bicubic resize, as in torchvision) and NumPy (crop, normalisation, layout), bit-identical on the workstation; QualityGate head in NumPy (logits within $3{\times}10^{-6}$). \\
 B8 & Engine builds were killed for lack of memory: 4\,GB is shared by CPU and GPU, and the stock swap is compressed RAM, in which weights barely compress. &
      One engine built per process; the graph parsed directly from file (one copy of the weights); fp16 with a 256\,MB builder workspace; a temporary swap file on the SD card for the build only. \\
 B9 & Even so, building from fp32 graphs exhausted the memory the GPU can allocate (which cannot be swapped). &
-     Graphs converted to fp16 weights on the workstation (halving them to ${\sim}$607\,MB), with LayerNorm arithmetic kept in fp32 because ViT activation outliers overflow fp16 when squared; cosine to the fp32 reference $\geq 0.9999$. \\
+     Graphs converted to fp16 weights on the workstation (halving them to ${\sim}$607\,MB), with LayerNorm arithmetic kept in fp32 because ViT activation outliers overflow fp16 when squared; cosine to the fp32 reference $\geq 0.9999$ in onnxruntime, whose CPU provider computes these graphs in fp32 --- the check covers the rounding of the weights, not fp16 arithmetic (see B14). \\
 B10 & A whole fp16 ViT-L still could not be built: parsing alone peaks at 2.75\,GB, and the build thrashed swap with the GPU idle. &
      Each backbone exported as four chunks of six transformer blocks, built one engine at a time and chained at run time (exact: cosine 1.000000 to the unsplit model). \\
 B11 & TensorRT~8.2 compiled each chunk into one fused kernel graph holding 969\,MB of device memory (13\,bytes per parameter). &
-     Every linear layer exported as an equivalent $1{\times}1$ convolution (attention for CLIP rewritten explicitly); engine size 612\,$\rightarrow$\,157\,MB, no fused graphs remain. \\
+     Every linear layer exported as an equivalent $1{\times}1$ convolution, applied to the (batch, tokens, channels) residual stream reshaped to $1 \times C \times (B\,N) \times 1$ and reshaped back (attention for CLIP rewritten explicitly); engine size 612\,$\rightarrow$\,157\,MB, no fused graphs remain. \\
 B12 & Chunk builds took ${\sim}$10\,min each. &
      A timing cache shared across chunks, whose layer shapes are identical within a backbone. \\
-B13 & Only nine of the twelve chunk engines fit in memory, even with one shared activation buffer. &
+B13 & Only nine of the twelve chunk engines fit in memory (measured with fp16 engines), even with one shared activation buffer; fp32 engines are twice as large. &
      Chunk-major batched cloud inference with deferred escalation (Section~\ref{sec:batch}); one chunk engine resident at a time. \\
 B14 & First parity check failed (top-1 agreement 1/24): DINOv3 features were NaN. Pinning LayerNorm, then all non-convolution layers, to fp32 changed nothing; profiling showed DINOv3's residual stream reaching $1.6{\times}10^{5}$, beyond the fp16 range. &
-     Per-backbone precision: DINOv2 fp16, DINOv3 fp32; CLIP also fp32, chosen while its deviation (B15) was still attributed to precision (a later check showed fp16 CLIP equivalent and faster). Every layer pinned with TensorRT precision constraints, since the fp16-weight graph requires the fp16 builder flag. \\
+     Per-backbone precision: DINOv2 fp16, DINOv3 fp32; CLIP also fp32, chosen while its deviation (B15) was still attributed to precision (a later check showed fp16 CLIP equivalent and faster). Every layer pinned with TensorRT precision constraints, since the fp16-weight graph requires the fp16 builder flag: the fp32 engines keep the fp16-rounded weights but compute in fp32. The workstation check of B9 had not shown the overflow because onnxruntime computed in fp32 (the first DINOv3 chunk's hidden state reaches $1.57{\times}10^{5}$ there without overflowing). \\
 B15 & CLIP still deviated (cosine below 0.99 on 5/24 reference images), identically in fp16 and fp32. &
-     Traced to the image library: Pillow~8.4 (the last release for Python~3.6) decodes and resamples JPEGs differently from Pillow~12. Given identical input tensors the engines match the reference (cosine 0.99999--1.00000, 24/24 top-1). Not correctable on JetPack~4; documented and measured over the replay. \\
+     Traced to the image library: Pillow~8.4 (the last release for Python~3.6) links IJG libjpeg~9, Pillow~12 libjpeg-turbo~3.1. The decoders differ on 36\,\% of pixels (up to 67/255); resampling the same decoded pixels is bit-identical in both versions. Given identical input tensors the CLIP and DINOv3 engines match the reference (cosine 0.99999--1.00000) and all engines agree on 24/24 top-1. Accepted rather than corrected (a matched decoder is not available as a stock JetPack~4 package); measured over the emulated deployments. \\
 B16 & TensorRT Python bindings ship with JetPack, not PyPI. &
      Virtual environment with access to system site-packages. \\
 B17 & Current Python packages no longer support Python~3.6. &
@@ -1669,10 +1869,12 @@ C1 & Scripts edited on Windows carried CRLF line endings, which break Bash on th
      LF enforced through \texttt{.gitattributes} and normalised before shipping. \\
 C2 & Devices hold no credentials for the private code repository. &
      Code shipped over SSH from the workstation; checkpoint integrity checked by SHA-256. \\
-C3 & The paper's test split had to be replayed exactly. &
+C3 & The paper's test split had to be reproduced exactly. &
      The seed-fixed 3\,677-image split materialised as hard links in a class-per-folder layout. \\
-C4 & A second, improved configuration (Section~\ref{sec:res-improved}) had to run on the same devices without losing the first. &
+C4 & The distilled configuration (Section~\ref{sec:res-improved}) had to run on the same devices without losing the baseline one. &
      Distilled edge checkpoint and its own validation-calibrated threshold selected through a separate configuration file; fp16 CLIP engines in a separate engine directory selected by a service override; both reversible. The deployed edge reproduces the distilled model's offline predictions on 300/300 test images. \\
+C5 & Added after the measurements: a queue that accumulates for long (more farms, a missed batch) would hold every image's hidden state at once, about 4.5\,MB per image. &
+     The cloud server processes queues of more than 128 images in sub-batches of 128; the edge server can optionally upload escalations from a background queue so that the answer never waits for the network. Neither affects the reported runs (largest batch 61 images; uploads acknowledged before answering). \\
 \end{longtable}
 }
 

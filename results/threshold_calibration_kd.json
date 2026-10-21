@@ -1,6 +1,6 @@
 {
  "rule": "smallest margin threshold whose validation accuracy reaches 95% of cloud validation accuracy; escalate iff margin < tau",
- "edge_val_csv": "C:/Users/Youssef/Desktop/TurboQuant/paper2/outputs/edge_v3l_kd_predictions_val.csv",
+ "edge_val_csv": "<home>/Desktop/TurboQuant/paper2/outputs/edge_v3l_kd_predictions_val.csv",
  "tau": 0.071893,
  "val": {
   "n": 1820,

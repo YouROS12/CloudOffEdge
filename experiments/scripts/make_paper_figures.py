@@ -40,7 +40,7 @@ NEUTRAL = "#b5b3ab"
 GOOD, CRITICAL = "#0ca30c", "#d03b3b"
 CLOUD_ACC, TARGET = 0.8017, 0.7617
 MSG_KB = 2 * (1280 + 89) / 1024  # verifier's always-on message (fp16 embedding + softmax)
-# S in Eq. (3): mean escalation payload measured in the replay (448 px, q90), so offline
+# S in Eq. (3): mean escalation payload measured in the baseline deployment (448 px, q90), so offline
 # bandwidth is in the same units as the deployment. Sweeps store rates; KB = rate x S.
 _SUMMARY = PAPER2 / "results" / "fleet_run" / "summary.json"
 IMAGE_KB = (__import__("json").loads(_SUMMARY.read_text(encoding="utf-8"))["overall"]["cloud_only_kb_per_image"]
@@ -225,8 +225,10 @@ def fig_capacity(results: Path, out: Path) -> None:
     bench = pd.read_csv(results / "option_A_3arch" / "arch_benchmark.csv").set_index("arch")
     archs = [("v3-Small", "MobileNetV3-S", NEUTRAL), ("v3-Large", "MobileNetV3-L", BLUE),
              ("EfficientNet-B0", "EfficientNet-B0", ORANGE)]
-    need = {"v3-Small": 43.54, "v3-Large": 20.53, "EfficientNet-B0": 21.70}
-    edge_acc = {"v3-Small": 61.08, "v3-Large": 69.32, "EfficientNet-B0": 69.35}
+    # exact escalation @95 % (image by image) and edge accuracy: experiments/scripts/review_analyses.py
+    ex = json.loads((results / "review" / "analyses.json").read_text(encoding="utf-8"))["exact_at_95"]
+    need = {k: 100 * ex[k]["esc_for_95"] for k in ("v3-Small", "v3-Large", "EfficientNet-B0")}
+    edge_acc = {k: 100 * ex[k]["edge_acc"] for k in ("v3-Small", "v3-Large", "EfficientNet-B0")}
     fig, (a, b) = plt.subplots(1, 2, figsize=(7.2, 3.0), gridspec_kw=dict(width_ratios=[1.35, 1], wspace=0.3))
 
     a.axhline(TARGET * 100, color=MUTED, lw=0.8, ls=(0, (4, 3)))
@@ -238,10 +240,10 @@ def fig_capacity(results: Path, out: Path) -> None:
         a.plot(d.offload_rate * 100, d.accuracy * 100, color=col, lw=1.8 if arch == "v3-Large" else 1.4,
                label=label, zorder=3 if arch == "v3-Large" else 2)
         a.scatter([need[arch]], [TARGET * 100], s=26, color=col, edgecolor=SURFACE, lw=1.2, zorder=4)
-    a.annotate("43.5 %", (43.54, TARGET * 100), (49, 72.5), fontsize=7, color=INK2,
-               arrowprops=dict(arrowstyle="-", color=MUTED, lw=0.6))
-    a.annotate("20.5 %", (20.53, TARGET * 100), (8, 78.6), fontsize=7, color=INK2,
-               arrowprops=dict(arrowstyle="-", color=MUTED, lw=0.6))
+    a.annotate(f"{need['v3-Small']:.1f} %", (need["v3-Small"], TARGET * 100), (49, 72.5), fontsize=7,
+               color=INK2, arrowprops=dict(arrowstyle="-", color=MUTED, lw=0.6))
+    a.annotate(f"{need['v3-Large']:.1f} %", (need["v3-Large"], TARGET * 100), (8, 78.6), fontsize=7,
+               color=INK2, arrowprops=dict(arrowstyle="-", color=MUTED, lw=0.6))
     a.set_xlim(0, 100)
     a.set_ylim(60, 81.5)
     a.set_xlabel("escalation rate (%)")
@@ -259,7 +261,7 @@ def fig_capacity(results: Path, out: Path) -> None:
                  "v3-Large": (gm, need[arch] + 6.5, "center"),
                  "EfficientNet-B0": (gm, need[arch] - 8.5, "center")}[arch]
         b.text(place[0], place[1], f"{label} — {'meets' if ok else 'misses'} target\n"
-               f"{pm:.1f} M params · edge {edge_acc[arch]:.1f} %",
+               f"{pm:.2f} M params · edge {edge_acc[arch]:.2f} %",
                ha=place[2], va="center", fontsize=6.8, color=INK, linespacing=1.25)
     b.text(0.465, 30.8, "30 % budget", fontsize=7, color=INK2, ha="right", va="bottom")
     b.set_xlim(0, 0.47)
@@ -273,8 +275,13 @@ def fig_capacity(results: Path, out: Path) -> None:
 # ---------------------------------------------------------------- 4. bandwidth tax
 def fig_tax(results: Path, out: Path) -> None:
     fig, (a, b) = plt.subplots(1, 2, figsize=(7.2, 2.5), gridspec_kw=dict(width_ratios=[1, 1.45], wspace=0.55))
-    sig = [("1 − margin", 0.810, BLUE), ("1 − max. probability", 0.807, NEUTRAL),
-           ("entropy", 0.790, NEUTRAL), ("cloud-supervised verifier", 0.731, ORANGE)]
+    A = json.loads((results / "review" / "analyses.json").read_text(encoding="utf-8"))
+    s_ = A["calibration"]["v3-Large"]["signals"]
+    best_v = max(A["verifiers"].values(), key=lambda v: v["test_auc_useful"])
+    sig = [("1 − margin", s_["margin"]["test_auc_useful"], BLUE),
+           ("1 − max. probability", s_["max_prob"]["test_auc_useful"], NEUTRAL),
+           ("entropy", s_["entropy"]["test_auc_useful"], NEUTRAL),
+           ("cloud-supervised verifier", best_v["test_auc_useful"], ORANGE)]
     for i, (name, auc, col) in enumerate(sig):
         a.plot([0.5, auc], [i, i], color=GRID, lw=1.5, zorder=1)
         a.scatter([auc], [i], s=40, color=col, edgecolor=SURFACE, lw=1.5, zorder=3)
@@ -288,10 +295,8 @@ def fig_tax(results: Path, out: Path) -> None:
     a.set_title("(a) ranking quality")
 
     # escalation rate at which each router's test curve first reaches 95 % of cloud accuracy
-    sw = pd.read_csv(results / "option_A_3arch" / "three_arch_sweep.csv")
-    ver = pd.read_csv(results / "option_B_verifier_disagree" / "verifier_sweep.csv")
-    r_m = sw[(sw.arch == "v3-Large") & (sw.signal == "margin") & (sw.accuracy >= TARGET)].offload_rate.min()
-    r_v = ver[(ver.signal == "verifier") & (ver.accuracy >= TARGET)].offload_rate.min()
+    r_m = A["exact_at_95"]["v3-Large"]["esc_for_95"]
+    r_v = best_v["esc_for_95"]
     rows = [("margin", 0.0, r_m * IMAGE_KB), ("verifier", MSG_KB, r_v * IMAGE_KB), ("always-cloud", 0.0, IMAGE_KB)]
     gap = IMAGE_KB / 250.0
     for i, (name, msg, img) in enumerate(rows):
@@ -327,7 +332,7 @@ def fig_crops(df: pd.DataFrame, out: Path) -> None:
     a.scatter(g.edge * 100, y, s=16, color=NEUTRAL, zorder=2, label="edge only", edgecolor=SURFACE, lw=0.8)
     a.scatter(g.final * 100, y, s=20, color=BLUE, zorder=3, label=f"with escalation ($\\tau$={TAU:.3f})",
               edgecolor=SURFACE, lw=0.8)
-    a.set_yticks(y, [f"{c}  ·  {g.loc[c, 'farm']}" for c in g.index])
+    a.set_yticks(y, [f"{c} (n={g.loc[c, 'n']})  ·  {g.loc[c, 'farm']}" for c in g.index])
     a.set_xlabel("top-1 accuracy (%)")
     a.set_xlim(30, 101)
     a.set_title("accuracy per crop: edge only → delivered")
@@ -382,16 +387,16 @@ def fig_fleet_timeline(ev: pd.DataFrame, days: int, out: Path, ev2: pd.DataFrame
     base = np.cumsum(np.bincount(ev.h, weights=ev.cloud_only_kb, minlength=H)[:H]) / 1024
     b.plot(np.arange(H), base, color=NEUTRAL, lw=1.8, label="always-cloud (same payload)")
     b.plot(np.arange(H), up, color=BLUE, lw=2.0,
-           label="selective escalation" + (" (replay 1)" if ev2 is not None else ""))
+           label="selective escalation" + (", original edge" if ev2 is not None else ""))
     b.fill_between(np.arange(H), up, base, color=BLUE_LIGHT, alpha=0.35, lw=0)
-    b.text(H - 1, base[-1], f"  {base[-1]:.0f} MB", va="center", fontsize=7.2, color=INK2)
-    b.text(H - 1, up[-1], f"  {up[-1]:.0f} MB", va="center", fontsize=7.2, color=BLUE_DARK)
+    b.text(H - 1, base[-1], f"  {base[-1]:.1f} MB", va="center", fontsize=7.2, color=INK2)
+    b.text(H - 1, up[-1], f"  {up[-1]:.1f} MB", va="center", fontsize=7.2, color=BLUE_DARK)
     b.text(H * 0.52, (up[-1] + base[-1]) / 2.2, f"{base[-1] / max(up[-1], 1e-9):.1f}$\\times$ less uplink",
            fontsize=8, color=BLUE_DARK, ha="center")
-    if ev2 is not None:  # replay 2: distilled edge model, same images and payload
+    if ev2 is not None:  # distilled deployment: distilled edge model, same images and payload
         up2 = np.cumsum(np.bincount(ev2.h, weights=ev2.bandwidth_kb, minlength=H)[:H]) / 1024
-        b.plot(np.arange(H), up2, color=AQUA, lw=2.0, label="selective escalation, distilled edge (replay 2)")
-        b.text(H - 1, up2[-1], f"  {up2[-1]:.0f} MB", va="top", fontsize=7.2, color=INK)
+        b.plot(np.arange(H), up2, color=AQUA, lw=2.0, label="selective escalation, distilled edge")
+        b.text(H - 1, up2[-1], f"  {up2[-1]:.1f} MB", va="top", fontsize=7.2, color=INK)
     b.set_ylabel("cumulative uplink (MB)")
     b.set_xticks([d * 24 + 12 for d in range(days)], [f"day {d + 1}" for d in range(days)])
     b.set_xlim(-1, H + 10)
@@ -530,8 +535,8 @@ def fig_port(results: Path, out: Path, prof: dict | None) -> None:
     ceiling = (prof["runs"][0]["ram_total_mb"] if prof else 3956) / 1024
     steps = [("whole ViT-L: ONNX parser alone", 2.75, "fails"),
              ("6-block chunk, fused kernel graph (device)", 0.969, ""),
-             ("6-block chunk as 1×1 convolutions (loaded)", 0.35, ""),
-             ("all 12 chunks loaded at once (9 fit)", 12 * 0.35, "fails")]
+             ("6-block chunk as 1×1 convolutions (loaded, fp16)", 0.35, ""),
+             ("all 12 chunks loaded at once (fp16 engines; 9 fit)", 12 * 0.35, "fails")]
     if prof:
         rise = np.mean([(r["ram_peak_mb"] - r["ram_idle_mb"]) / 1024 for r in prof["runs"]])
         steps.append(("chunk-major runtime: measured rise above idle", rise, ""))
@@ -543,10 +548,10 @@ def fig_port(results: Path, out: Path, prof: dict | None) -> None:
         b.text(v + 0.06, i, f"{v:.2f} GB", va="center", fontsize=7, color=INK)
     b.axvline(ceiling, color=INK2, lw=0.8, ls=(0, (4, 3)))
     idle = (np.mean([r["ram_idle_mb"] for r in prof["runs"]]) / 1024) if prof else 1.9
-    b.text(ceiling + 0.07, 1.05, f"{ceiling:.1f} GB\nshared by\nCPU and GPU\n({idle:.1f} GB in\nuse at idle)",
-           ha="left", va="center", fontsize=6.6, color=INK2, linespacing=1.25)
+    b.text(ceiling - 0.07, -1.0, f"{ceiling:.2f} GB shared by CPU and GPU\n({idle:.2f} GB in use at idle)",
+           ha="right", va="center", fontsize=6.6, color=INK2, linespacing=1.25)
     b.set_yticks([])
-    b.set_ylim(len(steps) - 0.5, -1.2)
+    b.set_ylim(len(steps) - 0.5, -1.6)
     b.set_xlim(0, 5.3)
     b.grid(axis="y", visible=False)
     b.set_xlabel("memory needed (GB)")
@@ -555,7 +560,7 @@ def fig_port(results: Path, out: Path, prof: dict | None) -> None:
 
 
 def fig_nano_flush(prof: dict, out: Path) -> None:
-    """Memory and board power during one replay-sized batch (run 0)."""
+    """Memory and board power during one deployment-sized batch (run 0)."""
     r = prof["runs"][0]
     tr = r["trace"]
     fig, (a, b) = plt.subplots(2, 1, figsize=(7.2, 3.3), sharex=True, gridspec_kw=dict(hspace=0.12))
@@ -574,8 +579,10 @@ def fig_nano_flush(prof: dict, out: Path) -> None:
     a.set_ylabel("RAM used (GB)")
     b.plot(tr.x, tr.p_in_w, color=ORANGE, lw=0.8)
     b.axhline(r["p_idle_w"], color=INK2, lw=0.8, ls=(0, (2, 2)))
-    b.text(tr.x.max() - 2, r["p_idle_w"] - 0.15, f"idle {r['p_idle_w']:.1f} W", fontsize=6.8, color=INK2,
-           va="top", ha="right")
+    mean_idle = np.mean([q["p_idle_w"] for q in prof["runs"]])
+    b.text(tr.x.max() - 2, r["p_idle_w"] - 0.15,
+           f"idle {r['p_idle_w']:.1f} W in this run ({mean_idle:.1f} W mean of {len(prof['runs'])} runs)",
+           fontsize=6.8, color=INK2, va="top", ha="right")
     b.set_ylabel("board power (W)")
     b.set_ylim(0, max(10, tr.p_in_w.max() * 1.1))
     b.set_xlabel(f"time since the batch started (s) — {r['n']} escalated images")

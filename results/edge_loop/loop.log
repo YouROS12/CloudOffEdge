@@ -1,5 +1,5 @@
 [PlantWild] Using MVPDR-native layout (images/ directory)
-[PlantWild] Loading split from C:\Users\Youssef\Desktop\TurboQuant\PlantEdge\data\PlantWild\trainval.txt
+[PlantWild] Loading split from <home>\Desktop\TurboQuant\PlantEdge\data\PlantWild\trainval.txt
 [PlantWild] 89 classes | train=13045 | val=1820 | test=3677
 [loop] baseline edge accuracy on the full test split: 0.6935 (paper: 0.6932)
 [loop] week1=1812 week2=1865 escalated in week1=344 (cloud correct on 228)

@@ -1,0 +1,8 @@
+{
+ "question": "Why did the workstation check of the fp16-weight ONNX graphs (cosine >= 0.9999, all outputs finite) not reveal DINOv3's fp16 overflow, which made the TensorRT fp16 build produce NaN?",
+ "test": "dinov3_vitl16.c0.fp16.onnx (fp16 weights, fp32 LayerNorm math) run on onnxruntime 1.31 CPUExecutionProvider with one workstation-preprocessed reference image (outputs/trt_export/pre_desktop.npz)",
+ "result": {"output_dtype": "float32", "output_shape": [1, 446, 1024], "max_abs_hidden_state": 156658.17, "finite": true,
+            "cast_nodes_before_after_ort_optimisation": [116, 138]},
+ "conclusion": "The chunk's hidden state reaches 1.57e5 (> fp16 max 65504) yet stays finite: onnxruntime's CPU provider has no fp16 kernels for these operators and inserts casts, so the residual arithmetic ran in fp32 with fp16-rounded weights. The workstation check therefore validated the weight rounding, not fp16 arithmetic; the overflow could only appear on a backend that computes in fp16 (TensorRT with the FP16 flag).",
+ "date": "2026-10-21"
+}

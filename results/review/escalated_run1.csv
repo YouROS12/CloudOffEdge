@@ -1,0 +1,685 @@
+image_path,true_label,nano_label
+grape leaf/18.jpg,grape leaf,grapevine leafroll disease
+cucumber angular leaf spot/295.jpg,cucumber angular leaf spot,cucumber angular leaf spot
+bell pepper leaf spot/google_0184.jpg,bell pepper leaf spot,bell pepper leaf spot
+citrus canker/google_0077.jpg,citrus canker,citrus canker
+tomato leaf/56.jpg,tomato leaf,tomato mosaic virus
+squash leaf/251.jpg,squash leaf,squash leaf
+citrus canker/google_0219.jpg,citrus canker,citrus canker
+tomato septoria leaf spot/google_0238.jpg,tomato septoria leaf spot,tomato septoria leaf spot
+cherry leaf/96.jpg,cherry leaf,cherry leaf
+apple black rot/google_0071.jpg,apple black rot,apple scab
+tomato leaf/google_0279.jpg,tomato leaf,tomato leaf
+corn rust/4.jpg,corn rust,corn gray leaf spot
+cucumber powdery mildew/27.jpg,cucumber powdery mildew,cucumber powdery mildew
+apple leaf/263.jpg,apple leaf,apple leaf
+bean leaf/google_0074.jpg,bean leaf,bean leaf
+coffee leaf/294.jpg,coffee leaf,apple leaf
+peach leaf curl/13.jpg,peach leaf curl,peach leaf curl
+citrus canker/111.jpg,citrus canker,citrus greening disease
+peach leaf/google_0015.jpg,peach leaf,peach leaf
+eggplant leaf/53.jpg,eggplant leaf,eggplant leaf
+bean leaf/google_0522.jpg,bean leaf,bean leaf
+peach leaf curl/google_0098.jpg,peach leaf curl,peach leaf curl
+corn smut/11.jpg,corn smut,corn smut
+bell pepper leaf/152.jpg,bell pepper leaf,bell pepper leaf
+plum leaf/353.jpg,plum leaf,bean leaf
+tobacco mosaic virus/google_0012.jpg,tobacco mosaic virus,tobacco mosaic virus
+corn gray leaf spot/google_0180.jpg,corn gray leaf spot,corn northern leaf blight
+lettuce leaf/google_0189.jpg,lettuce leaf,lettuce leaf
+grape downy mildew/google_0105.jpg,grape downy mildew,grape black rot
+grape downy mildew/google_0061.jpg,grape downy mildew,grape downy mildew
+apple black rot/google_0010.jpg,apple black rot,apple black rot
+corn northern leaf blight/google_0042.jpg,corn northern leaf blight,corn gray leaf spot
+potato early blight/3.jpg,potato early blight,potato late blight
+apple mosaic virus/google_0067.jpg,apple mosaic virus,apple leaf
+strawberry leaf/75.jpg,strawberry leaf,strawberry leaf
+cauliflower leaf/google_0134.jpg,cauliflower leaf,cauliflower leaf
+plum leaf/google_0053.jpg,plum leaf,plum leaf
+peach leaf/174.jpg,peach leaf,peach leaf
+grape downy mildew/146.jpg,grape downy mildew,tomato bacterial leaf spot
+coffee leaf/55.jpg,coffee leaf,coffee leaf
+rice blast/92.jpg,rice blast,rice leaf
+apple leaf/188.jpg,apple leaf,apple leaf
+tomato yellow leaf curl virus/80.jpg,tomato yellow leaf curl virus,tomato mosaic virus
+tomato bacterial leaf spot/56.jpg,tomato bacterial leaf spot,tomato bacterial leaf spot
+broccoli leaf/google_0254.jpg,broccoli leaf,broccoli leaf
+tomato early blight/google_0076.jpg,tomato early blight,tomato early blight
+lettuce leaf/google_0055.jpg,lettuce leaf,lettuce leaf
+tomato leaf/104.jpg,tomato leaf,tomato leaf
+tomato yellow leaf curl virus/15.jpg,tomato yellow leaf curl virus,tomato mosaic virus
+bell pepper leaf spot/16.jpg,bell pepper leaf spot,bell pepper leaf
+apple leaf/21.jpg,apple leaf,apple leaf
+apple leaf/288.jpg,apple leaf,apple leaf
+cabbage leaf/147.jpg,cabbage leaf,cabbage leaf
+tomato bacterial leaf spot/44.jpg,tomato bacterial leaf spot,tomato late blight
+peach leaf curl/31.jpg,peach leaf curl,peach leaf curl
+corn rust/google_0172.jpg,corn rust,corn rust
+apple leaf/139.jpg,apple leaf,blueberry leaf
+maple leaf/google_0050.jpg,maple leaf,maple leaf
+cabbage leaf/427.jpg,cabbage leaf,cabbage leaf
+cherry leaf spot/google_0319.jpg,cherry leaf spot,cherry leaf spot
+squash leaf/google_0084.jpg,squash leaf,squash leaf
+strawberry leaf scorch/google_0154.jpg,strawberry leaf scorch,strawberry leaf scorch
+tomato yellow leaf curl virus/google_0122.jpg,tomato yellow leaf curl virus,tomato yellow leaf curl virus
+tomato early blight/google_0267.jpg,tomato early blight,tomato early blight
+potato leaf/65.jpg,potato leaf,potato leaf
+squash powdery mildew/60.jpg,squash powdery mildew,squash powdery mildew
+zucchini yellow mosaic virus/google_0175.jpg,zucchini yellow mosaic virus,zucchini yellow mosaic virus
+garlic leaf/392.jpg,garlic leaf,garlic leaf
+apple mosaic virus/97.jpg,apple mosaic virus,bell pepper leaf
+tomato leaf/90.jpg,tomato leaf,tomato leaf
+tomato early blight/google_0057.jpg,tomato early blight,tomato bacterial leaf spot
+lettuce leaf/google_0354.jpg,lettuce leaf,lettuce leaf
+tomato bacterial leaf spot/80.jpg,tomato bacterial leaf spot,tomato late blight
+tomato bacterial leaf spot/11 - Copy (2).jpg,tomato bacterial leaf spot,tomato septoria leaf spot
+rice leaf/126.jpg,rice leaf,rice leaf
+cabbage alternaria leaf spot/google_0094.jpg,cabbage alternaria leaf spot,cabbage alternaria leaf spot
+soybean leaf/105.jpg,soybean leaf,soybean leaf
+soybean leaf/google_0607.jpg,soybean leaf,soybean leaf
+tomato mosaic virus/22.jpg,tomato mosaic virus,tomato late blight
+tomato late blight/google_0157.jpg,tomato late blight,tomato late blight
+apple rust/google_0221.jpg,apple rust,apple rust
+cauliflower leaf/google_0215.jpg,cauliflower leaf,broccoli leaf
+tomato bacterial leaf spot/google_0072.jpg,tomato bacterial leaf spot,tomato septoria leaf spot
+bean leaf/128.jpg,bean leaf,peach leaf
+zucchini yellow mosaic virus/google_0100 - Copy (2).jpg,zucchini yellow mosaic virus,zucchini yellow mosaic virus
+grape downy mildew/google_0042.jpg,grape downy mildew,grapevine leafroll disease
+corn northern leaf blight/google_0123.jpg,corn northern leaf blight,corn gray leaf spot
+apple rust/google_0230.jpg,apple rust,apple rust
+tomato septoria leaf spot/google_0059.jpg,tomato septoria leaf spot,tomato septoria leaf spot
+cucumber leaf/37.jpg,cucumber leaf,cucumber leaf
+plum leaf/190.jpg,plum leaf,citrus greening disease
+tomato mosaic virus/google_0205.jpg,tomato mosaic virus,potato early blight
+grape downy mildew/google_0024.jpg,grape downy mildew,grape downy mildew
+soybean leaf/201.jpg,soybean leaf,soybean leaf
+eggplant cercospora leaf spot/11.jpg,eggplant cercospora leaf spot,eggplant cercospora leaf spot
+soybean leaf/google_0594.jpg,soybean leaf,soybean leaf
+bell pepper leaf/186.jpg,bell pepper leaf,bell pepper leaf
+grape black rot/google_0052.jpg,grape black rot,grape black rot
+zucchini yellow mosaic virus/google_0016.jpg,zucchini yellow mosaic virus,cucumber leaf
+plum leaf/284.jpg,plum leaf,cherry leaf spot
+cucumber bacterial wilt/2.jpg,cucumber bacterial wilt,cucumber bacterial wilt
+apple mosaic virus/google_0006.jpg,apple mosaic virus,apple mosaic virus
+bell pepper leaf/google_0208.jpg,bell pepper leaf,bell pepper leaf
+corn northern leaf blight/google_0135.jpg,corn northern leaf blight,corn gray leaf spot
+grape black rot/171.jpg,grape black rot,grape black rot
+tomato leaf mold/175.jpg,tomato leaf mold,tomato leaf mold
+bean halo blight/google_0188.jpg,bean halo blight,bean halo blight
+tobacco mosaic virus/19.jpg,tobacco mosaic virus,tobacco mosaic virus
+tomato septoria leaf spot/google_0273 - Copy.jpg,tomato septoria leaf spot,bean halo blight
+bean leaf/google_0060.jpg,bean leaf,bean leaf
+cucumber angular leaf spot/google_0188.jpg,cucumber angular leaf spot,cucumber angular leaf spot
+tomato bacterial leaf spot/google_0055.jpg,tomato bacterial leaf spot,tomato early blight
+bell pepper leaf spot/google_0136.jpg,bell pepper leaf spot,bell pepper leaf spot
+ginger leaf/google_0115.jpg,ginger leaf,ginger leaf
+cucumber leaf/126.jpg,cucumber leaf,cucumber leaf
+peach leaf/161.jpg,peach leaf,peach leaf
+tomato leaf mold/86.jpg,tomato leaf mold,tomato bacterial leaf spot
+soybean leaf/117.jpg,soybean leaf,soybean leaf
+coffee leaf/71.jpg,coffee leaf,coffee leaf
+plum leaf/64.jpg,plum leaf,plum leaf
+grape downy mildew/269.jpg,grape downy mildew,grape downy mildew
+apple rust/130.jpg,apple rust,apple rust
+ginger leaf/google_0188.jpg,ginger leaf,ginger leaf
+grape downy mildew/google_0028.jpg,grape downy mildew,grape downy mildew
+garlic leaf blight/google_0198.jpg,garlic leaf blight,garlic leaf
+cabbage alternaria leaf spot/35.jpg,cabbage alternaria leaf spot,cabbage alternaria leaf spot
+apple leaf/110.jpg,apple leaf,apple leaf
+grape leaf spot/8.jpg,grape leaf spot,grape downy mildew
+blueberry leaf/google_0121.jpg,blueberry leaf,blueberry leaf
+cherry leaf spot/google_0275.jpg,cherry leaf spot,blueberry rust
+celery anthracnose/google_0005.jpg,celery anthracnose,celery anthracnose
+zucchini yellow mosaic virus/google_0023.jpg,zucchini yellow mosaic virus,cucumber bacterial wilt
+broccoli leaf/191.jpg,broccoli leaf,broccoli leaf
+grape downy mildew/9.jpg,grape downy mildew,grape downy mildew
+blueberry rust/google_0058.jpg,blueberry rust,blueberry rust
+tomato yellow leaf curl virus/45.jpg,tomato yellow leaf curl virus,tomato leaf
+maple leaf/97.jpg,maple leaf,maple leaf
+cabbage leaf/55.jpg,cabbage leaf,cabbage leaf
+plum leaf/182.jpg,plum leaf,plum leaf
+tomato bacterial leaf spot/37.jpg,tomato bacterial leaf spot,tomato leaf
+potato leaf/92.jpg,potato leaf,potato late blight
+zucchini yellow mosaic virus/google_0086.jpg,zucchini yellow mosaic virus,zucchini yellow mosaic virus
+strawberry leaf/70.jpg,strawberry leaf,strawberry leaf
+bean mosaic virus/167.jpg,bean mosaic virus,tomato leaf mold
+plum leaf/google_0061.jpg,plum leaf,plum leaf
+lettuce downy mildew/google_0160.jpg,lettuce downy mildew,lettuce downy mildew
+grapevine leafroll disease/google_0034.jpg,grapevine leafroll disease,grapevine leafroll disease
+tomato early blight/87.jpg,tomato early blight,tomato early blight
+zucchini yellow mosaic virus/google_0034.jpg,zucchini yellow mosaic virus,zucchini yellow mosaic virus
+tomato bacterial leaf spot/google_0053.jpg,tomato bacterial leaf spot,tomato septoria leaf spot
+ginger leaf/google_0282.jpg,ginger leaf,ginger leaf
+peach leaf/46.jpg,peach leaf,peach leaf
+grape downy mildew/google_0159.jpg,grape downy mildew,grape downy mildew
+apple rust/google_0122.jpg,apple rust,apple scab
+bean rust/google_0206.jpg,bean rust,bean rust
+tobacco leaf/google_0016.jpg,tobacco leaf,tobacco mosaic virus
+cabbage alternaria leaf spot/google_0282.jpg,cabbage alternaria leaf spot,lettuce downy mildew
+apple leaf/183.jpg,apple leaf,apple leaf
+tomato bacterial leaf spot/google_0465.jpg,tomato bacterial leaf spot,tomato septoria leaf spot
+banana panama disease/addition (20).jpg,banana panama disease,banana panama disease
+bean leaf/google_0242.jpg,bean leaf,bean leaf
+potato leaf/5.jpg,potato leaf,potato leaf
+bean mosaic virus/google_0087.jpg,bean mosaic virus,bean mosaic virus
+apple mosaic virus/google_0208.jpg,apple mosaic virus,cabbage alternaria leaf spot
+corn rust/google_0056.jpg,corn rust,corn rust
+lettuce downy mildew/75.jpg,lettuce downy mildew,cabbage alternaria leaf spot
+cherry leaf spot/google_0170.jpg,cherry leaf spot,cherry leaf spot
+raspberry leaf/117.jpg,raspberry leaf,raspberry leaf
+grape leaf/58.jpg,grape leaf,grape leaf
+tomato early blight/252.jpg,tomato early blight,tomato early blight
+broccoli leaf/96.jpg,broccoli leaf,broccoli leaf
+lettuce mosaic virus/google_0006.jpg,lettuce mosaic virus,lettuce mosaic virus
+blueberry rust/google_0286.jpg,blueberry rust,blueberry rust
+cherry leaf spot/google_0199.jpg,cherry leaf spot,cherry leaf spot
+squash powdery mildew/google_0003.jpg,squash powdery mildew,squash powdery mildew
+potato leaf/google_0662.jpg,potato leaf,potato leaf
+broccoli downy mildew/30 - Copy.jpg,broccoli downy mildew,broccoli downy mildew
+grape leaf/9.jpg,grape leaf,grape leaf
+ginger sheath blight/28.jpg,ginger sheath blight,ginger sheath blight
+maple leaf/225.jpg,maple leaf,grape leaf
+bean leaf/google_0054 - Copy.jpg,bean leaf,bean leaf
+cauliflower leaf/google_0123.jpg,cauliflower leaf,cauliflower leaf
+tomato early blight/199 - Copy.jpg,tomato early blight,tomato early blight
+plum pocket disease/google_0023.jpg,plum pocket disease,plum pocket disease
+tomato leaf mold/google_0105.jpg,tomato leaf mold,tomato leaf mold
+rice sheath blight/33.jpg,rice sheath blight,rice sheath blight
+broccoli leaf/google_0479.jpg,broccoli leaf,broccoli leaf
+plum leaf/27.jpg,plum leaf,plum leaf
+cherry leaf spot/google_0389.jpg,cherry leaf spot,coffee leaf rust
+potato late blight/71.jpg,potato late blight,potato late blight
+corn northern leaf blight/google_0073.jpg,corn northern leaf blight,corn northern leaf blight
+lettuce downy mildew/175.jpg,lettuce downy mildew,lettuce downy mildew
+apple mosaic virus/google_0111.jpg,apple mosaic virus,cucumber powdery mildew
+cherry leaf/73.jpg,cherry leaf,apple leaf
+bean halo blight/9.jpg,bean halo blight,bean mosaic virus
+cherry powdery mildew/google_0113.jpg,cherry powdery mildew,bean rust
+potato late blight/google_0182 - Copy.jpg,potato late blight,potato late blight
+cherry leaf spot/google_0093.jpg,cherry leaf spot,cherry leaf spot
+cucumber leaf/google_0185.jpg,cucumber leaf,squash leaf
+peach leaf/18.jpg,peach leaf,peach leaf
+basil downy mildew/google_0098.jpg,basil downy mildew,broccoli downy mildew
+bean mosaic virus/36.jpg,bean mosaic virus,tomato mosaic virus
+apple rust/google_0183.jpg,apple rust,apple rust
+apple rust/77.jpg,apple rust,apple scab
+squash powdery mildew/google_0080.jpg,squash powdery mildew,squash powdery mildew
+potato early blight/google_0080 - Copy.jpg,potato early blight,tomato early blight
+tomato early blight/25 - Copy (5).jpg,tomato early blight,tomato early blight
+eggplant leaf/google_0078.jpg,eggplant leaf,eggplant leaf
+ginger leaf/google_0269.jpg,ginger leaf,corn leaf
+plum leaf/19.jpg,plum leaf,plum leaf
+grape leaf/google_0192.jpg,grape leaf,grape leaf
+cauliflower alternaria leaf spot/google_0056.jpg,cauliflower alternaria leaf spot,tomato septoria leaf spot
+zucchini yellow mosaic virus/google_0099.jpg,zucchini yellow mosaic virus,cucumber powdery mildew
+bean leaf/64.jpg,bean leaf,bean leaf
+tomato leaf mold/google_0056.jpg,tomato leaf mold,tomato leaf mold
+bean leaf/google_0232.jpg,bean leaf,bean leaf
+tobacco leaf/29 - Copy.jpg,tobacco leaf,tobacco leaf
+soybean leaf/7.jpg,soybean leaf,soybean leaf
+tomato leaf/google_0477.jpg,tomato leaf,tomato leaf
+cucumber bacterial wilt/11.jpg,cucumber bacterial wilt,cucumber bacterial wilt
+corn smut/google_0287.jpg,corn smut,corn smut
+tomato early blight/google_0249.jpg,tomato early blight,tomato early blight
+squash powdery mildew/google_0354.jpg,squash powdery mildew,cucumber powdery mildew
+peach leaf curl/google_0166.jpg,peach leaf curl,peach leaf curl
+cherry powdery mildew/108.jpg,cherry powdery mildew,bell pepper leaf spot
+apple leaf/280.jpg,apple leaf,apple scab
+tomato mosaic virus/google_0228.jpg,tomato mosaic virus,tomato mosaic virus
+bean leaf/google_0029.jpg,bean leaf,bean leaf
+bean mosaic virus/google_0110.jpg,bean mosaic virus,bean mosaic virus
+apple leaf/192.jpg,apple leaf,apple leaf
+potato early blight/19.jpg,potato early blight,potato early blight
+apple leaf/85.jpg,apple leaf,apple leaf
+cherry leaf/184.jpg,cherry leaf,cherry leaf
+blueberry leaf/123.jpg,blueberry leaf,blueberry leaf
+coffee leaf/107.jpg,coffee leaf,coffee leaf
+tomato mosaic virus/228.jpg,tomato mosaic virus,tomato mosaic virus
+tomato early blight/google_0224.jpg,tomato early blight,tomato early blight
+potato leaf/google_0005.jpg,potato leaf,potato leaf
+cauliflower leaf/107.jpg,cauliflower leaf,cauliflower leaf
+banana leaf/google_0143.jpg,banana leaf,banana leaf
+tomato early blight/google_0350.jpg,tomato early blight,tomato bacterial leaf spot
+cabbage alternaria leaf spot/google_0236.jpg,cabbage alternaria leaf spot,broccoli downy mildew
+apple rust/google_0026.jpg,apple rust,apple rust
+cherry powdery mildew/google_0064.jpg,cherry powdery mildew,grape downy mildew
+tomato bacterial leaf spot/google_0032.jpg,tomato bacterial leaf spot,tomato early blight
+ginger leaf/google_0215.jpg,ginger leaf,ginger leaf
+celery early blight/google_0107.jpg,celery early blight,tomato early blight
+tomato late blight/54.jpg,tomato late blight,tomato mosaic virus
+soybean leaf/google_0526.jpg,soybean leaf,bean mosaic virus
+grape leaf/25.jpg,grape leaf,grape leaf
+bell pepper leaf spot/google_0238.jpg,bell pepper leaf spot,bell pepper leaf spot
+bell pepper leaf spot/google_0280.jpg,bell pepper leaf spot,plum leaf
+tomato yellow leaf curl virus/78.jpg,tomato yellow leaf curl virus,tomato yellow leaf curl virus
+apple mosaic virus/google_0172.jpg,apple mosaic virus,ginger leaf
+cauliflower alternaria leaf spot/google_0007.jpg,cauliflower alternaria leaf spot,cauliflower alternaria leaf spot
+ginger leaf/google_0149.jpg,ginger leaf,potato leaf
+cabbage alternaria leaf spot/google_0226.jpg,cabbage alternaria leaf spot,tomato early blight
+tomato septoria leaf spot/google_0257 - Copy.jpg,tomato septoria leaf spot,tomato septoria leaf spot
+coffee leaf/271.jpg,coffee leaf,coffee leaf
+grape leaf spot/42.jpg,grape leaf spot,grape leaf spot
+apple mosaic virus/google_0069.jpg,apple mosaic virus,zucchini yellow mosaic virus
+cauliflower alternaria leaf spot/google_0221.jpg,cauliflower alternaria leaf spot,cauliflower alternaria leaf spot
+strawberry leaf/google_0542.jpg,strawberry leaf,strawberry leaf
+cucumber leaf/103.jpg,cucumber leaf,cucumber leaf
+citrus canker/google_0169.jpg,citrus canker,cherry leaf spot
+ginger sheath blight/65.jpg,ginger sheath blight,rice sheath blight
+citrus canker/google_0064.jpg,citrus canker,citrus canker
+corn rust/google_0170.jpg,corn rust,corn rust
+apple mosaic virus/google_0047.jpg,apple mosaic virus,tomato bacterial leaf spot
+squash leaf/zgoogle_0300.jpg,squash leaf,squash leaf
+potato early blight/google_0240.jpg,potato early blight,bell pepper leaf spot
+apple leaf/260.jpg,apple leaf,apple leaf
+soybean leaf/311.jpg,soybean leaf,potato leaf
+peach leaf/50.jpg,peach leaf,peach leaf curl
+grape leaf spot/170.jpg,grape leaf spot,grape leaf spot
+strawberry leaf scorch/google_0085.jpg,strawberry leaf scorch,strawberry leaf scorch
+cabbage leaf/google_0266.jpg,cabbage leaf,cabbage leaf
+tomato leaf mold/google_0013.jpg,tomato leaf mold,tomato mosaic virus
+rice sheath blight/161.jpg,rice sheath blight,rice sheath blight
+peach leaf/194.jpg,peach leaf,coffee leaf
+rice leaf/310.jpg,rice leaf,rice blast
+corn gray leaf spot/70 - Copy (2).jpg,corn gray leaf spot,corn northern leaf blight
+cabbage leaf/google_0274.jpg,cabbage leaf,garlic leaf
+soybean leaf/google_0587.jpg,soybean leaf,soybean leaf
+corn smut/google_0184.jpg,corn smut,corn rust
+grape leaf spot/143.jpg,grape leaf spot,grape leaf spot
+peach leaf/78.jpg,peach leaf,peach leaf
+apple mosaic virus/19.jpg,apple mosaic virus,apple mosaic virus
+rice sheath blight/google_0028.jpg,rice sheath blight,rice sheath blight
+maple leaf/290.jpg,maple leaf,maple leaf
+tobacco mosaic virus/311.jpg,tobacco mosaic virus,tobacco leaf
+rice sheath blight/174.jpg,rice sheath blight,rice sheath blight
+grape leaf spot/google_0003 - Copy.jpg,grape leaf spot,grape leaf spot
+citrus canker/58.jpg,citrus canker,citrus canker
+tomato bacterial leaf spot/google_0030.jpg,tomato bacterial leaf spot,tomato late blight
+grape downy mildew/google_0026.jpg,grape downy mildew,grape downy mildew
+grape downy mildew/247.jpg,grape downy mildew,grapevine leafroll disease
+cherry leaf/google_0128.jpg,cherry leaf,cherry leaf
+tomato early blight/25 - Copy (2).jpg,tomato early blight,tomato mosaic virus
+celery leaf/google_0061.jpg,celery leaf,celery leaf
+cucumber leaf/22.jpg,cucumber leaf,cucumber leaf
+tomato late blight/google_0077.jpg,tomato late blight,tomato early blight
+lettuce mosaic virus/google_0079.jpg,lettuce mosaic virus,lettuce mosaic virus
+potato leaf/google_0681.jpg,potato leaf,potato leaf
+lettuce mosaic virus/google_0094.jpg,lettuce mosaic virus,lettuce leaf
+corn rust/google_0067.jpg,corn rust,corn rust
+tomato yellow leaf curl virus/49.jpg,tomato yellow leaf curl virus,tomato mosaic virus
+tomato late blight/google_0013.jpg,tomato late blight,tomato late blight
+plum pocket disease/google_0097.jpg,plum pocket disease,plum pocket disease
+bean leaf/google_0078.jpg,bean leaf,bean leaf
+cucumber leaf/google_0161.jpg,cucumber leaf,cucumber leaf
+potato late blight/google_0002.jpg,potato late blight,potato early blight
+apple leaf/217.jpg,apple leaf,apple leaf
+squash leaf/138.jpg,squash leaf,squash leaf
+plum pocket disease/google_0145.jpg,plum pocket disease,plum pocket disease
+apple leaf/163.jpg,apple leaf,apple leaf
+banana leaf/243.jpg,banana leaf,banana leaf
+citrus canker/google_0116.jpg,citrus canker,citrus canker
+apple scab/5.jpg,apple scab,apple scab
+apple mosaic virus/google_0120.jpg,apple mosaic virus,apple mosaic virus
+squash powdery mildew/google_0058.jpg,squash powdery mildew,squash powdery mildew
+basil leaf/google_0259.jpg,basil leaf,basil leaf
+tobacco leaf/google_0074.jpg,tobacco leaf,tobacco leaf
+citrus canker/google_0027.jpg,citrus canker,citrus canker
+potato late blight/google_0240.jpg,potato late blight,tomato mosaic virus
+bean rust/182.jpg,bean rust,bean rust
+basil downy mildew/google_0231.jpg,basil downy mildew,basil downy mildew
+cauliflower alternaria leaf spot/google_0010.jpg,cauliflower alternaria leaf spot,cabbage alternaria leaf spot
+plum leaf/google_0113.jpg,plum leaf,plum leaf
+cucumber leaf/google_0294.jpg,cucumber leaf,cucumber leaf
+tomato late blight/google_0007.jpg,tomato late blight,tomato late blight
+squash leaf/z50.jpg,squash leaf,squash powdery mildew
+apple rust/google_0203.jpg,apple rust,apple rust
+apple scab/google_0184.jpg,apple scab,apple mosaic virus
+bell pepper leaf spot/google_0057.jpg,bell pepper leaf spot,bell pepper leaf spot
+tomato septoria leaf spot/google_0004.jpg,tomato septoria leaf spot,tomato early blight
+plum leaf/google_0160.jpg,plum leaf,plum leaf
+potato leaf/google_0216.jpg,potato leaf,potato leaf
+bean leaf/google_0236.jpg,bean leaf,bean leaf
+apple rust/google_0181.jpg,apple rust,apple rust
+maple tar spot/google_0020.jpg,maple tar spot,maple tar spot
+bean rust/google_0144.jpg,bean rust,bean halo blight
+squash leaf/zgoogle_0215.jpg,squash leaf,squash leaf
+grape leaf spot/google_0013.jpg,grape leaf spot,grape leaf spot
+tobacco mosaic virus/13.jpg,tobacco mosaic virus,tobacco mosaic virus
+apple leaf/274.jpg,apple leaf,apple leaf
+garlic rust/62.jpg,garlic rust,ginger sheath blight
+celery anthracnose/google_0016 - Copy.jpg,celery anthracnose,celery anthracnose
+cherry leaf spot/38.jpg,cherry leaf spot,cherry leaf spot
+tomato early blight/179.jpg,tomato early blight,tomato early blight
+garlic leaf/google_0210.jpg,garlic leaf,garlic leaf
+cherry leaf/161.jpg,cherry leaf,apple leaf
+bell pepper leaf spot/google_0297.jpg,bell pepper leaf spot,bell pepper leaf spot
+potato leaf/48.jpg,potato leaf,potato late blight
+grape downy mildew/google_0077.jpg,grape downy mildew,grape downy mildew
+citrus canker/172.jpg,citrus canker,citrus canker
+apple leaf/google_0521.jpg,apple leaf,apple leaf
+cucumber leaf/125.jpg,cucumber leaf,cucumber angular leaf spot
+grape downy mildew/278 - Copy.jpg,grape downy mildew,grape downy mildew
+bean leaf/194.jpg,bean leaf,bean leaf
+tomato yellow leaf curl virus/google_0148 - Copy.jpg,tomato yellow leaf curl virus,tomato mosaic virus
+rice leaf/69.jpg,rice leaf,rice blast
+celery anthracnose/2.jpg,celery anthracnose,celery early blight
+eggplant leaf/google_0174.jpg,eggplant leaf,eggplant leaf
+potato late blight/google_0010 - Copy (2).jpg,potato late blight,potato late blight
+tomato bacterial leaf spot/google_0144.jpg,tomato bacterial leaf spot,tomato leaf mold
+corn gray leaf spot/google_0003.jpg,corn gray leaf spot,corn gray leaf spot
+tomato early blight/google_0127.jpg,tomato early blight,tomato septoria leaf spot
+tomato yellow leaf curl virus/19.jpg,tomato yellow leaf curl virus,tomato yellow leaf curl virus
+tomato bacterial leaf spot/178.jpg,tomato bacterial leaf spot,tomato bacterial leaf spot
+bean halo blight/google_0120.jpg,bean halo blight,bean halo blight
+bean rust/google_0129.jpg,bean rust,bean leaf
+eggplant leaf/181.jpg,eggplant leaf,peach leaf
+basil leaf/45.jpg,basil leaf,basil leaf
+plum leaf/google_0129.jpg,plum leaf,plum leaf
+cabbage leaf/9.jpg,cabbage leaf,cabbage leaf
+banana panama disease/add_2 (54).jpg,banana panama disease,banana panama disease
+cabbage alternaria leaf spot/google_0345.jpg,cabbage alternaria leaf spot,tomato early blight
+peach leaf curl/google_0029.jpg,peach leaf curl,peach leaf curl
+tomato bacterial leaf spot/google_0395.jpg,tomato bacterial leaf spot,tomato septoria leaf spot
+bean leaf/google_0518.jpg,bean leaf,bean leaf
+eggplant cercospora leaf spot/google_0042.jpg,eggplant cercospora leaf spot,cabbage alternaria leaf spot
+tomato mosaic virus/google_0200 - Copy.jpg,tomato mosaic virus,tomato mosaic virus
+broccoli leaf/google_0475.jpg,broccoli leaf,broccoli leaf
+bean leaf/google_0085.jpg,bean leaf,bean leaf
+bean halo blight/google_0054.jpg,bean halo blight,bean halo blight
+corn gray leaf spot/google_0136.jpg,corn gray leaf spot,rice sheath blight
+squash leaf/20.jpg,squash leaf,squash leaf
+cucumber bacterial wilt/google_0019.jpg,cucumber bacterial wilt,cucumber bacterial wilt
+zucchini yellow mosaic virus/google_0012.jpg,zucchini yellow mosaic virus,zucchini yellow mosaic virus
+soybean leaf/76.jpg,soybean leaf,soybean leaf
+tomato late blight/233.jpg,tomato late blight,tomato leaf mold
+grape black rot/google_0050.jpg,grape black rot,grape black rot
+basil downy mildew/google_0024.jpg,basil downy mildew,basil downy mildew
+apple mosaic virus/google_0183.jpg,apple mosaic virus,maple leaf
+cherry leaf/google_0453.jpg,cherry leaf,cherry leaf
+corn rust/google_0120.jpg,corn rust,corn rust
+basil downy mildew/google_0034.jpg,basil downy mildew,basil downy mildew
+cherry leaf/google_0120.jpg,cherry leaf,eggplant leaf
+grape downy mildew/google_0278.jpg,grape downy mildew,grape leaf spot
+eggplant leaf/google_0302.jpg,eggplant leaf,eggplant leaf
+ginger leaf spot/google_0001.jpg,ginger leaf spot,ginger leaf spot
+lettuce mosaic virus/203 - Copy (2).jpg,lettuce mosaic virus,lettuce mosaic virus
+tomato septoria leaf spot/107.jpg,tomato septoria leaf spot,bell pepper leaf spot
+bean leaf/60.jpg,bean leaf,bean leaf
+zucchini yellow mosaic virus/google_0173.jpg,zucchini yellow mosaic virus,zucchini yellow mosaic virus
+cucumber leaf/google_0245.jpg,cucumber leaf,cucumber leaf
+apple leaf/234.jpg,apple leaf,grape leaf
+blueberry leaf/google_0195.jpg,blueberry leaf,blueberry leaf
+cabbage alternaria leaf spot/3.jpg,cabbage alternaria leaf spot,cabbage alternaria leaf spot
+broccoli leaf/google_0338.jpg,broccoli leaf,broccoli leaf
+apple scab/google_0219.jpg,apple scab,apple scab
+potato leaf/82.jpg,potato leaf,potato leaf
+broccoli downy mildew/google_0019.jpg,broccoli downy mildew,broccoli downy mildew
+rice leaf/304.jpg,rice leaf,rice blast
+tomato leaf mold/google_0261.jpg,tomato leaf mold,tomato septoria leaf spot
+ginger sheath blight/51 - Copy.jpg,ginger sheath blight,corn gray leaf spot
+cucumber powdery mildew/google_0117.jpg,cucumber powdery mildew,cucumber leaf
+tomato early blight/25 - Copy (6).jpg,tomato early blight,tomato early blight
+apple scab/google_0168.jpg,apple scab,apple mosaic virus
+cucumber bacterial wilt/278.jpg,cucumber bacterial wilt,cucumber bacterial wilt
+strawberry anthracnose/google_0050.jpg,strawberry anthracnose,strawberry anthracnose
+plum pocket disease/google_0003.jpg,plum pocket disease,plum pocket disease
+corn gray leaf spot/45.jpg,corn gray leaf spot,corn gray leaf spot
+potato early blight/google_0149.jpg,potato early blight,potato early blight
+broccoli downy mildew/google_0034.jpg,broccoli downy mildew,broccoli downy mildew
+tomato bacterial leaf spot/130.jpg,tomato bacterial leaf spot,tomato bacterial leaf spot
+lettuce downy mildew/google_0038.jpg,lettuce downy mildew,lettuce downy mildew
+grape downy mildew/168.jpg,grape downy mildew,cucumber angular leaf spot
+rice blast/51.jpg,rice blast,garlic rust
+cucumber leaf/174.jpg,cucumber leaf,cucumber leaf
+apple rust/google_0196.jpg,apple rust,apple scab
+lettuce downy mildew/google_0209.jpg,lettuce downy mildew,basil downy mildew
+tomato septoria leaf spot/google_0272.jpg,tomato septoria leaf spot,tomato septoria leaf spot
+bell pepper leaf spot/google_0162.jpg,bell pepper leaf spot,bell pepper leaf spot
+bean halo blight/google_0087.jpg,bean halo blight,bean halo blight
+bell pepper leaf spot/20.jpg,bell pepper leaf spot,bell pepper leaf spot
+citrus canker/231.jpg,citrus canker,citrus canker
+garlic leaf blight/google_0007.jpg,garlic leaf blight,garlic leaf blight
+cherry leaf spot/google_0268.jpg,cherry leaf spot,cherry leaf spot
+eggplant leaf/8.jpg,eggplant leaf,eggplant cercospora leaf spot
+bean halo blight/google_0046.jpg,bean halo blight,bean halo blight
+tomato septoria leaf spot/155.jpg,tomato septoria leaf spot,tomato bacterial leaf spot
+grapevine leafroll disease/google_0046.jpg,grapevine leafroll disease,grapevine leafroll disease
+apple black rot/google_0000.jpg,apple black rot,apple scab
+cherry leaf spot/google_0146.jpg,cherry leaf spot,cherry leaf spot
+maple leaf/106.jpg,maple leaf,bean leaf
+tomato yellow leaf curl virus/google_0034 - Copy (2).jpg,tomato yellow leaf curl virus,tomato mosaic virus
+cucumber leaf/google_0167.jpg,cucumber leaf,cucumber leaf
+cherry leaf/google_0004.jpg,cherry leaf,cherry leaf
+bean halo blight/google_0010.jpg,bean halo blight,bean halo blight
+garlic leaf/google_0069.jpg,garlic leaf,garlic leaf
+cauliflower alternaria leaf spot/google_0118.jpg,cauliflower alternaria leaf spot,cauliflower alternaria leaf spot
+tomato leaf/82.jpg,tomato leaf,tomato mosaic virus
+tomato bacterial leaf spot/148.jpg,tomato bacterial leaf spot,bean halo blight
+bean leaf/54.jpg,bean leaf,bean halo blight
+apple scab/google_0183.jpg,apple scab,apple scab
+peach leaf curl/google_0170.jpg,peach leaf curl,peach leaf curl
+cucumber angular leaf spot/google_0151.jpg,cucumber angular leaf spot,cucumber angular leaf spot
+lettuce leaf/google_0089.jpg,lettuce leaf,lettuce leaf
+banana panama disease/add_2 (60).jpg,banana panama disease,banana panama disease
+apple black rot/61.jpg,apple black rot,apple rust
+grape leaf spot/20.jpg,grape leaf spot,grape downy mildew
+peach leaf curl/google_0305.jpg,peach leaf curl,peach leaf curl
+lettuce leaf/52.jpg,lettuce leaf,lettuce leaf
+squash powdery mildew/google_0001.jpg,squash powdery mildew,squash powdery mildew
+tomato early blight/77.jpg,tomato early blight,tomato mosaic virus
+tobacco mosaic virus/77.jpg,tobacco mosaic virus,bell pepper leaf
+garlic leaf blight/22.jpg,garlic leaf blight,garlic leaf blight
+blueberry leaf/google_0165.jpg,blueberry leaf,blueberry leaf
+plum leaf/google_0063.jpg,plum leaf,blueberry leaf
+tomato mosaic virus/129.jpg,tomato mosaic virus,tomato leaf mold
+apple mosaic virus/google_0176.jpg,apple mosaic virus,cucumber angular leaf spot
+tomato bacterial leaf spot/google_0400.jpg,tomato bacterial leaf spot,tomato bacterial leaf spot
+cherry powdery mildew/google_0011.jpg,cherry powdery mildew,squash powdery mildew
+blueberry leaf/109.jpg,blueberry leaf,blueberry leaf
+cherry leaf/35.jpg,cherry leaf,cherry leaf
+bean halo blight/google_0032.jpg,bean halo blight,tomato early blight
+apple leaf/google_0158.jpg,apple leaf,apple leaf
+apple scab/24.jpg,apple scab,apple rust
+tomato bacterial leaf spot/102.jpg,tomato bacterial leaf spot,tomato early blight
+bean leaf/11.jpg,bean leaf,bean leaf
+tomato late blight/48.jpg,tomato late blight,tomato late blight
+corn leaf/75.jpg,corn leaf,corn leaf
+tomato yellow leaf curl virus/google_0110.jpg,tomato yellow leaf curl virus,tomato yellow leaf curl virus
+bean rust/34.jpg,bean rust,bean rust
+cherry leaf spot/google_0240.jpg,cherry leaf spot,cherry leaf spot
+bell pepper leaf spot/google_0282.jpg,bell pepper leaf spot,cherry leaf spot
+rice leaf/260.jpg,rice leaf,rice leaf
+maple leaf/187.jpg,maple leaf,maple leaf
+tomato septoria leaf spot/google_0233.jpg,tomato septoria leaf spot,cherry powdery mildew
+garlic leaf/google_0064.jpg,garlic leaf,garlic leaf
+cauliflower leaf/google_0096.jpg,cauliflower leaf,cauliflower leaf
+soybean leaf/google_0604.jpg,soybean leaf,soybean leaf
+cucumber leaf/201.jpg,cucumber leaf,cucumber leaf
+apple scab/38.jpg,apple scab,apple rust
+potato leaf/google_0229.jpg,potato leaf,potato leaf
+cherry leaf/google_0399.jpg,cherry leaf,cherry leaf
+grape leaf/76.jpg,grape leaf,grape leaf
+banana leaf/220.jpg,banana leaf,banana leaf
+tomato bacterial leaf spot/google_0413.jpg,tomato bacterial leaf spot,cabbage alternaria leaf spot
+maple tar spot/google_0048.jpg,maple tar spot,maple tar spot
+celery early blight/18.jpg,celery early blight,celery early blight
+cherry powdery mildew/google_0115.jpg,cherry powdery mildew,cherry powdery mildew
+garlic leaf/312.jpg,garlic leaf,garlic leaf blight
+lettuce mosaic virus/google_0053.jpg,lettuce mosaic virus,lettuce mosaic virus
+tomato late blight/google_0217.jpg,tomato late blight,tomato early blight
+tomato bacterial leaf spot/google_0066.jpg,tomato bacterial leaf spot,cabbage alternaria leaf spot
+apple rust/100.jpg,apple rust,apple leaf
+grape leaf/101.jpg,grape leaf,grape leaf
+cabbage alternaria leaf spot/google_0235.jpg,cabbage alternaria leaf spot,cauliflower alternaria leaf spot
+blueberry rust/google_0038.jpg,blueberry rust,blueberry rust
+tomato septoria leaf spot/google_0242.jpg,tomato septoria leaf spot,tomato septoria leaf spot
+bean leaf/google_0200.jpg,bean leaf,bean leaf
+squash powdery mildew/google_0244.jpg,squash powdery mildew,squash powdery mildew
+apple scab/3.jpg,apple scab,apple leaf
+citrus canker/google_0216.jpg,citrus canker,citrus canker
+broccoli leaf/6.jpg,broccoli leaf,broccoli leaf
+potato early blight/google_0070.jpg,potato early blight,potato early blight
+citrus canker/62.jpg,citrus canker,citrus canker
+potato early blight/google_0077.jpg,potato early blight,potato leaf
+tomato leaf/google_0417.jpg,tomato leaf,tomato leaf
+cabbage leaf/217.jpg,cabbage leaf,cabbage leaf
+grapevine leafroll disease/14.jpg,grapevine leafroll disease,grapevine leafroll disease
+potato leaf/google_0149.jpg,potato leaf,potato leaf
+zucchini yellow mosaic virus/google_0200.jpg,zucchini yellow mosaic virus,zucchini yellow mosaic virus
+apple scab/google_0193.jpg,apple scab,apple mosaic virus
+cucumber angular leaf spot/google_0131.jpg,cucumber angular leaf spot,lettuce downy mildew
+tomato mosaic virus/168.jpg,tomato mosaic virus,tomato yellow leaf curl virus
+apple leaf/278.jpg,apple leaf,apple leaf
+tomato yellow leaf curl virus/google_0009.jpg,tomato yellow leaf curl virus,tomato bacterial leaf spot
+citrus greening disease/69.jpg,citrus greening disease,citrus greening disease
+strawberry leaf/18.jpg,strawberry leaf,strawberry leaf
+cucumber leaf/google_0240.jpg,cucumber leaf,squash leaf
+tomato bacterial leaf spot/google_0271.jpg,tomato bacterial leaf spot,tomato early blight
+blueberry rust/2.jpg,blueberry rust,blueberry rust
+ginger leaf spot/9.jpg,ginger leaf spot,ginger leaf spot
+cucumber leaf/google_0008.jpg,cucumber leaf,cucumber leaf
+peach leaf/google_0024.jpg,peach leaf,peach leaf
+cucumber powdery mildew/google_0068.jpg,cucumber powdery mildew,grape downy mildew
+citrus canker/99.jpg,citrus canker,citrus canker
+tomato late blight/google_0250.jpg,tomato late blight,tomato late blight
+corn gray leaf spot/google_0150.jpg,corn gray leaf spot,corn northern leaf blight
+blueberry leaf/google_0381.jpg,blueberry leaf,blueberry leaf
+apple leaf/126.jpg,apple leaf,apple leaf
+cherry powdery mildew/google_0130.jpg,cherry powdery mildew,cherry powdery mildew
+apple scab/google_0287.jpg,apple scab,apple leaf
+tomato bacterial leaf spot/114.jpg,tomato bacterial leaf spot,tomato bacterial leaf spot
+bean leaf/google_0169.jpg,bean leaf,bean leaf
+grape leaf/168.jpg,grape leaf,grape leaf
+tomato early blight/google_0143.jpg,tomato early blight,tomato early blight
+bean rust/google_0098.jpg,bean rust,bean leaf
+cherry powdery mildew/google_0055.jpg,cherry powdery mildew,cherry leaf spot
+tomato yellow leaf curl virus/google_0075.jpg,tomato yellow leaf curl virus,tomato yellow leaf curl virus
+corn smut/3 - Copy (4).jpg,corn smut,corn smut
+bean mosaic virus/google_0090.jpg,bean mosaic virus,bean leaf
+maple tar spot/google_0106.jpg,maple tar spot,maple tar spot
+tomato early blight/google_0050.jpg,tomato early blight,tomato septoria leaf spot
+ginger leaf spot/165.jpg,ginger leaf spot,rice sheath blight
+apple black rot/187.jpg,apple black rot,apple rust
+apple black rot/47.jpg,apple black rot,apple black rot
+lettuce leaf/google_0044.jpg,lettuce leaf,lettuce leaf
+apple black rot/google_0147.jpg,apple black rot,apple black rot
+potato late blight/82.jpg,potato late blight,potato leaf
+tomato yellow leaf curl virus/google_0060.jpg,tomato yellow leaf curl virus,tomato late blight
+bell pepper leaf/155.jpg,bell pepper leaf,bell pepper leaf
+garlic leaf blight/google_0009.jpg,garlic leaf blight,garlic leaf blight
+banana leaf/google_0178.jpg,banana leaf,apple leaf
+eggplant cercospora leaf spot/google_0083.jpg,eggplant cercospora leaf spot,cabbage alternaria leaf spot
+bean halo blight/google_0008.jpg,bean halo blight,bean halo blight
+banana panama disease/add_2 (43).jpg,banana panama disease,banana panama disease
+strawberry anthracnose/google_0051.jpg,strawberry anthracnose,strawberry anthracnose
+tomato late blight/google_0205.jpg,tomato late blight,tomato late blight
+squash powdery mildew/google_0175.jpg,squash powdery mildew,squash leaf
+tomato yellow leaf curl virus/google_0032.jpg,tomato yellow leaf curl virus,tomato yellow leaf curl virus
+rice sheath blight/google_0035.jpg,rice sheath blight,rice sheath blight
+tomato leaf mold/google_0185 - Copy (2).jpg,tomato leaf mold,tomato leaf mold
+apple rust/16.jpg,apple rust,apple mosaic virus
+strawberry leaf/google_0407.jpg,strawberry leaf,strawberry leaf
+coffee leaf/204.jpg,coffee leaf,coffee leaf
+citrus greening disease/google_0227.jpg,citrus greening disease,citrus greening disease
+grapevine leafroll disease/google_0000.jpg,grapevine leafroll disease,grape black rot
+cucumber angular leaf spot/google_0078 - Copy.jpg,cucumber angular leaf spot,cucumber angular leaf spot
+cherry leaf/google_0090.jpg,cherry leaf,plum leaf
+apple scab/google_0331.jpg,apple scab,tomato late blight
+tomato late blight/google_0136.jpg,tomato late blight,tomato early blight
+bean mosaic virus/google_0023.jpg,bean mosaic virus,bean leaf
+corn rust/48.jpg,corn rust,corn rust
+apple leaf/64.jpg,apple leaf,maple leaf
+tomato early blight/google_0020.jpg,tomato early blight,tomato septoria leaf spot
+tomato late blight/201.jpg,tomato late blight,tomato late blight
+bean rust/google_0237.jpg,bean rust,bean rust
+plum pocket disease/google_0064.jpg,plum pocket disease,apple scab
+citrus canker/82.jpg,citrus canker,citrus canker
+rice leaf/111.jpg,rice leaf,rice leaf
+cucumber angular leaf spot/google_0116.jpg,cucumber angular leaf spot,cucumber angular leaf spot
+soybean leaf/58.jpg,soybean leaf,soybean leaf
+squash powdery mildew/45.jpg,squash powdery mildew,squash powdery mildew
+tomato bacterial leaf spot/12.jpg,tomato bacterial leaf spot,tomato early blight
+apple leaf/google_0557.jpg,apple leaf,plum leaf
+bean rust/55.jpg,bean rust,bean rust
+peach leaf curl/google_0269.jpg,peach leaf curl,peach leaf curl
+bean rust/google_0086.jpg,bean rust,blueberry rust
+cauliflower alternaria leaf spot/google_0078 - Copy.jpg,cauliflower alternaria leaf spot,cauliflower alternaria leaf spot
+ginger leaf spot/google_0055.jpg,ginger leaf spot,ginger leaf
+blueberry leaf/google_0099.jpg,blueberry leaf,blueberry leaf
+squash leaf/google_0027.jpg,squash leaf,squash leaf
+basil downy mildew/google_0045 - Copy.jpg,basil downy mildew,basil downy mildew
+plum leaf/google_0120.jpg,plum leaf,peach leaf
+grape leaf spot/14.jpg,grape leaf spot,grape downy mildew
+broccoli downy mildew/44.jpg,broccoli downy mildew,cabbage alternaria leaf spot
+tomato yellow leaf curl virus/google_0063.jpg,tomato yellow leaf curl virus,tomato mosaic virus
+zucchini yellow mosaic virus/google_0082.jpg,zucchini yellow mosaic virus,zucchini yellow mosaic virus
+broccoli leaf/38.jpg,broccoli leaf,broccoli leaf
+bean leaf/117.jpg,bean leaf,bean leaf
+potato leaf/73.jpg,potato leaf,potato leaf
+blueberry leaf/82.jpg,blueberry leaf,blueberry leaf
+apple leaf/159.jpg,apple leaf,apple leaf
+soybean leaf/google_0532.jpg,soybean leaf,soybean leaf
+tomato early blight/google_0292.jpg,tomato early blight,tomato bacterial leaf spot
+ginger sheath blight/google_0071.jpg,ginger sheath blight,garlic leaf blight
+basil downy mildew/google_0056 - Copy.jpg,basil downy mildew,basil downy mildew
+apple leaf/195.jpg,apple leaf,apple leaf
+plum leaf/153.jpg,plum leaf,apple leaf
+apple leaf/61.jpg,apple leaf,apple black rot
+strawberry leaf/60.jpg,strawberry leaf,strawberry leaf
+tomato bacterial leaf spot/google_0421.jpg,tomato bacterial leaf spot,tomato bacterial leaf spot
+broccoli leaf/google_0079.jpg,broccoli leaf,broccoli leaf
+potato early blight/google_0096.jpg,potato early blight,potato early blight
+cherry leaf/126.jpg,cherry leaf,plum leaf
+cherry powdery mildew/58.jpg,cherry powdery mildew,cherry powdery mildew
+apple black rot/google_0186.jpg,apple black rot,apple black rot
+potato leaf/26.jpg,potato leaf,potato leaf
+bean halo blight/16.jpg,bean halo blight,bean mosaic virus
+maple leaf/136.jpg,maple leaf,maple leaf
+tomato early blight/google_0235.jpg,tomato early blight,tomato early blight
+grape leaf/131.jpg,grape leaf,grape leaf
+tomato leaf mold/google_0176.jpg,tomato leaf mold,tomato mosaic virus
+tomato early blight/161 - Copy (2).jpg,tomato early blight,tomato early blight
+soybean leaf/301.jpg,soybean leaf,soybean leaf
+celery leaf/155.jpg,celery leaf,celery anthracnose
+cherry powdery mildew/google_0060.jpg,cherry powdery mildew,cherry powdery mildew
+potato early blight/google_0079.jpg,potato early blight,tomato early blight
+garlic leaf blight/google_0235 - Copy (2).jpg,garlic leaf blight,garlic leaf blight
+apple mosaic virus/google_0068.jpg,apple mosaic virus,apple mosaic virus
+cabbage alternaria leaf spot/google_0095.jpg,cabbage alternaria leaf spot,cabbage alternaria leaf spot
+cherry leaf spot/google_0179.jpg,cherry leaf spot,apple mosaic virus
+cucumber leaf/google_0302.jpg,cucumber leaf,cucumber leaf
+cherry leaf/google_0149.jpg,cherry leaf,apple leaf
+plum leaf/172.jpg,plum leaf,plum leaf
+corn leaf/google_0571.jpg,corn leaf,corn leaf
+celery early blight/19.jpg,celery early blight,celery early blight
+peach leaf/google_0035.jpg,peach leaf,peach leaf
+plum leaf/google_0163.jpg,plum leaf,plum leaf
+lettuce downy mildew/363.jpg,lettuce downy mildew,lettuce mosaic virus
+blueberry leaf/google_0171.jpg,blueberry leaf,blueberry leaf
+tobacco leaf/google_0097.jpg,tobacco leaf,tobacco leaf
+peach leaf/283.jpg,peach leaf,peach leaf
+bean halo blight/google_0011.jpg,bean halo blight,bean rust
+apple scab/google_0124.jpg,apple scab,apple scab
+peach leaf curl/26.jpg,peach leaf curl,peach leaf curl
+apple scab/30.jpg,apple scab,apple scab
+citrus canker/google_0047.jpg,citrus canker,citrus canker
+corn leaf/48.jpg,corn leaf,corn leaf
+peach leaf/61.jpg,peach leaf,peach leaf
+banana leaf/197.jpg,banana leaf,banana leaf
+peach leaf curl/google_0196.jpg,peach leaf curl,peach leaf curl
+citrus greening disease/25.jpg,citrus greening disease,plum leaf
+lettuce downy mildew/48.jpg,lettuce downy mildew,lettuce leaf
+bean leaf/55.jpg,bean leaf,bean leaf
+apple black rot/google_0135.jpg,apple black rot,apple scab
+celery leaf/google_0078.jpg,celery leaf,celery leaf
+grape downy mildew/google_0274.jpg,grape downy mildew,grape downy mildew
+garlic leaf blight/2.jpg,garlic leaf blight,garlic leaf blight
+tomato leaf mold/google_0006.jpg,tomato leaf mold,tomato leaf mold
+eggplant cercospora leaf spot/1.jpg,eggplant cercospora leaf spot,eggplant cercospora leaf spot
+ginger leaf/google_0112.jpg,ginger leaf,ginger leaf
+bean mosaic virus/google_0147.jpg,bean mosaic virus,bean mosaic virus
+squash leaf/google_0182.jpg,squash leaf,squash leaf
+tomato yellow leaf curl virus/62.jpg,tomato yellow leaf curl virus,tomato mosaic virus
+cucumber powdery mildew/126.jpg,cucumber powdery mildew,cucumber powdery mildew
+squash powdery mildew/71.jpg,squash powdery mildew,squash powdery mildew
+plum leaf/286.jpg,plum leaf,basil leaf
+grapevine leafroll disease/101.jpg,grapevine leafroll disease,tomato mosaic virus

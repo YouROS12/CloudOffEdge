@@ -50,6 +50,12 @@ log = logging.getLogger("cloud-trt")
 TRT_DIR = os.environ.get("TRT_DIR", "/opt/plant-deploy/trt")
 MODE = os.environ.get("CLOUD_MODE", "batch").lower()
 NODE_ID = os.environ.get("NODE_ID") or socket.gethostname()
+# Largest number of queued images passed through a chunk in one pass. Each image holds
+# about 4.5 MB in host memory during a flush (decoded payload ~0.8 MB, preprocessed input
+# ~1.4 MB, hidden state up to 2.4 MB for DINOv2's 577 tokens); 128 keeps that near 0.6 GB,
+# within the headroom left beside one loaded fp32 chunk. Larger queues are processed in sub-batches, each
+# reloading the chunk engines. (Added after the measured runs, whose batches were <= 61.)
+MAX_BATCH = int(os.environ.get("CLOUD_MAX_BATCH", "128"))
 
 
 # Mirrors shared/protocol.py (which needs Python >= 3.7 to import).
@@ -124,21 +130,24 @@ class State(object):
                 jobs, self.queue = self.queue, []
             if not jobs:
                 return {"n": 0, "load_ms": {}, "results": []}
-            feats = [[] for _ in jobs]
-            timings = [{} for _ in jobs]
-            load_ms = {}
-            for spec in tc.BACKBONES:
-                xs, pre_ms = [], []
-                for job in jobs:
-                    t1 = time.perf_counter()
-                    xs.append(tc.preprocess(job["img"], spec["size"], spec["mean"], spec["std"]))
-                    pre_ms.append((time.perf_counter() - t1) * 1000)
-                # chunk-major: one engine resident at a time
-                outs, load_ms[spec["name"]], comp = run_backbone_batched(TRT_DIR, spec["name"], xs)
-                for i, o in enumerate(outs):
-                    feats[i].append(o)
-                    timings[i][spec["name"]] = pre_ms[i] + comp[i]
-            results = [self._result(f, tm, job) for f, tm, job in zip(feats, timings, jobs)]
+            results, load_ms = [], {}
+            for s in range(0, len(jobs), MAX_BATCH):
+                part = jobs[s:s + MAX_BATCH]
+                feats = [[] for _ in part]
+                timings = [{} for _ in part]
+                for spec in tc.BACKBONES:
+                    xs, pre_ms = [], []
+                    for job in part:
+                        t1 = time.perf_counter()
+                        xs.append(tc.preprocess(job["img"], spec["size"], spec["mean"], spec["std"]))
+                        pre_ms.append((time.perf_counter() - t1) * 1000)
+                    # chunk-major: one engine resident at a time
+                    outs, ms, comp = run_backbone_batched(TRT_DIR, spec["name"], xs)
+                    load_ms[spec["name"]] = load_ms.get(spec["name"], 0.0) + ms
+                    for i, o in enumerate(outs):
+                        feats[i].append(o)
+                        timings[i][spec["name"]] = pre_ms[i] + comp[i]
+                results += [self._result(f, tm, job) for f, tm, job in zip(feats, timings, part)]
             self.n_done += len(jobs)
             self.n_flushes += 1
             log.info("flush: %d images | load %s | compute median %.0f ms/img", len(jobs),

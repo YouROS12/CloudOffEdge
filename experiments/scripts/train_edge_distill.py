@@ -70,7 +70,7 @@ def kd_loss(logits, y, t_logits, focal, alpha: float, T: float):
     return loss
 
 
-def train(model, loader, epochs, lr, device, alpha, T, warmup_frac=0.05, eval_fn=None):
+def train(model, loader, epochs, lr, device, alpha, T, warmup_frac=0.05, eval_fn=None, freeze_bn=False):
     focal = base.FocalLoss(gamma=2.0, label_smoothing=0.1)
     opt = torch.optim.AdamW(model.parameters(), lr=lr, weight_decay=1e-4)
     scaler = torch.amp.GradScaler("cuda", enabled=(device == "cuda"))
@@ -80,6 +80,10 @@ def train(model, loader, epochs, lr, device, alpha, T, warmup_frac=0.05, eval_fn
     t0 = time.time()
     for ep in range(epochs):
         model.train()
+        if freeze_bn:  # keep the deployed model's BatchNorm statistics (small fine-tuning batches)
+            for mod in model.modules():
+                if isinstance(mod, torch.nn.modules.batchnorm._BatchNorm):
+                    mod.eval()
         tot = n = 0
         for x, y, t in loader:
             x, y, t = x.to(device, non_blocking=True), y.to(device), t.to(device)
@@ -115,9 +119,8 @@ def predict(model, items, tf, device, bs=128):
     ds = base._ItemsDataset(items, tf)
     dl = DataLoader(ds, batch_size=bs, shuffle=False, num_workers=4, pin_memory=True)
     out = []
-    for x, _ in dl:
-        with torch.amp.autocast("cuda", enabled=(device == "cuda")):
-            out.append(model(x.to(device)).float().cpu())
+    for x, _ in dl:  # fp32: margins rounded by fp16 move tau and ties (same precision as predict_edge.py)
+        out.append(model(x.to(device)).float().cpu())
     return torch.cat(out)
 
 
@@ -188,7 +191,7 @@ def loop(args):
     y_test, c_logits = soft["test_labels"], soft["test_logits"]
     c_pred, c_conf = c_logits.argmax(-1), F.softmax(c_logits, -1).max(-1).values
     # per-class halves: week 1 (stream) / week 2 (evaluation)
-    rng = random.Random(args.seed)
+    rng = random.Random(args.split_seed)
     by = {}
     for i, (_, l) in enumerate(test_items):
         by.setdefault(l, []).append(i)
@@ -219,12 +222,13 @@ def loop(args):
     nan = torch.full((len(names),), float("nan"))
     results = {"meta": {"n_week1": len(w1), "n_week2": len(w2), "n_escalated_week1": len(esc_w1), "tau": TAU,
                         "epochs": args.epochs, "replay_per_epoch": args.replay, "stream_repeat": args.repeat,
-                        "lr": args.lr, "alpha": args.alpha, "T": args.T}}
+                        "lr": args.lr, "alpha": args.alpha, "T": args.T, "split_seed": args.split_seed,
+                        "sampler": args.sampler, "freeze_bn": args.freeze_bn}}
     w2t = torch.tensor(w2)
     results["none"] = operating(base_logits[w2t], c_pred[w2t], y_test[w2t])
     print("none", results["none"], flush=True)
 
-    for variant in ["replay", "hard", "soft", "soft_conf", "oracle"]:
+    for variant in args.variants.split(","):
         torch.manual_seed(args.seed)
         stream_items, stream_t = [], []
         for i in esc_w1:
@@ -242,16 +246,18 @@ def loop(args):
         items = stream_items * args.repeat + rep
         teach = (torch.stack(stream_t) if stream_t else torch.empty(0, len(names))).repeat(args.repeat, 1)
         teach = torch.cat([teach, nan.repeat(len(rep), 1)])
-        dl = DataLoader(TeacherDataset(items, teach, train_tf), batch_size=64, shuffle=True, num_workers=4,
-                        pin_memory=True, persistent_workers=True, drop_last=True)
+        # "balanced": the original training's sqrt-frequency sampler; "uniform": plain shuffling
+        samp = dict(sampler=base.make_balanced_sampler(items)) if args.sampler == "balanced" else dict(shuffle=True)
+        dl = DataLoader(TeacherDataset(items, teach, train_tf), batch_size=64, num_workers=4,
+                        pin_memory=True, persistent_workers=True, drop_last=True, **samp)
         m = fresh()
-        train(m, dl, args.epochs, args.lr, device, args.alpha, args.T, warmup_frac=0.1)
+        train(m, dl, args.epochs, args.lr, device, args.alpha, args.T, warmup_frac=0.1, freeze_bn=args.freeze_bn)
         lg = predict(m, [test_items[i] for i in w2], eval_tf, device)
         results[variant] = operating(lg, c_pred[w2t], y_test[w2t])
         results[variant]["n_stream"] = len(stream_items)
         print(variant, results[variant], flush=True)
         Path(args.out).mkdir(parents=True, exist_ok=True)
-        (Path(args.out) / "loop_results.json").write_text(json.dumps(results, indent=1))
+        (Path(args.out) / args.out_name).write_text(json.dumps(results, indent=1))
 
 
 def main():
@@ -272,6 +278,11 @@ def main():
     b.add_argument("--alpha", type=float, default=0.5)
     b.add_argument("--T", type=float, default=2.0)
     b.add_argument("--seed", type=int, default=1)
+    b.add_argument("--split-seed", type=int, default=1, help="week-1/week-2 partition")
+    b.add_argument("--sampler", choices=["uniform", "balanced"], default="uniform")
+    b.add_argument("--freeze-bn", action="store_true")
+    b.add_argument("--variants", default="replay,hard,soft,soft_conf,oracle")
+    b.add_argument("--out-name", default="loop_results.json")
     args = ap.parse_args()
     offline(args) if args.cmd == "offline" else loop(args)
 

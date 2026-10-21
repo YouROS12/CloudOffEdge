@@ -1,8 +1,8 @@
-[farm A] http://100.80.229.78:8101 node_id=farm-A threshold=0.138424 payload=448px q90 cloud=http://100.87.131.25:8001
-[farm B] http://100.80.229.78:8102 node_id=farm-B threshold=0.138424 payload=448px q90 cloud=http://100.87.131.25:8001
-[farm C] http://100.80.229.78:8103 node_id=farm-C threshold=0.138424 payload=448px q90 cloud=http://100.87.131.25:8001
-[farm D] http://100.80.229.78:8104 node_id=farm-D threshold=0.138424 payload=448px q90 cloud=http://100.87.131.25:8001
-[cloud] http://100.87.131.25:8001 {'status': 'ok', 'node_id': 'azze-desktop', 'role': 'cloud', 'mode': 'batch', 'device': 'jetson-nano-tensorrt-fp16', 'n_classes': 89, 'feat_dim': 2816, 'backbones': ['dinov2_vitl14', 'dinov3_vitl16', 'clip_vitl14'], 'queued': 0, 'n_requests': 2, 'n_flushes': 1}
+[farm A] http://raspberrypi.local:8101 node_id=farm-A threshold=0.138424 payload=448px q90 cloud=http://jetson.local:8001
+[farm B] http://raspberrypi.local:8102 node_id=farm-B threshold=0.138424 payload=448px q90 cloud=http://jetson.local:8001
+[farm C] http://raspberrypi.local:8103 node_id=farm-C threshold=0.138424 payload=448px q90 cloud=http://jetson.local:8001
+[farm D] http://raspberrypi.local:8104 node_id=farm-D threshold=0.138424 payload=448px q90 cloud=http://jetson.local:8001
+[cloud] http://jetson.local:8001 {'status': 'ok', 'node_id': 'jetson-nano', 'role': 'cloud', 'mode': 'batch', 'device': 'jetson-nano-tensorrt-fp16', 'n_classes': 89, 'feat_dim': 2816, 'backbones': ['dinov2_vitl14', 'dinov3_vitl16', 'clip_vitl14'], 'queued': 0, 'n_requests': 2, 'n_flushes': 1}
 [plan] 3677 images, 4 farms, 7 sim days, 84 active sim hours
    farm A (orchard): 1360 images
    farm B (solanaceae): 701 images

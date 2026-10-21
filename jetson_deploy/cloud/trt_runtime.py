@@ -143,8 +143,9 @@ def chunk_engines(trt_dir, name):
 def run_backbone_batched(trt_dir, name, xs):
     """Run a batch of inputs through a backbone chunk-major: load chunk 1, run
     every input through it, free it, load chunk 2, ... Only ONE engine is
-    resident at any time (fp32 DINOv3 chunks are ~0.65 GB each once loaded),
-    and intermediate hidden states (~2 MB per image) are kept in host memory.
+    resident at any time (a loaded fp32 chunk raised board RAM by up to 0.46 GB
+    in the measured flushes, an fp16 one by 0.22 GB), and intermediate hidden
+    states (up to 2.4 MB per image) are kept in host memory.
 
     Returns (outputs, load_ms_total, compute_ms_per_input)."""
     import gc

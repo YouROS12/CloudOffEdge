@@ -1,0 +1,5 @@
+102 payloads, mean 59.2 KB
+run 0: 34 images, flush 284 s, load dinov2=17.6s dinov3=17.0s clip=9.7s
+run 1: 34 images, flush 284 s, load dinov2=8.5s dinov3=17.1s clip=9.7s
+run 2: 34 images, flush 285 s, load dinov2=8.3s dinov3=16.9s clip=9.4s
+wrote results\nano_flush_profile_clip16_n34

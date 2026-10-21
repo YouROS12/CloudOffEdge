@@ -1,0 +1,32 @@
+{
+ "meta": {
+  "n_week1": 1812,
+  "n_week2": 1865,
+  "n_escalated_week1": 344,
+  "tau": 0.138424,
+  "epochs": 8,
+  "replay_per_epoch": 2000,
+  "stream_repeat": 4,
+  "lr": 0.0001,
+  "alpha": 0.5,
+  "T": 2.0,
+  "split_seed": 1,
+  "sampler": "uniform",
+  "freeze_bn": false
+ },
+ "none": {
+  "edge_acc": 0.6895442605018616,
+  "esc_at_tau": 0.18176943063735962,
+  "acc_at_tau": 0.753887414932251,
+  "cloud_acc": 0.795174241065979,
+  "esc_for_95": 0.18605898123324396
+ },
+ "replay": {
+  "edge_acc": 0.6895442605018616,
+  "esc_at_tau": 0.20000000298023224,
+  "acc_at_tau": 0.7522788047790527,
+  "cloud_acc": 0.795174241065979,
+  "esc_for_95": 0.2134048257372654,
+  "n_stream": 0
+ }
+}

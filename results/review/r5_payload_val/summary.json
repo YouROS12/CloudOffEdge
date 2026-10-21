@@ -1,0 +1,42 @@
+{
+ "n": 1820,
+ "list": "<home>/Desktop/TurboQuant/paper2/outputs/cloud_predictions_val.csv",
+ "policies": {
+  "original": {
+   "kb_mean": 148.91818498883927,
+   "kb_median": 64.74755859375,
+   "acc": 0.7961538461538461,
+   "agreement_with_original": 1.0
+  },
+  "full_q90": {
+   "kb_mean": 133.1582540994162,
+   "kb_median": 69.9345703125,
+   "acc": 0.7983516483516484,
+   "agreement_with_original": 0.9917582417582418
+  },
+  "448px_q90": {
+   "kb_mean": 59.14463963770604,
+   "kb_median": 57.943359375,
+   "acc": 0.7978021978021979,
+   "agreement_with_original": 0.9835164835164835
+  },
+  "336px_q95": {
+   "kb_mean": 57.122996437156594,
+   "kb_median": 58.705078125,
+   "acc": 0.7956043956043956,
+   "agreement_with_original": 0.9807692307692307
+  },
+  "336px_q90": {
+   "kb_mean": 41.9156727549794,
+   "kb_median": 42.09716796875,
+   "acc": 0.7928571428571428,
+   "agreement_with_original": 0.978021978021978
+  },
+  "224px_q90": {
+   "kb_mean": 22.925654082245877,
+   "kb_median": 22.83837890625,
+   "acc": 0.7884615384615384,
+   "agreement_with_original": 0.9543956043956044
+  }
+ }
+}

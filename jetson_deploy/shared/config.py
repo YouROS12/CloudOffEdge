@@ -26,13 +26,17 @@ class EdgeConfig:
     jpeg_quality: int = 90
     # Escalated images are downscaled so their shorter side is 448 px before
     # JPEG encoding: the cloud works at <= 336 px, and the extra margin keeps
-    # 97.7% of cloud diagnoses identical to full resolution (vs 95.7% at
-    # 336 px) at 60 KB instead of 149 KB. 0 = upload at original resolution.
+    # 98.4% of cloud diagnoses identical to the original file (vs 97.8% at
+    # 336 px) at 59 KB instead of 133 KB at full resolution, on the 1,820
+    # validation images (cloud/payload_eval.py). 0 = upload at original resolution.
     escalation_short_side: int = 448
     # "sync": wait for the cloud's answer (cloud keeps its models resident).
     # "deferred": queue the image on the cloud (POST /enqueue) and answer with
     # the edge label now; the cloud diagnosis follows at its next batch flush
     # (needed when the cloud node cannot hold all backbones, e.g. 4 GB Nano).
+    # "background": as "deferred", but the upload runs on a background queue so
+    # the answer never waits for the network (added after the paper's
+    # measurements, which used "deferred": answer after the upload is acknowledged).
     escalation_mode: str = "sync"
     class_names_path: str = "checkpoints/class_names.txt"
 

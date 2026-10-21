@@ -1,0 +1,54 @@
+<home>/.cache\torch\hub\facebookresearch_dinov2_main\dinov2\layers\swiglu_ffn.py:51: UserWarning: xFormers is not available (SwiGLU)
+  warnings.warn("xFormers is not available (SwiGLU)")
+<home>/.cache\torch\hub\facebookresearch_dinov2_main\dinov2\layers\attention.py:33: UserWarning: xFormers is not available (Attention)
+  warnings.warn("xFormers is not available (Attention)")
+<home>/.cache\torch\hub\facebookresearch_dinov2_main\dinov2\layers\block.py:40: UserWarning: xFormers is not available (Block)
+  warnings.warn("xFormers is not available (Block)")
+23:52:33 [cloud] INFO using MLP layer as FFN
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\triton\windows_utils.py:405: UserWarning: Failed to find CUDA.
+  warnings.warn("Failed to find CUDA.")
+done dinov2_vitl14
+23:55:34 [cloud] INFO Loading pretrained weights from Hugging Face hub (timm/vit_large_patch16_dinov3.lvd1689m)
+23:55:35 [cloud] INFO HTTP Request: HEAD https://huggingface.co/timm/vit_large_patch16_dinov3.lvd1689m/resolve/main/model.safetensors "HTTP/1.1 302 Found"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+23:55:35 [cloud] WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+23:55:35 [cloud] INFO [timm/vit_large_patch16_dinov3.lvd1689m] Safe alternative available for 'pytorch_model.bin' (as 'model.safetensors'). Loading weights using safetensors.
+done dinov3_vitl16
+23:58:19 [cloud] INFO Parsing model identifier. Schema: None, Identifier: ViT-L-14
+23:58:19 [cloud] INFO Loaded built-in ViT-L-14 model config.
+23:58:19 [cloud] INFO HTTP Request: HEAD https://huggingface.co/timm/vit_large_patch14_clip_224.openai/resolve/main/open_clip_model.safetensors "HTTP/1.1 302 Found"
+23:58:19 [cloud] INFO HTTP Request: GET https://huggingface.co/api/models/timm/vit_large_patch14_clip_224.openai/xet-read-token/18d0535469bb561bf468d76c1d73aa35156c922b "HTTP/1.1 200 OK"
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\huggingface_hub\file_download.py:138: UserWarning: `huggingface_hub` cache-system uses symlinks by default to efficiently store duplicated files but your machine does not support them in <home>\.cache\huggingface\hub\models--timm--vit_large_patch14_clip_224.openai. Caching files will still work but in a degraded version that might require more space on your disk. This warning can be disabled by setting the `HF_HUB_DISABLE_SYMLINKS_WARNING` environment variable. For more details, see https://huggingface.co/docs/huggingface_hub/how-to-cache#limitations.
+To support symlinks on Windows, you either need to activate Developer Mode or to run Python as an administrator. In order to activate developer mode, see this article: https://docs.microsoft.com/en-us/windows/apps/get-started/enable-your-device-for-development
+  warnings.warn(message)
+<home>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\open_clip\factory.py:450: UserWarning: QuickGELU mismatch between final model config (quick_gelu=False) and pretrained tag 'openai' (quick_gelu=True).
+  warnings.warn(
+00:00:05 [cloud] INFO Instantiating model architecture: CLIP
+00:00:07 [cloud] INFO Loading full pretrained weights from: <home>\.cache\huggingface\hub\models--timm--vit_large_patch14_clip_224.openai\snapshots\18d0535469bb561bf468d76c1d73aa35156c922b\open_clip_model.safetensors
+00:00:07 [cloud] INFO Final image preprocessing configuration set: {'size': (224, 224), 'mode': 'RGB', 'mean': (0.48145466, 0.4578275, 0.40821073), 'std': (0.26862954, 0.26130258, 0.27577711), 'interpolation': 'bicubic', 'resize_mode': 'shortest', 'fill_color': 0}
+00:00:07 [cloud] INFO Model ViT-L-14 creation process complete.
+done clip_vitl14
+{
+ "n": 684,
+ "list": "../results/review/escalated_run1.csv",
+ "policies": {
+  "original": {
+   "kb_mean": 142.30746013797514,
+   "kb_median": 65.89892578125,
+   "acc": 0.6681286549707602,
+   "agreement_with_original": 1.0
+  },
+  "full_q90": {
+   "kb_mean": 139.24394359923247,
+   "kb_median": 71.8515625,
+   "acc": 0.6739766081871345,
+   "agreement_with_original": 0.9824561403508771
+  },
+  "448px_q90": {
+   "kb_mean": 60.41318302266082,
+   "kb_median": 59.51123046875,
+   "acc": 0.6812865497076024,
+   "agreement_with_original": 0.966374269005848
+  }
+ }
+}

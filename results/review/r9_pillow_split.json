@@ -1,0 +1,29 @@
+{
+ "pillow_workstation": "12.2.0",
+ "pillow_nano": "8.4.0",
+ "n_images": 24,
+ "decode_max_abs_diff_255": 67,
+ "decode_pixels_differing_frac": 0.358464763597945,
+ "per_backbone": {
+  "dinov2_vitl14": {
+   "total_max": 0.5925925970077515,
+   "decode_only_max": 0.5925925970077515,
+   "resample_only_max": 0.0
+  },
+  "dinov3_vitl16": {
+   "total_max": 0.5925925970077515,
+   "decode_only_max": 0.5925925970077515,
+   "resample_only_max": 0.0
+  },
+  "clip_vitl14": {
+   "total_max": 0.3555017113685608,
+   "decode_only_max": 0.3555017113685608,
+   "resample_only_max": 0.0
+  }
+ },
+ "decoder_workstation": "libjpeg-turbo 3.1.4 (libjpeg API 8.0), bundled with Pillow 12.2.0",
+ "decoder_nano": "IJG libjpeg 9.0 (not libjpeg-turbo), used by Pillow 8.4.0 on JetPack 4.6.1 / Python 3.6",
+ "method": "24 reference images; each host decodes and preprocesses its own decode and the other host's decoded pixels (deploy/cloud/pillow_split.py); decode_only = same resampler, different decode; resample_only = same pixels, different Pillow",
+ "conclusion": "The whole deviation comes from JPEG decoding (two different libjpeg implementations); Pillow's bicubic resampling is bit-identical across 8.4 and 12.2. A NumPy resize would not remove it; a matched decoder would.",
+ "date": "2026-10-21"
+}

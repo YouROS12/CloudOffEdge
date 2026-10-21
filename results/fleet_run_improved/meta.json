@@ -1,12 +1,12 @@
 {
   "description": "Time-compressed multi-farm deployment replay.",
-  "disclosure": "4 virtual edge nodes (farms A,B,C,D) emulated as separate processes on one physical edge device (100.80.229.78); 1 simulated hour = >= 1.0 s wall clock. Every inference and every edge->cloud transfer is a real measurement; only the idle time between captures is compressed.",
+  "disclosure": "4 virtual edge nodes (farms A,B,C,D) emulated as separate processes on one physical edge device (raspberrypi.local); 1 simulated hour = >= 1.0 s wall clock. Every inference and every edge->cloud transfer is a real measurement; only the idle time between captures is compressed.",
   "args": {
     "image_dir": "outputs/plantwild_test",
-    "edge_host": "100.80.229.78",
+    "edge_host": "raspberrypi.local",
     "farms": "A,B,C,D",
     "base_port": 8101,
-    "cloud_url": "http://100.87.131.25:8001",
+    "cloud_url": "http://jetson.local:8001",
     "allow_no_cloud": false,
     "assign": "themed",
     "days": 7,
