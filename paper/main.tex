@@ -8,7 +8,7 @@
 %  measured render as amber "pending" boxes.
 %  \note{...} (red) is available for author notes; none remain.
 % =====================================================================
-\documentclass[preprint,12pt,authoryear]{elsarticle}
+\documentclass[preprint,12pt]{elsarticle}
 
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
@@ -50,7 +50,8 @@
 % scripts/make_paper_numbers.py (never edit numbers.tex by hand).
 \input{numbers}
 
-\journal{Results in Engineering}
+\journal{Smart Agricultural Technology}
+\biboptions{sort&compress}
 
 \begin{document}
 
@@ -242,7 +243,7 @@ baselines that inject textual disease descriptions
 \citep{wei2024mvpdr}. Recent work combines foundation backbones
 \citep{jiang2025plantcafo, salman2025plantdisease} or compresses ensembles
 for deployment \citep{hasan2025deployable}. Our cloud model is the
-three-backbone QualityGate fusion of \citet{elkarch2026backbone}; this
+three-backbone QualityGate fusion of El~Karch et~al.~\citep{elkarch2026backbone}; this
 paper does not propose a new recogniser but asks how to deliver such a
 recogniser's accuracy to farms that cannot afford to upload every image.
 
@@ -296,7 +297,7 @@ embedded node rather than in a data centre.
 We use PlantWild \citep{wei2024plantwild}: 18\,542 field photographs of
 89 classes spanning healthy and diseased leaves of more than thirty plant
 species. We follow the official split procedure of
-\citet{wei2024mvpdr} (fixed seed, 80\,\% train-validation and 20\,\%
+Wei et~al.~\citep{wei2024mvpdr} (fixed seed, 80\,\% train-validation and 20\,\%
 test, with 12.5\,\% of train-validation held out for validation),
 giving 13\,045 training, 1\,820 validation and 3\,677 test images. All
 accuracies are top-1 on the 3\,677-image test split. Training, offline
@@ -305,7 +306,7 @@ GeForce RTX~3070 (8\,GB), an AMD Ryzen~7 7700 CPU and 64\,GB of RAM.
 
 \subsection{Cloud model: frozen foundation-backbone fusion}
 \label{sec:cloud}
-The cloud model is the QualityGate fusion of \citet{elkarch2026backbone}
+The cloud model is the QualityGate fusion of El~Karch et~al.~\citep{elkarch2026backbone}
 (Fig.~\ref{fig:system}, right). Three frozen backbones each produce a
 global image descriptor: DINOv2 ViT-L/14 at 336\,px
 \citep{oquab2024dinov2}, DINOv3 ViT-L/16 at 336\,px
@@ -1893,7 +1894,7 @@ Figure~\ref{fig:setup} shows the testbed: the Raspberry Pi~5 (edge tier, four vi
 \label{fig:setup}
 \end{figure}}{}
 
-\bibliographystyle{elsarticle-harv}
+\bibliographystyle{elsarticle-num}
 \bibliography{refs_paper1,refs_edge}
 
 \end{document}

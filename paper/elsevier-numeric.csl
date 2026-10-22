@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="sort-only" default-locale="en-US">
+  <!-- Numeric Elsevier style written for this manuscript's Word version (make_docx.py):
+       [n] in order of first citation, bracketed and compressed; references in the
+       journal's numbered format (initials, title, journal, volume (year) pages, DOI). -->
+  <info>
+    <title>Elsevier numeric (CloudOffEdge manuscript)</title>
+    <id>cloudoffedge-elsevier-numeric</id>
+    <category citation-format="numeric"/>
+    <updated>2026-10-22T00:00:00+00:00</updated>
+  </info>
+  <macro name="author">
+    <names variable="author">
+      <name initialize-with="." delimiter=", " name-as-sort-order="none"/>
+      <label form="short" prefix=" (" suffix=")"/>
+      <substitute>
+        <names variable="editor"/>
+        <text variable="publisher"/>
+      </substitute>
+    </names>
+  </macro>
+  <macro name="editor">
+    <names variable="editor">
+      <name initialize-with="." delimiter=", " and="text"/>
+      <label form="short" prefix=" (" suffix=")" text-case="capitalize-first"/>
+    </names>
+  </macro>
+  <macro name="year">
+    <date variable="issued">
+      <date-part name="year"/>
+    </date>
+  </macro>
+  <macro name="access">
+    <choose>
+      <if variable="DOI">
+        <text variable="DOI" prefix="https://doi.org/"/>
+      </if>
+      <else-if variable="URL">
+        <group delimiter=", ">
+          <text variable="URL"/>
+          <group>
+            <text value="accessed "/>
+            <date variable="accessed">
+              <date-part name="day" suffix=" "/>
+              <date-part name="month" suffix=" "/>
+              <date-part name="year"/>
+            </date>
+          </group>
+        </group>
+      </else-if>
+    </choose>
+  </macro>
+  <citation collapse="citation-number">
+    <sort>
+      <key variable="citation-number"/>
+    </sort>
+    <layout prefix="[" suffix="]" delimiter=",">
+      <text variable="citation-number"/>
+    </layout>
+  </citation>
+  <bibliography entry-spacing="0" second-field-align="flush">
+    <layout suffix=".">
+      <text variable="citation-number" prefix="[" suffix="]"/>
+      <group delimiter=", ">
+        <text macro="author"/>
+        <text variable="title"/>
+        <choose>
+          <if type="article-journal article-magazine article-newspaper" match="any">
+            <group delimiter=" ">
+              <text variable="container-title" form="short"/>
+              <text variable="volume"/>
+              <text macro="year" prefix="(" suffix=")"/>
+              <text variable="page"/>
+            </group>
+          </if>
+          <else-if type="paper-conference chapter" match="any">
+            <group delimiter=", ">
+              <group delimiter=" ">
+                <text term="in" suffix=":"/>
+                <text macro="editor"/>
+                <text variable="container-title"/>
+              </group>
+              <text variable="publisher"/>
+              <text variable="publisher-place"/>
+              <text macro="year"/>
+              <text variable="page" prefix="pp. "/>
+            </group>
+          </else-if>
+          <else-if type="book report thesis" match="any">
+            <group delimiter=", ">
+              <text variable="publisher"/>
+              <text variable="publisher-place"/>
+              <text macro="year"/>
+            </group>
+          </else-if>
+          <else>
+            <group delimiter=", ">
+              <text variable="container-title"/>
+              <text variable="publisher"/>
+              <text macro="year"/>
+            </group>
+          </else>
+        </choose>
+        <text macro="access" prefix=" "/>
+      </group>
+    </layout>
+  </bibliography>
+</style>

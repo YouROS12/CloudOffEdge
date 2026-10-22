@@ -1,6 +1,6 @@
 # paper — manuscript sources
 
-Elsevier `elsarticle` source for *Results in Engineering*.
+Elsevier `elsarticle` source for *Smart Agricultural Technology*.
 `main.pdf` is the compiled manuscript; `main.docx` a Word version built from the same
 source.
 

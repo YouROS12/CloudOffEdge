@@ -9,7 +9,7 @@ Steps
     references resolved, numbered captions, elsarticle front matter rewritten
     as plain title/authors/highlights/abstract/keywords;
  4. LaTeX -> Markdown with pandoc, place the reference list before the
-    appendix, Markdown -> .docx with citeproc (author-year).
+    appendix, Markdown -> .docx with citeproc (numbered, paper/manuscript/elsevier-numeric.csl).
 
   python experiments/scripts/make_docx.py  ->  paper/manuscript/main.docx
 """
@@ -219,7 +219,7 @@ def main() -> None:
     out = MS / "main.docx"
     pypandoc.convert_file(str(build / "flat.md"), "docx", format="markdown", outputfile=str(out),
                           extra_args=["--citeproc", f"--bibliography={MS / 'refs_paper1.bib'}",
-                                      f"--bibliography={MS / 'refs_edge.bib'}", "--number-sections",
+                                      f"--bibliography={MS / 'refs_edge.bib'}", f"--csl={MS / 'elsevier-numeric.csl'}", "--number-sections",
                                       f"--resource-path={build}", "--metadata=link-citations:true"])
     print("wrote", out, f"({out.stat().st_size / 1e6:.1f} MB); TikZ figures rendered:", tikz_figs)
 
