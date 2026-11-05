@@ -9,7 +9,8 @@ Steps
     references resolved, numbered captions, elsarticle front matter rewritten
     as plain title/authors/highlights/abstract/keywords;
  4. LaTeX -> Markdown with pandoc, place the reference list before the
-    appendix, Markdown -> .docx with citeproc (numbered, paper/manuscript/elsevier-numeric.csl).
+    appendix, Markdown -> .docx with citeproc (author-year).
+    --anonymous: version for double-anonymized review (no author details; see anonymize()).
 
   python experiments/scripts/make_docx.py  ->  paper/manuscript/main.docx
 """
@@ -82,10 +83,24 @@ def render_tikz(work: Path, out: Path, numbers: list[str]) -> dict[str, Path]:
     return res
 
 
+def anonymize(tex: str) -> str:
+    """Version for double-anonymized review: drop %<*named> ... %</named> blocks and activate the
+    %ANON lines that replace them (author block, CRediT names, repository address)."""
+    tex = re.sub(r"%<\*named>\n.*?%</named>\n", "", tex, flags=re.S)
+    return re.sub(r"^%ANON ", "", tex, flags=re.M)
+
+
 def main() -> None:
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--anonymous", action="store_true")
+    ap.add_argument("--out", default=str(MS / "main.docx"))
+    args = ap.parse_args()
     work = Path(__import__("tempfile").gettempdir()) / "cloudoffedge_docx_build"
     labels = compile_scratch(work)
     src = (MS / "main.tex").read_text(encoding="utf-8")
+    if args.anonymous:
+        src = anonymize(src)
 
     # ---- measured values
     nums = {}
@@ -180,17 +195,20 @@ def main() -> None:
     highlights = re.search(r"\\begin\{highlights\}(.*?)\\end\{highlights\}", fm, re.S).group(1)
     keywords = re.search(r"\\begin\{keyword\}(.*?)\\end\{keyword\}", fm, re.S).group(1)
     keywords = "; ".join(k.strip() for k in keywords.replace("\n", " ").split("\\sep"))
-    front = (
-        f"\\title{{{title}}}\n\\author{{Youssef Natij\\textsuperscript{{a,*}} \\and Hajar El Karch\\textsuperscript{{b}}"
-        f" \\and Abdelkader Mezouari\\textsuperscript{{a}}}}\n\\date{{}}\n\\begin{{document}}\n\\maketitle\n"
+    authors = "" if args.anonymous else (
         "\\noindent\\textsuperscript{a}Scientific Research and Innovation Laboratory, Higher School of Technology, "
         "Ibn Tofail University, Campus Universitaire, B.P. 242, 14000 Kenitra, Morocco\n\n"
         "\\noindent\\textsuperscript{b}Laboratory of Advanced Systems Engineering, National School of Applied "
         "Engineering, Ibn Tofail University, Campus Universitaire, B.P. 241, 14000 Kenitra, Morocco\n\n"
         "\\noindent\\textsuperscript{*}Corresponding author: youssef.natij@uit.ac.ma\n\n"
         "\\noindent E-mail addresses: youssef.natij@uit.ac.ma (Y. Natij), hajar.elkarch@uit.ac.ma (H. El Karch), "
-        "abdelkader.mezouari1@uit.ac.ma (A. Mezouari)\n\n"
-        f"\\section*{{Highlights}}\n\\begin{{itemize}}{highlights}\\end{{itemize}}\n\n"
+        "abdelkader.mezouari1@uit.ac.ma (A. Mezouari)\n\n")
+    names = "" if args.anonymous else (
+        "\\author{Youssef Natij\\textsuperscript{a,*} \\and Hajar El Karch\\textsuperscript{b}"
+        " \\and Abdelkader Mezouari\\textsuperscript{a}}\n")
+    front = (
+        f"\\title{{{title}}}\n" + names + "\\date{}\n\\begin{document}\n\\maketitle\n" + authors
+        + f"\\section*{{Highlights}}\n\\begin{{itemize}}{highlights}\\end{{itemize}}\n\n"
         f"\\section*{{Abstract}}\n{abstract}\n\n\\noindent\\textbf{{Keywords:}} {keywords}\n\n"
     )
     for name in sorted(nums, key=len, reverse=True):
@@ -216,10 +234,10 @@ def main() -> None:
     # \paragraph{} run-in headings (level 4) are unnumbered in the PDF
     md = re.sub(r"^(####+ .*?)\s*(\{[^}]*\})?$", lambda m: m.group(1) + " {-}", md, flags=re.M)
     (build / "flat.md").write_text(md, encoding="utf-8")
-    out = MS / "main.docx"
+    out = Path(args.out)
     pypandoc.convert_file(str(build / "flat.md"), "docx", format="markdown", outputfile=str(out),
                           extra_args=["--citeproc", f"--bibliography={MS / 'refs_paper1.bib'}",
-                                      f"--bibliography={MS / 'refs_edge.bib'}", f"--csl={MS / 'elsevier-numeric.csl'}", "--number-sections",
+                                      f"--bibliography={MS / 'refs_edge.bib'}", "--number-sections",
                                       f"--resource-path={build}", "--metadata=link-citations:true"])
     print("wrote", out, f"({out.stat().st_size / 1e6:.1f} MB); TikZ figures rendered:", tikz_figs)
 
